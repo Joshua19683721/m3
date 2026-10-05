@@ -43,32 +43,24 @@ git push -u origin main
 推到 GitHub **不會自動開啟 Pages**，要去網頁上點一下：
 
 1. 開啟 <https://github.com/Joshua19683721/m3/settings/pages>
-2. **Build and deployment → Source** 選 **GitHub Actions**
-3. 儲存
+2. **Build and deployment → Source** 選 **Deploy from a branch**
+3. **Branch** 選 `main`，**Folder** 選 `/ (root)`
+4. 儲存
 
-選完之後，第一次推送時跑的那個 workflow 會顯示失敗（那時 Pages 還沒開），
-到 **Actions 分頁** 找到紅色的 "Deploy to GitHub Pages"，
-按 **Re-run all jobs** 就會成功。
-
-跑完網址是：
+大約一分鐘後網址就會開通：
 
 ```
 https://joshua19683721.github.io/m3/
 ```
 
-> **為什麼一定要這一步？**
-> `actions/configure-pages` 會去呼叫 GitHub 的 Pages API；
-> 倉庫還沒啟用 Pages 時那支 API 回 404，工作流程就會停在這一步
-> （已實測：checkout 與打包都成功，只有這一步失敗）。
-> 這是 GitHub 的設計——Pages 是倉庫層級的設定，不能從 Actions 裡打開。
+> 這個專案放了 `.nojekyll`，所以 GitHub 會把檔案**原樣**輸出，不經過 Jekyll。
+> 倉庫根目錄就是網站根目錄，而 App 全部使用相對路徑，
+> 所以在 `/m3/` 這種子路徑下運作正常。
 
-### 3-1. 不想用 Actions 的話
-
-Pages 的 Source 也可以選 **Deploy from a branch → main → /(root)**，
-完全不需要 Actions，推上去就有網址。
-差別是會把 `tools/`、`README.md` 等一併公開（都是靜態檔案，不影響使用）。
-
-**兩種方式擇一即可，不要同時開。**
+> **為什麼不用 Actions？**
+> 走 Actions（`actions/deploy-pages`）同樣要先在 Settings 開啟 Pages 才會跑，
+> 還要多按一次 Re-run；直接用分支部署反而少一步，也不會有失敗紅燈。
+> 所以這個專案改用分支部署，並已移除 `.github/workflows/`。
 
 ---
 
