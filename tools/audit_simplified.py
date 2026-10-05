@@ -87,19 +87,41 @@ def convert(text):
     return "".join(S2T[ch] if is_simplified(ch) else ch for ch in text)
 
 
-TARGETS = [
-    "index.html",
-    "README.md",
-    "start.bat",
-    "assets/css/app.css",
-    "assets/js/app.js",
-    "data/banks.js",
-    "package.json",
-    "tools/fixes.json",
-    "tools/lexicon.json",
-]
-TARGETS += [str(p.relative_to(ROOT)).replace("\\", "/")
-            for p in sorted((ROOT / "tools").glob("*.py"))]
+# 要掃的檔案：走訪整個 repo，不再列白名單。
+# 之前是手寫 TARGETS，結果新增 tools/phrase_expected.json 時忘了加進去，
+# 那份檔案裡有 110 筆中文卻完全沒被掃到。改成自動走訪，以後不會再漏。
+TEXT_SUFFIX = {".py", ".js", ".json", ".html", ".css", ".md", ".bat",
+               ".txt", ".yml", ".yaml", ".toml", ".cfg", ".ini"}
+SKIP_DIRS = {".git", "node_modules", "cache", "__pycache__", ".idea", ".vscode"}
+# 只排除「本來就必須含簡體字」的檔案。
+# data/banks.js 雖然是產物，但它是使用者實際看到的中文，照樣要掃。
+SKIP_NAMES = {
+    # 這份就是「簡體字清單」本身，必須含簡體字（tools/test_app.js 載入）
+    "simplified_chars.js",
+}
+
+
+def collect_targets():
+    out = []
+    for p in sorted(ROOT.rglob("*")):
+        if not p.is_file():
+            continue
+        if any(part in SKIP_DIRS for part in p.relative_to(ROOT).parts):
+            continue
+        if p.suffix.lower() not in TEXT_SUFFIX:
+            continue
+        if p.name in SKIP_NAMES:
+            continue
+        # 報告檔本身會含「簡體」這三個字（因為是用來描述問題的），跳過
+        if p.name in ("simplified_report.txt", "gap_units.txt", "bank_report.txt",
+                      "phrase_report.txt", "ipa_report.txt", "bad_phrases.txt",
+                      "contraction_ipa.txt", "ipa_primary_report.txt"):
+            continue
+        out.append(p.relative_to(ROOT).as_posix())
+    return out
+
+
+TARGETS = collect_targets()
 
 
 def main():

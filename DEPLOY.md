@@ -127,5 +127,5 @@ npm test                    # 88 項測試
 ```
 
 練習進度存在瀏覽器的 localStorage，**跟倉庫無關**——
-換瀏覽器或換裝置就不會跟著走。若要跨裝置同步，`.github/workflows/deploy-pages.yml`
-目前沒有後端，需要另外接 Firebase / Supabase 之類的服务才能做到。
+換瀏覽器或換裝置就不會跟著走。若要跨裝置同步，目前沒有後端，
+需要另外接 Firebase / Supabase 之類的服務才能做到。
