@@ -1,0 +1,216 @@
+{
+ "6-117": {
+  "word": "fisherman / fishermen",
+  "zh": "漁夫（單數／複數）",
+  "ex_en": "There are many fishermen in Penghu.",
+  "ex_zh": "澎湖有很多漁夫。",
+  "_note": "PDF 把單複數擠在同一格，切分後英文殘缺；改為標準寫法。"
+ },
+ "6-123": {
+  "word": "goose / geese",
+  "zh": "鵝（單數／複數）",
+  "ex_en": "Some geese are swimming in the lake.",
+  "ex_zh": "有幾隻鵝在湖上游水。",
+  "_note": "同 fisherman：單複數同列一格，切分後英文只剩 geese.。"
+ },
+ "6-218": {
+  "word": "rat",
+  "zh": "老鼠（比 mouse 體型大且嘴巴較尖）",
+  "ex_en": "I hate rats.",
+  "ex_zh": "討厭老鼠。",
+  "_note": "釋義括號內含英文 mouse，導致切分時提前斷開。"
+ },
+ "6-222": {
+  "word": "roller skate",
+  "zh": "四輪溜冰鞋（roller blade：冰刀）",
+  "ex_en": "Do you want to go roller-skating with me?",
+  "ex_zh": "你想跟我去溜冰嗎？",
+  "_note": "釋義括號內含英文 roller blade，切分時把例句併進譯文。"
+ },
+ "1-037": {
+  "ex_en": "The lion is the king of animals.",
+  "_note": "[校對] error（第 1 批）：可數名詞單數 lion 在句首須加定冠詞 the，否則文法錯誤。"
+ },
+ "2-041": {
+  "ex_en": "China has a lot of land.",
+  "_note": "[校對] error（第 4 批）：land 為不可數名詞，前面需加限定詞，原句「has big land」缺少冠詞或數量詞，英文文法錯誤。"
+ },
+ "2-045": {
+  "ex_en": "Mr. Lin was so mad when his student cheated on the test.",
+  "_note": "[校對] error（第 4 批）：student 與 cheated 之間遺漏空格，導致兩字黏合在一起，屬明顯的排字與斷詞錯誤。"
+ },
+ "2-039": {
+  "ex_zh": "青蛙在池塘邊跳",
+  "_note": "[校對] minor（第 4 批）：譯文缺少介詞「在」，句子結構殘缺，讀起來不完整。"
+ },
+ "2-074": {
+  "ex_zh": "Peggy留短髮",
+  "_note": "[校對] minor（第 4 批）：英文是 has short hair，中文誤用「是」當動詞。"
+ },
+ "2-085": {
+  "ex_en": "Who's your Chinese teacher?",
+  "_note": "[校對] error（第 5 批）：Whe 為拼字錯誤，應為 who is 的縮寫 Who's。"
+ },
+ "3-016": {
+  "ex_zh": "吹熄蠟燭",
+  "_note": "[校對] minor（第 5 批）：英文 blow out the candles 含有「吹熄」之意，中文翻譯遺漏了熄滅的動作。"
+ },
+ "3-017": {
+  "ex_en": "The teacher is writing on the blackboard with a piece of chalk.",
+  "_note": "[校對] error（第 5 批）：chalk 為不可數名詞，不能用冠詞 a，修飾應為 a piece of chalk。"
+ },
+ "3-041": {
+  "ex_en": "She always gets good grades.",
+  "_note": "[校對] error（第 6 批）：主詞 She 為第三人稱單數，動詞應為 gets，此處 get 造成主詞與動詞不一致的文法錯誤。"
+ },
+ "3-079": {
+  "zh": "磅（重量單位）；英鎊（貨幣單位）",
+  "_note": "[校對] minor（第 7 批）：釋義只標貨幣「英磅」，但例句「lost ten pounds」與譯文「減了十磅」用的都是重量單位，兩者不一致。"
+ },
+ "3-090": {
+  "ex_zh": "你可以把機器放在這裡",
+  "_note": "[校對] minor（第 7 批）：譯文「放這」缺少方位詞「在」及處所補語，語句不完整。"
+ },
+ "3-091": {
+  "ex_en": "The sign says “No smoking.”",
+  "_note": "[校對] error（第 7 批）：譯文開頭誤植了一個孤立的右引號，應改成完整配對的中文引號。",
+  "ex_zh": "標示寫著：「禁止吸菸」"
+ },
+ "3-106": {
+  "ex_en": "Please enter “zero, nine, five.”",
+  "_note": "[校對] minor（第 8 批）：中文翻譯開頭多了一個孤立的右引號，引號不成對屬排版錯誤。",
+  "ex_zh": "請輸入“0-9-5”"
+ },
+ "4-021": {
+  "zh": "西洋棋",
+  "_note": "[校對] error（第 8 批）：chess 指的是西洋棋這個遊戲，而非單一「棋子」，釋義與例句 playing chess 不符。"
+ },
+ "4-024": {
+  "ex_zh": "我的弟弟看了很多漫畫",
+  "_note": "[校對] error（第 8 批）：中文多了一個「的」字，造成「弟弟的看了」病句。"
+ },
+ "4-061": {
+  "zh": "中號的",
+  "_note": "[校對] minor（第 9 批）：「中的」無法正確表達 medium 的意思，尺寸的 medium 應譯為「中號的」（中等的）。"
+ },
+ "4-080": {
+  "ex_en": "A new restaurant will be opened two blocks away from the park.",
+  "_note": "[校對] minor（第 10 批）：此處為將來被動式，應為 will be opened，will be open 語意變成「將會是開著的」。"
+ },
+ "4-092": {
+  "ex_zh": "這件裙子的尺寸很適合你。",
+  "_note": "[校對] minor（第 10 批）：漏譯 the right，且「是你的尺寸」中文不通順，應為「尺寸正合你」。"
+ },
+ "4-106": {
+  "ex_zh": "這個主意聽起來不錯。",
+  "_note": "[校對] error（第 10 批）：譯文多出「見到你」等殘留文字，與例句內容不符。"
+ },
+ "4-127": {
+  "ex_zh": "我的表姊週末期間來拜訪我們",
+  "_note": "[校對] error（第 11 批）：英文為 during the weekends（週末期間），中文卻譯為「寒假期間」，時間意義不符。"
+ },
+ "4-133": {
+  "ex_en": "J.K. Rowling is a popular writer.",
+  "_note": "[校對] error（第 11 批）：句末殘留多餘且大小寫錯誤的「J.k.」殘字，屬資料錯亂。"
+ },
+ "5-013": {
+  "zh": "烘焙",
+  "_note": "[校對] minor（第 11 批）：「烘培」為常見誤字，標準用字應為「烘焙」。"
+ },
+ "5-032": {
+  "ex_zh": "Nick收集很多郵票",
+  "_note": "[校對] minor（第 12 批）：英文為一般現在時的習慣用法，中文卻用「了」譯成已完成，時態不符。"
+ },
+ "5-036": {
+  "ex_en": "Dennis covers his bed with a blanket.",
+  "_note": "[校對] error（第 12 批）：配合英文改為 cover B with A，中文一併調整。",
+  "ex_zh": "Dennis在床上蓋了一條毯子。"
+ },
+ "5-083": {
+  "word": "mouth",
+  "_note": "[校對] minor（第 13 批）：mouth 為普通名詞，單字條不應將首字母大寫。"
+ },
+ "5-092": {
+  "ex_en": "My favorite fruit is oranges.",
+  "_note": "[校對] minor（第 13 批）：泛指水果種類時不可用定冠詞 the，應改為複數 oranges。"
+ },
+ "5-104": {
+  "ex_en": "Let’s take a photo here.",
+  "_note": "[校對] error（第 14 批）：縮寫 Let's 的撇號與後面字母之間誤植空白，應為 Let's。"
+ },
+ "5-110": {
+  "ex_zh": "不要用手指著月亮",
+  "_note": "[校對] minor（第 14 批）：「用手指著」漏了「著」字，譯文因此不成句。"
+ },
+ "5-114": {
+  "ex_en": "What’s the price of this DVD?",
+  "_note": "[校對] minor（第 14 批）：問號前多了一個空格，英文排版應為 DVD?。"
+ },
+ "5-120": {
+  "ex_en": "The puppy is sleeping under the bench.",
+  "_note": "[校對] error（第 14 批）：句首冠詞誤植為小寫且漏掉字母 T，應為 The。"
+ },
+ "5-121": {
+  "ex_en": "Push the button to open the door.",
+  "_note": "[校對] error（第 14 批）：bottom 應為 button（按鈕），否則語意不通且與中文譯文「按鈕」不符。"
+ },
+ "5-125": {
+  "ex_zh": "我看不清楚這些快速的動作",
+  "_note": "[校對] error（第 14 批）：譯文只有片語，漏掉英文句中我看不清楚的內容。"
+ },
+ "5-180": {
+  "ex_en": "We watch that program on Tuesday night.",
+  "_note": "[校對] error（第 15 批）：例句中的「Tues- day」是換行斷字殘留，應合併為完整的 Tuesday。"
+ },
+ "5-184": {
+  "ex_en": "Michelle practices the violin every day.",
+  "_note": "[校對] error（第 16 批）：everyday 是形容詞，此處作副詞應寫成 every day。"
+ },
+ "6-028": {
+  "ex_zh": "那個人是瞎子",
+  "_note": "[校對] error（第 16 批）：「眼盲」並非正確中文說法，應改為「瞎子」或「眼睛看不見」。"
+ },
+ "6-049": {
+  "ex_en": "China is a big country.",
+  "_note": "[校對] minor（第 17 批）：配合英文改為「a big country」，中文應作「一個很大的國家」。",
+  "ex_zh": "中國是一個很大的國家"
+ },
+ "6-061": {
+  "ex_en": "Cars make our lives more convenient.",
+  "_note": "[校對] minor（第 17 批）：英文改為「more convenient」後，中文須補上「更」才相符。",
+  "ex_zh": "汽車使我們的生活更便利"
+ },
+ "6-081": {
+  "ex_zh": "Zoe把抽屜整理得很整齊",
+  "_note": "[校對] minor（第 18 批）：「保持」不能與「把」字句搭配作結果補語，此處應改用「整理」。"
+ },
+ "6-110": {
+  "ex_en": "We often barbecue meat at the Moon Festival.",
+  "_note": "[校對] error（第 19 批）：介系詞誤用，節慶前應用 at，且專有名詞前漏了定冠詞 the。"
+ },
+ "6-130": {
+  "ex_en": "Our leader is a hard-working person.",
+  "_note": "[校對] error（第 19 批）：系名詞片語缺少不定冠詞 a，應為 a hard-working person。"
+ },
+ "6-185": {
+  "ex_zh": "這間公司損失了三百萬美元",
+  "_note": "[校對] error（第 20 批）：英文句中的 dollars（美元）在中文翻譯中漏譯，譯文缺少金額單位。"
+ },
+ "6-225": {
+  "ex_zh": "節日有很多東西在特價",
+  "_note": "[校對] minor（第 21 批）：「多東西」漏了程度詞「很」，中文不通順。"
+ },
+ "6-237": {
+  "ex_en": "Soldiers have to wear their uniforms.",
+  "_note": "[校對] error（第 22 批）：主詞 Soldiers 為複數，後面的所有格名詞也須用複數 their uniforms。"
+ },
+ "6-241": {
+  "ex_en": "My family goes to a good restaurant on special days.",
+  "_note": "[校對] minor（第 22 批）：family 為集合名詞，美式英語的主詞動詞一致應用單數 goes。"
+ },
+ "6-261": {
+  "word": "T-shirt",
+  "zh": "T恤",
+  "_note": "PDF 寫成「T-shirt T恤」中間沒有空格，切分時把「恤」切掉了。"
+ }
+}

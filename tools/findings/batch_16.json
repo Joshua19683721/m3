@@ -1,0 +1,22 @@
+{
+  "batch": 16,
+  "checked": 40,
+  "issues": [
+    {
+      "id": "5-184",
+      "field": "ex_en",
+      "current": "Michelle practices the violin everyday.",
+      "proposed": "Michelle practices the violin every day.",
+      "severity": "error",
+      "reason": "everyday 是形容詞，此處作副詞應寫成 every day。"
+    },
+    {
+      "id": "6-028",
+      "field": "ex_zh",
+      "current": "那個人眼盲",
+      "proposed": "那個人是瞎子",
+      "severity": "error",
+      "reason": "「眼盲」並非正確中文說法，應改為「瞎子」或「眼睛看不見」。"
+    }
+  ]
+}

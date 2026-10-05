@@ -1,0 +1,30 @@
+{
+  "batch": 21,
+  "checked": 40,
+  "issues": [
+    {
+      "id": "6-218",
+      "field": "ex_zh",
+      "current": "討厭老鼠。",
+      "proposed": "我討厭老鼠。",
+      "severity": "minor",
+      "reason": "譯文漏掉主詞「我」，中文句子不完整。"
+    },
+    {
+      "id": "6-222",
+      "field": "zh",
+      "current": "四輪溜冰鞋（roller blade：冰刀）",
+      "proposed": "四輪溜冰鞋（roller blade：直排輪溜冰鞋）",
+      "severity": "minor",
+      "reason": "roller blade 是單排輪的直排輪溜冰鞋，譯成「冰刀」並不正確。"
+    },
+    {
+      "id": "6-225",
+      "field": "ex_zh",
+      "current": "節日有多東西在特價",
+      "proposed": "節日有很多東西在特價",
+      "severity": "minor",
+      "reason": "「多東西」漏了程度詞「很」，中文不通順。"
+    }
+  ]
+}

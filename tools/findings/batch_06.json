@@ -1,0 +1,14 @@
+{
+  "batch": 6,
+  "checked": 40,
+  "issues": [
+    {
+      "id": "3-041",
+      "field": "ex_en",
+      "current": "She always get good grades.",
+      "proposed": "She always gets good grades.",
+      "severity": "error",
+      "reason": "主詞 She 為第三人稱單數，動詞應為 gets，此處 get 造成主詞與動詞不一致的文法錯誤。"
+    }
+  ]
+}

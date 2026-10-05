@@ -1,0 +1,54 @@
+{
+  "batch": 14,
+  "checked": 40,
+  "issues": [
+    {
+      "id": "5-104",
+      "field": "ex_en",
+      "current": "Let’ s take a photo here.",
+      "proposed": "Let’s take a photo here.",
+      "severity": "error",
+      "reason": "縮寫 Let's 的撇號與後面字母之間誤植空白，應為 Let's。"
+    },
+    {
+      "id": "5-110",
+      "field": "ex_zh",
+      "current": "不要用手指月亮",
+      "proposed": "不要用手指著月亮",
+      "severity": "minor",
+      "reason": "「用手指著」漏了「著」字，譯文因此不成句。"
+    },
+    {
+      "id": "5-114",
+      "field": "ex_en",
+      "current": "What’s the price of this DVD ?",
+      "proposed": "What’s the price of this DVD?",
+      "severity": "minor",
+      "reason": "問號前多了一個空格，英文排版應為 DVD?。"
+    },
+    {
+      "id": "5-120",
+      "field": "ex_en",
+      "current": "he puppy is sleeping under the bench.",
+      "proposed": "The puppy is sleeping under the bench.",
+      "severity": "error",
+      "reason": "句首冠詞誤植為小寫且漏掉字母 T，應為 The。"
+    },
+    {
+      "id": "5-121",
+      "field": "ex_en",
+      "current": "Push the bottom to open the door.",
+      "proposed": "Push the button to open the door.",
+      "severity": "error",
+      "reason": "bottom 應為 button（按鈕），否則語意不通且與中文譯文「按鈕」不符。"
+    },
+    {
+      "id": "5-125",
+      "field": "ex_zh",
+      "current": "快速的動作",
+      "proposed": "我看不清楚這些快速的動作",
+      "severity": "error",
+      "reason": "譯文只有片語，漏掉英文句中我看不清楚的內容。"
+    }
+  ]
+}

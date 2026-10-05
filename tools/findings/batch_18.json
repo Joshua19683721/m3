@@ -1,0 +1,14 @@
+{
+  "batch": 18,
+  "checked": 40,
+  "issues": [
+    {
+      "id": "6-081",
+      "field": "ex_zh",
+      "current": "Zoe把抽屜保持得很整齊",
+      "proposed": "Zoe把抽屜整理得很整齊",
+      "severity": "minor",
+      "reason": "「保持」不能與「把」字句搭配作結果補語，此處應改用「整理」。"
+    }
+  ]
+}

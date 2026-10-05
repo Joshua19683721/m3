@@ -1,0 +1,22 @@
+{
+  "batch": 22,
+  "checked": 40,
+  "issues": [
+    {
+      "id": "6-237",
+      "field": "ex_en",
+      "current": "Soldiers have to wear their uniform.",
+      "proposed": "Soldiers have to wear their uniforms.",
+      "severity": "error",
+      "reason": "主詞 Soldiers 為複數，後面的所有格名詞也須用複數 their uniforms。"
+    },
+    {
+      "id": "6-241",
+      "field": "ex_en",
+      "current": "My family go to a good restaurant on special days.",
+      "proposed": "My family goes to a good restaurant on special days.",
+      "severity": "minor",
+      "reason": "family 為集合名詞，美式英語的主詞動詞一致應用單數 goes。"
+    }
+  ]
+}

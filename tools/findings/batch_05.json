@@ -1,0 +1,38 @@
+{
+  "batch": 5,
+  "checked": 40,
+  "issues": [
+    {
+      "id": "2-077",
+      "field": "ex_en",
+      "current": "My older sister is an officer in the bank.",
+      "proposed": "My older sister is a bank clerk.",
+      "severity": "minor",
+      "reason": "officer 一詞通常指軍官或警官，用來指銀行職員並不自然。"
+    },
+    {
+      "id": "2-085",
+      "field": "ex_en",
+      "current": "Whe's your Chinese teacher?",
+      "proposed": "Who's your Chinese teacher?",
+      "severity": "error",
+      "reason": "Whe 為拼字錯誤，應為 who is 的縮寫 Who's。"
+    },
+    {
+      "id": "3-016",
+      "field": "ex_zh",
+      "current": "吹蠟燭",
+      "proposed": "吹熄蠟燭",
+      "severity": "minor",
+      "reason": "英文 blow out the candles 含有「吹熄」之意，中文翻譯遺漏了熄滅的動作。"
+    },
+    {
+      "id": "3-017",
+      "field": "ex_en",
+      "current": "The teacher is writing on the blackboard with a chalk.",
+      "proposed": "The teacher is writing on the blackboard with a piece of chalk.",
+      "severity": "error",
+      "reason": "chalk 為不可數名詞，不能用冠詞 a，修飾應為 a piece of chalk。"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "batch": 8,
+  "checked": 40,
+  "issues": [
+    {
+      "id": "3-106",
+      "field": "ex_en",
+      "current": "Please enter “zero, nine, five.",
+      "proposed": "Please enter “zero, nine, five.”",
+      "severity": "error",
+      "reason": "英文例句只有左引號卻缺右引號，句子被截斷不完整。"
+    },
+    {
+      "id": "3-106",
+      "field": "ex_zh",
+      "current": "”請輸入”0-9-5”",
+      "proposed": "請輸入“0-9-5”",
+      "severity": "minor",
+      "reason": "中文翻譯開頭多了一個孤立的右引號，引號不成對屬排版錯誤。"
+    },
+    {
+      "id": "4-021",
+      "field": "zh",
+      "current": "棋子",
+      "proposed": "西洋棋",
+      "severity": "error",
+      "reason": "chess 指的是西洋棋這個遊戲，而非單一「棋子」，釋義與例句 playing chess 不符。"
+    },
+    {
+      "id": "4-024",
+      "field": "ex_zh",
+      "current": "我的弟弟的看了很多漫畫",
+      "proposed": "我的弟弟看了很多漫畫",
+      "severity": "error",
+      "reason": "中文多了一個「的」字，造成「弟弟的看了」病句。"
+    }
+  ]
+}

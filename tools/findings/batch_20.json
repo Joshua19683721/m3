@@ -1,0 +1,14 @@
+{
+  "batch": 20,
+  "checked": 40,
+  "issues": [
+    {
+      "id": "6-185",
+      "field": "ex_zh",
+      "current": "這間公司損失了三百萬",
+      "proposed": "這間公司損失了三百萬美元",
+      "severity": "error",
+      "reason": "英文句中的 dollars（美元）在中文翻譯中漏譯，譯文缺少金額單位。"
+    }
+  ]
+}

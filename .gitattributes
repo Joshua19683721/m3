@@ -1,0 +1,11 @@
+# 統一以 LF 存在版控裡，避免 Windows 的 CRLF 造成大量假 diff
+* text=auto eol=lf
+
+# 批次檔在 Windows 上必須是 CRLF 才能正常執行
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# 二進位／不該被轉換的
+*.png binary
+*.pdf binary
+*.dict binary

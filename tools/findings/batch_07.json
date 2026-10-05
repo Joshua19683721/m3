@@ -1,0 +1,38 @@
+{
+  "batch": 7,
+  "checked": 40,
+  "issues": [
+    {
+      "id": "3-079",
+      "field": "zh",
+      "current": "英磅",
+      "proposed": "磅（重量）；英鎊（貨幣）",
+      "severity": "minor",
+      "reason": "釋義只標貨幣「英磅」，但例句 lost ten pounds 與譯文「減了十磅」都是重量用法，兩者不一致。"
+    },
+    {
+      "id": "3-090",
+      "field": "ex_zh",
+      "current": "你可以把機器放這",
+      "proposed": "你可以把機器放在這裡",
+      "severity": "minor",
+      "reason": "譯文「放這」缺少方位詞「在」與處所補語，句子不完整。"
+    },
+    {
+      "id": "3-091",
+      "field": "ex_en",
+      "current": "The sign says “No smoking.",
+      "proposed": "The sign says “No smoking.”",
+      "severity": "error",
+      "reason": "例句只有左引號而沒有右引號，是 PDF 擷取造成的斷裂瑕疵。"
+    },
+    {
+      "id": "3-091",
+      "field": "ex_zh",
+      "current": "”標示寫著：禁止吸菸",
+      "proposed": "標示寫著：禁止吸菸",
+      "severity": "error",
+      "reason": "句首殘留一個英文右引號，是從例句誤移過來的多餘符號。"
+    }
+  ]
+}

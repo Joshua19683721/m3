@@ -1,0 +1,22 @@
+{
+  "batch": 13,
+  "checked": 40,
+  "issues": [
+    {
+      "id": "5-083",
+      "field": "word",
+      "current": "Mouth",
+      "proposed": "mouth",
+      "severity": "minor",
+      "reason": "mouth 為普通名詞，單字條不應將首字母大寫。"
+    },
+    {
+      "id": "5-092",
+      "field": "ex_en",
+      "current": "My favorite fruit is the orange.",
+      "proposed": "My favorite fruit is oranges.",
+      "severity": "minor",
+      "reason": "泛指水果種類時不可用定冠詞 the，應改為複數 oranges。"
+    }
+  ]
+}

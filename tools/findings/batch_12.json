@@ -1,0 +1,30 @@
+{
+  "batch": 12,
+  "checked": 40,
+  "issues": [
+    {
+      "id": "5-032",
+      "field": "ex_zh",
+      "current": "Nick收集了很多郵票",
+      "proposed": "Nick收集很多郵票",
+      "severity": "minor",
+      "reason": "英文為一般現在時的習慣用法，中文卻用「了」譯成已完成，時態不符。"
+    },
+    {
+      "id": "5-036",
+      "field": "ex_en",
+      "current": "Dennis covers a blanket on his bed.",
+      "proposed": "Dennis covers his bed with a blanket.",
+      "severity": "error",
+      "reason": "「cover a blanket on his bed」語序錯誤，cover A on B 應改為 cover B with A。"
+    },
+    {
+      "id": "5-036",
+      "field": "ex_zh",
+      "current": "Dennis蓋了一條毯子在床上",
+      "proposed": "Dennis用一條毯子蓋在床上。",
+      "severity": "error",
+      "reason": "原譯句式與英文不符且用「了」表示過去，與現在式原意不一致。"
+    }
+  ]
+}

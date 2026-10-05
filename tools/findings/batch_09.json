@@ -1,0 +1,14 @@
+{
+  "batch": 9,
+  "checked": 40,
+  "issues": [
+    {
+      "id": "4-061",
+      "field": "zh",
+      "current": "中的",
+      "proposed": "中號的",
+      "severity": "minor",
+      "reason": "「中的」無法正確表達 medium 的意思，尺寸的 medium 應譯為「中號的」（中等的）。"
+    }
+  ]
+}

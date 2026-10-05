@@ -1,0 +1,28 @@
+# ── 依賴與工具產物（都可由 npm install / npm run build 重建）──
+node_modules/
+tools/__pycache__/
+*.pyc
+
+# CMUdict 下載快取（3.5 MB）與轉換後的音標表（3.6 MB）
+# 都可由 `python tools/fetch_ipa.py` 重新產生，不需要進版控
+tools/cache/
+tools/ipa.json
+
+# 中間產物（由 tools/*.py 產生）
+tools/lexicon.json
+tools/*.txt
+
+# 稽核與修正時產生的備份
+*.bak
+
+# 本機測試用的 Chrome 快取
+.cd*/
+.cp*/
+.chrome-tmp/
+
+# 截圖（文件用，需要的話再自行加入）
+shot-*.png
+
+# 原始 PDF 版權／檔案較大，預設不進版控；
+# 若希望保留出處，把下面這行註解掉即可
+source.pdf

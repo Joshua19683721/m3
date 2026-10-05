@@ -1,0 +1,14 @@
+{
+  "batch": 1,
+  "checked": 40,
+  "issues": [
+    {
+      "id": "1-037",
+      "field": "ex_en",
+      "current": "Lion is the king of animals.",
+      "proposed": "The lion is the king of animals.",
+      "severity": "error",
+      "reason": "可數名詞單數 lion 在句首須加定冠詞 the，否則文法錯誤。"
+    }
+  ]
+}

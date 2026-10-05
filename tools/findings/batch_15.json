@@ -1,0 +1,14 @@
+{
+  "batch": 15,
+  "checked": 40,
+  "issues": [
+    {
+      "id": "5-180",
+      "field": "ex_en",
+      "current": "We watch that program on Tues- day night.",
+      "proposed": "We watch that program on Tuesday night.",
+      "severity": "error",
+      "reason": "例句中的「Tues- day」是換行斷字殘留，應合併為完整的 Tuesday。"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "batch": 11,
+  "checked": 40,
+  "issues": [
+    {
+      "id": "4-127",
+      "field": "ex_zh",
+      "current": "我的表姊寒假期間來拜訪我們",
+      "proposed": "我的表姊週末期間來拜訪我們",
+      "severity": "error",
+      "reason": "英文為 during the weekends（週末期間），中文卻譯為「寒假期間」，時間意義不符。"
+    },
+    {
+      "id": "4-133",
+      "field": "ex_en",
+      "current": "J.K. Rowling is a popular writer. J.k.",
+      "proposed": "J.K. Rowling is a popular writer.",
+      "severity": "error",
+      "reason": "句末殘留多餘且大小寫錯誤的「J.k.」殘字，屬資料錯亂。"
+    },
+    {
+      "id": "5-013",
+      "field": "zh",
+      "current": "烘培",
+      "proposed": "烘焙",
+      "severity": "minor",
+      "reason": "「烘培」為常見誤字，標準用字應為「烘焙」。"
+    }
+  ]
+}

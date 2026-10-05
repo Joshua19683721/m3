@@ -1,0 +1,38 @@
+{
+  "batch": 17,
+  "checked": 40,
+  "issues": [
+    {
+      "id": "6-049",
+      "field": "ex_en",
+      "current": "China is a big land.",
+      "proposed": "China is a big country.",
+      "severity": "minor",
+      "reason": "「a big land」不是自然英文用法，指國家應改用「a big country」。"
+    },
+    {
+      "id": "6-049",
+      "field": "ex_zh",
+      "current": "中國是一塊廣大的土地",
+      "proposed": "中國是一個很大的國家",
+      "severity": "minor",
+      "reason": "配合英文改為「a big country」，中文應作「一個很大的國家」。"
+    },
+    {
+      "id": "6-061",
+      "field": "ex_en",
+      "current": "Cars make our life convenient.",
+      "proposed": "Cars make our lives more convenient.",
+      "severity": "error",
+      "reason": "「make our life convenient」是中式英文且缺少比較級 more，通數應作 lives。"
+    },
+    {
+      "id": "6-061",
+      "field": "ex_zh",
+      "current": "汽車使我們的生活便利",
+      "proposed": "汽車使我們的生活更便利",
+      "severity": "minor",
+      "reason": "英文改為「more convenient」後，中文須補上「更」才相符。"
+    }
+  ]
+}

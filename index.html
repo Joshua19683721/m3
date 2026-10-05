@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>場景單字輸入練習 · 英語單字口袋書 1-6 級</title>
+<link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+
+<!-- ============ 頂列 ============ -->
+<header class="topbar">
+  <div class="topbar__left">
+    <button class="icon-btn" id="homeBtn" title="回到場景總覽">☰</button>
+    <div class="brand">
+      <span class="brand__title">場景單字輸入練習</span>
+      <span class="brand__sub">英語單字口袋書 1–6 級 · 889 字</span>
+    </div>
+  </div>
+  <div class="topbar__right">
+    <label class="ctl">
+      <span>🔊 語音</span>
+      <select id="voiceSelect"><option>載入中…</option></select>
+    </label>
+    <label class="ctl">
+      <span>🔁 錯 3 次朗讀</span>
+      <select id="repeatSelect">
+        <option value="1">1 次</option>
+        <option value="2">2 次</option>
+        <option value="3" selected>3 次</option>
+        <option value="4">4 次</option>
+        <option value="5">5 次</option>
+      </select>
+    </label>
+    <button class="btn btn--ghost" id="browseBtn" title="查單字">🔍</button>
+    <button class="btn btn--ghost" id="mistakesBtn" title="錯字本">📕 <span class="btn__count" id="mistakeCount">0</span></button>
+    <button class="btn btn--ghost" id="statsBtn" title="學習統計">📊</button>
+    <button class="btn btn--ghost" id="dataBtn" title="資料管理">⚙</button>
+  </div>
+</header>
+
+<!-- ============ 場景總覽 ============ -->
+<main class="view view--home" id="viewHome">
+  <section class="hero">
+    <div>
+      <h1>依照「生活場景」練習輸入英文</h1>
+      <p class="hero__desc">
+        全部內容取自《英語單字口袋書（1–6級）》。每一個單元都照著
+        <b>單字 → 詞組 → 整句</b> 的順序循序漸進，逐字敲出英文，
+        把「看得懂」變成「打得出來」。
+      </p>
+    </div>
+    <div class="hero__stat">
+      <div class="ring" id="ringOverall"><span id="ringPct">0%</span></div>
+      <div class="hero__statText">
+        <b id="statDone">0</b> / <span id="statTotal">0</span> 個單元完成
+      </div>
+    </div>
+  </section>
+
+  <div class="filterbar">
+    <span class="filterbar__label">等級篩選</span>
+    <div class="chips" id="levelChips"></div>
+    <button class="btn btn--tiny" id="resetFilter">全部</button>
+  </div>
+
+  <div class="grid" id="scenarioGrid"></div>
+</main>
+
+<!-- ============ 練習畫面 ============ -->
+<main class="view view--practice" id="viewPractice" hidden>
+
+  <div class="practice__head">
+    <button class="btn btn--ghost" id="backBtn">← 場景</button>
+    <div class="crumbs">
+      <span class="crumbs__icon" id="pIcon">🏠</span>
+      <span class="crumbs__title" id="pTitle">居家生活</span>
+      <span class="crumbs__sep">/</span>
+      <span class="crumbs__unit" id="pUnit">單元 1 / 49</span>
+      <span class="badge badge--lv" id="pLevel">1 級</span>
+    </div>
+    <div class="practice__nav">
+      <button class="btn btn--tiny" id="prevUnitBtn" title="上一個單元 (Alt+P)">◀ 單元</button>
+      <button class="btn btn--tiny" id="nextUnitBtn" title="下一個單元 (Alt+N)">單元 ▶</button>
+    </div>
+  </div>
+
+  <ol class="steps" id="stepBar"></ol>
+
+  <section class="prompt">
+    <div class="prompt__tags">
+      <span class="badge" id="kindBadge">單字</span>
+      <span class="prompt__src" id="srcBadge">來源 3-021</span>
+    </div>
+    <div class="prompt__zh" id="promptZh">載入中…</div>
+    <div class="prompt__ipa" id="promptIpa"></div>
+    <div class="prompt__en" id="promptEn" hidden></div>
+    <div class="prompt__tip" id="promptTip"></div>
+  </section>
+
+  <div class="stage"><div class="words" id="words"></div></div>
+
+  <div class="banner" id="banner" hidden>
+    <span>✔ 完成！按 <kbd>Space</kbd> 繼續下一步，或 <kbd>Enter</kbd> 重打這一步。</span>
+  </div>
+
+  <div class="toolbar">
+    <button class="btn btn--purple" id="explainBtn"><kbd>Alt</kbd>+<kbd>Z</kbd> 解析</button>
+    <button class="btn" id="speakBtn"><kbd>Alt</kbd>+<kbd>'</kbd> 朗讀</button>
+    <button class="btn" id="peekBtn"><kbd>Alt</kbd>+<kbd>H</kbd> 看答案</button>
+    <button class="btn" id="toggleZhBtn"><kbd>Alt</kbd>+<kbd>B</kbd> 隱藏中文</button>
+    <button class="btn btn--purple" id="retryBtn"><kbd>Enter</kbd> 重打</button>
+  </div>
+</main>
+
+<!-- ============ 解析面板 ============ -->
+<div class="scrim" id="scrim" hidden></div>
+<aside class="panel" id="panel" hidden>
+  <div class="panel__head">
+    <div>
+      <h2>📖 這一課的解析</h2>
+      <p class="panel__sub" id="panelSub"></p>
+    </div>
+    <button class="panel__close" id="panelClose">✕</button>
+  </div>
+  <div class="panel__body" id="panelBody"></div>
+</aside>
+
+<!-- ============ 查單字 ============ -->
+<main class="view view--sheet" id="viewBrowse" hidden>
+  <div class="sheet__head">
+    <h2>🔍 查單字</h2>
+    <p>889 個單字全部可查。點任一列會跳到該單字所屬的場景開始練習。</p>
+    <button class="btn btn--ghost" id="closeBrowseBtn">✕ 關閉</button>
+  </div>
+  <div class="sheet__body">
+    <div class="searchbar">
+      <input type="search" id="searchInput" class="searchInput"
+             placeholder="輸入英文、中文、音標，或留空看全部…" autocomplete="off"
+             spellcheck="false">
+      <span class="searchCount" id="searchCount"></span>
+    </div>
+    <div class="chips" id="browseScenChips" style="margin-bottom:12px"></div>
+    <div id="browseList"></div>
+  </div>
+</main>
+
+<!-- ============ 錯字本 ============ -->
+<main class="view view--sheet" id="viewMistakes" hidden>
+  <div class="sheet__head">
+    <h2>📕 錯字本</h2>
+    <p>同一個字打字出錯 3 次以上就會收進來。點任一列會跳到重打那個字的步驟。</p>
+    <button class="btn btn--ghost" id="closeMistakesBtn">✕ 關閉</button>
+  </div>
+  <div class="sheet__body" id="mistakeList"></div>
+</main>
+
+<!-- ============ 統計 ============ -->
+<main class="view view--sheet" id="viewStats" hidden>
+  <div class="sheet__head">
+    <h2>📊 學習統計</h2>
+    <p>依場景統計練習進度，並列出累積打字量。</p>
+    <button class="btn btn--ghost" id="closeStatsBtn">✕ 關閉</button>
+  </div>
+  <div class="sheet__body" id="statsList"></div>
+</main>
+
+<!-- ============ 資料管理 ============ -->
+<main class="view view--sheet" id="viewData" hidden>
+  <div class="sheet__head">
+    <h2>⚙ 資料管理</h2>
+    <p>所有進度都存在這台裝置的瀏覽器（localStorage），不會上傳。</p>
+    <button class="btn btn--ghost" id="closeDataBtn">✕ 關閉</button>
+  </div>
+  <div class="sheet__body">
+    <div class="dataRow">
+      <b>中文提示（可模糊化，自我測驗用）</b>
+      <label class="switch"><input type="checkbox" id="zhToggle"><span></span></label>
+    </div>
+    <div class="dataRow">
+      <b>打字時自動跳到下一格</b>
+      <label class="switch"><input type="checkbox" id="autoNextToggle" checked><span></span></label>
+    </div>
+    <div class="dataRow">
+      <b>錯字自動朗讀（次數由上方選單控制）</b>
+      <label class="switch"><input type="checkbox" id="autoSpeakToggle" checked><span></span></label>
+    </div>
+    <hr>
+    <div class="dataActions">
+      <button class="btn" id="exportBtn">⬇ 匯出進度 JSON</button>
+      <button class="btn" id="importBtn">⬆ 匯入進度 JSON</button>
+      <button class="btn" id="resetBtn">🗑 清空全部進度</button>
+    </div>
+    <textarea id="dataArea" class="dataArea" spellcheck="false"
+              placeholder="進度 JSON 會出現在這裡"></textarea>
+    <hr>
+    <p class="dataNote">
+      題庫來源：<code>data/banks.js</code>（由 <code>tools/build_bank.py</code>
+      從 <code>source.pdf</code> 產生）。想改內容請改 PDF 後重新執行工具，
+      不要直接編輯 <code>banks.js</code>。
+    </p>
+  </div>
+</main>
+
+<div class="toast" id="toast"></div>
+
+<script src="data/banks.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

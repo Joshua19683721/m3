@@ -1,0 +1,22 @@
+{
+  "batch": 19,
+  "checked": 40,
+  "issues": [
+    {
+      "id": "6-110",
+      "field": "ex_en",
+      "current": "We often barbecue meat on Moon Festival.",
+      "proposed": "We often barbecue meat at the Moon Festival.",
+      "severity": "error",
+      "reason": "介系詞誤用，節慶前應用 at，且專有名詞前漏了定冠詞 the。"
+    },
+    {
+      "id": "6-130",
+      "field": "ex_en",
+      "current": "Our leader is hard-working person.",
+      "proposed": "Our leader is a hard-working person.",
+      "severity": "error",
+      "reason": "系名詞片語缺少不定冠詞 a，應為 a hard-working person。"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "batch": 10,
+  "checked": 40,
+  "issues": [
+    {
+      "id": "4-080",
+      "field": "ex_en",
+      "current": "A new restaurant will be open two blocks away from the park.",
+      "proposed": "A new restaurant will be opened two blocks away from the park.",
+      "severity": "minor",
+      "reason": "此處為將來被動式，應為 will be opened，will be open 語意變成「將會是開著的」。"
+    },
+    {
+      "id": "4-092",
+      "field": "ex_zh",
+      "current": "這件裙子是你的尺寸",
+      "proposed": "這件裙子的尺寸很適合你。",
+      "severity": "minor",
+      "reason": "漏譯 the right，且「是你的尺寸」中文不通順，應為「尺寸正合你」。"
+    },
+    {
+      "id": "4-106",
+      "field": "ex_zh",
+      "current": "這個主意聽起來不錯見到你",
+      "proposed": "這個主意聽起來不錯。",
+      "severity": "error",
+      "reason": "譯文多出「見到你」等殘留文字，與例句內容不符。"
+    }
+  ]
+}

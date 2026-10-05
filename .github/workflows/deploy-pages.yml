@@ -1,0 +1,49 @@
+name: Deploy to GitHub Pages
+
+# 推到 main 就自動發佈到 GitHub Pages
+# 首次使用：
+#   1. Settings → Pages → Source 選 "GitHub Actions"
+#   2. 推上去之後這個 workflow 就會自己跑
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: 部署到 GitHub Pages
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 準備要發佈的檔案
+        run: |
+          # App 是純靜態網站，路徑全部相對路徑，所以放在
+          # https://<user>.github.io/<repo>/ 這種子路徑下也能正常運作。
+          mkdir -p _site
+          cp index.html _site/
+          cp -r assets _site/
+          cp -r data _site/
+          touch _site/.nojekyll
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - id: deploy
+        uses: actions/deploy-pages@v4

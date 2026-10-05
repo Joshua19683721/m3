@@ -1,0 +1,46 @@
+{
+  "batch": 4,
+  "checked": 40,
+  "issues": [
+    {
+      "id": "2-041",
+      "field": "ex_en",
+      "current": "China has big land.",
+      "proposed": "China has a lot of land.",
+      "severity": "error",
+      "reason": "land 為不可數名詞，前面需加限定詞，原句「has big land」缺少冠詞或數量詞，英文文法錯誤。"
+    },
+    {
+      "id": "2-045",
+      "field": "ex_en",
+      "current": "Mr. Lin was so mad when his studentcheated on the test.",
+      "proposed": "Mr. Lin was so mad when his student cheated on the test.",
+      "severity": "error",
+      "reason": "student 與 cheated 之間遺漏空格，導致兩字黏合在一起，屬明顯的排字與斷詞錯誤。"
+    },
+    {
+      "id": "2-039",
+      "field": "ex_zh",
+      "current": "青蛙池塘邊跳",
+      "proposed": "青蛙在池塘邊跳",
+      "severity": "minor",
+      "reason": "譯文缺少介詞「在」，句子結構殘缺，讀起來不完整。"
+    },
+    {
+      "id": "2-065",
+      "field": "ex_zh",
+      "current": "中國人以米為主食",
+      "proposed": "中國人吃很多米飯",
+      "severity": "minor",
+      "reason": "英文原句是「eat much rice」（吃很多米），譯文卻多出「以米為主食」的意思，與英文不一致。"
+    },
+    {
+      "id": "2-074",
+      "field": "ex_zh",
+      "current": "Peggy是短髮",
+      "proposed": "Peggy有短髮",
+      "severity": "minor",
+      "reason": "英文為「Peggy has short hair.」，譯文誤用「是」當動詞，應為「有」，否則語意不通。"
+    }
+  ]
+}
