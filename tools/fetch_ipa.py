@@ -38,8 +38,23 @@ PHONES = {
 }
 # 需要標長音的母音（後面沒有 r 時）
 LONG = {"IY": "iː", "UW": "uː", "AA": "ɑː", "AO": "ɔː", "ER": "ɜː"}
-VOWELS = {"AA", "AE", "AH0", "AH1", "AH2", "AO", "AW", "AY", "EH",
-          "ER0", "ER1", "ER2", "EY", "IH", "IY", "OW", "OY", "UH", "UW"}
+_VOWEL_TOKENS = {"AA", "AE", "AH0", "AH1", "AH2", "AO", "AW", "AY", "EH",
+                 "ER0", "ER1", "ER2", "EY", "IH", "IY", "OW", "OY", "UH", "UW"}
+VOWELS = _VOWEL_TOKENS
+# 比對時用的是「去掉重音數字」的那一段（parse_line 裡的 base），
+# 所以這裡也要去掉數字。少了這個集合，AH1 / ER1 會被誤判成輔音，
+# 結果是 touch → tʌtʃ、bird → bɝd，主重音符號整個不見。
+VOWEL_BASES = {v.rstrip("012") for v in _VOWEL_TOKENS}
+
+
+# CMUdict 首選讀音不適用時的人工覆寫（字 -> ARPAbet 音素）
+#   july    首選 JH UW2 L AY1 = /dʒʊlˈaɪ/，但當月份唸 /dʒuˈlaɪ/
+#   nobody  首選 N OW1 B AA2 D IY2 = /ˈnoʊˌbɑːdiːz/，實際是 /ˈnoʊbədi/
+OVERRIDES = {
+    "july": "JH UW2 L AY1",
+    "nobody": "N OW1 B AH0 D IY0",
+    "nobody's": "N OW1 B AH0 D IY0 Z",
+}
 
 
 def download():
@@ -83,18 +98,24 @@ def parse_line(line):
         # 長母音：AA/AO 一律用長音 ɑː，後面接 R 時自然組成 ɑːɹ（不要重複標捲舌）
         # ARPAbet 的 AA = /ɑ/（hot, watch, want），AO = /ɔ/（all, dog, ball）。
         # 兩者不要混，否則 all / dog 會被念成 /ɑː/。
+        # 帶 0 的（AA0 / IY0 / UW0）出現在輕化音節，是短的，不加 ː，
+        # 否則 happy 會變成 /ˈhæpiː/、nobody 變成 /ˈnoʊbədiː/。
+        long_ok = stress in ("1", "2")
         if base == "AA":
-            sym = "ɑː"
+            sym = "ɑː" if long_ok else "ɑ"
         elif base == "AO":
-            sym = "ɔː"
+            sym = "ɔː" if long_ok else "ɔ"
         elif base == "IY":
-            sym = "iː"
+            sym = "iː" if long_ok else "i"
         elif base == "UW":
-            sym = "uː"
-        elif base in ("ER1", "ER2"):
-            sym = "ɝ" if nxt == "R" else "ɜː"
+            sym = "uː" if long_ok else "u"
+        elif p in ("ER1", "ER2"):
+            # 美式英語是 rhotic：ER 一律是捲舌 ɝ。
+            # 不能因為「後面沒有 R 音素」就退回 ɜː，那樣 person / bird / word
+            # 會變成 /ˈpɜːsən/ /ˈbɜːd/，實際唸起來是 ˈpɝsən / bɝd。
+            sym = "ɝ"
 
-        if base in VOWELS:
+        if base in VOWEL_BASES:
             pre = "".join(onset)
             onset = []
             if stress == "1":
@@ -121,9 +142,18 @@ def main():
         r = parse_line(line)
         if r:
             table.setdefault(r[0], r[1])
+
+    # CMUdict 有少數「首選條目」不是實際會唸的讀音，這裡人工指定。
+    # （tools/audit_ipa_primary.py 會把可疑條目列出來供人確認）
+    for word, phones in OVERRIDES.items():
+        r = parse_line(word + " " + phones)
+        if r:
+            table[r[0]] = r[1]
+
     OUT.write_text(json.dumps(table, ensure_ascii=False, indent=0), encoding="utf-8")
     print(f"words={len(table)} -> {OUT}")
-    for w in ("lunch", "school", "dragon", "the", "walk", "happy"):
+    for w in ("lunch", "school", "dragon", "the", "walk", "happy",
+              "nobody", "july", "person", "bird", "police", "city", "easy"):
         print(f"  {w:8s} /{table.get(w, '—')}/")
 
 

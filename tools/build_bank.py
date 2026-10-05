@@ -1729,11 +1729,150 @@ for _ph, _zh, _sid in [
     ("don’t be", "不要", "feeling"),
     ("do not touch", "不要碰", "action"),
     ("can not", "不能", "action"),
-    ("can’t", "不能", "action"),
+    # 原本這裡有 ("can’t", "不能", "action")：它是單一個縮寫、查不到音標，
+    # 卻會在 in_sent 分支搶先命中（例如 "I can't find him."），害那幾個單元
+    # 拿到一個沒有音標、也沒東西可學的「詞組」。已移除，改用真正可學的語塊。
     ("did not", "沒有", "action"),
     ("does not", "不", "action"),
     ("do not come", "不要來", "action"),
     ("do not say", "不要說", "action"),
+]:
+    add_phrase(_ph, _zh, _sid)
+
+# ── 第四批：讓每個單元都一定有「詞組」那一關 ──────────────────────
+# 挑法：一律取自該單元自己的例句（in_sent 一定配得到），所以學的是
+# 自己正在讀、正在打的那一句裡真正會出現的語塊，不是憑空生出來的搭配。
+for _ph, _zh, _sid in [
+    # ---- basic ----
+    ("studies very hard", "非常用功唸書", "basic"),
+    ("under the trees", "在樹子底下", "basic"),
+    ("doesn't know", "不知道", "basic"),
+    ("even a five-year-old kid", "就連五歲的小孩", "basic"),
+    ("nobody's home", "沒有人在家", "basic"),
+    ("got nothing", "什麼都沒得到", "basic"),
+    ("something to drink", "喝的東西", "basic"),
+    ("still works here", "仍在這裡工作", "basic"),
+    ("take off their shoes", "把鞋子脫掉", "basic"),
+    ("knows the answer", "知道答案", "basic"),
+    ("other people", "其他人", "basic"),
+    ("shall we leave", "我們可以走了嗎", "basic"),
+    ("almost ten o'clock", "快要十點", "basic"),
+    ("years old", "歲", "basic"),
+    ("another way", "另一個方法", "basic"),
+    ("don't want to go", "不想去", "basic"),
+    ("all my classmates", "我所有的同學", "basic"),
+    ("finally got the answer", "終於得到了答案", "basic"),
+    ("the most difficult", "最難的", "basic"),
+    ("will say yes", "會答應", "basic"),
+    ("don't know whether", "不知道是否", "basic"),
+    ("whose notebook", "誰的筆記本", "basic"),
+    # ---- family ----
+    ("kissed mom", "親了媽媽", "family"),
+    ("share things", "分享東西", "family"),
+    # ---- home ----
+    ("mops the floor", "拖地板", "home"),
+    # ---- school ----
+    ("read these three pages", "讀這三頁", "school"),
+    ("spell this word", "拼這個字", "school"),
+    ("mark this part", "標記這個部分", "school"),
+    ("listened to music", "聽音樂", "school"),
+    ("passed the test", "通過考試", "school"),
+    ("is interesting", "很有趣", "school"),
+    # ---- food ----
+    ("like to eat", "喜歡吃", "food"),
+    ("fries eggs", "炒蛋", "food"),
+    ("bakes a cake", "烤一個蛋糕", "food"),
+    ("ready to order", "準備好要點餐", "food"),
+    ("is boiling", "正在沸騰", "food"),
+    # ---- animal ----
+    ("bites people", "咬人", "animal"),
+    # ---- weather ----
+    ("seldom snows", "很少下雪", "weather"),
+    # ---- time ----
+    ("once a month", "每個月一次", "time"),
+    # ---- body ----
+    ("brush my teeth", "刷牙", "body"),
+    ("cut my finger", "割到手指", "body"),
+    ("good for your health", "對你的健康有益", "body"),
+    ("combs my hair", "梳頭髮", "body"),
+    # ---- clothes ----
+    ("wear gloves", "戴手套", "clothes"),
+    # ---- city ----
+    ("in taiwan", "在台灣", "city"),
+    ("a big country", "一個很大的國家", "city"),
+    # ---- travel ----
+    ("back home", "回到家", "travel"),
+    # ---- money ----
+    ("saved the princess", "救出了公主", "money"),
+    ("lend my car", "把我的車借出去", "money"),
+    ("change your mind", "改變心意", "money"),
+    ("borrow your dictionary", "借你的字典", "money"),
+    # ---- work ----
+    ("decided to go", "決定要去", "work"),
+    ("follow these rules", "遵守這些規定", "work"),
+    # ---- sport ----
+    ("goes jogging", "去慢跑", "sport"),
+    ("play table tennis", "打桌球", "sport"),
+    ("throw it away", "把它丟掉", "sport"),
+    ("is hopping", "正在跳", "sport"),
+    ("don't hit", "不要打", "sport"),
+    ("are kicking the soccer", "正在踢足球", "sport"),
+    ("under the blanket", "在毯子下面", "sport"),
+    ("win this game", "贏得這場比賽", "sport"),
+    # ---- festival ----
+    ("dances very well", "舞跳得很好", "festival"),
+    ("acts snow white", "扮演白雪公主", "festival"),
+    ("will celebrate", "會慶祝", "festival"),
+    # ---- feeling ----
+    ("is crying", "正在哭", "feeling"),
+    # ---- action ----
+    ("go with you", "和你一起去", "action"),
+    ("nodded to me", "對我點頭", "action"),
+    ("draw an elephant", "畫一隻大象", "action"),
+    ("can't find him", "找不到他", "action"),
+    ("wake you up", "叫醒你", "action"),
+    ("waving at me", "對我揮手", "action"),
+    ("ask questions", "問問題", "action"),
+    ("hang the picture", "掛那幅畫", "action"),
+    ("join us", "加入我們", "action"),
+    ("keep these books", "保留這些書", "action"),
+    ("carry too much money", "帶太多錢在身上", "action"),
+    ("digging on the ground", "在地上挖土", "action"),
+    ("goes hunting", "去打獵", "action"),
+    ("killed the man", "殺了那個男人", "action"),
+    ("became very quiet", "變得非常安靜", "action"),
+    ("when will the show begin", "表演什麼時候開始", "action"),
+    ("ten years ago", "十年前", "action"),
+    ("burning in the kitchen", "在廚房裡燒起來了", "action"),
+    ("check your answers", "檢查你的答案", "action"),
+    ("choose the red one", "選紅色的那個", "action"),
+    ("a lot of stamps", "很多郵票", "action"),
+    ("covers his bed", "蓋住他的床", "action"),
+    ("don't drop the juice", "不要把果汁滴落", "action"),
+    ("don't forget your bag", "別忘了你的包包", "action"),
+    ("let me guess", "讓我猜猜看", "action"),
+    ("knocking on the door", "敲門", "action"),
+    ("pulled his sister down", "把妹妹拉坐下來", "action"),
+    ("remember his name", "記得他的名字", "action"),
+    ("watch ball games", "看球賽", "action"),
+    ("behind the trees", "在樹子後面", "action"),
+    ("attacked the old lady", "攻擊那位老太太", "action"),
+    ("belongs to", "屬於", "action"),
+    ("is blowing hard", "颳得很大", "action"),
+    ("enter this room", "進入這個房間", "action"),
+    ("fill the bottle with water", "把瓶子裝滿水", "action"),
+    ("have to finish it", "必須把它完成", "action"),
+    ("under the bed", "在床下", "action"),
+    ("shake your body", "搖動身體", "action"),
+    # ---- describe ----
+    ("six candles", "六根蠟燭", "describe"),
+    ("small or medium", "小的或中型的", "describe"),
+    ("quite short", "相當短", "describe"),
+    ("keep your voice low", "把音量放低", "describe"),
+    # ---- talk ----
+    ("i agree with you", "我同意你", "talk"),
+    ("what's up", "最近怎麼樣", "talk"),
+    ("have any ideas", "有什麼點子嗎", "talk"),
 ]:
     add_phrase(_ph, _zh, _sid)
 
@@ -1744,6 +1883,16 @@ for _k, _v in list(PHRASES.items()):
         PHRASES[_k] = [_v]
 
 TOKEN_RE = re.compile(r"[A-Za-z0-9][A-Za-z0-9'’\-]*")
+
+
+def flat(s):
+    """把句子與片語壓成同一種「只有小寫字母、數字與空白」的形式再比對。
+
+    片語裡的 don't / what's / five-year-old 帶撇號與連字號，
+    句子上那邊會被 [^a-z0-9 ] 換成空白（doesn t / what s / five year old）。
+    片語這邊不做同樣的處理就永遠配不上，所以兩邊都走 flat()。
+    """
+    return re.sub(r"\s+", " ", re.sub(r"[^a-z0-9 ]+", " ", s.lower())).strip()
 
 # 英文裡「排版好看但鍵盤打不出來」的字元 → 半形對應字元
 PUNCT_TYPABLE = {
@@ -1786,6 +1935,10 @@ def ipa_of(word):
     """查一個字的音標；查不到就逐字拆開再拼（處理 "French fries"、"T-shirt"）。"""
     if not IPA:
         return ""
+    # PDF 的例句用 U+2019（can’t），CMUdict 的 key 用 U+0027（can't）。
+    # 不先轉換的話，例句裡所有帶撇號的字都查不到，會被整個從音標裡漏掉，
+    # 變成 "I can't find him." → /ˈaɪ ˈfaɪnd ˈhɪm/。
+    word = word.translate(IPA_APOS)
     key = norm(word)
     if key in IPA:
         return IPA[key]
@@ -1805,6 +1958,10 @@ def ipa_of_sentence(sent):
         if got:
             out.append(got)
     return " ".join(out)
+
+
+# 查 CMUdict 之前先把排版撇號換成 ASCII 撇號
+IPA_APOS = str.maketrans({"’": "'", "‘": "'", "ʼ": "'"})
 
 
 def main():
@@ -1864,7 +2021,7 @@ def main():
             # 詞組步驟：只能用「人工對照表」裡的固定搭配。
             # 不用「把兩個字的釋義直接串起來」——那會產生「書厚的」「應該答案」
             # 這種讀不通的中文，對學習者是負面效果。
-            low = " " + re.sub(r"\s+", " ", re.sub(r"[^a-z0-9 ]+", " ", e["ex_en"].lower())) + " "
+            low = " " + flat(e["ex_en"]) + " "
             # 目標字可能本身是多字（"everyone everybody"、"goose / geese"），
             # 比對時取第一個字當代表，避免這類條目永遠配不到片語。
             tgt = norm(e["word"])
@@ -1875,7 +2032,11 @@ def main():
                 for zh, ph_sid in ph_entries:
                     if ph_sid != sid:
                         continue
-                    if in_sent is None and " " + ph.lower() + " " in low:
+                    # 詞組步驟在畫面上要顯示音標，查不到音標的片語一律不採用，
+                    # 否則會出現「整格空白、只有一條底線」的情況。
+                    if not ipa_of_sentence(ph):
+                        continue
+                    if in_sent is None and " " + flat(ph) + " " in low:
                         in_sent = (ph, zh)
                     if by_target is None and norm(ph.split()[-1]) in (tgt, tgt_key):
                         by_target = (ph, zh)

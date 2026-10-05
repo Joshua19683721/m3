@@ -11,6 +11,7 @@ tools/ipa.json
 # 中間產物（由 tools/*.py 產生）
 tools/lexicon.json
 tools/*.txt
+tools/gap_units.json
 
 # 稽核與修正時產生的備份
 *.bak

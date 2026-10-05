@@ -1,0 +1,153 @@
+{
+ "_note": "2024 補齊詞組時人工挑定的搭配。check_phrases.py 會驗證每個單元拿到的詞組與中文，跟這裡完全一致；不一致就讓 npm run build 失敗。挑法一律取自該單元自己的例句。",
+ "basic": {
+  "1-065": ["studies very hard", "非常用功唸書"],
+  "2-089": ["under the trees", "在樹子底下"],
+  "4-030": ["doesn't know", "不知道"],
+  "4-035": ["even a five-year-old kid", "就連五歲的小孩"],
+  "4-068": ["nobody's home", "沒有人在家"],
+  "4-069": ["got nothing", "什麼都沒得到"],
+  "4-103": ["something to drink", "喝的東西"],
+  "4-110": ["still works here", "仍在這裡工作"],
+  "5-044": ["take off their shoes", "把鞋子脫掉"],
+  "5-091": ["knows the answer", "知道答案"],
+  "5-094": ["other people", "其他人"],
+  "5-148": ["shall we leave", "我們可以走了嗎"],
+  "6-007": ["almost ten o'clock", "快要十點"],
+  "6-008": ["years old", "歲"],
+  "6-010": ["another way", "另一個方法"],
+  "6-087": ["don't want to go", "不想去"],
+  "6-098": ["all my classmates", "我所有的同學"],
+  "6-114": ["finally got the answer", "終於得到了答案"],
+  "6-189": ["the most difficult", "最難的"],
+  "6-205": ["will say yes", "會答應"],
+  "6-274": ["don't know whether", "不知道是否"],
+  "6-275": ["whose notebook", "誰的筆記本"]
+ },
+ "family": {
+  "3-059": ["kissed mom", "親了媽媽"],
+  "6-233": ["share things", "分享東西"]
+ },
+ "home": {
+  "2-048": ["mops the floor", "拖地板"]
+ },
+ "school": {
+  "2-063": ["read these three pages", "讀這三頁"],
+  "3-094": ["spell this word", "拼這個字"],
+  "4-060": ["mark this part", "標記這個部分"],
+  "5-084": ["listened to music", "聽音樂"],
+  "5-101": ["passed the test", "通過考試"],
+  "6-227": ["is interesting", "很有趣"]
+ },
+ "food": {
+  "2-022": ["like to eat", "喜歡吃"],
+  "2-028": ["fries eggs", "炒蛋"],
+  "5-013": ["bakes a cake", "烤一個蛋糕"],
+  "5-093": ["ready to order", "準備好要點餐"],
+  "6-030": ["is boiling", "正在沸騰"]
+ },
+ "animal": {
+  "4-011": ["bites people", "咬人"]
+ },
+ "weather": {
+  "4-100": ["seldom snows", "很少下雪"]
+ },
+ "time": {
+  "5-090": ["once a month", "每個月一次"]
+ },
+ "body": {
+  "3-014": ["brush my teeth", "刷牙"],
+  "4-051": ["cut my finger", "割到手指"],
+  "5-047": ["good for your health", "對你的健康有益"],
+  "6-059": ["combs my hair", "梳頭髮"]
+ },
+ "clothes": {
+  "6-122": ["wear gloves", "戴手套"]
+ },
+ "city": {
+  "2-067": ["in taiwan", "在台灣"],
+  "6-049": ["a big country", "一個很大的國家"]
+ },
+ "travel": {
+  "5-012": ["back home", "回到家"]
+ },
+ "money": {
+  "3-089": ["saved the princess", "救出了公主"],
+  "4-058": ["lend my car", "把我的車借出去"],
+  "5-028": ["change your mind", "改變心意"],
+  "6-033": ["borrow your dictionary", "借你的字典"]
+ },
+ "work": {
+  "6-072": ["decided to go", "決定要去"],
+  "6-119": ["follow these rules", "遵守這些規定"]
+ },
+ "sport": {
+  "1-032": ["goes jogging", "去慢跑"],
+  "1-056": ["play table tennis", "打桌球"],
+  "1-075": ["throw it away", "把它丟掉"],
+  "2-039": ["is hopping", "正在跳"],
+  "3-047": ["don't hit", "不要打"],
+  "3-057": ["are kicking the soccer", "正在踢足球"],
+  "4-081": ["under the blanket", "在毯子下面"],
+  "4-128": ["win this game", "贏得這場比賽"]
+ },
+ "festival": {
+  "3-024": ["dances very well", "舞跳得很好"],
+  "4-001": ["acts snow white", "扮演白雪公主"],
+  "5-027": ["will celebrate", "會慶祝"]
+ },
+ "feeling": {
+  "3-023": ["is crying", "正在哭"]
+ },
+ "action": {
+  "1-021": ["go with you", "和你一起去"],
+  "1-049": ["nodded to me", "對我點頭"],
+  "2-021": ["draw an elephant", "畫一隻大象"],
+  "2-024": ["can't find him", "找不到他"],
+  "2-092": ["wake you up", "叫醒你"],
+  "2-093": ["waving at me", "對我揮手"],
+  "3-003": ["ask questions", "問問題"],
+  "3-045": ["hang the picture", "掛那幅畫"],
+  "3-053": ["join us", "加入我們"],
+  "3-056": ["keep these books", "保留這些書"],
+  "4-018": ["carry too much money", "帶太多錢在身上"],
+  "4-028": ["digging on the ground", "在地上挖土"],
+  "4-050": ["goes hunting", "去打獵"],
+  "4-054": ["killed the man", "殺了那個男人"],
+  "5-016": ["became very quiet", "變得非常安靜"],
+  "5-017": ["when will the show begin", "表演什麼時候開始"],
+  "5-022": ["ten years ago", "十年前"],
+  "5-023": ["burning in the kitchen", "在廚房裡燒起來了"],
+  "5-029": ["check your answers", "檢查你的答案"],
+  "5-031": ["choose the red one", "選紅色的那個"],
+  "5-032": ["a lot of stamps", "很多郵票"],
+  "5-036": ["covers his bed", "蓋住他的床"],
+  "5-039": ["don't drop the juice", "不要把果汁滴落"],
+  "5-054": ["don't forget your bag", "別忘了你的包包"],
+  "5-061": ["let me guess", "讓我猜猜看"],
+  "5-071": ["knocking on the door", "敲門"],
+  "5-119": ["pulled his sister down", "把妹妹拉坐下來"],
+  "5-133": ["remember his name", "記得他的名字"],
+  "5-187": ["watch ball games", "看球賽"],
+  "6-012": ["behind the trees", "在樹子後面"],
+  "6-015": ["attacked the old lady", "攻擊那位老太太"],
+  "6-026": ["belongs to", "屬於"],
+  "6-029": ["is blowing hard", "颳得很大"],
+  "6-093": ["enter this room", "進入這個房間"],
+  "6-113": ["fill the bottle with water", "把瓶子裝滿水"],
+  "6-116": ["have to finish it", "必須把它完成"],
+  "6-136": ["under the bed", "在床下"],
+  "6-231": ["shake your body", "搖動身體"]
+ },
+ "describe": {
+  "1-067": ["six candles", "六根蠟燭"],
+  "4-061": ["small or medium", "小的或中型的"],
+  "5-126": ["quite short", "相當短"],
+  "6-173": ["keep your voice low", "把音量放低"]
+ },
+ "talk": {
+  "1-083": ["i agree with you", "我同意你"],
+  "2-036": ["what's up", "最近怎麼樣"],
+  "6-142": ["have any ideas", "有什麼點子嗎"]
+ }
+}

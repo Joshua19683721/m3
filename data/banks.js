@@ -41,7 +41,7 @@ window.BANKS = {
        "en": "I'm a student.",
        "zh": "我是一個學生",
        "src": "1-001",
-       "ipa": "ə ˈstuːdənt"
+       "ipa": "ˈaɪm ə ˈstuːdənt"
       }
      ]
     },
@@ -71,7 +71,7 @@ window.BANKS = {
        "en": "I am Annie.",
        "zh": "我是Annie",
        "src": "1-002",
-       "ipa": "ˈaɪ ˈæm ˈæniː"
+       "ipa": "ˈaɪ ˈæm ˈæni"
       }
      ]
     },
@@ -138,7 +138,7 @@ window.BANKS = {
        "en": "I'll see you at ten.",
        "zh": "我們十點見",
        "src": "1-004",
-       "ipa": "ˈsiː ˈjuː ˈæt ˈtɛn"
+       "ipa": "ˈaɪl ˈsiː ˈjuː ˈæt ˈtɛn"
       }
      ]
     },
@@ -175,7 +175,7 @@ window.BANKS = {
        "en": "I have four cousins.",
        "zh": "我有四個表兄弟",
        "src": "1-023",
-       "ipa": "ˈaɪ ˈhæv ˈfɔːɹ kʌzənz"
+       "ipa": "ˈaɪ ˈhæv ˈfɔːɹ ˈkʌzənz"
       }
      ]
     },
@@ -258,14 +258,14 @@ window.BANKS = {
        "en": "come in",
        "zh": "進來",
        "src": "table",
-       "ipa": "kʌm ɪn"
+       "ipa": "ˈkʌm ɪn"
       },
       {
        "kind": "sentence",
        "en": "Come in, please.",
        "zh": "請進",
        "src": "1-028",
-       "ipa": "kʌm ɪn ˈpliːz"
+       "ipa": "ˈkʌm ɪn ˈpliːz"
       }
      ]
     },
@@ -362,7 +362,7 @@ window.BANKS = {
        "en": "It's OK.",
        "zh": "沒關係",
        "src": "1-051",
-       "ipa": "ˈoʊˈkeɪ"
+       "ipa": "ˈɪts ˈoʊˈkeɪ"
       }
      ]
     },
@@ -381,11 +381,18 @@ window.BANKS = {
        "ipa": "ˈʃiː"
       },
       {
+       "kind": "phrase",
+       "en": "studies very hard",
+       "zh": "非常用功唸書",
+       "src": "table",
+       "ipa": "ˈstʌdiz ˈvɛɹi ˈhɑːɹd"
+      },
+      {
        "kind": "sentence",
        "en": "She studies very hard.",
        "zh": "她很認真唸書",
        "src": "1-065",
-       "ipa": "ˈʃiː stʌdiːz ˈvɛɹiː ˈhɑːɹd"
+       "ipa": "ˈʃiː ˈstʌdiz ˈvɛɹi ˈhɑːɹd"
       }
      ]
     },
@@ -438,7 +445,7 @@ window.BANKS = {
        "en": "does the",
        "zh": "做了那個",
        "src": "table",
-       "ipa": "dʌz ðə"
+       "ipa": "ˈdʌz ðə"
       },
       {
        "kind": "word",
@@ -482,7 +489,7 @@ window.BANKS = {
        "en": "What's this?",
        "zh": "這是什麼",
        "src": "1-073",
-       "ipa": "ˈðɪs"
+       "ipa": "ˈwʌts ˈðɪs"
       }
      ]
     },
@@ -521,28 +528,28 @@ window.BANKS = {
      "level": 1,
      "target": "yummy",
      "gloss": "美味的",
-     "ipa": "jʌmiː",
+     "ipa": "ˈjʌmi",
      "steps": [
       {
        "kind": "word",
        "en": "yummy",
        "zh": "美味的",
        "src": "1-085",
-       "ipa": "jʌmiː"
+       "ipa": "ˈjʌmi"
       },
       {
        "kind": "phrase",
        "en": "look yummy",
        "zh": "看起來很美味",
        "src": "table",
-       "ipa": "ˈlʊk jʌmiː"
+       "ipa": "ˈlʊk ˈjʌmi"
       },
       {
        "kind": "sentence",
        "en": "This dish is yummy.",
        "zh": "這道菜很美味",
        "src": "1-085",
-       "ipa": "ˈðɪs ˈdɪʃ ˈɪz jʌmiː"
+       "ipa": "ˈðɪs ˈdɪʃ ˈɪz ˈjʌmi"
       }
      ]
     },
@@ -565,7 +572,7 @@ window.BANKS = {
        "en": "such as",
        "zh": "例如",
        "src": "table",
-       "ipa": "sʌtʃ ˈæz"
+       "ipa": "ˈsʌtʃ ˈæz"
       },
       {
        "kind": "word",
@@ -579,7 +586,7 @@ window.BANKS = {
        "en": "I'm as tall as my brother.",
        "zh": "我和我哥哥一樣高",
        "src": "2-004",
-       "ipa": "ˈæz ˈtɔːl ˈæz ˈmaɪ bɹʌðɚ"
+       "ipa": "ˈaɪm ˈæz ˈtɔːl ˈæz ˈmaɪ ˈbɹʌðɚ"
       }
      ]
     },
@@ -602,14 +609,14 @@ window.BANKS = {
        "en": "turn off",
        "zh": "關掉",
        "src": "table",
-       "ipa": "tɝn ˈɔːf"
+       "ipa": "ˈtɝn ˈɔːf"
       },
       {
        "kind": "sentence",
        "en": "I get off work at 6:00 p.m.",
        "zh": "我在下午六點下班",
        "src": "2-052",
-       "ipa": "ˈaɪ ˈɡɛt ˈɔːf wɝk ˈæt ˈpiː"
+       "ipa": "ˈaɪ ˈɡɛt ˈɔːf ˈwɝk ˈæt ˈpiː"
       }
      ]
     },
@@ -632,7 +639,7 @@ window.BANKS = {
        "en": "turn on",
        "zh": "打開",
        "src": "table",
-       "ipa": "tɝn ˈɑːn"
+       "ipa": "ˈtɝn ˈɑːn"
       },
       {
        "kind": "sentence",
@@ -648,14 +655,21 @@ window.BANKS = {
      "level": 2,
      "target": "under",
      "gloss": "在…下面",
-     "ipa": "ʌndɚ",
+     "ipa": "ˈʌndɚ",
      "steps": [
       {
        "kind": "word",
        "en": "under",
        "zh": "在…下面",
        "src": "2-089",
-       "ipa": "ʌndɚ"
+       "ipa": "ˈʌndɚ"
+      },
+      {
+       "kind": "phrase",
+       "en": "under the trees",
+       "zh": "在樹子底下",
+       "src": "table",
+       "ipa": "ˈʌndɚ ðə ˈtɹiːz"
       },
       {
        "kind": "word",
@@ -669,7 +683,7 @@ window.BANKS = {
        "en": "I like to sit under the trees.",
        "zh": "我喜歡坐在樹下",
        "src": "2-089",
-       "ipa": "ˈaɪ ˈlaɪk ˈtuː ˈsɪt ʌndɚ ðə ˈtɹiːz"
+       "ipa": "ˈaɪ ˈlaɪk ˈtuː ˈsɪt ˈʌndɚ ðə ˈtɹiːz"
       }
      ]
     },
@@ -775,21 +789,21 @@ window.BANKS = {
      "level": 3,
      "target": "into",
      "gloss": "到…裡",
-     "ipa": "ˈɪntuː",
+     "ipa": "ˈɪntu",
      "steps": [
       {
        "kind": "word",
        "en": "into",
        "zh": "到…裡",
        "src": "3-052",
-       "ipa": "ˈɪntuː"
+       "ipa": "ˈɪntu"
       },
       {
        "kind": "phrase",
        "en": "into the",
        "zh": "進入",
        "src": "table",
-       "ipa": "ˈɪntuː ðə"
+       "ipa": "ˈɪntu ðə"
       },
       {
        "kind": "word",
@@ -803,7 +817,7 @@ window.BANKS = {
        "en": "They ran into the hospital.",
        "zh": "他們跑進醫院",
        "src": "3-052",
-       "ipa": "ˈðeɪ ˈɹæn ˈɪntuː ðə ˈhɑːˌspɪtəl"
+       "ipa": "ˈðeɪ ˈɹæn ˈɪntu ðə ˈhɑːˌspɪtəl"
       }
      ]
     },
@@ -812,14 +826,14 @@ window.BANKS = {
      "level": 3,
      "target": "really",
      "gloss": "真的",
-     "ipa": "ˈɹɪliː",
+     "ipa": "ˈɹɪli",
      "steps": [
       {
        "kind": "word",
        "en": "really",
        "zh": "真的",
        "src": "3-083",
-       "ipa": "ˈɹɪliː"
+       "ipa": "ˈɹɪli"
       },
       {
        "kind": "phrase",
@@ -833,7 +847,7 @@ window.BANKS = {
        "en": "Did she really do this?",
        "zh": "她真的這麼做嗎",
        "src": "3-083",
-       "ipa": "ˈdɪd ˈʃiː ˈɹɪliː ˈduː ˈðɪs"
+       "ipa": "ˈdɪd ˈʃiː ˈɹɪli ˈduː ˈðɪs"
       }
      ]
     },
@@ -842,28 +856,28 @@ window.BANKS = {
      "level": 3,
      "target": "up",
      "gloss": "向上",
-     "ipa": "ʌp",
+     "ipa": "ˈʌp",
      "steps": [
       {
        "kind": "word",
        "en": "up",
        "zh": "向上",
        "src": "3-100",
-       "ipa": "ʌp"
+       "ipa": "ˈʌp"
       },
       {
        "kind": "phrase",
        "en": "stand up",
        "zh": "站起來",
        "src": "table",
-       "ipa": "ˈstænd ʌp"
+       "ipa": "ˈstænd ˈʌp"
       },
       {
        "kind": "sentence",
        "en": "Stand up.",
        "zh": "站起來",
        "src": "3-100",
-       "ipa": "ˈstænd ʌp"
+       "ipa": "ˈstænd ˈʌp"
       }
      ]
     },
@@ -872,28 +886,28 @@ window.BANKS = {
      "level": 4,
      "target": "around",
      "gloss": "到處",
-     "ipa": "ˈɚaʊnd",
+     "ipa": "ɚˈaʊnd",
      "steps": [
       {
        "kind": "word",
        "en": "around",
        "zh": "到處",
        "src": "4-005",
-       "ipa": "ˈɚaʊnd"
+       "ipa": "ɚˈaʊnd"
       },
       {
        "kind": "phrase",
        "en": "walk around",
        "zh": "到處走",
        "src": "table",
-       "ipa": "ˈwɔːk ˈɚaʊnd"
+       "ipa": "ˈwɔːk ɚˈaʊnd"
       },
       {
        "kind": "sentence",
        "en": "Let's walk around.",
        "zh": "我們四處走走吧",
        "src": "4-005",
-       "ipa": "ˈwɔːk ˈɚaʊnd"
+       "ipa": "ˈlɛts ˈwɔːk ɚˈaʊnd"
       }
      ]
     },
@@ -930,7 +944,7 @@ window.BANKS = {
        "en": "I want to be an engineer in the future.",
        "zh": "我未來想要成為一名工程師",
        "src": "4-007",
-       "ipa": "ˈaɪ ˈwɑːnt ˈtuː ˈbiː ˈæn ˈɛˈndʒənɪɹ ɪn ðə ˈfjuːtʃɚ"
+       "ipa": "ˈaɪ ˈwɑːnt ˈtuː ˈbiː ˈæn ˈɛndʒəˈnɪɹ ɪn ðə ˈfjuːtʃɚ"
       }
      ]
     },
@@ -953,14 +967,14 @@ window.BANKS = {
        "en": "behind her",
        "zh": "在她後面",
        "src": "table",
-       "ipa": "bɪˈhaɪnd hɝ"
+       "ipa": "bɪˈhaɪnd ˈhɝ"
       },
       {
        "kind": "sentence",
        "en": "The girl is hiding behind her mom.",
        "zh": "那個女孩躲在她媽媽後面",
        "src": "4-009",
-       "ipa": "ðə ɡɝl ˈɪz ˈhaɪdɪŋ bɪˈhaɪnd hɝ ˈmɑːm"
+       "ipa": "ðə ˈɡɝl ˈɪz ˈhaɪdɪŋ bɪˈhaɪnd ˈhɝ ˈmɑːm"
       }
      ]
     },
@@ -1036,21 +1050,28 @@ window.BANKS = {
      "level": 4,
      "target": "does",
      "gloss": "助動詞",
-     "ipa": "dʌz",
+     "ipa": "ˈdʌz",
      "steps": [
       {
        "kind": "word",
        "en": "does",
        "zh": "助動詞",
        "src": "4-030",
-       "ipa": "dʌz"
+       "ipa": "ˈdʌz"
+      },
+      {
+       "kind": "phrase",
+       "en": "doesn't know",
+       "zh": "不知道",
+       "src": "table",
+       "ipa": "ˈdʌzənt ˈnoʊ"
       },
       {
        "kind": "sentence",
        "en": "He doesn't know.",
        "zh": "他不知道",
        "src": "4-030",
-       "ipa": "ˈhiː ˈnoʊ"
+       "ipa": "ˈhiː ˈdʌzənt ˈnoʊ"
       }
      ]
     },
@@ -1067,6 +1088,13 @@ window.BANKS = {
        "zh": "甚至",
        "src": "4-035",
        "ipa": "ˈiːvɪn"
+      },
+      {
+       "kind": "phrase",
+       "en": "even a five-year-old kid",
+       "zh": "就連五歲的小孩",
+       "src": "table",
+       "ipa": "ˈiːvɪn ə ˈfaɪv ˈjɪɹ ˈoʊld ˈkɪd"
       },
       {
        "kind": "word",
@@ -1103,7 +1131,7 @@ window.BANKS = {
        "en": "what if",
        "zh": "如果…怎麼辦",
        "src": "table",
-       "ipa": "wʌt ˈɪf"
+       "ipa": "ˈwʌt ˈɪf"
       },
       {
        "kind": "word",
@@ -1117,7 +1145,7 @@ window.BANKS = {
        "en": "We won't go if it rains tomorrow.",
        "zh": "如果明天下雨，我們就不去了",
        "src": "4-052",
-       "ipa": "ˈwiː ˈɡoʊ ˈɪf ˈɪt ˈɹeɪnz ˈtəmɑːˌɹoʊ"
+       "ipa": "ˈwiː ˈwoʊnt ˈɡoʊ ˈɪf ˈɪt ˈɹeɪnz təˈmɑːˌɹoʊ"
       }
      ]
     },
@@ -1126,14 +1154,21 @@ window.BANKS = {
      "level": 4,
      "target": "nobody",
      "gloss": "沒有人",
-     "ipa": "ˈnoʊˌbɑːˌdiː",
+     "ipa": "ˈnoʊbədi",
      "steps": [
       {
        "kind": "word",
        "en": "nobody",
        "zh": "沒有人",
        "src": "4-068",
-       "ipa": "ˈnoʊˌbɑːˌdiː"
+       "ipa": "ˈnoʊbədi"
+      },
+      {
+       "kind": "phrase",
+       "en": "nobody's home",
+       "zh": "沒有人在家",
+       "src": "table",
+       "ipa": "ˈnoʊbədiz ˈhoʊm"
       },
       {
        "kind": "word",
@@ -1143,18 +1178,11 @@ window.BANKS = {
        "ipa": "ˈhoʊm"
       },
       {
-       "kind": "word",
-       "en": "tonight",
-       "zh": "今晚",
-       "src": "5-175",
-       "ipa": "ˈtənaɪt"
-      },
-      {
        "kind": "sentence",
        "en": "Nobody's home tonight.",
        "zh": "今晚沒人在家",
        "src": "4-068",
-       "ipa": "ˈhoʊm ˈtənaɪt"
+       "ipa": "ˈnoʊbədiz ˈhoʊm təˈnaɪt"
       }
      ]
     },
@@ -1163,21 +1191,28 @@ window.BANKS = {
      "level": 4,
      "target": "nothing",
      "gloss": "沒有東西",
-     "ipa": "nʌθɪŋ",
+     "ipa": "ˈnʌθɪŋ",
      "steps": [
       {
        "kind": "word",
        "en": "nothing",
        "zh": "沒有東西",
        "src": "4-069",
-       "ipa": "nʌθɪŋ"
+       "ipa": "ˈnʌθɪŋ"
+      },
+      {
+       "kind": "phrase",
+       "en": "got nothing",
+       "zh": "什麼都沒得到",
+       "src": "table",
+       "ipa": "ˈɡɑːt ˈnʌθɪŋ"
       },
       {
        "kind": "sentence",
        "en": "She got nothing at last.",
        "zh": "她最後什麼都沒得到",
        "src": "4-069",
-       "ipa": "ˈʃiː ˈɡɑːt nʌθɪŋ ˈæt ˈlæst"
+       "ipa": "ˈʃiː ˈɡɑːt ˈnʌθɪŋ ˈæt ˈlæst"
       }
      ]
     },
@@ -1186,21 +1221,21 @@ window.BANKS = {
      "level": 4,
      "target": "of",
      "gloss": "之中的",
-     "ipa": "ʌv",
+     "ipa": "ˈʌv",
      "steps": [
       {
        "kind": "word",
        "en": "of",
        "zh": "之中的",
        "src": "4-070",
-       "ipa": "ʌv"
+       "ipa": "ˈʌv"
       },
       {
        "kind": "phrase",
        "en": "a lot of",
        "zh": "很多",
        "src": "table",
-       "ipa": "ə ˈlɑːt ʌv"
+       "ipa": "ə ˈlɑːt ˈʌv"
       },
       {
        "kind": "word",
@@ -1214,7 +1249,7 @@ window.BANKS = {
        "en": "John is the tallest of the three.",
        "zh": "John是三人之中最高的",
        "src": "4-070",
-       "ipa": "ˈdʒɑːn ˈɪz ðə ˈtɔːlɪst ʌv ðə ˈθɹiː"
+       "ipa": "ˈdʒɑːn ˈɪz ðə ˈtɔːlɪst ˈʌv ðə ˈθɹiː"
       }
      ]
     },
@@ -1237,7 +1272,7 @@ window.BANKS = {
        "en": "out of",
        "zh": "從…外面",
        "src": "table",
-       "ipa": "ˈaʊt ʌv"
+       "ipa": "ˈaʊt ˈʌv"
       },
       {
        "kind": "word",
@@ -1251,7 +1286,7 @@ window.BANKS = {
        "en": "Get out of my way.",
        "zh": "別擋我的路",
        "src": "4-072",
-       "ipa": "ˈɡɛt ˈaʊt ʌv ˈmaɪ ˈweɪ"
+       "ipa": "ˈɡɛt ˈaʊt ˈʌv ˈmaɪ ˈweɪ"
       }
      ]
     },
@@ -1318,7 +1353,7 @@ window.BANKS = {
        "en": "You should do your homework first.",
        "zh": "你應該先做你的功課",
        "src": "4-088",
-       "ipa": "ˈjuː ˈʃʊd ˈduː ˈjɔːɹ ˈhoʊmwɝk fɝst"
+       "ipa": "ˈjuː ˈʃʊd ˈduː ˈjɔːɹ ˈhoʊˌmwɝk ˈfɝst"
       }
      ]
     },
@@ -1327,14 +1362,14 @@ window.BANKS = {
      "level": 4,
      "target": "someone",
      "gloss": "某人;有人",
-     "ipa": "sʌmwʌn",
+     "ipa": "ˈsʌˌmwʌn",
      "steps": [
       {
        "kind": "word",
        "en": "someone",
        "zh": "某人;有人",
        "src": "4-102",
-       "ipa": "sʌmwʌn"
+       "ipa": "ˈsʌˌmwʌn"
       },
       {
        "kind": "phrase",
@@ -1348,7 +1383,7 @@ window.BANKS = {
        "en": "She is waiting for someone.",
        "zh": "她在等人",
        "src": "4-102",
-       "ipa": "ˈʃiː ˈɪz ˈweɪtɪŋ ˈfɔːɹ sʌmwʌn"
+       "ipa": "ˈʃiː ˈɪz ˈweɪtɪŋ ˈfɔːɹ ˈsʌˌmwʌn"
       }
      ]
     },
@@ -1357,14 +1392,21 @@ window.BANKS = {
      "level": 4,
      "target": "something",
      "gloss": "某些東西",
-     "ipa": "sʌmθɪŋ",
+     "ipa": "ˈsʌmθɪŋ",
      "steps": [
       {
        "kind": "word",
        "en": "something",
        "zh": "某些東西",
        "src": "4-103",
-       "ipa": "sʌmθɪŋ"
+       "ipa": "ˈsʌmθɪŋ"
+      },
+      {
+       "kind": "phrase",
+       "en": "something to drink",
+       "zh": "喝的東西",
+       "src": "table",
+       "ipa": "ˈsʌmθɪŋ ˈtuː ˈdɹɪŋk"
       },
       {
        "kind": "word",
@@ -1378,7 +1420,7 @@ window.BANKS = {
        "en": "Can I have something to drink?",
        "zh": "我可以喝點東西嗎",
        "src": "4-103",
-       "ipa": "ˈkæn ˈaɪ ˈhæv sʌmθɪŋ ˈtuː ˈdɹɪŋk"
+       "ipa": "ˈkæn ˈaɪ ˈhæv ˈsʌmθɪŋ ˈtuː ˈdɹɪŋk"
       }
      ]
     },
@@ -1387,21 +1429,21 @@ window.BANKS = {
      "level": 4,
      "target": "somewhere",
      "gloss": "某個地方",
-     "ipa": "ˌsʌmwɛɹ",
+     "ipa": "ˈsʌˌmwɛɹ",
      "steps": [
       {
        "kind": "word",
        "en": "somewhere",
        "zh": "某個地方",
        "src": "4-104",
-       "ipa": "ˌsʌmwɛɹ"
+       "ipa": "ˈsʌˌmwɛɹ"
       },
       {
        "kind": "phrase",
        "en": "somewhere else",
        "zh": "別的地方",
        "src": "table",
-       "ipa": "ˌsʌmwɛɹ ˈɛls"
+       "ipa": "ˈsʌˌmwɛɹ ˈɛls"
       },
       {
        "kind": "word",
@@ -1415,7 +1457,7 @@ window.BANKS = {
        "en": "Do you want to go somewhere else?",
        "zh": "你想去別的地方嗎",
        "src": "4-104",
-       "ipa": "ˈduː ˈjuː ˈwɑːnt ˈtuː ˈɡoʊ ˌsʌmwɛɹ ˈɛls"
+       "ipa": "ˈduː ˈjuː ˈwɑːnt ˈtuː ˈɡoʊ ˈsʌˌmwɛɹ ˈɛls"
       }
      ]
     },
@@ -1434,11 +1476,18 @@ window.BANKS = {
        "ipa": "ˈstɪl"
       },
       {
+       "kind": "phrase",
+       "en": "still works here",
+       "zh": "仍在這裡工作",
+       "src": "table",
+       "ipa": "ˈstɪl ˈwɝks ˈhiːɹ"
+      },
+      {
        "kind": "sentence",
        "en": "He still works here.",
        "zh": "他仍在這工作",
        "src": "4-110",
-       "ipa": "ˈhiː ˈstɪl wɝks ˈhiːɹ"
+       "ipa": "ˈhiː ˈstɪl ˈwɝks ˈhiːɹ"
       }
      ]
     },
@@ -1447,21 +1496,21 @@ window.BANKS = {
      "level": 5,
      "target": "above",
      "gloss": "在…之上",
-     "ipa": "əbʌv",
+     "ipa": "əˈbʌv",
      "steps": [
       {
        "kind": "word",
        "en": "above",
        "zh": "在…之上",
        "src": "5-001",
-       "ipa": "əbʌv"
+       "ipa": "əˈbʌv"
       },
       {
        "kind": "phrase",
        "en": "above",
        "zh": "在上面",
        "src": "table",
-       "ipa": "əbʌv"
+       "ipa": "əˈbʌv"
       },
       {
        "kind": "word",
@@ -1475,7 +1524,7 @@ window.BANKS = {
        "en": "A kite is above the trees.",
        "zh": "樹上方有一個風箏",
        "src": "5-001",
-       "ipa": "ə ˈkaɪt ˈɪz əbʌv ðə ˈtɹiːz"
+       "ipa": "ə ˈkaɪt ˈɪz əˈbʌv ðə ˈtɹiːz"
       }
      ]
     },
@@ -1558,35 +1607,35 @@ window.BANKS = {
      "level": 5,
      "target": "ahead",
      "gloss": "在…前方",
-     "ipa": "ˈəhɛd",
+     "ipa": "əˈhɛd",
      "steps": [
       {
        "kind": "word",
        "en": "ahead",
        "zh": "在…前方",
        "src": "5-005",
-       "ipa": "ˈəhɛd"
+       "ipa": "əˈhɛd"
       },
       {
        "kind": "phrase",
        "en": "ahead of",
        "zh": "在…前面",
        "src": "table",
-       "ipa": "ˈəhɛd ʌv"
+       "ipa": "əˈhɛd ˈʌv"
       },
       {
        "kind": "word",
        "en": "brother",
        "zh": "兄弟",
        "src": "2-009",
-       "ipa": "bɹʌðɚ"
+       "ipa": "ˈbɹʌðɚ"
       },
       {
        "kind": "sentence",
        "en": "My brother ran ahead of me.",
        "zh": "我哥哥跑在我前面",
        "src": "5-005",
-       "ipa": "ˈmaɪ bɹʌðɚ ˈɹæn ˈəhɛd ʌv ˈmiː"
+       "ipa": "ˈmaɪ ˈbɹʌðɚ ˈɹæn əˈhɛd ˈʌv ˈmiː"
       }
      ]
     },
@@ -1595,21 +1644,21 @@ window.BANKS = {
      "level": 5,
      "target": "along",
      "gloss": "沿著",
-     "ipa": "ˈəlɔːŋ",
+     "ipa": "əˈlɔːŋ",
      "steps": [
       {
        "kind": "word",
        "en": "along",
        "zh": "沿著",
        "src": "5-006",
-       "ipa": "ˈəlɔːŋ"
+       "ipa": "əˈlɔːŋ"
       },
       {
        "kind": "phrase",
        "en": "come along",
        "zh": "一起來",
        "src": "table",
-       "ipa": "kʌm ˈəlɔːŋ"
+       "ipa": "ˈkʌm əˈlɔːŋ"
       },
       {
        "kind": "word",
@@ -1623,7 +1672,7 @@ window.BANKS = {
        "en": "Many people enjoy walking along the lake.",
        "zh": "很多人喜歡沿著湖邊散步",
        "src": "5-006",
-       "ipa": "ˈmɛniː ˈpiːpəl ˌɛˈndʒɔɪ ˈwɔːkɪŋ ˈəlɔːŋ ðə ˈleɪk"
+       "ipa": "ˈmɛni ˈpiːpəl ˌɛˈndʒɔɪ ˈwɔːkɪŋ əˈlɔːŋ ðə ˈleɪk"
       }
      ]
     },
@@ -1632,28 +1681,28 @@ window.BANKS = {
      "level": 5,
      "target": "anyone (anybody)",
      "gloss": "任何人",
-     "ipa": "ˈɛniːwʌn",
+     "ipa": "ˈɛniˌwʌn",
      "steps": [
       {
        "kind": "word",
        "en": "anyone (anybody)",
        "zh": "任何人",
        "src": "5-009",
-       "ipa": "ˈɛniːwʌn"
+       "ipa": "ˈɛniˌwʌn"
       },
       {
        "kind": "phrase",
        "en": "would anyone",
        "zh": "會有人",
        "src": "table",
-       "ipa": "ˈwʊd ˈɛniːwʌn"
+       "ipa": "ˈwʊd ˈɛniˌwʌn"
       },
       {
        "kind": "sentence",
        "en": "Is anyone hungry?",
        "zh": "有人覺得餓嗎",
        "src": "5-009",
-       "ipa": "ˈɪz ˈɛniːwʌn hʌŋɡɹiː"
+       "ipa": "ˈɪz ˈɛniˌwʌn ˈhʌŋɡɹi"
       }
      ]
     },
@@ -1662,21 +1711,21 @@ window.BANKS = {
      "level": 5,
      "target": "anything",
      "gloss": "任何東西;任何事情",
-     "ipa": "ˈɛniːˌθɪŋ",
+     "ipa": "ˈɛniˌθɪŋ",
      "steps": [
       {
        "kind": "word",
        "en": "anything",
        "zh": "任何東西;任何事情",
        "src": "5-010",
-       "ipa": "ˈɛniːˌθɪŋ"
+       "ipa": "ˈɛniˌθɪŋ"
       },
       {
        "kind": "phrase",
        "en": "say anything",
        "zh": "說任何話",
        "src": "table",
-       "ipa": "ˈseɪ ˈɛniːˌθɪŋ"
+       "ipa": "ˈseɪ ˈɛniˌθɪŋ"
       },
       {
        "kind": "word",
@@ -1690,7 +1739,7 @@ window.BANKS = {
        "en": "Do you want anything to drink?",
        "zh": "你想要喝點什麼嗎",
        "src": "5-010",
-       "ipa": "ˈduː ˈjuː ˈwɑːnt ˈɛniːˌθɪŋ ˈtuː ˈdɹɪŋk"
+       "ipa": "ˈduː ˈjuː ˈwɑːnt ˈɛniˌθɪŋ ˈtuː ˈdɹɪŋk"
       }
      ]
     },
@@ -1699,21 +1748,21 @@ window.BANKS = {
      "level": 5,
      "target": "away",
      "gloss": "離開",
-     "ipa": "ˈəweɪ",
+     "ipa": "əˈweɪ",
      "steps": [
       {
        "kind": "word",
        "en": "away",
        "zh": "離開",
        "src": "5-011",
-       "ipa": "ˈəweɪ"
+       "ipa": "əˈweɪ"
       },
       {
        "kind": "phrase",
        "en": "run away",
        "zh": "逃跑",
        "src": "table",
-       "ipa": "ɹʌn ˈəweɪ"
+       "ipa": "ˈɹʌn əˈweɪ"
       },
       {
        "kind": "word",
@@ -1727,7 +1776,7 @@ window.BANKS = {
        "en": "Go away!",
        "zh": "走開",
        "src": "5-011",
-       "ipa": "ˈɡoʊ ˈəweɪ"
+       "ipa": "ˈɡoʊ əˈweɪ"
       }
      ]
     },
@@ -1803,28 +1852,28 @@ window.BANKS = {
      "level": 5,
      "target": "of course",
      "gloss": "當然",
-     "ipa": "ʌv ˈkɔːɹs",
+     "ipa": "ˈʌv ˈkɔːɹs",
      "steps": [
       {
        "kind": "word",
        "en": "of course",
        "zh": "當然",
        "src": "5-035",
-       "ipa": "ʌv ˈkɔːɹs"
+       "ipa": "ˈʌv ˈkɔːɹs"
       },
       {
        "kind": "phrase",
        "en": "of course",
        "zh": "當然",
        "src": "table",
-       "ipa": "ʌv ˈkɔːɹs"
+       "ipa": "ˈʌv ˈkɔːɹs"
       },
       {
        "kind": "sentence",
        "en": "Of course, it is.",
        "zh": "當然是這樣",
        "src": "5-035",
-       "ipa": "ʌv ˈkɔːɹs ˈɪt ˈɪz"
+       "ipa": "ˈʌv ˈkɔːɹs ˈɪt ˈɪz"
       }
      ]
     },
@@ -1847,21 +1896,21 @@ window.BANKS = {
        "en": "each one",
        "zh": "每一個",
        "src": "table",
-       "ipa": "ˈiːtʃ wʌn"
+       "ipa": "ˈiːtʃ ˈwʌn"
       },
       {
        "kind": "word",
        "en": "one",
        "zh": "一",
        "src": "1-052",
-       "ipa": "wʌn"
+       "ipa": "ˈwʌn"
       },
       {
        "kind": "sentence",
        "en": "Each one in the school has to join the Sports Day.",
        "zh": "學校裡每個人都必須參加運動會",
        "src": "5-041",
-       "ipa": "ˈiːtʃ wʌn ɪn ðə ˈskuːl ˈhæz ˈtuː ˈdʒɔɪn ðə ˈspɔːɹts ˈdeɪ"
+       "ipa": "ˈiːtʃ ˈwʌn ɪn ðə ˈskuːl ˈhæz ˈtuː ˈdʒɔɪn ðə ˈspɔːɹts ˈdeɪ"
       }
      ]
     },
@@ -1870,28 +1919,28 @@ window.BANKS = {
      "level": 5,
      "target": "enough",
      "gloss": "足夠的",
-     "ipa": "ɪnʌf",
+     "ipa": "ɪˈnʌf",
      "steps": [
       {
        "kind": "word",
        "en": "enough",
        "zh": "足夠的",
        "src": "5-043",
-       "ipa": "ɪnʌf"
+       "ipa": "ɪˈnʌf"
       },
       {
        "kind": "phrase",
        "en": "enough money",
        "zh": "足夠的錢",
        "src": "table",
-       "ipa": "ɪnʌf mʌniː"
+       "ipa": "ɪˈnʌf ˈmʌni"
       },
       {
        "kind": "sentence",
        "en": "I didn't bring enough money.",
        "zh": "我沒有帶足夠的錢",
        "src": "5-043",
-       "ipa": "ˈaɪ ˈbɹɪŋ ɪnʌf mʌniː"
+       "ipa": "ˈaɪ ˈdɪdənt ˈbɹɪŋ ɪˈnʌf ˈmʌni"
       }
      ]
     },
@@ -1900,14 +1949,21 @@ window.BANKS = {
      "level": 5,
      "target": "everyone everybody",
      "gloss": "每人",
-     "ipa": "ˈɛvɹiːwʌn ˈɛvɹiːˌbɑːdiː",
+     "ipa": "ˈɛvɹiˌwʌn ˈɛvɹiˌbɑːdi",
      "steps": [
       {
        "kind": "word",
        "en": "everyone everybody",
        "zh": "每人",
        "src": "5-044",
-       "ipa": "ˈɛvɹiːwʌn ˈɛvɹiːˌbɑːdiː"
+       "ipa": "ˈɛvɹiˌwʌn ˈɛvɹiˌbɑːdi"
+      },
+      {
+       "kind": "phrase",
+       "en": "take off their shoes",
+       "zh": "把鞋子脫掉",
+       "src": "table",
+       "ipa": "ˈteɪk ˈɔːf ˈðɛɹ ˈʃuːz"
       },
       {
        "kind": "word",
@@ -1917,18 +1973,11 @@ window.BANKS = {
        "ipa": "ˈɔːf"
       },
       {
-       "kind": "word",
-       "en": "outside",
-       "zh": "在外面",
-       "src": "5-095",
-       "ipa": "ˈaʊˈtsaɪd"
-      },
-      {
        "kind": "sentence",
        "en": "Everyone has to take off their shoes outside.",
        "zh": "每個人都必須把鞋子脫在外面",
        "src": "5-044",
-       "ipa": "ˈɛvɹiːwʌn ˈhæz ˈtuː ˈteɪk ˈɔːf ˈðɛɹ ˈʃuːz ˈaʊˈtsaɪd"
+       "ipa": "ˈɛvɹiˌwʌn ˈhæz ˈtuː ˈteɪk ˈɔːf ˈðɛɹ ˈʃuːz ˈaʊˈtsaɪd"
       }
      ]
     },
@@ -1937,21 +1986,21 @@ window.BANKS = {
      "level": 5,
      "target": "everything",
      "gloss": "每件事",
-     "ipa": "ˈɛvɹiːˌθɪŋ",
+     "ipa": "ˈɛvɹiˌθɪŋ",
      "steps": [
       {
        "kind": "word",
        "en": "everything",
        "zh": "每件事",
        "src": "5-045",
-       "ipa": "ˈɛvɹiːˌθɪŋ"
+       "ipa": "ˈɛvɹiˌθɪŋ"
       },
       {
        "kind": "phrase",
        "en": "everything ok",
        "zh": "一切都還好",
        "src": "table",
-       "ipa": "ˈɛvɹiːˌθɪŋ ˈoʊˈkeɪ"
+       "ipa": "ˈɛvɹiˌθɪŋ ˈoʊˈkeɪ"
       },
       {
        "kind": "word",
@@ -1965,7 +2014,7 @@ window.BANKS = {
        "en": "Is everything OK?",
        "zh": "一切都還好嗎",
        "src": "5-045",
-       "ipa": "ˈɪz ˈɛvɹiːˌθɪŋ ˈoʊˈkeɪ"
+       "ipa": "ˈɪz ˈɛvɹiˌθɪŋ ˈoʊˈkeɪ"
       }
      ]
     },
@@ -2002,7 +2051,7 @@ window.BANKS = {
        "en": "I'd like to go; however, I already have a plan.",
        "zh": "我很想去，但我已經有計畫了",
        "src": "5-065",
-       "ipa": "ˈlaɪk ˈtuː ˈɡoʊ ˌhaʊˈɛvɚ ˈaɪ ɔːˈlɹɛdiː ˈhæv ə ˈplæn"
+       "ipa": "ˈaɪd ˈlaɪk ˈtuː ˈɡoʊ ˌhaʊˈɛvɚ ˈaɪ ɔˈlɹɛdi ˈhæv ə ˈplæn"
       }
      ]
     },
@@ -2025,14 +2074,14 @@ window.BANKS = {
        "en": "what do you mean",
        "zh": "你的意思是什麼",
        "src": "table",
-       "ipa": "wʌt ˈduː ˈjuː ˈmiːn"
+       "ipa": "ˈwʌt ˈduː ˈjuː ˈmiːn"
       },
       {
        "kind": "sentence",
        "en": "What do you mean by that?",
        "zh": "你說的那句話是什麼意思",
        "src": "5-077",
-       "ipa": "wʌt ˈduː ˈjuː ˈmiːn ˈbaɪ ˈðæt"
+       "ipa": "ˈwʌt ˈduː ˈjuː ˈmiːn ˈbaɪ ˈðæt"
       }
      ]
     },
@@ -2062,14 +2111,14 @@ window.BANKS = {
        "en": "movie",
        "zh": "電影",
        "src": "4-063",
-       "ipa": "ˈmuːviː"
+       "ipa": "ˈmuːvi"
       },
       {
        "kind": "sentence",
        "en": "The movie theater is near the MRT station.",
        "zh": "電影院離捷運站很近",
        "src": "5-085",
-       "ipa": "ðə ˈmuːviː ˈθiːətɚ ˈɪz ˈnɪɹ ðə ˈsteɪʃən"
+       "ipa": "ðə ˈmuːvi ˈθiːətɚ ˈɪz ˈnɪɹ ðə ˈsteɪʃən"
       }
      ]
     },
@@ -2078,14 +2127,21 @@ window.BANKS = {
      "level": 5,
      "target": "only",
      "gloss": "只有",
-     "ipa": "ˈoʊnliː",
+     "ipa": "ˈoʊnli",
      "steps": [
       {
        "kind": "word",
        "en": "only",
        "zh": "只有",
        "src": "5-091",
-       "ipa": "ˈoʊnliː"
+       "ipa": "ˈoʊnli"
+      },
+      {
+       "kind": "phrase",
+       "en": "knows the answer",
+       "zh": "知道答案",
+       "src": "table",
+       "ipa": "ˈnoʊz ðə ˈænsɚ"
       },
       {
        "kind": "word",
@@ -2099,7 +2155,7 @@ window.BANKS = {
        "en": "Only Ryan knows the answer.",
        "zh": "只有Ryan知道答案",
        "src": "5-091",
-       "ipa": "ˈoʊnliː ˈɹaɪən ˈnoʊz ðə ˈænsɚ"
+       "ipa": "ˈoʊnli ˈɹaɪən ˈnoʊz ðə ˈænsɚ"
       }
      ]
     },
@@ -2108,14 +2164,21 @@ window.BANKS = {
      "level": 5,
      "target": "other",
      "gloss": "其他的",
-     "ipa": "ʌðɚ",
+     "ipa": "ˈʌðɚ",
      "steps": [
       {
        "kind": "word",
        "en": "other",
        "zh": "其他的",
        "src": "5-094",
-       "ipa": "ʌðɚ"
+       "ipa": "ˈʌðɚ"
+      },
+      {
+       "kind": "phrase",
+       "en": "other people",
+       "zh": "其他人",
+       "src": "table",
+       "ipa": "ˈʌðɚ ˈpiːpəl"
       },
       {
        "kind": "word",
@@ -2129,7 +2192,7 @@ window.BANKS = {
        "en": "Other people have different ideas.",
        "zh": "其他人有不同的意見",
        "src": "5-094",
-       "ipa": "ʌðɚ ˈpiːpəl ˈhæv ˈdɪfɚənt aɪˈdiːəz"
+       "ipa": "ˈʌðɚ ˈpiːpəl ˈhæv ˈdɪfɚənt aɪˈdiːəz"
       }
      ]
     },
@@ -2198,35 +2261,35 @@ window.BANKS = {
      "level": 5,
      "target": "person",
      "gloss": "人",
-     "ipa": "pɝsən",
+     "ipa": "ˈpɝsən",
      "steps": [
       {
        "kind": "word",
        "en": "person",
        "zh": "人",
        "src": "5-103",
-       "ipa": "pɝsən"
+       "ipa": "ˈpɝsən"
       },
       {
        "kind": "phrase",
        "en": "a person",
        "zh": "一個人",
        "src": "table",
-       "ipa": "ə pɝsən"
+       "ipa": "ə ˈpɝsən"
       },
       {
        "kind": "word",
        "en": "successful",
        "zh": "成功的",
        "src": "6-247",
-       "ipa": "ˈsəksɛsfəl"
+       "ipa": "səˈksɛsfəl"
       },
       {
        "kind": "sentence",
        "en": "Julia is a successful person.",
        "zh": "Julia是一個成功的人",
        "src": "5-103",
-       "ipa": "ˈdʒuːljə ˈɪz ə ˈsəksɛsfəl pɝsən"
+       "ipa": "ˈdʒuːljə ˈɪz ə səˈksɛsfəl ˈpɝsən"
       }
      ]
     },
@@ -2282,6 +2345,13 @@ window.BANKS = {
        "ipa": "ˈʃæl"
       },
       {
+       "kind": "phrase",
+       "en": "shall we leave",
+       "zh": "我們可以走了嗎",
+       "src": "table",
+       "ipa": "ˈʃæl ˈwiː ˈliːv"
+      },
+      {
        "kind": "word",
        "en": "leave",
        "zh": "離開",
@@ -2323,7 +2393,7 @@ window.BANKS = {
        "en": "Jane is able to come and help.",
        "zh": "Jane能夠來幫忙",
        "src": "6-001",
-       "ipa": "ˈdʒeɪn ˈɪz ˈeɪbəl ˈtuː kʌm ənd ˈhɛlp"
+       "ipa": "ˈdʒeɪn ˈɪz ˈeɪbəl ˈtuː ˈkʌm ənd ˈhɛlp"
       }
      ]
     },
@@ -2332,28 +2402,28 @@ window.BANKS = {
      "level": 6,
      "target": "agree",
      "gloss": "同意",
-     "ipa": "ˈəɡɹiː",
+     "ipa": "əˈɡɹiː",
      "steps": [
       {
        "kind": "word",
        "en": "agree",
        "zh": "同意",
        "src": "6-004",
-       "ipa": "ˈəɡɹiː"
+       "ipa": "əˈɡɹiː"
       },
       {
        "kind": "phrase",
        "en": "i agree",
        "zh": "我同意",
        "src": "table",
-       "ipa": "ˈaɪ ˈəɡɹiː"
+       "ipa": "ˈaɪ əˈɡɹiː"
       },
       {
        "kind": "sentence",
        "en": "I agree with you.",
        "zh": "我同意你的看法/說法",
        "src": "6-004",
-       "ipa": "ˈaɪ ˈəɡɹiː ˈwɪð ˈjuː"
+       "ipa": "ˈaɪ əˈɡɹiː ˈwɪð ˈjuː"
       }
      ]
     },
@@ -2372,6 +2442,13 @@ window.BANKS = {
        "ipa": "ˈɔːˌlmoʊst"
       },
       {
+       "kind": "phrase",
+       "en": "almost ten o'clock",
+       "zh": "快要十點",
+       "src": "table",
+       "ipa": "ˈɔːˌlmoʊst ˈtɛn əˈklɑːk"
+      },
+      {
        "kind": "word",
        "en": "ten",
        "zh": "十",
@@ -2383,7 +2460,7 @@ window.BANKS = {
        "en": "It was almost ten o'clock when we left.",
        "zh": "我們離開的時候快要十點了",
        "src": "6-007",
-       "ipa": "ˈɪt ˈwɑːz ˈɔːˌlmoʊst ˈtɛn ˈwɛn ˈwiː ˈlɛft"
+       "ipa": "ˈɪt ˈwɑːz ˈɔːˌlmoʊst ˈtɛn əˈklɑːk ˈwɛn ˈwiː ˈlɛft"
       }
      ]
     },
@@ -2392,21 +2469,28 @@ window.BANKS = {
      "level": 6,
      "target": "already",
      "gloss": "已經",
-     "ipa": "ɔːˈlɹɛdiː",
+     "ipa": "ɔˈlɹɛdi",
      "steps": [
       {
        "kind": "word",
        "en": "already",
        "zh": "已經",
        "src": "6-008",
-       "ipa": "ɔːˈlɹɛdiː"
+       "ipa": "ɔˈlɹɛdi"
+      },
+      {
+       "kind": "phrase",
+       "en": "years old",
+       "zh": "歲",
+       "src": "table",
+       "ipa": "ˈjɪɹz ˈoʊld"
       },
       {
        "kind": "sentence",
        "en": "I'm already 18 years old.",
        "zh": "我已經十八歲了",
        "src": "6-008",
-       "ipa": "ɔːˈlɹɛdiː ˈjɪɹz ˈoʊld"
+       "ipa": "ˈaɪm ɔˈlɹɛdi ˈjɪɹz ˈoʊld"
       }
      ]
     },
@@ -2415,14 +2499,21 @@ window.BANKS = {
      "level": 6,
      "target": "another",
      "gloss": "另一…",
-     "ipa": "ənʌðɚ",
+     "ipa": "əˈnʌðɚ",
      "steps": [
       {
        "kind": "word",
        "en": "another",
        "zh": "另一…",
        "src": "6-010",
-       "ipa": "ənʌðɚ"
+       "ipa": "əˈnʌðɚ"
+      },
+      {
+       "kind": "phrase",
+       "en": "another way",
+       "zh": "另一個方法",
+       "src": "table",
+       "ipa": "əˈnʌðɚ ˈweɪ"
       },
       {
        "kind": "word",
@@ -2436,7 +2527,7 @@ window.BANKS = {
        "en": "You can try another way.",
        "zh": "你可以試試另一個方法",
        "src": "6-010",
-       "ipa": "ˈjuː ˈkæn ˈtɹaɪ ənʌðɚ ˈweɪ"
+       "ipa": "ˈjuː ˈkæn ˈtɹaɪ əˈnʌðɚ ˈweɪ"
       }
      ]
     },
@@ -2473,7 +2564,7 @@ window.BANKS = {
        "en": "I'll stay home because it's raining.",
        "zh": "我會待在家，因為現在在下雨",
        "src": "6-023",
-       "ipa": "ˈsteɪ ˈhoʊm bɪˈkɔːz ˈɹeɪnɪŋ"
+       "ipa": "ˈaɪl ˈsteɪ ˈhoʊm bɪˈkɔːz ˈɪts ˈɹeɪnɪŋ"
       }
      ]
     },
@@ -2540,7 +2631,7 @@ window.BANKS = {
        "en": "I learned to drive during the summer vacation.",
        "zh": "我在暑假學開車",
        "src": "6-083",
-       "ipa": "ˈaɪ lɝnd ˈtuː ˈdɹaɪv ˈdʊɹɪŋ ðə sʌmɚ veɪˈkeɪʃən"
+       "ipa": "ˈaɪ ˈlɝnd ˈtuː ˈdɹaɪv ˈdʊɹɪŋ ðə ˈsʌmɚ veɪˈkeɪʃən"
       }
      ]
     },
@@ -2577,7 +2668,7 @@ window.BANKS = {
        "en": "Taitung is in the east of Taiwan.",
        "zh": "台東在台灣東部",
        "src": "6-085",
-       "ipa": "ˈɪz ɪn ðə ˈiːst ʌv ˈtaɪˈwɑːn"
+       "ipa": "ˈɪz ɪn ðə ˈiːst ˈʌv ˈtaɪˈwɑːn"
       }
      ]
     },
@@ -2596,6 +2687,13 @@ window.BANKS = {
        "ipa": "ˈiːðɚ"
       },
       {
+       "kind": "phrase",
+       "en": "don't want to go",
+       "zh": "不想去",
+       "src": "table",
+       "ipa": "ˈdoʊnt ˈwɑːnt ˈtuː ˈɡoʊ"
+      },
+      {
        "kind": "word",
        "en": "want",
        "zh": "想要",
@@ -2603,18 +2701,11 @@ window.BANKS = {
        "ipa": "ˈwɑːnt"
       },
       {
-       "kind": "word",
-       "en": "go",
-       "zh": "去",
-       "src": "1-021",
-       "ipa": "ˈɡoʊ"
-      },
-      {
        "kind": "sentence",
        "en": "I don't want to go, either.",
        "zh": "我也不想去",
        "src": "6-087",
-       "ipa": "ˈaɪ ˈwɑːnt ˈtuː ˈɡoʊ ˈiːðɚ"
+       "ipa": "ˈaɪ ˈdoʊnt ˈwɑːnt ˈtuː ˈɡoʊ ˈiːðɚ"
       }
      ]
     },
@@ -2637,14 +2728,14 @@ window.BANKS = {
        "en": "something else",
        "zh": "別的東西",
        "src": "table",
-       "ipa": "sʌmθɪŋ ˈɛls"
+       "ipa": "ˈsʌmθɪŋ ˈɛls"
       },
       {
        "kind": "sentence",
        "en": "What else?",
        "zh": "還有什麼其他的嗎",
        "src": "6-089",
-       "ipa": "wʌt ˈɛls"
+       "ipa": "ˈwʌt ˈɛls"
       }
      ]
     },
@@ -2663,6 +2754,13 @@ window.BANKS = {
        "ipa": "ɪˈksɛpt"
       },
       {
+       "kind": "phrase",
+       "en": "all my classmates",
+       "zh": "我所有的同學",
+       "src": "table",
+       "ipa": "ˈɔːl ˈmaɪ ˈklæˌsmeɪts"
+      },
+      {
        "kind": "word",
        "en": "go",
        "zh": "去",
@@ -2670,18 +2768,11 @@ window.BANKS = {
        "ipa": "ˈɡoʊ"
       },
       {
-       "kind": "word",
-       "en": "movie",
-       "zh": "電影",
-       "src": "4-063",
-       "ipa": "ˈmuːviː"
-      },
-      {
        "kind": "sentence",
        "en": "All my classmates except Ted will go to the movie.",
        "zh": "除了Ted外，我所有的同學都會去看電影",
        "src": "6-098",
-       "ipa": "ˈɔːl ˈmaɪ ˈklæˌsmeɪts ɪˈksɛpt ˈtɛd ˈwɪl ˈɡoʊ ˈtuː ðə ˈmuːviː"
+       "ipa": "ˈɔːl ˈmaɪ ˈklæˌsmeɪts ɪˈksɛpt ˈtɛd ˈwɪl ˈɡoʊ ˈtuː ðə ˈmuːvi"
       }
      ]
     },
@@ -2690,28 +2781,28 @@ window.BANKS = {
      "level": 6,
      "target": "experience",
      "gloss": "經驗",
-     "ipa": "ɪˈkspɪɹiːəns",
+     "ipa": "ɪˈkspɪɹiəns",
      "steps": [
       {
        "kind": "word",
        "en": "experience",
        "zh": "經驗",
        "src": "6-102",
-       "ipa": "ɪˈkspɪɹiːəns"
+       "ipa": "ɪˈkspɪɹiəns"
       },
       {
        "kind": "phrase",
        "en": "work experience",
        "zh": "工作經驗",
        "src": "table",
-       "ipa": "wɝk ɪˈkspɪɹiːəns"
+       "ipa": "ˈwɝk ɪˈkspɪɹiəns"
       },
       {
        "kind": "sentence",
        "en": "I have no teaching experience.",
        "zh": "我沒有教學經驗",
        "src": "6-102",
-       "ipa": "ˈaɪ ˈhæv ˈnoʊ ˈtiːtʃɪŋ ɪˈkspɪɹiːəns"
+       "ipa": "ˈaɪ ˈhæv ˈnoʊ ˈtiːtʃɪŋ ɪˈkspɪɹiəns"
       }
      ]
     },
@@ -2741,7 +2832,7 @@ window.BANKS = {
        "en": "In fact, I didn't hear about this before.",
        "zh": "事實上，我以前沒聽過這個",
        "src": "6-103",
-       "ipa": "ɪn ˈfækt ˈaɪ ˈhiːɹ ˈəbaʊt ˈðɪs bɪˈfɔːɹ"
+       "ipa": "ɪn ˈfækt ˈaɪ ˈdɪdənt ˈhiːɹ əˈbaʊt ˈðɪs bɪˈfɔːɹ"
       }
      ]
     },
@@ -2771,14 +2862,14 @@ window.BANKS = {
        "en": "museum",
        "zh": "博物館",
        "src": "6-190",
-       "ipa": "mjuːˈziːəm"
+       "ipa": "mjuˈziːəm"
       },
       {
        "kind": "sentence",
        "en": "The museum is far from my house.",
        "zh": "博物館離我家很遠",
        "src": "6-106",
-       "ipa": "ðə mjuːˈziːəm ˈɪz ˈfɑːɹ fɹʌm ˈmaɪ ˈhaʊs"
+       "ipa": "ðə mjuˈziːəm ˈɪz ˈfɑːɹ ˈfɹʌm ˈmaɪ ˈhaʊs"
       }
      ]
     },
@@ -2824,14 +2915,21 @@ window.BANKS = {
      "level": 6,
      "target": "finally",
      "gloss": "最後;終於",
-     "ipa": "ˈfaɪnəliː",
+     "ipa": "ˈfaɪnəli",
      "steps": [
       {
        "kind": "word",
        "en": "finally",
        "zh": "最後;終於",
        "src": "6-114",
-       "ipa": "ˈfaɪnəliː"
+       "ipa": "ˈfaɪnəli"
+      },
+      {
+       "kind": "phrase",
+       "en": "finally got the answer",
+       "zh": "終於得到了答案",
+       "src": "table",
+       "ipa": "ˈfaɪnəli ˈɡɑːt ðə ˈænsɚ"
       },
       {
        "kind": "word",
@@ -2845,7 +2943,7 @@ window.BANKS = {
        "en": "We finally got the answer.",
        "zh": "我們終於得到了答案",
        "src": "6-114",
-       "ipa": "ˈwiː ˈfaɪnəliː ˈɡɑːt ðə ˈænsɚ"
+       "ipa": "ˈwiː ˈfaɪnəli ˈɡɑːt ðə ˈænsɚ"
       }
      ]
     },
@@ -2882,7 +2980,7 @@ window.BANKS = {
        "en": "You should answer the first question at least.",
        "zh": "你至少回答第一個問題",
        "src": "6-162",
-       "ipa": "ˈjuː ˈʃʊd ˈænsɚ ðə fɝst ˈkwɛstʃən ˈæt ˈliːst"
+       "ipa": "ˈjuː ˈʃʊd ˈænsɚ ðə ˈfɝst ˈkwɛstʃən ˈæt ˈliːst"
       }
      ]
     },
@@ -2919,7 +3017,7 @@ window.BANKS = {
        "en": "I'll buy the less expensive one.",
        "zh": "我會買比較便宜的那個",
        "src": "6-164",
-       "ipa": "ˈbaɪ ðə ˈlɛs ɪˈkspɛnsɪv wʌn"
+       "ipa": "ˈaɪl ˈbaɪ ðə ˈlɛs ɪˈkspɛnsɪv ˈwʌn"
       }
      ]
     },
@@ -2986,7 +3084,7 @@ window.BANKS = {
        "en": "A little girl is crying on the street.",
        "zh": "一個小女孩在街上哭",
        "src": "6-168",
-       "ipa": "ə ˈlɪtəl ɡɝl ˈɪz ˈkɹaɪɪŋ ˈɑːn ðə ˈstɹiːt"
+       "ipa": "ə ˈlɪtəl ˈɡɝl ˈɪz ˈkɹaɪɪŋ ˈɑːn ðə ˈstɹiːt"
       }
      ]
     },
@@ -2995,14 +3093,14 @@ window.BANKS = {
      "level": 6,
      "target": "maybe",
      "gloss": "或許",
-     "ipa": "ˈmeɪbiː",
+     "ipa": "ˈmeɪbi",
      "steps": [
       {
        "kind": "word",
        "en": "maybe",
        "zh": "或許",
        "src": "6-183",
-       "ipa": "ˈmeɪbiː"
+       "ipa": "ˈmeɪbi"
       },
       {
        "kind": "phrase",
@@ -3016,7 +3114,7 @@ window.BANKS = {
        "en": "Maybe he is sick.",
        "zh": "或許他生病了",
        "src": "6-183",
-       "ipa": "ˈmeɪbiː ˈhiː ˈɪz ˈsɪk"
+       "ipa": "ˈmeɪbi ˈhiː ˈɪz ˈsɪk"
       }
      ]
     },
@@ -3035,6 +3133,13 @@ window.BANKS = {
        "ipa": "ˈmoʊst"
       },
       {
+       "kind": "phrase",
+       "en": "the most difficult",
+       "zh": "最難的",
+       "src": "table",
+       "ipa": "ðə ˈmoʊst ˈdɪfəkəlt"
+      },
+      {
        "kind": "word",
        "en": "math (mathematics)",
        "zh": "數學",
@@ -3042,18 +3147,11 @@ window.BANKS = {
        "ipa": "ˈmæθ"
       },
       {
-       "kind": "word",
-       "en": "difficult",
-       "zh": "困難的",
-       "src": "6-076",
-       "ipa": "ˈdɪfəkəlt"
-      },
-      {
        "kind": "sentence",
        "en": "Math is the most difficult subject for me.",
        "zh": "對我來說數學是最難的科目",
        "src": "6-189",
-       "ipa": "ˈmæθ ˈɪz ðə ˈmoʊst ˈdɪfəkəlt ˈsəbdʒɛkt ˈfɔːɹ ˈmiː"
+       "ipa": "ˈmæθ ˈɪz ðə ˈmoʊst ˈdɪfəkəlt səˈbdʒɛkt ˈfɔːɹ ˈmiː"
       }
      ]
     },
@@ -3062,28 +3160,28 @@ window.BANKS = {
      "level": 6,
      "target": "must",
      "gloss": "必然要",
-     "ipa": "mʌst",
+     "ipa": "ˈmʌst",
      "steps": [
       {
        "kind": "word",
        "en": "must",
        "zh": "必然要",
        "src": "6-191",
-       "ipa": "mʌst"
+       "ipa": "ˈmʌst"
       },
       {
        "kind": "phrase",
        "en": "you must",
        "zh": "你必須",
        "src": "table",
-       "ipa": "ˈjuː mʌst"
+       "ipa": "ˈjuː ˈmʌst"
       },
       {
        "kind": "sentence",
        "en": "You must come.",
        "zh": "你一定要來",
        "src": "6-191",
-       "ipa": "ˈjuː mʌst kʌm"
+       "ipa": "ˈjuː ˈmʌst ˈkʌm"
       }
      ]
     },
@@ -3113,14 +3211,14 @@ window.BANKS = {
        "en": "holiday",
        "zh": "節日;假日",
        "src": "6-140",
-       "ipa": "ˈhɑːˌlədeɪ"
+       "ipa": "ˈhɑːləˌdeɪ"
       },
       {
        "kind": "sentence",
        "en": "Double Tenth Day is a national holiday.",
        "zh": "雙十節是國定假日",
        "src": "6-193",
-       "ipa": "dʌbəl ˈtɛnθ ˈdeɪ ˈɪz ə ˈnæʃənəl ˈhɑːˌlədeɪ"
+       "ipa": "ˈdʌbəl ˈtɛnθ ˈdeɪ ˈɪz ə ˈnæʃənəl ˈhɑːləˌdeɪ"
       }
      ]
     },
@@ -3159,21 +3257,28 @@ window.BANKS = {
      "level": 6,
      "target": "perhaps",
      "gloss": "也許",
-     "ipa": "ˈpɚhæps",
+     "ipa": "pɚˈhæps",
      "steps": [
       {
        "kind": "word",
        "en": "perhaps",
        "zh": "也許",
        "src": "6-205",
-       "ipa": "ˈpɚhæps"
+       "ipa": "pɚˈhæps"
+      },
+      {
+       "kind": "phrase",
+       "en": "will say yes",
+       "zh": "會答應",
+       "src": "table",
+       "ipa": "ˈwɪl ˈseɪ ˈjɛs"
       },
       {
        "kind": "sentence",
        "en": "Perhaps he will say yes.",
        "zh": "他也許會答應",
        "src": "6-205",
-       "ipa": "ˈpɚhæps ˈhiː ˈwɪl ˈseɪ ˈjɛs"
+       "ipa": "pɚˈhæps ˈhiː ˈwɪl ˈseɪ ˈjɛs"
       }
      ]
     },
@@ -3210,7 +3315,7 @@ window.BANKS = {
        "en": "Is it possible to win first place?",
        "zh": "有沒有可能贏得第一名呢",
        "src": "6-213",
-       "ipa": "ˈɪz ˈɪt ˈpɑːsəbəl ˈtuː ˈwɪn fɝst ˈpleɪs"
+       "ipa": "ˈɪz ˈɪt ˈpɑːsəbəl ˈtuː ˈwɪn ˈfɝst ˈpleɪs"
       }
      ]
     },
@@ -3219,28 +3324,28 @@ window.BANKS = {
      "level": 6,
      "target": "ready",
      "gloss": "準備好",
-     "ipa": "ˈɹɛdiː",
+     "ipa": "ˈɹɛdi",
      "steps": [
       {
        "kind": "word",
        "en": "ready",
        "zh": "準備好",
        "src": "6-219",
-       "ipa": "ˈɹɛdiː"
+       "ipa": "ˈɹɛdi"
       },
       {
        "kind": "phrase",
        "en": "be ready",
        "zh": "準備好",
        "src": "table",
-       "ipa": "ˈbiː ˈɹɛdiː"
+       "ipa": "ˈbiː ˈɹɛdi"
       },
       {
        "kind": "sentence",
        "en": "Are you ready?",
        "zh": "你準備好了嗎",
        "src": "6-219",
-       "ipa": "ˈɑːɹ ˈjuː ˈɹɛdiː"
+       "ipa": "ˈɑːɹ ˈjuː ˈɹɛdi"
       }
      ]
     },
@@ -3277,7 +3382,7 @@ window.BANKS = {
        "en": "In Taiwan, people drive on the right side of the road.",
        "zh": "台灣人是靠右駕駛",
        "src": "6-235",
-       "ipa": "ɪn ˈtaɪˈwɑːn ˈpiːpəl ˈdɹaɪv ˈɑːn ðə ˈɹaɪt ˈsaɪd ʌv ðə ˈɹoʊd"
+       "ipa": "ɪn ˈtaɪˈwɑːn ˈpiːpəl ˈdɹaɪv ˈɑːn ðə ˈɹaɪt ˈsaɪd ˈʌv ðə ˈɹoʊd"
       }
      ]
     },
@@ -3307,14 +3412,14 @@ window.BANKS = {
        "en": "city",
        "zh": "城市",
        "src": "4-022",
-       "ipa": "ˈsɪtiː"
+       "ipa": "ˈsɪti"
       },
       {
        "kind": "sentence",
        "en": "Jennifer lives in the south of the city.",
        "zh": "Jennifer住在城市南方",
        "src": "6-238",
-       "ipa": "ˈdʒɛnəfɚ ˈlɪvz ɪn ðə ˈsaʊθ ʌv ðə ˈsɪtiː"
+       "ipa": "ˈdʒɛnəfɚ ˈlɪvz ɪn ðə ˈsaʊθ ˈʌv ðə ˈsɪti"
       }
      ]
     },
@@ -3388,7 +3493,7 @@ window.BANKS = {
        "en": "I still went to work though I had a cold.",
        "zh": "雖然我感冒了,我仍去上班",
        "src": "6-254",
-       "ipa": "ˈaɪ ˈstɪl ˈwɛnt ˈtuː wɝk ˈðoʊ ˈaɪ ˈhæd ə ˈkoʊld"
+       "ipa": "ˈaɪ ˈstɪl ˈwɛnt ˈtuː ˈwɝk ˈðoʊ ˈaɪ ˈhæd ə ˈkoʊld"
       }
      ]
     },
@@ -3397,21 +3502,21 @@ window.BANKS = {
      "level": 6,
      "target": "until",
      "gloss": "直到",
-     "ipa": "ˈəntɪl",
+     "ipa": "əˈntɪl",
      "steps": [
       {
        "kind": "word",
        "en": "until",
        "zh": "直到",
        "src": "6-266",
-       "ipa": "ˈəntɪl"
+       "ipa": "əˈntɪl"
       },
       {
        "kind": "phrase",
        "en": "wait until",
        "zh": "等到",
        "src": "table",
-       "ipa": "ˈweɪt ˈəntɪl"
+       "ipa": "ˈweɪt əˈntɪl"
       },
       {
        "kind": "word",
@@ -3425,7 +3530,7 @@ window.BANKS = {
        "en": "I don't have time until next week.",
        "zh": "我到下週才有時間",
        "src": "6-266",
-       "ipa": "ˈaɪ ˈhæv ˈtaɪm ˈəntɪl ˈnɛkst ˈwiːk"
+       "ipa": "ˈaɪ ˈdoʊnt ˈhæv ˈtaɪm əˈntɪl ˈnɛkst ˈwiːk"
       }
      ]
     },
@@ -3462,7 +3567,7 @@ window.BANKS = {
        "en": "Changhua is in the west of Taiwan.",
        "zh": "彰化在台灣西部",
        "src": "6-273",
-       "ipa": "ˈɪz ɪn ðə ˈwɛst ʌv ˈtaɪˈwɑːn"
+       "ipa": "ˈɪz ɪn ðə ˈwɛst ˈʌv ˈtaɪˈwɑːn"
       }
      ]
     },
@@ -3481,6 +3586,13 @@ window.BANKS = {
        "ipa": "ˈwɛðɚ"
       },
       {
+       "kind": "phrase",
+       "en": "don't know whether",
+       "zh": "不知道是否",
+       "src": "table",
+       "ipa": "ˈdoʊnt ˈnoʊ ˈwɛðɚ"
+      },
+      {
        "kind": "word",
        "en": "like",
        "zh": "喜歡",
@@ -3488,18 +3600,11 @@ window.BANKS = {
        "ipa": "ˈlaɪk"
       },
       {
-       "kind": "word",
-       "en": "idea",
-       "zh": "點子;主意",
-       "src": "6-142",
-       "ipa": "aɪˈdiːə"
-      },
-      {
        "kind": "sentence",
        "en": "I don't know whether they like the idea.",
        "zh": "我不知道他們喜不喜歡這個點子",
        "src": "6-274",
-       "ipa": "ˈaɪ ˈnoʊ ˈwɛðɚ ˈðeɪ ˈlaɪk ðə aɪˈdiːə"
+       "ipa": "ˈaɪ ˈdoʊnt ˈnoʊ ˈwɛðɚ ˈðeɪ ˈlaɪk ðə aɪˈdiːə"
       }
      ]
     },
@@ -3516,6 +3621,13 @@ window.BANKS = {
        "zh": "誰的",
        "src": "6-275",
        "ipa": "ˈhuːz"
+      },
+      {
+       "kind": "phrase",
+       "en": "whose notebook",
+       "zh": "誰的筆記本",
+       "src": "table",
+       "ipa": "ˈhuːz ˈnoʊˌtbʊk"
       },
       {
        "kind": "sentence",
@@ -3545,14 +3657,14 @@ window.BANKS = {
        "en": "come in",
        "zh": "進來",
        "src": "table",
-       "ipa": "kʌm ɪn"
+       "ipa": "ˈkʌm ɪn"
       },
       {
        "kind": "sentence",
        "en": "You can't come in without your ID.",
        "zh": "沒有身分證不能進入",
        "src": "6-277",
-       "ipa": "ˈjuː kʌm ɪn wɪˈθaʊt ˈjɔːɹ ˈɪd"
+       "ipa": "ˈjuː ˈkænt ˈkʌm ɪn wɪˈθaʊt ˈjɔːɹ ˈɪd"
       }
      ]
     },
@@ -3582,7 +3694,7 @@ window.BANKS = {
        "en": "It's not over yet.",
        "zh": "還沒結束",
        "src": "6-278",
-       "ipa": "ˈnɑːt ˈoʊvɚ ˈjɛt"
+       "ipa": "ˈɪts ˈnɑːt ˈoʊvɚ ˈjɛt"
       }
      ]
     }
@@ -3599,21 +3711,21 @@ window.BANKS = {
      "level": 1,
      "target": "baby",
      "gloss": "嬰兒",
-     "ipa": "ˈbeɪbiː",
+     "ipa": "ˈbeɪbi",
      "steps": [
       {
        "kind": "word",
        "en": "baby",
        "zh": "嬰兒",
        "src": "1-005",
-       "ipa": "ˈbeɪbiː"
+       "ipa": "ˈbeɪbi"
       },
       {
        "kind": "phrase",
        "en": "a baby",
        "zh": "一個嬰兒",
        "src": "table",
-       "ipa": "ə ˈbeɪbiː"
+       "ipa": "ə ˈbeɪbi"
       },
       {
        "kind": "word",
@@ -3627,7 +3739,7 @@ window.BANKS = {
        "en": "The baby is so small.",
        "zh": "這個嬰兒好小喔",
        "src": "1-005",
-       "ipa": "ðə ˈbeɪbiː ˈɪz ˈsoʊ ˈsmɔːl"
+       "ipa": "ðə ˈbeɪbi ˈɪz ˈsoʊ ˈsmɔːl"
       }
      ]
     },
@@ -3701,7 +3813,7 @@ window.BANKS = {
        "en": "Those kids often play together.",
        "zh": "那些小孩常在一起玩",
        "src": "1-033",
-       "ipa": "ˈðoʊz ˈkɪdz ˈɔːfən ˈpleɪ ˈtəɡɛðɚ"
+       "ipa": "ˈðoʊz ˈkɪdz ˈɔːfən ˈpleɪ təˈɡɛðɚ"
       }
      ]
     },
@@ -3710,28 +3822,28 @@ window.BANKS = {
      "level": 1,
      "target": "mother",
      "gloss": "媽媽",
-     "ipa": "mʌðɚ",
+     "ipa": "ˈmʌðɚ",
      "steps": [
       {
        "kind": "word",
        "en": "mother",
        "zh": "媽媽",
        "src": "1-045",
-       "ipa": "mʌðɚ"
+       "ipa": "ˈmʌðɚ"
       },
       {
        "kind": "phrase",
        "en": "my mother",
        "zh": "我的媽媽",
        "src": "table",
-       "ipa": "ˈmaɪ mʌðɚ"
+       "ipa": "ˈmaɪ ˈmʌðɚ"
       },
       {
        "kind": "sentence",
        "en": "I love my mother.",
        "zh": "我愛我媽媽",
        "src": "1-045",
-       "ipa": "ˈaɪ lʌv ˈmaɪ mʌðɚ"
+       "ipa": "ˈaɪ ˈlʌv ˈmaɪ ˈmʌðɚ"
       }
      ]
     },
@@ -3740,21 +3852,21 @@ window.BANKS = {
      "level": 2,
      "target": "brother",
      "gloss": "兄弟",
-     "ipa": "bɹʌðɚ",
+     "ipa": "ˈbɹʌðɚ",
      "steps": [
       {
        "kind": "word",
        "en": "brother",
        "zh": "兄弟",
        "src": "2-009",
-       "ipa": "bɹʌðɚ"
+       "ipa": "ˈbɹʌðɚ"
       },
       {
        "kind": "phrase",
        "en": "a brother",
        "zh": "一個哥哥／弟弟",
        "src": "table",
-       "ipa": "ə bɹʌðɚ"
+       "ipa": "ə ˈbɹʌðɚ"
       },
       {
        "kind": "word",
@@ -3768,7 +3880,7 @@ window.BANKS = {
        "en": "I have two older brothers.",
        "zh": "我有兩個哥哥",
        "src": "2-009",
-       "ipa": "ˈaɪ ˈhæv ˈtuː ˈoʊldɚ bɹʌðɚz"
+       "ipa": "ˈaɪ ˈhæv ˈtuː ˈoʊldɚ ˈbɹʌðɚz"
       }
      ]
     },
@@ -3798,7 +3910,7 @@ window.BANKS = {
        "en": "The card is from my dear friend.",
        "zh": "這張卡片來自我親愛的朋友",
        "src": "2-018",
-       "ipa": "ðə ˈkɑːɹd ˈɪz fɹʌm ˈmaɪ ˈdɪɹ ˈfɹɛnd"
+       "ipa": "ðə ˈkɑːɹd ˈɪz ˈfɹʌm ˈmaɪ ˈdɪɹ ˈfɹɛnd"
       }
      ]
     },
@@ -3807,28 +3919,28 @@ window.BANKS = {
      "level": 2,
      "target": "friendly",
      "gloss": "友善的",
-     "ipa": "ˈfɹɛndliː",
+     "ipa": "ˈfɹɛndli",
      "steps": [
       {
        "kind": "word",
        "en": "friendly",
        "zh": "友善的",
        "src": "2-026",
-       "ipa": "ˈfɹɛndliː"
+       "ipa": "ˈfɹɛndli"
       },
       {
        "kind": "phrase",
        "en": "be friendly",
        "zh": "友善",
        "src": "table",
-       "ipa": "ˈbiː ˈfɹɛndliː"
+       "ipa": "ˈbiː ˈfɹɛndli"
       },
       {
        "kind": "sentence",
        "en": "My new friends are very friendly.",
        "zh": "我的新朋友非常友善",
        "src": "2-026",
-       "ipa": "ˈmaɪ ˈnuː ˈfɹɛndz ˈɑːɹ ˈvɛɹiː ˈfɹɛndliː"
+       "ipa": "ˈmaɪ ˈnuː ˈfɹɛndz ˈɑːɹ ˈvɛɹi ˈfɹɛndli"
       }
      ]
     },
@@ -3914,6 +4026,13 @@ window.BANKS = {
        "ipa": "ˈkɪs"
       },
       {
+       "kind": "phrase",
+       "en": "kissed mom",
+       "zh": "親了媽媽",
+       "src": "table",
+       "ipa": "ˈkɪst ˈmɑːm"
+      },
+      {
        "kind": "sentence",
        "en": "Dad kissed Mom.",
        "zh": "爸爸親了媽媽",
@@ -3927,28 +4046,28 @@ window.BANKS = {
      "level": 3,
      "target": "together",
      "gloss": "一起",
-     "ipa": "ˈtəɡɛðɚ",
+     "ipa": "təˈɡɛðɚ",
      "steps": [
       {
        "kind": "word",
        "en": "together",
        "zh": "一起",
        "src": "3-096",
-       "ipa": "ˈtəɡɛðɚ"
+       "ipa": "təˈɡɛðɚ"
       },
       {
        "kind": "phrase",
        "en": "do together",
        "zh": "一起做",
        "src": "table",
-       "ipa": "ˈduː ˈtəɡɛðɚ"
+       "ipa": "ˈduː təˈɡɛðɚ"
       },
       {
        "kind": "sentence",
        "en": "Kate and I usually do homework together.",
        "zh": "Kate和我常常一起做作業",
        "src": "3-096",
-       "ipa": "ˈkeɪt ənd ˈaɪ ˈjuːʒəwəliː ˈduː ˈhoʊmwɝk ˈtəɡɛðɚ"
+       "ipa": "ˈkeɪt ənd ˈaɪ ˈjuːʒəwəli ˈduː ˈhoʊˌmwɝk təˈɡɛðɚ"
       }
      ]
     },
@@ -3978,14 +4097,14 @@ window.BANKS = {
        "en": "baby",
        "zh": "嬰兒",
        "src": "1-005",
-       "ipa": "ˈbeɪbiː"
+       "ipa": "ˈbeɪbi"
       },
       {
        "kind": "sentence",
        "en": "The baby was born last week.",
        "zh": "這個寶寶上星期出生",
        "src": "4-014",
-       "ipa": "ðə ˈbeɪbiː ˈwɑːz ˈbɔːɹn ˈlæst ˈwiːk"
+       "ipa": "ðə ˈbeɪbi ˈwɑːz ˈbɔːɹn ˈlæst ˈwiːk"
       }
      ]
     },
@@ -4008,21 +4127,21 @@ window.BANKS = {
        "en": "my cousin",
        "zh": "我的表姊",
        "src": "table",
-       "ipa": "ˈmaɪ kʌzən"
+       "ipa": "ˈmaɪ ˈkʌzən"
       },
       {
        "kind": "word",
        "en": "cousin",
        "zh": "堂(表)兄弟姊妹",
        "src": "6-066",
-       "ipa": "kʌzən"
+       "ipa": "ˈkʌzən"
       },
       {
        "kind": "sentence",
        "en": "My cousin visits us during the weekends.",
        "zh": "我的表姊週末期間來拜訪我們",
        "src": "4-127",
-       "ipa": "ˈmaɪ kʌzən ˈvɪzɪts ʌs ˈdʊɹɪŋ ðə ˈwiːˌkɛndz"
+       "ipa": "ˈmaɪ ˈkʌzən ˈvɪzɪts ˈʌs ˈdʊɹɪŋ ðə ˈwiːˌkɛndz"
       }
      ]
     },
@@ -4031,21 +4150,21 @@ window.BANKS = {
      "level": 5,
      "target": "husband",
      "gloss": "丈夫",
-     "ipa": "hʌzbənd",
+     "ipa": "ˈhʌzbənd",
      "steps": [
       {
        "kind": "word",
        "en": "husband",
        "zh": "丈夫",
        "src": "5-068",
-       "ipa": "hʌzbənd"
+       "ipa": "ˈhʌzbənd"
       },
       {
        "kind": "phrase",
        "en": "a husband",
        "zh": "一個丈夫",
        "src": "table",
-       "ipa": "ə hʌzbənd"
+       "ipa": "ə ˈhʌzbənd"
       },
       {
        "kind": "word",
@@ -4059,7 +4178,7 @@ window.BANKS = {
        "en": "Amy's husband is a lawyer.",
        "zh": "Amy的丈夫是一名律師",
        "src": "5-068",
-       "ipa": "hʌzbənd ˈɪz ə ˈlɔːjɚ"
+       "ipa": "ˈeɪmiz ˈhʌzbənd ˈɪz ə ˈlɔːjɚ"
       }
      ]
     },
@@ -4068,28 +4187,28 @@ window.BANKS = {
      "level": 5,
      "target": "married",
      "gloss": "已婚的",
-     "ipa": "ˈmɛɹiːd",
+     "ipa": "ˈmɛɹid",
      "steps": [
       {
        "kind": "word",
        "en": "married",
        "zh": "已婚的",
        "src": "5-075",
-       "ipa": "ˈmɛɹiːd"
+       "ipa": "ˈmɛɹid"
       },
       {
        "kind": "phrase",
        "en": "be married",
        "zh": "結婚",
        "src": "table",
-       "ipa": "ˈbiː ˈmɛɹiːd"
+       "ipa": "ˈbiː ˈmɛɹid"
       },
       {
        "kind": "sentence",
        "en": "Are you married?",
        "zh": "你結婚了嗎",
        "src": "5-075",
-       "ipa": "ˈɑːɹ ˈjuː ˈmɛɹiːd"
+       "ipa": "ˈɑːɹ ˈjuː ˈmɛɹid"
       }
      ]
     },
@@ -4119,7 +4238,7 @@ window.BANKS = {
        "en": "Our new neighbor is from Japan.",
        "zh": "我們的新鄰居從日本來",
        "src": "5-086",
-       "ipa": "ˈaʊɚ ˈnuː ˈneɪbɚ ˈɪz fɹʌm ˈdʒəpæn"
+       "ipa": "ˈaʊɚ ˈnuː ˈneɪbɚ ˈɪz ˈfɹʌm dʒəˈpæn"
       }
      ]
     },
@@ -4149,7 +4268,7 @@ window.BANKS = {
        "en": "My parents love me so much.",
        "zh": "我的父母非常愛我",
        "src": "5-100",
-       "ipa": "ˈmaɪ ˈpɛɹənts lʌv ˈmiː ˈsoʊ mʌtʃ"
+       "ipa": "ˈmaɪ ˈpɛɹənts ˈlʌv ˈmiː ˈsoʊ ˈmʌtʃ"
       }
      ]
     },
@@ -4172,14 +4291,14 @@ window.BANKS = {
        "en": "raised her",
        "zh": "撫養她",
        "src": "table",
-       "ipa": "ˈɹeɪzd hɝ"
+       "ipa": "ˈɹeɪzd ˈhɝ"
       },
       {
        "kind": "sentence",
        "en": "Jessie's grandparents raised her up.",
        "zh": "Jessie的祖父母撫養她長大",
        "src": "5-131",
-       "ipa": "ˈɡɹæˌndpɛɹənts ˈɹeɪzd hɝ ʌp"
+       "ipa": "ˈɡɹæˌndpɛɹənts ˈɹeɪzd ˈhɝ ˈʌp"
       }
      ]
     },
@@ -4209,7 +4328,7 @@ window.BANKS = {
        "en": "Your wife just called.",
        "zh": "你太太剛打來",
        "src": "5-190",
-       "ipa": "ˈjɔːɹ ˈwaɪf dʒʌst ˈkɔːld"
+       "ipa": "ˈjɔːɹ ˈwaɪf ˈdʒʌst ˈkɔːld"
       }
      ]
     },
@@ -4232,21 +4351,21 @@ window.BANKS = {
        "en": "my cousin",
        "zh": "我的表姊",
        "src": "table",
-       "ipa": "ˈmaɪ kʌzən"
+       "ipa": "ˈmaɪ ˈkʌzən"
       },
       {
        "kind": "word",
        "en": "cousin",
        "zh": "堂(表)兄弟姊妹",
        "src": "6-066",
-       "ipa": "kʌzən"
+       "ipa": "ˈkʌzən"
       },
       {
        "kind": "sentence",
        "en": "My cousin and I are at the same age.",
        "zh": "我的表妹和我同年",
        "src": "6-003",
-       "ipa": "ˈmaɪ kʌzən ənd ˈaɪ ˈɑːɹ ˈæt ðə ˈseɪm ˈeɪdʒ"
+       "ipa": "ˈmaɪ ˈkʌzən ənd ˈaɪ ˈɑːɹ ˈæt ðə ˈseɪm ˈeɪdʒ"
       }
      ]
     },
@@ -4255,21 +4374,21 @@ window.BANKS = {
      "level": 6,
      "target": "cousin",
      "gloss": "堂(表)兄弟姊妹",
-     "ipa": "kʌzən",
+     "ipa": "ˈkʌzən",
      "steps": [
       {
        "kind": "word",
        "en": "cousin",
        "zh": "堂(表)兄弟姊妹",
        "src": "6-066",
-       "ipa": "kʌzən"
+       "ipa": "ˈkʌzən"
       },
       {
        "kind": "phrase",
        "en": "my cousin",
        "zh": "我的表姊",
        "src": "table",
-       "ipa": "ˈmaɪ kʌzən"
+       "ipa": "ˈmaɪ ˈkʌzən"
       },
       {
        "kind": "word",
@@ -4283,7 +4402,7 @@ window.BANKS = {
        "en": "My cousin is three years older than me.",
        "zh": "我堂姊大我三歲",
        "src": "6-066",
-       "ipa": "ˈmaɪ kʌzən ˈɪz ˈθɹiː ˈjɪɹz ˈoʊldɚ ˈðæn ˈmiː"
+       "ipa": "ˈmaɪ ˈkʌzən ˈɪz ˈθɹiː ˈjɪɹz ˈoʊldɚ ˈðæn ˈmiː"
       }
      ]
     },
@@ -4339,18 +4458,25 @@ window.BANKS = {
        "ipa": "ˈʃɛɹ"
       },
       {
+       "kind": "phrase",
+       "en": "share things",
+       "zh": "分享東西",
+       "src": "table",
+       "ipa": "ˈʃɛɹ ˈθɪŋz"
+      },
+      {
        "kind": "word",
        "en": "happy",
        "zh": "快樂的",
        "src": "1-022",
-       "ipa": "ˈhæpiː"
+       "ipa": "ˈhæpi"
       },
       {
        "kind": "sentence",
        "en": "I feel happy to share things with friends.",
        "zh": "我樂於和朋友分享",
        "src": "6-233",
-       "ipa": "ˈaɪ ˈfiːl ˈhæpiː ˈtuː ˈʃɛɹ ˈθɪŋz ˈwɪð ˈfɹɛndz"
+       "ipa": "ˈaɪ ˈfiːl ˈhæpi ˈtuː ˈʃɛɹ ˈθɪŋz ˈwɪð ˈfɹɛndz"
       }
      ]
     },
@@ -4432,7 +4558,7 @@ window.BANKS = {
        "en": "Don't eat on the bed.",
        "zh": "別在床上吃東西",
        "src": "1-006",
-       "ipa": "ˈiːt ˈɑːn ðə ˈbɛd"
+       "ipa": "ˈdoʊnt ˈiːt ˈɑːn ðə ˈbɛd"
       }
      ]
     },
@@ -4441,28 +4567,28 @@ window.BANKS = {
      "level": 1,
      "target": "cup",
      "gloss": "杯子",
-     "ipa": "kʌp",
+     "ipa": "ˈkʌp",
      "steps": [
       {
        "kind": "word",
        "en": "cup",
        "zh": "杯子",
        "src": "1-013",
-       "ipa": "kʌp"
+       "ipa": "ˈkʌp"
       },
       {
        "kind": "phrase",
        "en": "a cup",
        "zh": "一個杯子",
        "src": "table",
-       "ipa": "ə kʌp"
+       "ipa": "ə ˈkʌp"
       },
       {
        "kind": "sentence",
        "en": "Please give me a cup of tea.",
        "zh": "請給我一杯茶",
        "src": "1-013",
-       "ipa": "ˈpliːz ˈɡɪv ˈmiː ə kʌp ʌv ˈtiː"
+       "ipa": "ˈpliːz ˈɡɪv ˈmiː ə ˈkʌp ˈʌv ˈtiː"
       }
      ]
     },
@@ -4499,7 +4625,7 @@ window.BANKS = {
        "en": "I will go home after work.",
        "zh": "我下班後會回家",
        "src": "1-025",
-       "ipa": "ˈaɪ ˈwɪl ˈɡoʊ ˈhoʊm ˈæftɚ wɝk"
+       "ipa": "ˈaɪ ˈwɪl ˈɡoʊ ˈhoʊm ˈæftɚ ˈwɝk"
       }
      ]
     },
@@ -4566,7 +4692,7 @@ window.BANKS = {
        "en": "I can make you a pot of tea.",
        "zh": "我可以為你泡一壺茶",
        "src": "1-058",
-       "ipa": "ˈaɪ ˈkæn ˈmeɪk ˈjuː ə ˈpɑːt ʌv ˈtiː"
+       "ipa": "ˈaɪ ˈkæn ˈmeɪk ˈjuː ə ˈpɑːt ˈʌv ˈtiː"
       }
      ]
     },
@@ -4596,7 +4722,7 @@ window.BANKS = {
        "en": "Robert prepared a ring for his girlfriend.",
        "zh": "Robert準備了一枚戒指給他女朋友",
        "src": "1-060",
-       "ipa": "ˈɹɑːbɚt pɹiːˈpɛɹd ə ˈɹɪŋ ˈfɔːɹ ˈhɪz ˌɡɝlfɹɛnd"
+       "ipa": "ˈɹɑːbɚt pɹiˈpɛɹd ə ˈɹɪŋ ˈfɔːɹ ˈhɪz ˈɡɝˌlfɹɛnd"
       }
      ]
     },
@@ -4663,7 +4789,7 @@ window.BANKS = {
        "en": "We took a rest on the top of the mountain.",
        "zh": "我們在山頂上休息了一下",
        "src": "1-076",
-       "ipa": "ˈwiː ˈtʊk ə ˈɹɛst ˈɑːn ðə ˈtɑːp ʌv ðə ˈmaʊntən"
+       "ipa": "ˈwiː ˈtʊk ə ˈɹɛst ˈɑːn ðə ˈtɑːp ˈʌv ðə ˈmaʊntən"
       }
      ]
     },
@@ -4693,7 +4819,7 @@ window.BANKS = {
        "en": "Michael's son has a lot of toys.",
        "zh": "Michael的兒子有很多玩具",
        "src": "1-077",
-       "ipa": "sʌn ˈhæz ə ˈlɑːt ʌv ˈtɔɪz"
+       "ipa": "ˈmaɪkəlz ˈsʌn ˈhæz ə ˈlɑːt ˈʌv ˈtɔɪz"
       }
      ]
     },
@@ -4702,21 +4828,21 @@ window.BANKS = {
      "level": 1,
      "target": "tub",
      "gloss": "浴缸",
-     "ipa": "tʌb",
+     "ipa": "ˈtʌb",
      "steps": [
       {
        "kind": "word",
        "en": "tub",
        "zh": "浴缸",
        "src": "1-078",
-       "ipa": "tʌb"
+       "ipa": "ˈtʌb"
       },
       {
        "kind": "phrase",
        "en": "a tub",
        "zh": "一個浴缸",
        "src": "table",
-       "ipa": "ə tʌb"
+       "ipa": "ə ˈtʌb"
       },
       {
        "kind": "word",
@@ -4730,7 +4856,7 @@ window.BANKS = {
        "en": "Mom filled the tub with water.",
        "zh": "媽媽把浴缸裝滿水",
        "src": "1-078",
-       "ipa": "ˈmɑːm ˈfɪld ðə tʌb ˈwɪð ˈwɔːtɚ"
+       "ipa": "ˈmɑːm ˈfɪld ðə ˈtʌb ˈwɪð ˈwɔːtɚ"
       }
      ]
     },
@@ -4767,7 +4893,7 @@ window.BANKS = {
        "en": "Let's get some fresh air outside.",
        "zh": "我們到外面呼吸一點新鮮空氣吧",
        "src": "2-001",
-       "ipa": "ˈɡɛt sʌm ˈfɹɛʃ ˈɛɹ ˈaʊˈtsaɪd"
+       "ipa": "ˈlɛts ˈɡɛt ˈsʌm ˈfɹɛʃ ˈɛɹ ˈaʊˈtsaɪd"
       }
      ]
     },
@@ -4776,21 +4902,21 @@ window.BANKS = {
      "level": 2,
      "target": "dirty",
      "gloss": "髒的",
-     "ipa": "dɝtiː",
+     "ipa": "ˈdɝti",
      "steps": [
       {
        "kind": "word",
        "en": "dirty",
        "zh": "髒的",
        "src": "2-019",
-       "ipa": "dɝtiː"
+       "ipa": "ˈdɝti"
       },
       {
        "kind": "phrase",
        "en": "a dirty",
        "zh": "一件髒的",
        "src": "table",
-       "ipa": "ə dɝtiː"
+       "ipa": "ə ˈdɝti"
       },
       {
        "kind": "word",
@@ -4804,7 +4930,7 @@ window.BANKS = {
        "en": "Put your dirty clothes in the basket.",
        "zh": "把你的髒衣服放在籃子裡",
        "src": "2-019",
-       "ipa": "ˈpʊt ˈjɔːɹ dɝtiː ˈkloʊðz ɪn ðə ˈbæskət"
+       "ipa": "ˈpʊt ˈjɔːɹ ˈdɝti ˈkloʊðz ɪn ðə ˈbæskət"
       }
      ]
     },
@@ -4823,25 +4949,25 @@ window.BANKS = {
        "ipa": "ˈmɑːp"
       },
       {
+       "kind": "phrase",
+       "en": "mops the floor",
+       "zh": "拖地板",
+       "src": "table",
+       "ipa": "ˈmɑːps ðə ˈflɔːɹ"
+      },
+      {
        "kind": "word",
        "en": "once",
        "zh": "一次",
        "src": "5-090",
-       "ipa": "wʌns"
-      },
-      {
-       "kind": "word",
-       "en": "week",
-       "zh": "週",
-       "src": "2-094",
-       "ipa": "ˈwiːk"
+       "ipa": "ˈwʌns"
       },
       {
        "kind": "sentence",
        "en": "Mom mops the floor once a week.",
        "zh": "媽媽一週拖一次地板",
        "src": "2-048",
-       "ipa": "ˈmɑːm ˈmɑːps ðə ˈflɔːɹ wʌns ə ˈwiːk"
+       "ipa": "ˈmɑːm ˈmɑːps ðə ˈflɔːɹ ˈwʌns ə ˈwiːk"
       }
      ]
     },
@@ -4850,28 +4976,28 @@ window.BANKS = {
      "level": 2,
      "target": "mud",
      "gloss": "泥巴",
-     "ipa": "mʌd",
+     "ipa": "ˈmʌd",
      "steps": [
       {
        "kind": "word",
        "en": "mud",
        "zh": "泥巴",
        "src": "2-049",
-       "ipa": "mʌd"
+       "ipa": "ˈmʌd"
       },
       {
        "kind": "phrase",
        "en": "mud on",
        "zh": "泥巴在",
        "src": "table",
-       "ipa": "mʌd ˈɑːn"
+       "ipa": "ˈmʌd ˈɑːn"
       },
       {
        "kind": "sentence",
        "en": "Clean the mud on your shoes.",
        "zh": "清一清你鞋子上的泥巴",
        "src": "2-049",
-       "ipa": "ˈkliːn ðə mʌd ˈɑːn ˈjɔːɹ ˈʃuːz"
+       "ipa": "ˈkliːn ðə ˈmʌd ˈɑːn ˈjɔːɹ ˈʃuːz"
       }
      ]
     },
@@ -4910,28 +5036,28 @@ window.BANKS = {
      "level": 2,
      "target": "tidy",
      "gloss": "整齊的",
-     "ipa": "ˈtaɪdiː",
+     "ipa": "ˈtaɪdi",
      "steps": [
       {
        "kind": "word",
        "en": "tidy",
        "zh": "整齊的",
        "src": "2-087",
-       "ipa": "ˈtaɪdiː"
+       "ipa": "ˈtaɪdi"
       },
       {
        "kind": "phrase",
        "en": "a tidy",
        "zh": "一個整齊的",
        "src": "table",
-       "ipa": "ə ˈtaɪdiː"
+       "ipa": "ə ˈtaɪdi"
       },
       {
        "kind": "sentence",
        "en": "My mom keeps our house tidy.",
        "zh": "我媽媽保持房子整潔",
        "src": "2-087",
-       "ipa": "ˈmaɪ ˈmɑːm ˈkiːps ˈaʊɚ ˈhaʊs ˈtaɪdiː"
+       "ipa": "ˈmaɪ ˈmɑːm ˈkiːps ˈaʊɚ ˈhaʊs ˈtaɪdi"
       }
      ]
     },
@@ -4968,7 +5094,7 @@ window.BANKS = {
        "en": "I had a bowl of rice for lunch.",
        "zh": "我午餐吃了一碗飯",
        "src": "3-013",
-       "ipa": "ˈaɪ ˈhæd ə ˈboʊl ʌv ˈɹaɪs ˈfɔːɹ lʌntʃ"
+       "ipa": "ˈaɪ ˈhæd ə ˈboʊl ˈʌv ˈɹaɪs ˈfɔːɹ ˈlʌntʃ"
       }
      ]
     },
@@ -4998,7 +5124,7 @@ window.BANKS = {
        "en": "She is preparing dinner in the kitchen.",
        "zh": "她在廚房裡準備晚餐",
        "src": "3-060",
-       "ipa": "ˈʃiː ˈɪz pɹiːˈpɛɹɪŋ ˈdɪnɚ ɪn ðə ˈkɪtʃən"
+       "ipa": "ˈʃiː ˈɪz pɹiˈpɛɹɪŋ ˈdɪnɚ ɪn ðə ˈkɪtʃən"
       }
      ]
     },
@@ -5035,7 +5161,7 @@ window.BANKS = {
        "en": "Turn on the lamp when you read.",
        "zh": "閱讀時把檯燈打開",
        "src": "3-063",
-       "ipa": "tɝn ˈɑːn ðə ˈlæmp ˈwɛn ˈjuː ˈɹɛd"
+       "ipa": "ˈtɝn ˈɑːn ðə ˈlæmp ˈwɛn ˈjuː ˈɹɛd"
       }
      ]
     },
@@ -5065,14 +5191,14 @@ window.BANKS = {
        "en": "cup",
        "zh": "杯子",
        "src": "1-013",
-       "ipa": "kʌp"
+       "ipa": "ˈkʌp"
       },
       {
        "kind": "sentence",
        "en": "This lid is for the cup.",
        "zh": "這是那個杯子的蓋子",
        "src": "3-066",
-       "ipa": "ˈðɪs ˈlɪd ˈɪz ˈfɔːɹ ðə kʌp"
+       "ipa": "ˈðɪs ˈlɪd ˈɪz ˈfɔːɹ ðə ˈkʌp"
       }
      ]
     },
@@ -5095,14 +5221,14 @@ window.BANKS = {
        "en": "turn on the light",
        "zh": "開燈",
        "src": "table",
-       "ipa": "tɝn ˈɑːn ðə ˈlaɪt"
+       "ipa": "ˈtɝn ˈɑːn ðə ˈlaɪt"
       },
       {
        "kind": "sentence",
        "en": "Could you turn on the light?",
        "zh": "你可以把燈打開嗎",
        "src": "3-067",
-       "ipa": "ˈkʊd ˈjuː tɝn ˈɑːn ðə ˈlaɪt"
+       "ipa": "ˈkʊd ˈjuː ˈtɝn ˈɑːn ðə ˈlaɪt"
       }
      ]
     },
@@ -5132,14 +5258,14 @@ window.BANKS = {
        "en": "cup",
        "zh": "杯子",
        "src": "1-013",
-       "ipa": "kʌp"
+       "ipa": "ˈkʌp"
       },
       {
        "kind": "sentence",
        "en": "Put your cup on the mat.",
        "zh": "把你的杯子放在杯墊上",
        "src": "3-069",
-       "ipa": "ˈpʊt ˈjɔːɹ kʌp ˈɑːn ðə ˈmæt"
+       "ipa": "ˈpʊt ˈjɔːɹ ˈkʌp ˈɑːn ðə ˈmæt"
       }
      ]
     },
@@ -5169,7 +5295,7 @@ window.BANKS = {
        "en": "Don't put things on the stairs.",
        "zh": "不要在樓梯上放東西",
        "src": "3-095",
-       "ipa": "ˈpʊt ˈθɪŋz ˈɑːn ðə ˈstɛɹz"
+       "ipa": "ˈdoʊnt ˈpʊt ˈθɪŋz ˈɑːn ðə ˈstɛɹz"
       }
      ]
     },
@@ -5199,14 +5325,14 @@ window.BANKS = {
        "en": "forget",
        "zh": "忘記",
        "src": "5-054",
-       "ipa": "ˈfɚɡɛt"
+       "ipa": "fɚˈɡɛt"
       },
       {
        "kind": "sentence",
        "en": "Don't forget to take out the garbage.",
        "zh": "別忘了要倒垃圾",
        "src": "4-045",
-       "ipa": "ˈfɚɡɛt ˈtuː ˈteɪk ˈaʊt ðə ˈɡɑːɹbɪdʒ"
+       "ipa": "ˈdoʊnt fɚˈɡɛt ˈtuː ˈteɪk ˈaʊt ðə ˈɡɑːɹbɪdʒ"
       }
      ]
     },
@@ -5273,14 +5399,14 @@ window.BANKS = {
        "en": "machine",
        "zh": "機器",
        "src": "6-174",
-       "ipa": "ˈməʃiːn"
+       "ipa": "məˈʃiːn"
       },
       {
        "kind": "sentence",
        "en": "This machine has a huge base.",
        "zh": "這台機器有一個很大的基座",
        "src": "5-014",
-       "ipa": "ˈðɪs ˈməʃiːn ˈhæz ə ˈhjuːdʒ ˈbeɪs"
+       "ipa": "ˈðɪs məˈʃiːn ˈhæz ə ˈhjuːdʒ ˈbeɪs"
       }
      ]
     },
@@ -5310,7 +5436,7 @@ window.BANKS = {
        "en": "There is a basket in the front of my bike.",
        "zh": "我的單車前面有一個籃子",
        "src": "5-015",
-       "ipa": "ˈðɛɹ ˈɪz ə ˈbæskət ɪn ðə fɹʌnt ʌv ˈmaɪ ˈbaɪk"
+       "ipa": "ˈðɛɹ ˈɪz ə ˈbæskət ɪn ðə ˈfɹʌnt ˈʌv ˈmaɪ ˈbaɪk"
       }
      ]
     },
@@ -5347,7 +5473,7 @@ window.BANKS = {
        "en": "You can tie the rope around the package.",
        "zh": "你可以用這條繩子捆包裹",
        "src": "5-137",
-       "ipa": "ˈjuː ˈkæn ˈtaɪ ðə ˈɹoʊp ˈɚaʊnd ðə ˈpækədʒ"
+       "ipa": "ˈjuː ˈkæn ˈtaɪ ðə ˈɹoʊp ɚˈaʊnd ðə ˈpækədʒ"
       }
      ]
     },
@@ -5414,7 +5540,7 @@ window.BANKS = {
        "en": "Mom planted many flowers in our yard.",
        "zh": "媽媽在庭院裡種了很多花",
        "src": "5-191",
-       "ipa": "ˈmɑːm ˈplæntɪd ˈmɛniː ˈflaʊɚz ɪn ˈaʊɚ ˈjɑːɹd"
+       "ipa": "ˈmɑːm ˈplæntɪd ˈmɛni ˈflaʊɚz ɪn ˈaʊɚ ˈjɑːɹd"
       }
      ]
     },
@@ -5423,21 +5549,21 @@ window.BANKS = {
      "level": 6,
      "target": "apartment",
      "gloss": "公寓",
-     "ipa": "ˈəpɑːɹtmənt",
+     "ipa": "əˈpɑːɹtmənt",
      "steps": [
       {
        "kind": "word",
        "en": "apartment",
        "zh": "公寓",
        "src": "6-011",
-       "ipa": "ˈəpɑːɹtmənt"
+       "ipa": "əˈpɑːɹtmənt"
       },
       {
        "kind": "phrase",
        "en": "an apartment",
        "zh": "一間公寓",
        "src": "table",
-       "ipa": "ˈæn ˈəpɑːɹtmənt"
+       "ipa": "ˈæn əˈpɑːɹtmənt"
       },
       {
        "kind": "word",
@@ -5451,7 +5577,7 @@ window.BANKS = {
        "en": "Many people live in an apartment in Taipei.",
        "zh": "在台北有許多人住在公寓裡",
        "src": "6-011",
-       "ipa": "ˈmɛniː ˈpiːpəl ˈlaɪv ɪn ˈæn ˈəpɑːɹtmənt ɪn ˈtaɪˌpeɪ"
+       "ipa": "ˈmɛni ˈpiːpəl ˈlaɪv ɪn ˈæn əˈpɑːɹtmənt ɪn ˈtaɪˌpeɪ"
       }
      ]
     },
@@ -5460,21 +5586,21 @@ window.BANKS = {
      "level": 6,
      "target": "balcony",
      "gloss": "陽台",
-     "ipa": "ˈbælkəniː",
+     "ipa": "ˈbælkəni",
      "steps": [
       {
        "kind": "word",
        "en": "balcony",
        "zh": "陽台",
        "src": "6-019",
-       "ipa": "ˈbælkəniː"
+       "ipa": "ˈbælkəni"
       },
       {
        "kind": "phrase",
        "en": "a balcony",
        "zh": "一個陽台",
        "src": "table",
-       "ipa": "ə ˈbælkəniː"
+       "ipa": "ə ˈbælkəni"
       },
       {
        "kind": "word",
@@ -5488,7 +5614,7 @@ window.BANKS = {
        "en": "I can see your house from my balcony.",
        "zh": "從我的陽台可以看到你家",
        "src": "6-019",
-       "ipa": "ˈaɪ ˈkæn ˈsiː ˈjɔːɹ ˈhaʊs fɹʌm ˈmaɪ ˈbælkəniː"
+       "ipa": "ˈaɪ ˈkæn ˈsiː ˈjɔːɹ ˈhaʊs ˈfɹʌm ˈmaɪ ˈbælkəni"
       }
      ]
     },
@@ -5518,7 +5644,7 @@ window.BANKS = {
        "en": "Daddy is in the bathroom.",
        "zh": "爸爸在浴室裡",
        "src": "6-022",
-       "ipa": "ˈdædiː ˈɪz ɪn ðə ˈbæˌθɹuːm"
+       "ipa": "ˈdædi ˈɪz ɪn ðə ˈbæˌθɹuːm"
       }
      ]
     },
@@ -5622,7 +5748,7 @@ window.BANKS = {
        "en": "Bring a bottle of water with you.",
        "zh": "帶上一瓶水吧",
        "src": "6-035",
-       "ipa": "ˈbɹɪŋ ə ˈbɑːtəl ʌv ˈwɔːtɚ ˈwɪð ˈjuː"
+       "ipa": "ˈbɹɪŋ ə ˈbɑːtəl ˈʌv ˈwɔːtɚ ˈwɪð ˈjuː"
       }
      ]
     },
@@ -5659,7 +5785,7 @@ window.BANKS = {
        "en": "There is still some chocolate at the bottom of the cup.",
        "zh": "杯底還有些巧克力",
        "src": "6-036",
-       "ipa": "ˈðɛɹ ˈɪz ˈstɪl sʌm ˈtʃɔːklət ˈæt ðə ˈbɑːtəm ʌv ðə kʌp"
+       "ipa": "ˈðɛɹ ˈɪz ˈstɪl ˈsʌm ˈtʃɔːklət ˈæt ðə ˈbɑːtəm ˈʌv ðə ˈkʌp"
       }
      ]
     },
@@ -5668,28 +5794,28 @@ window.BANKS = {
      "level": 6,
      "target": "comfortable",
      "gloss": "舒服的",
-     "ipa": "kʌmfɚtəbəl",
+     "ipa": "ˈkʌmfɚtəbəl",
      "steps": [
       {
        "kind": "word",
        "en": "comfortable",
        "zh": "舒服的",
        "src": "6-060",
-       "ipa": "kʌmfɚtəbəl"
+       "ipa": "ˈkʌmfɚtəbəl"
       },
       {
        "kind": "phrase",
        "en": "a comfortable",
        "zh": "一把舒適的",
        "src": "table",
-       "ipa": "ə kʌmfɚtəbəl"
+       "ipa": "ə ˈkʌmfɚtəbəl"
       },
       {
        "kind": "sentence",
        "en": "The weather is comfortable.",
        "zh": "這天氣很舒服",
        "src": "6-060",
-       "ipa": "ðə ˈwɛðɚ ˈɪz kʌmfɚtəbəl"
+       "ipa": "ðə ˈwɛðɚ ˈɪz ˈkʌmfɚtəbəl"
       }
      ]
     },
@@ -5726,7 +5852,7 @@ window.BANKS = {
        "en": "There is a bookstore around the corner.",
        "zh": "轉角有間書店",
        "src": "6-062",
-       "ipa": "ˈðɛɹ ˈɪz ə ˈbʊˌkstɔːɹ ˈɚaʊnd ðə ˈkɔːɹnɚ"
+       "ipa": "ˈðɛɹ ˈɪz ə ˈbʊˌkstɔːɹ ɚˈaʊnd ðə ˈkɔːɹnɚ"
       }
      ]
     },
@@ -5786,14 +5912,14 @@ window.BANKS = {
        "en": "tidy",
        "zh": "整齊的",
        "src": "2-087",
-       "ipa": "ˈtaɪdiː"
+       "ipa": "ˈtaɪdi"
       },
       {
        "kind": "sentence",
        "en": "Zoe keeps her drawers tidy.",
        "zh": "Zoe把抽屜整理得很整齊",
        "src": "6-081",
-       "ipa": "ˈzoʊiː ˈkiːps hɝ ˈdɹɔːɹz ˈtaɪdiː"
+       "ipa": "ˈzoʊi ˈkiːps ˈhɝ ˈdɹɔːɹz ˈtaɪdi"
       }
      ]
     },
@@ -5830,7 +5956,7 @@ window.BANKS = {
        "en": "You could enter from the gate.",
        "zh": "你可以從大門進入",
        "src": "6-120",
-       "ipa": "ˈjuː ˈkʊd ˈɛntɚ fɹʌm ðə ˈɡeɪt"
+       "ipa": "ˈjuː ˈkʊd ˈɛntɚ ˈfɹʌm ðə ˈɡeɪt"
       }
      ]
     },
@@ -5876,28 +6002,28 @@ window.BANKS = {
      "level": 6,
      "target": "machine",
      "gloss": "機器",
-     "ipa": "ˈməʃiːn",
+     "ipa": "məˈʃiːn",
      "steps": [
       {
        "kind": "word",
        "en": "machine",
        "zh": "機器",
        "src": "6-174",
-       "ipa": "ˈməʃiːn"
+       "ipa": "məˈʃiːn"
       },
       {
        "kind": "phrase",
        "en": "a machine",
        "zh": "一台機器",
        "src": "table",
-       "ipa": "ə ˈməʃiːn"
+       "ipa": "ə məˈʃiːn"
       },
       {
        "kind": "sentence",
        "en": "This machine doesn't work.",
        "zh": "這個機器不運轉了",
        "src": "6-174",
-       "ipa": "ˈðɪs ˈməʃiːn wɝk"
+       "ipa": "ˈðɪs məˈʃiːn ˈdʌzənt ˈwɝk"
       }
      ]
     },
@@ -5936,21 +6062,21 @@ window.BANKS = {
      "level": 6,
      "target": "refrigerator",
      "gloss": "冰箱",
-     "ipa": "ˈɹəfɹɪˌdʒɚeɪtɚ",
+     "ipa": "ɹəˈfɹɪdʒɚˌeɪtɚ",
      "steps": [
       {
        "kind": "word",
        "en": "refrigerator",
        "zh": "冰箱",
        "src": "6-220",
-       "ipa": "ˈɹəfɹɪˌdʒɚeɪtɚ"
+       "ipa": "ɹəˈfɹɪdʒɚˌeɪtɚ"
       },
       {
        "kind": "phrase",
        "en": "in the refrigerator",
        "zh": "在冰箱裡",
        "src": "table",
-       "ipa": "ɪn ðə ˈɹəfɹɪˌdʒɚeɪtɚ"
+       "ipa": "ɪn ðə ɹəˈfɹɪdʒɚˌeɪtɚ"
       },
       {
        "kind": "word",
@@ -5964,7 +6090,7 @@ window.BANKS = {
        "en": "You should put the milk into the refrigerator.",
        "zh": "你該把牛奶放進冰箱裡",
        "src": "6-220",
-       "ipa": "ˈjuː ˈʃʊd ˈpʊt ðə ˈmɪlk ˈɪntuː ðə ˈɹəfɹɪˌdʒɚeɪtɚ"
+       "ipa": "ˈjuː ˈʃʊd ˈpʊt ðə ˈmɪlk ˈɪntu ðə ɹəˈfɹɪdʒɚˌeɪtɚ"
       }
      ]
     },
@@ -6017,14 +6143,14 @@ window.BANKS = {
        "en": "a lot of space",
        "zh": "很多空間",
        "src": "table",
-       "ipa": "ə ˈlɑːt ʌv ˈspeɪs"
+       "ipa": "ə ˈlɑːt ˈʌv ˈspeɪs"
       },
       {
        "kind": "sentence",
        "en": "Is there a space for a new computer?",
        "zh": "還有空間放一台新電腦嗎",
        "src": "6-239",
-       "ipa": "ˈɪz ˈðɛɹ ə ˈspeɪs ˈfɔːɹ ə ˈnuː ˈkəmpjuːtɚ"
+       "ipa": "ˈɪz ˈðɛɹ ə ˈspeɪs ˈfɔːɹ ə ˈnuː kəˈmpjuːtɚ"
       }
      ]
     },
@@ -6054,14 +6180,14 @@ window.BANKS = {
        "en": "brother",
        "zh": "兄弟",
        "src": "2-009",
-       "ipa": "bɹʌðɚ"
+       "ipa": "ˈbɹʌðɚ"
       },
       {
        "kind": "sentence",
        "en": "My brother takes out the trash every day.",
        "zh": "我哥哥每天倒垃圾",
        "src": "6-260",
-       "ipa": "ˈmaɪ bɹʌðɚ ˈteɪks ˈaʊt ðə ˈtɹæʃ ˈɛvɚiː ˈdeɪ"
+       "ipa": "ˈmaɪ ˈbɹʌðɚ ˈteɪks ˈaʊt ðə ˈtɹæʃ ˈɛvɚi ˈdeɪ"
       }
      ]
     }
@@ -6106,7 +6232,7 @@ window.BANKS = {
        "en": "This book is very thick.",
        "zh": "這本書很厚",
        "src": "1-009",
-       "ipa": "ˈðɪs ˈbʊk ˈɪz ˈvɛɹiː ˈθɪk"
+       "ipa": "ˈðɪs ˈbʊk ˈɪz ˈvɛɹi ˈθɪk"
       }
      ]
     },
@@ -6233,7 +6359,7 @@ window.BANKS = {
        "en": "The students are studying in the classroom.",
        "zh": "學生們在教室裡讀書",
        "src": "2-015",
-       "ipa": "ðə ˈstuːdənts ˈɑːɹ stʌdiːɪŋ ɪn ðə ˈklæˌsɹuːm"
+       "ipa": "ðə ˈstuːdənts ˈɑːɹ ˈstʌdiɪŋ ɪn ðə ˈklæˌsɹuːm"
       }
      ]
     },
@@ -6339,14 +6465,14 @@ window.BANKS = {
      "level": 2,
      "target": "PE(physical education)",
      "gloss": "體育",
-     "ipa": "ˈfɪzɪkəl ˌɛˈdʒəkeɪʃən",
+     "ipa": "ˈfɪzɪkəl ˌɛdʒəˈkeɪʃən",
      "steps": [
       {
        "kind": "word",
        "en": "PE(physical education)",
        "zh": "體育",
        "src": "2-055",
-       "ipa": "ˌɛˈdʒəkeɪʃən"
+       "ipa": "ˌɛdʒəˈkeɪʃən"
       },
       {
        "kind": "phrase",
@@ -6367,7 +6493,7 @@ window.BANKS = {
        "en": "We played basketball in our PE class this week.",
        "zh": "這週的體育課我們打籃球",
        "src": "2-055",
-       "ipa": "ˈwiː ˈpleɪd ˈbæˌskətbɔːl ɪn ˈaʊɚ ˈklæs ˈðɪs ˈwiːk"
+       "ipa": "ˈwiː ˈpleɪd ˈbæskəˌtbɔːl ɪn ˈaʊɚ ˈklæs ˈðɪs ˈwiːk"
       }
      ]
     },
@@ -6397,14 +6523,14 @@ window.BANKS = {
        "en": "only",
        "zh": "只有",
        "src": "5-091",
-       "ipa": "ˈoʊnliː"
+       "ipa": "ˈoʊnli"
       },
       {
        "kind": "sentence",
        "en": "You can only use a 2B pencil in the test.",
        "zh": "在這考試裡，你只能用2B的鉛筆",
        "src": "2-056",
-       "ipa": "ˈjuː ˈkæn ˈoʊnliː ˈjuːs ə ˈpɛnsəl ɪn ðə ˈtɛst"
+       "ipa": "ˈjuː ˈkæn ˈoʊnli ˈjuːs ə ˈpɛnsəl ɪn ðə ˈtɛst"
       }
      ]
     },
@@ -6423,18 +6549,18 @@ window.BANKS = {
        "ipa": "ˈɹɛd"
       },
       {
+       "kind": "phrase",
+       "en": "read these three pages",
+       "zh": "讀這三頁",
+       "src": "table",
+       "ipa": "ˈɹɛd ˈðiːz ˈθɹiː ˈpeɪdʒəz"
+      },
+      {
        "kind": "word",
        "en": "three",
        "zh": "三",
        "src": "1-074",
        "ipa": "ˈθɹiː"
-      },
-      {
-       "kind": "word",
-       "en": "go",
-       "zh": "去",
-       "src": "1-021",
-       "ipa": "ˈɡoʊ"
       },
       {
        "kind": "sentence",
@@ -6568,7 +6694,7 @@ window.BANKS = {
        "en": "We work as a team.",
        "zh": "我們在工作上是一個團隊",
        "src": "2-086",
-       "ipa": "ˈwiː wɝk ˈæz ə ˈtiːm"
+       "ipa": "ˈwiː ˈwɝk ˈæz ə ˈtiːm"
       }
      ]
     },
@@ -6605,7 +6731,7 @@ window.BANKS = {
        "en": "The teacher is writing on the blackboard with a piece of chalk.",
        "zh": "老師正用粉筆寫黑板",
        "src": "3-017",
-       "ipa": "ðə ˈtiːtʃɚ ˈɪz ˈɹaɪtɪŋ ˈɑːn ðə ˈblæˌkbɔːɹd ˈwɪð ə ˈpiːs ʌv ˈtʃɑːk"
+       "ipa": "ðə ˈtiːtʃɚ ˈɪz ˈɹaɪtɪŋ ˈɑːn ðə ˈblæˌkbɔːɹd ˈwɪð ə ˈpiːs ˈʌv ˈtʃɑːk"
       }
      ]
     },
@@ -6651,21 +6777,21 @@ window.BANKS = {
      "level": 3,
      "target": "polite",
      "gloss": "有禮貌的",
-     "ipa": "ˈpəlaɪt",
+     "ipa": "pəˈlaɪt",
      "steps": [
       {
        "kind": "word",
        "en": "polite",
        "zh": "有禮貌的",
        "src": "3-077",
-       "ipa": "ˈpəlaɪt"
+       "ipa": "pəˈlaɪt"
       },
       {
        "kind": "phrase",
        "en": "be polite to",
        "zh": "對…有禮貌",
        "src": "table",
-       "ipa": "ˈbiː ˈpəlaɪt ˈtuː"
+       "ipa": "ˈbiː pəˈlaɪt ˈtuː"
       },
       {
        "kind": "word",
@@ -6679,7 +6805,7 @@ window.BANKS = {
        "en": "You should be polite to your teacher.",
        "zh": "對你的老師要有禮貌",
        "src": "3-077",
-       "ipa": "ˈjuː ˈʃʊd ˈbiː ˈpəlaɪt ˈtuː ˈjɔːɹ ˈtiːtʃɚ"
+       "ipa": "ˈjuː ˈʃʊd ˈbiː pəˈlaɪt ˈtuː ˈjɔːɹ ˈtiːtʃɚ"
       }
      ]
     },
@@ -6709,7 +6835,7 @@ window.BANKS = {
        "en": "We are so proud of you.",
        "zh": "我們以你為榮",
        "src": "3-081",
-       "ipa": "ˈwiː ˈɑːɹ ˈsoʊ ˈpɹaʊd ʌv ˈjuː"
+       "ipa": "ˈwiː ˈɑːɹ ˈsoʊ ˈpɹaʊd ˈʌv ˈjuː"
       }
      ]
     },
@@ -6739,14 +6865,14 @@ window.BANKS = {
        "en": "together",
        "zh": "一起",
        "src": "3-096",
-       "ipa": "ˈtəɡɛðɚ"
+       "ipa": "təˈɡɛðɚ"
       },
       {
        "kind": "sentence",
        "en": "Our class made the rules together.",
        "zh": "我們班一起訂定這些規則",
        "src": "3-087",
-       "ipa": "ˈaʊɚ ˈklæs ˈmeɪd ðə ˈɹuːlz ˈtəɡɛðɚ"
+       "ipa": "ˈaʊɚ ˈklæs ˈmeɪd ðə ˈɹuːlz təˈɡɛðɚ"
       }
      ]
     },
@@ -6765,18 +6891,25 @@ window.BANKS = {
        "ipa": "ˈspɛl"
       },
       {
+       "kind": "phrase",
+       "en": "spell this word",
+       "zh": "拼這個字",
+       "src": "table",
+       "ipa": "ˈspɛl ˈðɪs ˈwɝd"
+      },
+      {
        "kind": "word",
        "en": "word",
        "zh": "字",
        "src": "3-103",
-       "ipa": "wɝd"
+       "ipa": "ˈwɝd"
       },
       {
        "kind": "sentence",
        "en": "I can't spell this word.",
        "zh": "我不會拼這個字",
        "src": "3-094",
-       "ipa": "ˈaɪ ˈspɛl ˈðɪs wɝd"
+       "ipa": "ˈaɪ ˈkænt ˈspɛl ˈðɪs ˈwɝd"
       }
      ]
     },
@@ -6785,21 +6918,21 @@ window.BANKS = {
      "level": 3,
      "target": "word",
      "gloss": "字",
-     "ipa": "wɝd",
+     "ipa": "ˈwɝd",
      "steps": [
       {
        "kind": "word",
        "en": "word",
        "zh": "字",
        "src": "3-103",
-       "ipa": "wɝd"
+       "ipa": "ˈwɝd"
       },
       {
        "kind": "phrase",
        "en": "a word",
        "zh": "一個字",
        "src": "table",
-       "ipa": "ə wɝd"
+       "ipa": "ə ˈwɝd"
       },
       {
        "kind": "word",
@@ -6813,7 +6946,7 @@ window.BANKS = {
        "en": "We learned five new words in the class.",
        "zh": "這堂課我們學了五個新單字",
        "src": "3-103",
-       "ipa": "ˈwiː lɝnd ˈfaɪv ˈnuː wɝdz ɪn ðə ˈklæs"
+       "ipa": "ˈwiː ˈlɝnd ˈfaɪv ˈnuː ˈwɝdz ɪn ðə ˈklæs"
       }
      ]
     },
@@ -6859,28 +6992,28 @@ window.BANKS = {
      "level": 4,
      "target": "copy",
      "gloss": "複製",
-     "ipa": "ˈkɑːpiː",
+     "ipa": "ˈkɑːpi",
      "steps": [
       {
        "kind": "word",
        "en": "copy",
        "zh": "複製",
        "src": "4-025",
-       "ipa": "ˈkɑːpiː"
+       "ipa": "ˈkɑːpi"
       },
       {
        "kind": "phrase",
        "en": "copy her",
        "zh": "抄她的",
        "src": "table",
-       "ipa": "ˈkɑːpiː hɝ"
+       "ipa": "ˈkɑːpi ˈhɝ"
       },
       {
        "kind": "sentence",
        "en": "You can't copy her homework.",
        "zh": "你不能抄她的作業",
        "src": "4-025",
-       "ipa": "ˈjuː ˈkɑːpiː hɝ ˈhoʊmwɝk"
+       "ipa": "ˈjuː ˈkænt ˈkɑːpi ˈhɝ ˈhoʊˌmwɝk"
       }
      ]
     },
@@ -6889,21 +7022,21 @@ window.BANKS = {
      "level": 4,
      "target": "correct",
      "gloss": "正確的",
-     "ipa": "ˈkɚɛkt",
+     "ipa": "kɚˈɛkt",
      "steps": [
       {
        "kind": "word",
        "en": "correct",
        "zh": "正確的",
        "src": "4-026",
-       "ipa": "ˈkɚɛkt"
+       "ipa": "kɚˈɛkt"
       },
       {
        "kind": "phrase",
        "en": "a correct",
        "zh": "一個正確的",
        "src": "table",
-       "ipa": "ə ˈkɚɛkt"
+       "ipa": "ə kɚˈɛkt"
       },
       {
        "kind": "word",
@@ -6917,7 +7050,7 @@ window.BANKS = {
        "en": "The answer is correct.",
        "zh": "這答案是正確的",
        "src": "4-026",
-       "ipa": "ðə ˈænsɚ ˈɪz ˈkɚɛkt"
+       "ipa": "ðə ˈænsɚ ˈɪz kɚˈɛkt"
       }
      ]
     },
@@ -6947,14 +7080,14 @@ window.BANKS = {
        "en": "afraid",
        "zh": "害怕",
        "src": "5-004",
-       "ipa": "ˈəfɹeɪd"
+       "ipa": "əˈfɹeɪd"
       },
       {
        "kind": "sentence",
        "en": "I'm afraid I'll fail the exam.",
        "zh": "我怕考試會不及格",
        "src": "4-036",
-       "ipa": "ˈəfɹeɪd ˈfeɪl ðə ɪˈɡzæm"
+       "ipa": "ˈaɪm əˈfɹeɪd ˈaɪl ˈfeɪl ðə ɪˈɡzæm"
       }
      ]
     },
@@ -6991,7 +7124,7 @@ window.BANKS = {
        "en": "The teacher put us into groups.",
        "zh": "老師把我們分組",
        "src": "4-047",
-       "ipa": "ðə ˈtiːtʃɚ ˈpʊt ʌs ˈɪntuː ˈɡɹuːps"
+       "ipa": "ðə ˈtiːtʃɚ ˈpʊt ˈʌs ˈɪntu ˈɡɹuːps"
       }
      ]
     },
@@ -7010,18 +7143,18 @@ window.BANKS = {
        "ipa": "ˈmɑːɹk"
       },
       {
+       "kind": "phrase",
+       "en": "mark this part",
+       "zh": "標記這個部分",
+       "src": "table",
+       "ipa": "ˈmɑːɹk ˈðɪs ˈpɑːɹt"
+      },
+      {
        "kind": "word",
        "en": "part",
        "zh": "部分",
        "src": "4-075",
        "ipa": "ˈpɑːɹt"
-      },
-      {
-       "kind": "word",
-       "en": "paper",
-       "zh": "紙",
-       "src": "4-074",
-       "ipa": "ˈpeɪpɚ"
       },
       {
        "kind": "sentence",
@@ -7065,7 +7198,7 @@ window.BANKS = {
        "en": "Please turn to page eight.",
        "zh": "請翻到第八頁",
        "src": "4-073",
-       "ipa": "ˈpliːz tɝn ˈtuː ˈpeɪdʒ ˈeɪt"
+       "ipa": "ˈpliːz ˈtɝn ˈtuː ˈpeɪdʒ ˈeɪt"
       }
      ]
     },
@@ -7125,7 +7258,7 @@ window.BANKS = {
        "en": "This is just part of it.",
        "zh": "這只是一部分",
        "src": "4-075",
-       "ipa": "ˈðɪs ˈɪz dʒʌst ˈpɑːɹt ʌv ˈɪt"
+       "ipa": "ˈðɪs ˈɪz ˈdʒʌst ˈpɑːɹt ˈʌv ˈɪt"
       }
      ]
     },
@@ -7155,7 +7288,7 @@ window.BANKS = {
        "en": "Many children spent their afternoon on the playground.",
        "zh": "很多小孩下午待在操場",
        "src": "4-077",
-       "ipa": "ˈmɛniː ˈtʃɪldɹən ˈspɛnt ˈðɛɹ ˌæˈftɚnuːn ˈɑːn ðə ˈpleɪˌɡɹaʊnd"
+       "ipa": "ˈmɛni ˈtʃɪldɹən ˈspɛnt ˈðɛɹ ˌæftɚˈnuːn ˈɑːn ðə ˈpleɪˌɡɹaʊnd"
       }
      ]
     },
@@ -7259,7 +7392,7 @@ window.BANKS = {
        "en": "Do you like this type of car?",
        "zh": "你喜歡這類型的車嗎",
        "src": "4-124",
-       "ipa": "ˈduː ˈjuː ˈlaɪk ˈðɪs ˈtaɪp ʌv ˈkɑːɹ"
+       "ipa": "ˈduː ˈjuː ˈlaɪk ˈðɪs ˈtaɪp ˈʌv ˈkɑːɹ"
       }
      ]
     },
@@ -7356,7 +7489,7 @@ window.BANKS = {
        "en": "Who's on the list?",
        "zh": "誰在名單上",
        "src": "5-074",
-       "ipa": "ˈɑːn ðə ˈlɪst"
+       "ipa": "ˈhuːz ˈɑːn ðə ˈlɪst"
       }
      ]
     },
@@ -7412,18 +7545,18 @@ window.BANKS = {
        "ipa": "ˈmjuːzɪk"
       },
       {
+       "kind": "phrase",
+       "en": "listened to music",
+       "zh": "聽音樂",
+       "src": "table",
+       "ipa": "ˈlɪsənd ˈtuː ˈmjuːzɪk"
+      },
+      {
        "kind": "word",
        "en": "during",
        "zh": "在…期間",
        "src": "6-083",
        "ipa": "ˈdʊɹɪŋ"
-      },
-      {
-       "kind": "word",
-       "en": "break",
-       "zh": "休息",
-       "src": "4-016",
-       "ipa": "ˈbɹeɪk"
       },
       {
        "kind": "sentence",
@@ -7447,6 +7580,13 @@ window.BANKS = {
        "zh": "通過",
        "src": "5-101",
        "ipa": "ˈpæs"
+      },
+      {
+       "kind": "phrase",
+       "en": "passed the test",
+       "zh": "通過考試",
+       "src": "table",
+       "ipa": "ˈpæst ðə ˈtɛst"
       },
       {
        "kind": "word",
@@ -7490,14 +7630,14 @@ window.BANKS = {
        "en": "Friday",
        "zh": "星期五",
        "src": "5-056",
-       "ipa": "ˈfɹaɪdiː"
+       "ipa": "ˈfɹaɪdi"
       },
       {
        "kind": "sentence",
        "en": "Do you have any plans this Friday night?",
        "zh": "你這週五晚上有計畫嗎",
        "src": "5-108",
-       "ipa": "ˈduː ˈjuː ˈhæv ˈɛniː ˈplænz ˈðɪs ˈfɹaɪdiː ˈnaɪt"
+       "ipa": "ˈduː ˈjuː ˈhæv ˈɛni ˈplænz ˈðɪs ˈfɹaɪdi ˈnaɪt"
       }
      ]
     },
@@ -7506,21 +7646,21 @@ window.BANKS = {
      "level": 5,
      "target": "prepare",
      "gloss": "準備",
-     "ipa": "pɹiːˈpɛɹ",
+     "ipa": "pɹiˈpɛɹ",
      "steps": [
       {
        "kind": "word",
        "en": "prepare",
        "zh": "準備",
        "src": "5-112",
-       "ipa": "pɹiːˈpɛɹ"
+       "ipa": "pɹiˈpɛɹ"
       },
       {
        "kind": "phrase",
        "en": "prepare for",
        "zh": "為…做準備",
        "src": "table",
-       "ipa": "pɹiːˈpɛɹ ˈfɔːɹ"
+       "ipa": "pɹiˈpɛɹ ˈfɔːɹ"
       },
       {
        "kind": "word",
@@ -7534,7 +7674,7 @@ window.BANKS = {
        "en": "Many students go to the library to prepare for the test.",
        "zh": "很多學生去圖書館準備考試",
        "src": "5-112",
-       "ipa": "ˈmɛniː ˈstuːdənts ˈɡoʊ ˈtuː ðə ˈlaɪbɹɛˌɹiː ˈtuː pɹiːˈpɛɹ ˈfɔːɹ ðə ˈtɛst"
+       "ipa": "ˈmɛni ˈstuːdənts ˈɡoʊ ˈtuː ðə ˈlaɪbɹɛˌɹiː ˈtuː pɹiˈpɛɹ ˈfɔːɹ ðə ˈtɛst"
       }
      ]
     },
@@ -7601,7 +7741,7 @@ window.BANKS = {
        "en": "We will have a math quiz tomorrow.",
        "zh": "我們在明天有一個數學小考",
        "src": "5-127",
-       "ipa": "ˈwiː ˈwɪl ˈhæv ə ˈmæθ ˈkwɪz ˈtəmɑːˌɹoʊ"
+       "ipa": "ˈwiː ˈwɪl ˈhæv ə ˈmæθ ˈkwɪz təˈmɑːˌɹoʊ"
       }
      ]
     },
@@ -7624,7 +7764,7 @@ window.BANKS = {
        "en": "front row",
        "zh": "前排",
        "src": "table",
-       "ipa": "fɹʌnt ˈɹoʊ"
+       "ipa": "ˈfɹʌnt ˈɹoʊ"
       },
       {
        "kind": "sentence",
@@ -7661,14 +7801,14 @@ window.BANKS = {
        "en": "brother",
        "zh": "兄弟",
        "src": "2-009",
-       "ipa": "bɹʌðɚ"
+       "ipa": "ˈbɹʌðɚ"
       },
       {
        "kind": "sentence",
        "en": "My brother teaches English at a senior high school.",
        "zh": "我哥哥在一所高中教英文",
        "src": "5-144",
-       "ipa": "ˈmaɪ bɹʌðɚ ˈtiːtʃəz ˈɪŋɡlɪʃ ˈæt ə ˈsiːnjɚ ˈhaɪ ˈskuːl"
+       "ipa": "ˈmaɪ ˈbɹʌðɚ ˈtiːtʃəz ˈɪŋɡlɪʃ ˈæt ə ˈsiːnjɚ ˈhaɪ ˈskuːl"
       }
      ]
     },
@@ -7735,7 +7875,7 @@ window.BANKS = {
        "en": "I have a test tomorrow.",
        "zh": "我明天有一個考試",
        "src": "5-171",
-       "ipa": "ˈaɪ ˈhæv ə ˈtɛst ˈtəmɑːˌɹoʊ"
+       "ipa": "ˈaɪ ˈhæv ə ˈtɛst təˈmɑːˌɹoʊ"
       }
      ]
     },
@@ -7781,21 +7921,21 @@ window.BANKS = {
      "level": 6,
      "target": "club",
      "gloss": "社團",
-     "ipa": "klʌb",
+     "ipa": "ˈklʌb",
      "steps": [
       {
        "kind": "word",
        "en": "club",
        "zh": "社團",
        "src": "6-057",
-       "ipa": "klʌb"
+       "ipa": "ˈklʌb"
       },
       {
        "kind": "phrase",
        "en": "a club",
        "zh": "一個社團",
        "src": "table",
-       "ipa": "ə klʌb"
+       "ipa": "ə ˈklʌb"
       },
       {
        "kind": "word",
@@ -7809,7 +7949,7 @@ window.BANKS = {
        "en": "What club will you join?",
        "zh": "你會加入什麼社團呢",
        "src": "6-057",
-       "ipa": "wʌt klʌb ˈwɪl ˈjuː ˈdʒɔɪn"
+       "ipa": "ˈwʌt ˈklʌb ˈwɪl ˈjuː ˈdʒɔɪn"
       }
      ]
     },
@@ -7818,28 +7958,28 @@ window.BANKS = {
      "level": 6,
      "target": "dictionary",
      "gloss": "字典",
-     "ipa": "ˈdɪˌkʃənɛɹiː",
+     "ipa": "ˈdɪkʃəˌnɛɹi",
      "steps": [
       {
        "kind": "word",
        "en": "dictionary",
        "zh": "字典",
        "src": "6-074",
-       "ipa": "ˈdɪˌkʃənɛɹiː"
+       "ipa": "ˈdɪkʃəˌnɛɹi"
       },
       {
        "kind": "phrase",
        "en": "a dictionary",
        "zh": "一本字典",
        "src": "table",
-       "ipa": "ə ˈdɪˌkʃənɛɹiː"
+       "ipa": "ə ˈdɪkʃəˌnɛɹi"
       },
       {
        "kind": "sentence",
        "en": "You can look up these words in a dictionary.",
        "zh": "你可以用字典查這些字",
        "src": "6-074",
-       "ipa": "ˈjuː ˈkæn ˈlʊk ʌp ˈðiːz wɝdz ɪn ə ˈdɪˌkʃənɛɹiː"
+       "ipa": "ˈjuː ˈkæn ˈlʊk ˈʌp ˈðiːz ˈwɝdz ɪn ə ˈdɪkʃəˌnɛɹi"
       }
      ]
     },
@@ -7848,21 +7988,21 @@ window.BANKS = {
      "level": 6,
      "target": "elementary school",
      "gloss": "小學",
-     "ipa": "ˌɛˈləmɛntɹiː ˈskuːl",
+     "ipa": "ˌɛləˈmɛntɹi ˈskuːl",
      "steps": [
       {
        "kind": "word",
        "en": "elementary school",
        "zh": "小學",
        "src": "6-088",
-       "ipa": "ˌɛˈləmɛntɹiː ˈskuːl"
+       "ipa": "ˌɛləˈmɛntɹi ˈskuːl"
       },
       {
        "kind": "phrase",
        "en": "elementary school",
        "zh": "小學",
        "src": "table",
-       "ipa": "ˌɛˈləmɛntɹiː ˈskuːl"
+       "ipa": "ˌɛləˈmɛntɹi ˈskuːl"
       },
       {
        "kind": "word",
@@ -7876,7 +8016,7 @@ window.BANKS = {
        "en": "There are six grades in elementary school.",
        "zh": "小學有六個年級",
        "src": "6-088",
-       "ipa": "ˈðɛɹ ˈɑːɹ ˈsɪks ˈɡɹeɪdz ɪn ˌɛˈləmɛntɹiː ˈskuːl"
+       "ipa": "ˈðɛɹ ˈɑːɹ ˈsɪks ˈɡɹeɪdz ɪn ˌɛləˈmɛntɹi ˈskuːl"
       }
      ]
     },
@@ -7906,7 +8046,7 @@ window.BANKS = {
        "en": "I'll give you some examples.",
        "zh": "我會給你一些例子",
        "src": "6-096",
-       "ipa": "ˈɡɪv ˈjuː sʌm ɪˈɡzæmpəlz"
+       "ipa": "ˈaɪl ˈɡɪv ˈjuː ˈsʌm ɪˈɡzæmpəlz"
       }
      ]
     },
@@ -7915,21 +8055,21 @@ window.BANKS = {
      "level": 6,
      "target": "hard-working",
      "gloss": "勤奮的",
-     "ipa": "ˈhɑːɹd wɝkɪŋ",
+     "ipa": "ˈhɑːɹd ˈwɝkɪŋ",
      "steps": [
       {
        "kind": "word",
        "en": "hard-working",
        "zh": "勤奮的",
        "src": "6-130",
-       "ipa": "ˈhɑːɹd wɝkɪŋ"
+       "ipa": "ˈhɑːɹd ˈwɝkɪŋ"
       },
       {
        "kind": "phrase",
-       "en": "study hard",
-       "zh": "努力用功",
+       "en": "a hard-working",
+       "zh": "一個勤勞的",
        "src": "table",
-       "ipa": "stʌdiː ˈhɑːɹd"
+       "ipa": "ə ˈhɑːɹd ˈwɝkɪŋ"
       },
       {
        "kind": "word",
@@ -7943,7 +8083,7 @@ window.BANKS = {
        "en": "Our leader is a hard-working person.",
        "zh": "我們的領導人很努力工作",
        "src": "6-130",
-       "ipa": "ˈaʊɚ ˈliːdɚ ˈɪz ə ˈhɑːɹd wɝkɪŋ pɝsən"
+       "ipa": "ˈaʊɚ ˈliːdɚ ˈɪz ə ˈhɑːɹd ˈwɝkɪŋ ˈpɝsən"
       }
      ]
     },
@@ -7952,21 +8092,21 @@ window.BANKS = {
      "level": 6,
      "target": "history",
      "gloss": "歷史",
-     "ipa": "ˈhɪstɚiː",
+     "ipa": "ˈhɪstɚi",
      "steps": [
       {
        "kind": "word",
        "en": "history",
        "zh": "歷史",
        "src": "6-138",
-       "ipa": "ˈhɪstɚiː"
+       "ipa": "ˈhɪstɚi"
       },
       {
        "kind": "phrase",
        "en": "the history of",
        "zh": "…的歷史",
        "src": "table",
-       "ipa": "ðə ˈhɪstɚiː ʌv"
+       "ipa": "ðə ˈhɪstɚi ˈʌv"
       },
       {
        "kind": "word",
@@ -7980,7 +8120,7 @@ window.BANKS = {
        "en": "We have to learn the history of Taiwan.",
        "zh": "我們必須學習台灣歷史",
        "src": "6-138",
-       "ipa": "ˈwiː ˈhæv ˈtuː lɝn ðə ˈhɪstɚiː ʌv ˈtaɪˈwɑːn"
+       "ipa": "ˈwiː ˈhæv ˈtuː ˈlɝn ðə ˈhɪstɚi ˈʌv ˈtaɪˈwɑːn"
       }
      ]
     },
@@ -8017,7 +8157,7 @@ window.BANKS = {
        "en": "My younger sister goes to junior high school now.",
        "zh": "我的妹妹現在讀國中",
        "src": "6-154",
-       "ipa": "ˈmaɪ jʌŋɡɚ ˈsɪstɚ ˈɡoʊz ˈtuː ˈdʒuːnjɚ ˈhaɪ ˈskuːl ˈnaʊ"
+       "ipa": "ˈmaɪ ˈjʌŋɡɚ ˈsɪstɚ ˈɡoʊz ˈtuː ˈdʒuːnjɚ ˈhaɪ ˈskuːl ˈnaʊ"
       }
      ]
     },
@@ -8107,21 +8247,21 @@ window.BANKS = {
        "en": "copy and paste",
        "zh": "複製貼上",
        "src": "table",
-       "ipa": "ˈkɑːpiː ənd ˈpeɪst"
+       "ipa": "ˈkɑːpi ənd ˈpeɪst"
       },
       {
        "kind": "word",
        "en": "copy",
        "zh": "複製",
        "src": "4-025",
-       "ipa": "ˈkɑːpiː"
+       "ipa": "ˈkɑːpi"
       },
       {
        "kind": "sentence",
        "en": "You can just copy and paste those sentences.",
        "zh": "你就把那些句子複製貼上就好了",
        "src": "6-202",
-       "ipa": "ˈjuː ˈkæn dʒʌst ˈkɑːpiː ənd ˈpeɪst ˈðoʊz ˈsɛntənsəz"
+       "ipa": "ˈjuː ˈkæn ˈdʒʌst ˈkɑːpi ənd ˈpeɪst ˈðoʊz ˈsɛntənsəz"
       }
      ]
     },
@@ -8138,6 +8278,13 @@ window.BANKS = {
        "zh": "科學",
        "src": "6-227",
        "ipa": "ˈsaɪəns"
+      },
+      {
+       "kind": "phrase",
+       "en": "is interesting",
+       "zh": "很有趣",
+       "src": "table",
+       "ipa": "ˈɪz ˈɪntɹəstɪŋ"
       },
       {
        "kind": "word",
@@ -8168,21 +8315,21 @@ window.BANKS = {
      "level": 1,
      "target": "lunch",
      "gloss": "午餐",
-     "ipa": "lʌntʃ",
+     "ipa": "ˈlʌntʃ",
      "steps": [
       {
        "kind": "word",
        "en": "lunch",
        "zh": "午餐",
        "src": "1-039",
-       "ipa": "lʌntʃ"
+       "ipa": "ˈlʌntʃ"
       },
       {
        "kind": "phrase",
        "en": "a big lunch",
        "zh": "一頓大午餐",
        "src": "table",
-       "ipa": "ə ˈbɪɡ lʌntʃ"
+       "ipa": "ə ˈbɪɡ ˈlʌntʃ"
       },
       {
        "kind": "word",
@@ -8196,7 +8343,7 @@ window.BANKS = {
        "en": "Let's go get some lunch.",
        "zh": "我們去吃午餐吧",
        "src": "1-039",
-       "ipa": "ˈɡoʊ ˈɡɛt sʌm lʌntʃ"
+       "ipa": "ˈlɛts ˈɡoʊ ˈɡɛt ˈsʌm ˈlʌntʃ"
       }
      ]
     },
@@ -8233,7 +8380,7 @@ window.BANKS = {
        "en": "More people don't eat meat today.",
        "zh": "現在更多人不吃肉",
        "src": "1-040",
-       "ipa": "ˈmɔːɹ ˈpiːpəl ˈiːt ˈmiːt ˈtədeɪ"
+       "ipa": "ˈmɔːɹ ˈpiːpəl ˈdoʊnt ˈiːt ˈmiːt təˈdeɪ"
       }
      ]
     },
@@ -8307,7 +8454,7 @@ window.BANKS = {
        "en": "Drink more water when you're sick.",
        "zh": "生病時要喝更多水",
        "src": "1-080",
-       "ipa": "ˈdɹɪŋk ˈmɔːɹ ˈwɔːtɚ ˈwɛn ˈsɪk"
+       "ipa": "ˈdɹɪŋk ˈmɔːɹ ˈwɔːtɚ ˈwɛn ˈjʊɹ ˈsɪk"
       }
      ]
     },
@@ -8344,7 +8491,7 @@ window.BANKS = {
        "en": "An apple a day keeps the doctor away.",
        "zh": "一天一蘋果，醫生遠離我",
        "src": "2-003",
-       "ipa": "ˈæn ˈæpəl ə ˈdeɪ ˈkiːps ðə ˈdɑːktɚ ˈəweɪ"
+       "ipa": "ˈæn ˈæpəl ə ˈdeɪ ˈkiːps ðə ˈdɑːktɚ əˈweɪ"
       }
      ]
     },
@@ -8367,7 +8514,7 @@ window.BANKS = {
        "en": "birthday cake",
        "zh": "生日蛋糕",
        "src": "table",
-       "ipa": "ˌbɝθdeɪ ˈkeɪk"
+       "ipa": "ˈbɝˌθdeɪ ˈkeɪk"
       },
       {
        "kind": "word",
@@ -8381,7 +8528,7 @@ window.BANKS = {
        "en": "I want strawberries on my cake.",
        "zh": "我想要蛋糕上有草莓",
        "src": "2-011",
-       "ipa": "ˈaɪ ˈwɑːnt ˈstɹɔːˌbɛɹiːz ˈɑːn ˈmaɪ ˈkeɪk"
+       "ipa": "ˈaɪ ˈwɑːnt ˈstɹɔːˌbɛɹiz ˈɑːn ˈmaɪ ˈkeɪk"
       }
      ]
     },
@@ -8390,21 +8537,21 @@ window.BANKS = {
      "level": 2,
      "target": "candy",
      "gloss": "糖果",
-     "ipa": "ˈkændiː",
+     "ipa": "ˈkændi",
      "steps": [
       {
        "kind": "word",
        "en": "candy",
        "zh": "糖果",
        "src": "2-012",
-       "ipa": "ˈkændiː"
+       "ipa": "ˈkændi"
       },
       {
        "kind": "phrase",
-       "en": "a candy",
-       "zh": "一顆糖",
+       "en": "like to eat",
+       "zh": "喜歡吃",
        "src": "table",
-       "ipa": "ə ˈkændiː"
+       "ipa": "ˈlaɪk ˈtuː ˈiːt"
       },
       {
        "kind": "word",
@@ -8418,7 +8565,7 @@ window.BANKS = {
        "en": "Kids like to eat candy.",
        "zh": "小孩喜歡吃糖果",
        "src": "2-012",
-       "ipa": "ˈkɪdz ˈlaɪk ˈtuː ˈiːt ˈkændiː"
+       "ipa": "ˈkɪdz ˈlaɪk ˈtuː ˈiːt ˈkændi"
       }
      ]
     },
@@ -8455,7 +8602,7 @@ window.BANKS = {
        "en": "Americans like to drink cola.",
        "zh": "美國人喜歡喝可樂",
        "src": "2-016",
-       "ipa": "ˈəmɛɹəkənz ˈlaɪk ˈtuː ˈdɹɪŋk ˈkoʊlə"
+       "ipa": "əˈmɛɹəkənz ˈlaɪk ˈtuː ˈdɹɪŋk ˈkoʊlə"
       }
      ]
     },
@@ -8472,6 +8619,13 @@ window.BANKS = {
        "zh": "吃",
        "src": "2-022",
        "ipa": "ˈiːt"
+      },
+      {
+       "kind": "phrase",
+       "en": "like to eat",
+       "zh": "喜歡吃",
+       "src": "table",
+       "ipa": "ˈlaɪk ˈtuː ˈiːt"
       },
       {
        "kind": "word",
@@ -8504,11 +8658,18 @@ window.BANKS = {
        "ipa": "ˈfɹaɪ"
       },
       {
+       "kind": "phrase",
+       "en": "fries eggs",
+       "zh": "炒蛋",
+       "src": "table",
+       "ipa": "ˈfɹaɪz ˈɛɡz"
+      },
+      {
        "kind": "sentence",
        "en": "Mom sometimes fries eggs in the morning.",
        "zh": "媽媽有時早上會炒蛋",
        "src": "2-028",
-       "ipa": "ˈmɑːm ˈsəmtaɪmz ˈfɹaɪz ˈɛɡz ɪn ðə ˈmɔːɹnɪŋ"
+       "ipa": "ˈmɑːm səˈmtaɪmz ˈfɹaɪz ˈɛɡz ɪn ðə ˈmɔːɹnɪŋ"
       }
      ]
     },
@@ -8561,7 +8722,7 @@ window.BANKS = {
        "en": "a bowl of rice",
        "zh": "一碗飯",
        "src": "table",
-       "ipa": "ə ˈboʊl ʌv ˈɹaɪs"
+       "ipa": "ə ˈboʊl ˈʌv ˈɹaɪs"
       },
       {
        "kind": "word",
@@ -8575,7 +8736,7 @@ window.BANKS = {
        "en": "Chinese people eat much rice.",
        "zh": "中國人以米為主食",
        "src": "2-065",
-       "ipa": "tʃaɪˈniːz ˈpiːpəl ˈiːt mʌtʃ ˈɹaɪs"
+       "ipa": "tʃaɪˈniːz ˈpiːpəl ˈiːt ˈmʌtʃ ˈɹaɪs"
       }
      ]
     },
@@ -8584,21 +8745,21 @@ window.BANKS = {
      "level": 3,
      "target": "banana",
      "gloss": "香蕉",
-     "ipa": "ˈbənænə",
+     "ipa": "bəˈnænə",
      "steps": [
       {
        "kind": "word",
        "en": "banana",
        "zh": "香蕉",
        "src": "3-005",
-       "ipa": "ˈbənænə"
+       "ipa": "bəˈnænə"
       },
       {
        "kind": "phrase",
        "en": "a banana",
        "zh": "一根香蕉",
        "src": "table",
-       "ipa": "ə ˈbənænə"
+       "ipa": "ə bəˈnænə"
       },
       {
        "kind": "word",
@@ -8612,7 +8773,7 @@ window.BANKS = {
        "en": "Monkeys like bananas.",
        "zh": "猴子喜歡香蕉",
        "src": "3-005",
-       "ipa": "mʌŋkiːz ˈlaɪk ˈbənænəz"
+       "ipa": "ˈmʌŋkiz ˈlaɪk bəˈnænəz"
       }
      ]
     },
@@ -8621,21 +8782,21 @@ window.BANKS = {
      "level": 3,
      "target": "cookie",
      "gloss": "餅乾",
-     "ipa": "ˈkʊkiː",
+     "ipa": "ˈkʊki",
      "steps": [
       {
        "kind": "word",
        "en": "cookie",
        "zh": "餅乾",
        "src": "3-021",
-       "ipa": "ˈkʊkiː"
+       "ipa": "ˈkʊki"
       },
       {
        "kind": "phrase",
        "en": "bake cookies",
        "zh": "烤餅乾",
        "src": "table",
-       "ipa": "ˈbeɪk ˈkʊkiːz"
+       "ipa": "ˈbeɪk ˈkʊkiz"
       },
       {
        "kind": "word",
@@ -8649,7 +8810,7 @@ window.BANKS = {
        "en": "My mom can bake cookies.",
        "zh": "我的媽媽會烤餅乾",
        "src": "3-021",
-       "ipa": "ˈmaɪ ˈmɑːm ˈkæn ˈbeɪk ˈkʊkiːz"
+       "ipa": "ˈmaɪ ˈmɑːm ˈkæn ˈbeɪk ˈkʊkiz"
       }
      ]
     },
@@ -8686,7 +8847,7 @@ window.BANKS = {
        "en": "Drink more water in summer.",
        "zh": "夏天要喝更多水",
        "src": "3-028",
-       "ipa": "ˈdɹɪŋk ˈmɔːɹ ˈwɔːtɚ ɪn sʌmɚ"
+       "ipa": "ˈdɹɪŋk ˈmɔːɹ ˈwɔːtɚ ɪn ˈsʌmɚ"
       }
      ]
     },
@@ -8723,7 +8884,7 @@ window.BANKS = {
        "en": "They sell French fries at McDonald's.",
        "zh": "麥當勞裡有賣薯條",
        "src": "3-035",
-       "ipa": "ˈðeɪ ˈsɛl ˈfɹɛntʃ ˈfɹaɪz ˈæt"
+       "ipa": "ˈðeɪ ˈsɛl ˈfɹɛntʃ ˈfɹaɪz ˈæt məˈkdɑːnəldz"
       }
      ]
     },
@@ -8760,7 +8921,7 @@ window.BANKS = {
        "en": "Would you like some juice?",
        "zh": "你要來些果汁嗎",
        "src": "3-055",
-       "ipa": "ˈwʊd ˈjuː ˈlaɪk sʌm ˈdʒuːs"
+       "ipa": "ˈwʊd ˈjuː ˈlaɪk ˈsʌm ˈdʒuːs"
       }
      ]
     },
@@ -8806,21 +8967,21 @@ window.BANKS = {
      "level": 3,
      "target": "menu",
      "gloss": "菜單",
-     "ipa": "ˈmɛnjuː",
+     "ipa": "ˈmɛnju",
      "steps": [
       {
        "kind": "word",
        "en": "menu",
        "zh": "菜單",
        "src": "3-071",
-       "ipa": "ˈmɛnjuː"
+       "ipa": "ˈmɛnju"
       },
       {
        "kind": "phrase",
        "en": "a menu",
        "zh": "一份菜單",
        "src": "table",
-       "ipa": "ə ˈmɛnjuː"
+       "ipa": "ə ˈmɛnju"
       },
       {
        "kind": "word",
@@ -8834,7 +8995,7 @@ window.BANKS = {
        "en": "Check the menu.",
        "zh": "看一下菜單",
        "src": "3-071",
-       "ipa": "ˈtʃɛk ðə ˈmɛnjuː"
+       "ipa": "ˈtʃɛk ðə ˈmɛnju"
       }
      ]
     },
@@ -8864,7 +9025,7 @@ window.BANKS = {
        "en": "You put too much salt in the noodles.",
        "zh": "你在麵裡放太多鹽了",
        "src": "3-088",
-       "ipa": "ˈjuː ˈpʊt ˈtuː mʌtʃ ˈsɔːlt ɪn ðə ˈnuːdəlz"
+       "ipa": "ˈjuː ˈpʊt ˈtuː ˈmʌtʃ ˈsɔːlt ɪn ðə ˈnuːdəlz"
       }
      ]
     },
@@ -8873,14 +9034,14 @@ window.BANKS = {
      "level": 3,
      "target": "watermelon",
      "gloss": "西瓜",
-     "ipa": "ˈwɔːˌtɚmɛlən",
+     "ipa": "ˈwɔːtɚˌmɛlən",
      "steps": [
       {
        "kind": "word",
        "en": "watermelon",
        "zh": "西瓜",
        "src": "3-101",
-       "ipa": "ˈwɔːˌtɚmɛlən"
+       "ipa": "ˈwɔːtɚˌmɛlən"
       },
       {
        "kind": "phrase",
@@ -8901,7 +9062,7 @@ window.BANKS = {
        "en": "We eat a lot of watermelon in summer.",
        "zh": "我們在夏天吃很多西瓜",
        "src": "3-101",
-       "ipa": "ˈwiː ˈiːt ə ˈlɑːt ʌv ˈwɔːˌtɚmɛlən ɪn sʌmɚ"
+       "ipa": "ˈwiː ˈiːt ə ˈlɑːt ˈʌv ˈwɔːtɚˌmɛlən ɪn ˈsʌmɚ"
       }
      ]
     },
@@ -8938,7 +9099,7 @@ window.BANKS = {
        "en": "Anna doesn't like beans.",
        "zh": "Anna不喜歡豆子",
        "src": "4-008",
-       "ipa": "ˈænə ˈlaɪk ˈbiːnz"
+       "ipa": "ˈænə ˈdʌzənt ˈlaɪk ˈbiːnz"
       }
      ]
     },
@@ -8975,7 +9136,7 @@ window.BANKS = {
        "en": "I need some fresh air.",
        "zh": "我需要一些新鮮空氣",
        "src": "4-043",
-       "ipa": "ˈaɪ ˈniːd sʌm ˈfɹɛʃ ˈɛɹ"
+       "ipa": "ˈaɪ ˈniːd ˈsʌm ˈfɹɛʃ ˈɛɹ"
       }
      ]
     },
@@ -8984,28 +9145,28 @@ window.BANKS = {
      "level": 4,
      "target": "honey",
      "gloss": "蜂蜜",
-     "ipa": "hʌniː",
+     "ipa": "ˈhʌni",
      "steps": [
       {
        "kind": "word",
        "en": "honey",
        "zh": "蜂蜜",
        "src": "4-049",
-       "ipa": "hʌniː"
+       "ipa": "ˈhʌni"
       },
       {
        "kind": "phrase",
        "en": "a honey",
        "zh": "一份蜂蜜",
        "src": "table",
-       "ipa": "ə hʌniː"
+       "ipa": "ə ˈhʌni"
       },
       {
        "kind": "sentence",
        "en": "Bees love honey.",
        "zh": "蜜蜂喜歡蜂蜜",
        "src": "4-049",
-       "ipa": "ˈbiːz lʌv hʌniː"
+       "ipa": "ˈbiːz ˈlʌv ˈhʌni"
       }
      ]
     },
@@ -9014,21 +9175,21 @@ window.BANKS = {
      "level": 4,
      "target": "restaurant",
      "gloss": "餐廳",
-     "ipa": "ˈɹɛˌstɚɑːnt",
+     "ipa": "ˈɹɛstɚˌɑːnt",
      "steps": [
       {
        "kind": "word",
        "en": "restaurant",
        "zh": "餐廳",
        "src": "4-080",
-       "ipa": "ˈɹɛˌstɚɑːnt"
+       "ipa": "ˈɹɛstɚˌɑːnt"
       },
       {
        "kind": "phrase",
        "en": "a good restaurant",
        "zh": "一家好餐廳",
        "src": "table",
-       "ipa": "ə ˈɡʊd ˈɹɛˌstɚɑːnt"
+       "ipa": "ə ˈɡʊd ˈɹɛstɚˌɑːnt"
       },
       {
        "kind": "word",
@@ -9042,7 +9203,7 @@ window.BANKS = {
        "en": "A new restaurant will be opened two blocks away from the park.",
        "zh": "離公園兩個街區外即將開一間新餐廳",
        "src": "4-080",
-       "ipa": "ə ˈnuː ˈɹɛˌstɚɑːnt ˈwɪl ˈbiː ˈoʊpənd ˈtuː ˈblɑːks ˈəweɪ fɹʌm ðə ˈpɑːɹk"
+       "ipa": "ə ˈnuː ˈɹɛstɚˌɑːnt ˈwɪl ˈbiː ˈoʊpənd ˈtuː ˈblɑːks əˈweɪ ˈfɹʌm ðə ˈpɑːɹk"
       }
      ]
     },
@@ -9079,7 +9240,7 @@ window.BANKS = {
        "en": "Don't eat too many snacks before dinner.",
        "zh": "別在晚餐前吃太多點心",
        "src": "4-098",
-       "ipa": "ˈiːt ˈtuː ˈmɛniː ˈsnæks bɪˈfɔːɹ ˈdɪnɚ"
+       "ipa": "ˈdoʊnt ˈiːt ˈtuː ˈmɛni ˈsnæks bɪˈfɔːɹ ˈdɪnɚ"
       }
      ]
     },
@@ -9153,7 +9314,7 @@ window.BANKS = {
        "en": "Do you want sugar in your coffee?",
        "zh": "你的咖啡要加糖嗎",
        "src": "4-111",
-       "ipa": "ˈduː ˈjuː ˈwɑːnt ˈʃʊɡɚ ɪn ˈjɔːɹ ˈkɑːfiː"
+       "ipa": "ˈduː ˈjuː ˈwɑːnt ˈʃʊɡɚ ɪn ˈjɔːɹ ˈkɑːfi"
       }
      ]
     },
@@ -9239,6 +9400,13 @@ window.BANKS = {
        "ipa": "ˈbeɪk"
       },
       {
+       "kind": "phrase",
+       "en": "bakes a cake",
+       "zh": "烤一個蛋糕",
+       "src": "table",
+       "ipa": "ˈbeɪks ə ˈkeɪk"
+      },
+      {
        "kind": "word",
        "en": "always",
        "zh": "總是",
@@ -9246,18 +9414,11 @@ window.BANKS = {
        "ipa": "ˈɔːˌlweɪz"
       },
       {
-       "kind": "word",
-       "en": "cake",
-       "zh": "蛋糕",
-       "src": "2-011",
-       "ipa": "ˈkeɪk"
-      },
-      {
        "kind": "sentence",
        "en": "Mom always bakes a cake on my birthday.",
        "zh": "媽媽總會在我生日時烤一個蛋糕",
        "src": "5-013",
-       "ipa": "ˈmɑːm ˈɔːˌlweɪz ˈbeɪks ə ˈkeɪk ˈɑːn ˈmaɪ ˌbɝθdeɪ"
+       "ipa": "ˈmɑːm ˈɔːˌlweɪz ˈbeɪks ə ˈkeɪk ˈɑːn ˈmaɪ ˈbɝˌθdeɪ"
       }
      ]
     },
@@ -9266,21 +9427,21 @@ window.BANKS = {
      "level": 5,
      "target": "butter",
      "gloss": "奶油",
-     "ipa": "bʌtɚ",
+     "ipa": "ˈbʌtɚ",
      "steps": [
       {
        "kind": "word",
        "en": "butter",
        "zh": "奶油",
        "src": "5-024",
-       "ipa": "bʌtɚ"
+       "ipa": "ˈbʌtɚ"
       },
       {
        "kind": "phrase",
        "en": "a butter",
        "zh": "一塊奶油",
        "src": "table",
-       "ipa": "ə bʌtɚ"
+       "ipa": "ə ˈbʌtɚ"
       },
       {
        "kind": "word",
@@ -9294,7 +9455,7 @@ window.BANKS = {
        "en": "Butter makes you fat.",
        "zh": "奶油會使你肥胖",
        "src": "5-024",
-       "ipa": "bʌtɚ ˈmeɪks ˈjuː ˈfæt"
+       "ipa": "ˈbʌtɚ ˈmeɪks ˈjuː ˈfæt"
       }
      ]
     },
@@ -9317,7 +9478,7 @@ window.BANKS = {
        "en": "very delicious",
        "zh": "非常美味",
        "src": "table",
-       "ipa": "ˈvɛɹiː dɪˈlɪʃəs"
+       "ipa": "ˈvɛɹi dɪˈlɪʃəs"
       },
       {
        "kind": "sentence",
@@ -9333,21 +9494,21 @@ window.BANKS = {
      "level": 5,
      "target": "dumpling",
      "gloss": "水餃",
-     "ipa": "dʌmplɪŋ",
+     "ipa": "ˈdʌmplɪŋ",
      "steps": [
       {
        "kind": "word",
        "en": "dumpling",
        "zh": "水餃",
        "src": "5-040",
-       "ipa": "dʌmplɪŋ"
+       "ipa": "ˈdʌmplɪŋ"
       },
       {
        "kind": "phrase",
        "en": "a dumpling",
        "zh": "一個水餃",
        "src": "table",
-       "ipa": "ə dʌmplɪŋ"
+       "ipa": "ə ˈdʌmplɪŋ"
       },
       {
        "kind": "word",
@@ -9361,7 +9522,7 @@ window.BANKS = {
        "en": "I can eat twenty dumplings one time.",
        "zh": "我一次可以吃二十個水餃",
        "src": "5-040",
-       "ipa": "ˈaɪ ˈkæn ˈiːt ˈtwɛntiː dʌmplɪŋz wʌn ˈtaɪm"
+       "ipa": "ˈaɪ ˈkæn ˈiːt ˈtwɛnti ˈdʌmplɪŋz ˈwʌn ˈtaɪm"
       }
      ]
     },
@@ -9398,7 +9559,7 @@ window.BANKS = {
        "en": "We use a fork to eat spaghetti.",
        "zh": "我們用叉子吃義大利麵",
        "src": "5-055",
-       "ipa": "ˈwiː ˈjuːs ə ˈfɔːɹk ˈtuː ˈiːt ˈspəɡɛtiː"
+       "ipa": "ˈwiː ˈjuːs ə ˈfɔːɹk ˈtuː ˈiːt spəˈɡɛti"
       }
      ]
     },
@@ -9454,18 +9615,25 @@ window.BANKS = {
        "ipa": "ˈɔːɹdɚ"
       },
       {
+       "kind": "phrase",
+       "en": "ready to order",
+       "zh": "準備好要點餐",
+       "src": "table",
+       "ipa": "ˈɹɛdi ˈtuː ˈɔːɹdɚ"
+      },
+      {
        "kind": "word",
        "en": "ready",
        "zh": "準備好",
        "src": "6-219",
-       "ipa": "ˈɹɛdiː"
+       "ipa": "ˈɹɛdi"
       },
       {
        "kind": "sentence",
        "en": "Are you ready to order?",
        "zh": "你準備好要點餐了嗎",
        "src": "5-093",
-       "ipa": "ˈɑːɹ ˈjuː ˈɹɛdiː ˈtuː ˈɔːɹdɚ"
+       "ipa": "ˈɑːɹ ˈjuː ˈɹɛdi ˈtuː ˈɔːɹdɚ"
       }
      ]
     },
@@ -9502,7 +9670,7 @@ window.BANKS = {
        "en": "Let's order pizzas.",
        "zh": "我們來點披薩吧",
        "src": "5-107",
-       "ipa": "ˈɔːɹdɚ ˈpiːtsəz"
+       "ipa": "ˈlɛts ˈɔːɹdɚ ˈpiːtsəz"
       }
      ]
     },
@@ -9599,14 +9767,14 @@ window.BANKS = {
        "en": "husband",
        "zh": "丈夫",
        "src": "5-068",
-       "ipa": "hʌzbənd"
+       "ipa": "ˈhʌzbənd"
       },
       {
        "kind": "sentence",
        "en": "Her husband treats her very well.",
        "zh": "她的先生對她很好",
        "src": "5-179",
-       "ipa": "hɝ hʌzbənd ˈtɹiːts hɝ ˈvɛɹiː ˈwɛl"
+       "ipa": "ˈhɝ ˈhʌzbənd ˈtɹiːts ˈhɝ ˈvɛɹi ˈwɛl"
       }
      ]
     },
@@ -9636,14 +9804,14 @@ window.BANKS = {
        "en": "polite",
        "zh": "有禮貌的",
        "src": "3-077",
-       "ipa": "ˈpəlaɪt"
+       "ipa": "pəˈlaɪt"
       },
       {
        "kind": "sentence",
        "en": "That waiter is very polite.",
        "zh": "這個服務生很有禮貌",
        "src": "5-185",
-       "ipa": "ˈðæt ˈweɪtɚ ˈɪz ˈvɛɹiː ˈpəlaɪt"
+       "ipa": "ˈðæt ˈweɪtɚ ˈɪz ˈvɛɹi pəˈlaɪt"
       }
      ]
     },
@@ -9680,7 +9848,7 @@ window.BANKS = {
        "en": "We had three new waitresses in our restaurant.",
        "zh": "我們餐廳有三個新來的女服務生",
        "src": "5-186",
-       "ipa": "ˈwiː ˈhæd ˈθɹiː ˈnuː ˈweɪtɹəsɪz ɪn ˈaʊɚ ˈɹɛˌstɚɑːnt"
+       "ipa": "ˈwiː ˈhæd ˈθɹiː ˈnuː ˈweɪtɹəsɪz ɪn ˈaʊɚ ˈɹɛstɚˌɑːnt"
       }
      ]
     },
@@ -9689,28 +9857,28 @@ window.BANKS = {
      "level": 6,
      "target": "bakery",
      "gloss": "麵包店",
-     "ipa": "ˈbeɪkɚiː",
+     "ipa": "ˈbeɪkɚi",
      "steps": [
       {
        "kind": "word",
        "en": "bakery",
        "zh": "麵包店",
        "src": "6-018",
-       "ipa": "ˈbeɪkɚiː"
+       "ipa": "ˈbeɪkɚi"
       },
       {
        "kind": "phrase",
        "en": "a bakery",
        "zh": "一家麵包店",
        "src": "table",
-       "ipa": "ə ˈbeɪkɚiː"
+       "ipa": "ə ˈbeɪkɚi"
       },
       {
        "kind": "sentence",
        "en": "Let's buy some bread at the bakery.",
        "zh": "我們去麵包店買些麵包吧",
        "src": "6-018",
-       "ipa": "ˈbaɪ sʌm ˈbɹɛd ˈæt ðə ˈbeɪkɚiː"
+       "ipa": "ˈlɛts ˈbaɪ ˈsʌm ˈbɹɛd ˈæt ðə ˈbeɪkɚi"
       }
      ]
     },
@@ -9727,6 +9895,13 @@ window.BANKS = {
        "zh": "沸騰",
        "src": "6-030",
        "ipa": "ˈbɔɪl"
+      },
+      {
+       "kind": "phrase",
+       "en": "is boiling",
+       "zh": "正在沸騰",
+       "src": "table",
+       "ipa": "ˈɪz ˈbɔɪlɪŋ"
       },
       {
        "kind": "word",
@@ -9749,21 +9924,21 @@ window.BANKS = {
      "level": 6,
      "target": "bun",
      "gloss": "小圓麵包",
-     "ipa": "bʌn",
+     "ipa": "ˈbʌn",
      "steps": [
       {
        "kind": "word",
        "en": "bun",
        "zh": "小圓麵包",
        "src": "6-037",
-       "ipa": "bʌn"
+       "ipa": "ˈbʌn"
       },
       {
        "kind": "phrase",
        "en": "a bun",
        "zh": "一個小麵包",
        "src": "table",
-       "ipa": "ə bʌn"
+       "ipa": "ə ˈbʌn"
       },
       {
        "kind": "word",
@@ -9777,7 +9952,7 @@ window.BANKS = {
        "en": "Would you like some buns?",
        "zh": "你要不要來一些小麵包呢",
        "src": "6-037",
-       "ipa": "ˈwʊd ˈjuː ˈlaɪk sʌm bʌnz"
+       "ipa": "ˈwʊd ˈjuː ˈlaɪk ˈsʌm ˈbʌnz"
       }
      ]
     },
@@ -9814,7 +9989,7 @@ window.BANKS = {
        "en": "The little girl eats chocolate every day.",
        "zh": "這個小女孩每天都吃巧克力",
        "src": "6-051",
-       "ipa": "ðə ˈlɪtəl ɡɝl ˈiːts ˈtʃɔːklət ˈɛvɚiː ˈdeɪ"
+       "ipa": "ðə ˈlɪtəl ˈɡɝl ˈiːts ˈtʃɔːklət ˈɛvɚi ˈdeɪ"
       }
      ]
     },
@@ -9860,21 +10035,21 @@ window.BANKS = {
      "level": 6,
      "target": "clerk",
      "gloss": "店員",
-     "ipa": "klɝk",
+     "ipa": "ˈklɝk",
      "steps": [
       {
        "kind": "word",
        "en": "clerk",
        "zh": "店員",
        "src": "6-056",
-       "ipa": "klɝk"
+       "ipa": "ˈklɝk"
       },
       {
        "kind": "phrase",
        "en": "a clerk",
        "zh": "一位店員",
        "src": "table",
-       "ipa": "ə klɝk"
+       "ipa": "ə ˈklɝk"
       },
       {
        "kind": "word",
@@ -9888,7 +10063,7 @@ window.BANKS = {
        "en": "Gary is a clerk at a convenience store.",
        "zh": "Gary是便利商店的店員",
        "src": "6-056",
-       "ipa": "ˈɡɛɹiː ˈɪz ə klɝk ˈæt ə ˈkənviːnjəns ˈstɔːɹ"
+       "ipa": "ˈɡɛɹi ˈɪz ə ˈklɝk ˈæt ə kəˈnviːnjəns ˈstɔːɹ"
       }
      ]
     },
@@ -9918,7 +10093,7 @@ window.BANKS = {
        "en": "This burger costs NT$50.",
        "zh": "這個漢堡要價五十元",
        "src": "6-063",
-       "ipa": "ˈðɪs bɝɡɚ ˈkɑːsts"
+       "ipa": "ˈðɪs ˈbɝɡɚ ˈkɑːsts"
       }
      ]
     },
@@ -9941,7 +10116,7 @@ window.BANKS = {
        "en": "a glass of",
        "zh": "一杯",
        "src": "table",
-       "ipa": "ə ˈɡlæs ʌv"
+       "ipa": "ə ˈɡlæs ˈʌv"
       },
       {
        "kind": "word",
@@ -9955,7 +10130,7 @@ window.BANKS = {
        "en": "I want a glass of water.",
        "zh": "我想要一杯水",
        "src": "6-121",
-       "ipa": "ˈaɪ ˈwɑːnt ə ˈɡlæs ʌv ˈwɔːtɚ"
+       "ipa": "ˈaɪ ˈwɑːnt ə ˈɡlæs ˈʌv ˈwɔːtɚ"
       }
      ]
     },
@@ -9985,7 +10160,7 @@ window.BANKS = {
        "en": "We had some grapes after dinner.",
        "zh": "我們晚餐後吃了一些葡萄",
        "src": "6-124",
-       "ipa": "ˈwiː ˈhæd sʌm ˈɡɹeɪps ˈæftɚ ˈdɪnɚ"
+       "ipa": "ˈwiː ˈhæd ˈsʌm ˈɡɹeɪps ˈæftɚ ˈdɪnɚ"
       }
      ]
     },
@@ -10015,14 +10190,14 @@ window.BANKS = {
        "en": "only",
        "zh": "只有",
        "src": "5-091",
-       "ipa": "ˈoʊnliː"
+       "ipa": "ˈoʊnli"
       },
       {
        "kind": "sentence",
        "en": "Ivy only had a guava for lunch.",
        "zh": "Ivy午餐只吃一顆芭樂",
        "src": "6-125",
-       "ipa": "ˈaɪviː ˈoʊnliː ˈhæd ə ˈɡwɑːvə ˈfɔːɹ lʌntʃ"
+       "ipa": "ˈaɪvi ˈoʊnli ˈhæd ə ˈɡwɑːvə ˈfɔːɹ ˈlʌntʃ"
       }
      ]
     },
@@ -10059,7 +10234,7 @@ window.BANKS = {
        "en": "Americans eat many hamburgers.",
        "zh": "美國人吃很多漢堡",
        "src": "6-128",
-       "ipa": "ˈəmɛɹəkənz ˈiːt ˈmɛniː ˈhæmbɚɡɚz"
+       "ipa": "əˈmɛɹəkənz ˈiːt ˈmɛni ˈhæmbɚɡɚz"
       }
      ]
     },
@@ -10096,7 +10271,7 @@ window.BANKS = {
        "en": "Mom likes to put lemon in her water.",
        "zh": "媽媽喜歡在水裡加檸檬",
        "src": "6-163",
-       "ipa": "ˈmɑːm ˈlaɪks ˈtuː ˈpʊt ˈlɛmən ɪn hɝ ˈwɔːtɚ"
+       "ipa": "ˈmɑːm ˈlaɪks ˈtuː ˈpʊt ˈlɛmən ɪn ˈhɝ ˈwɔːtɚ"
       }
      ]
     },
@@ -10149,21 +10324,21 @@ window.BANKS = {
        "en": "too much oil",
        "zh": "太多油",
        "src": "table",
-       "ipa": "ˈtuː mʌtʃ ˈɔɪl"
+       "ipa": "ˈtuː ˈmʌtʃ ˈɔɪl"
       },
       {
        "kind": "word",
        "en": "healthy",
        "zh": "健康的",
        "src": "6-133",
-       "ipa": "ˈhɛlθiː"
+       "ipa": "ˈhɛlθi"
       },
       {
        "kind": "sentence",
        "en": "It is not healthy to have too much oil.",
        "zh": "吃太多油不健康",
        "src": "6-198",
-       "ipa": "ˈɪt ˈɪz ˈnɑːt ˈhɛlθiː ˈtuː ˈhæv ˈtuː mʌtʃ ˈɔɪl"
+       "ipa": "ˈɪt ˈɪz ˈnɑːt ˈhɛlθi ˈtuː ˈhæv ˈtuː ˈmʌtʃ ˈɔɪl"
       }
      ]
     },
@@ -10172,21 +10347,21 @@ window.BANKS = {
      "level": 6,
      "target": "papaya",
      "gloss": "木瓜",
-     "ipa": "ˈpəpaɪə",
+     "ipa": "pəˈpaɪə",
      "steps": [
       {
        "kind": "word",
        "en": "papaya",
        "zh": "木瓜",
        "src": "6-201",
-       "ipa": "ˈpəpaɪə"
+       "ipa": "pəˈpaɪə"
       },
       {
        "kind": "phrase",
        "en": "a papaya",
        "zh": "一顆木瓜",
        "src": "table",
-       "ipa": "ə ˈpəpaɪə"
+       "ipa": "ə pəˈpaɪə"
       },
       {
        "kind": "word",
@@ -10200,7 +10375,7 @@ window.BANKS = {
        "en": "I like papaya milk.",
        "zh": "我喜歡木瓜牛奶",
        "src": "6-201",
-       "ipa": "ˈaɪ ˈlaɪk ˈpəpaɪə ˈmɪlk"
+       "ipa": "ˈaɪ ˈlaɪk pəˈpaɪə ˈmɪlk"
       }
      ]
     },
@@ -10297,7 +10472,7 @@ window.BANKS = {
        "en": "Try the cookies on this plate.",
        "zh": "試試這盤餅乾",
        "src": "6-208",
-       "ipa": "ˈtɹaɪ ðə ˈkʊkiːz ˈɑːn ˈðɪs ˈpleɪt"
+       "ipa": "ˈtɹaɪ ðə ˈkʊkiz ˈɑːn ˈðɪs ˈpleɪt"
       }
      ]
     },
@@ -10327,14 +10502,14 @@ window.BANKS = {
        "en": "movie",
        "zh": "電影",
        "src": "4-063",
-       "ipa": "ˈmuːviː"
+       "ipa": "ˈmuːvi"
       },
       {
        "kind": "sentence",
        "en": "Let's buy some popcorn before the movie starts.",
        "zh": "電影開始前買些爆米花",
        "src": "6-212",
-       "ipa": "ˈbaɪ sʌm ˈpɑːˌpkɔːɹn bɪˈfɔːɹ ðə ˈmuːviː ˈstɑːɹts"
+       "ipa": "ˈlɛts ˈbaɪ ˈsʌm ˈpɑːˌpkɔːɹn bɪˈfɔːɹ ðə ˈmuːvi ˈstɑːɹts"
       }
      ]
     },
@@ -10343,28 +10518,28 @@ window.BANKS = {
      "level": 6,
      "target": "pumpkin",
      "gloss": "南瓜",
-     "ipa": "pʌmpkɪn",
+     "ipa": "ˈpʌmpkɪn",
      "steps": [
       {
        "kind": "word",
        "en": "pumpkin",
        "zh": "南瓜",
        "src": "6-216",
-       "ipa": "pʌmpkɪn"
+       "ipa": "ˈpʌmpkɪn"
       },
       {
        "kind": "phrase",
        "en": "pumpkin pie",
        "zh": "南瓜派",
        "src": "table",
-       "ipa": "pʌmpkɪn ˈpaɪ"
+       "ipa": "ˈpʌmpkɪn ˈpaɪ"
       },
       {
        "kind": "sentence",
        "en": "Pumpkin pie is made by my mom.",
        "zh": "南瓜派是我媽媽做的",
        "src": "6-216",
-       "ipa": "pʌmpkɪn ˈpaɪ ˈɪz ˈmeɪd ˈbaɪ ˈmaɪ ˈmɑːm"
+       "ipa": "ˈpʌmpkɪn ˈpaɪ ˈɪz ˈmeɪd ˈbaɪ ˈmaɪ ˈmɑːm"
       }
      ]
     },
@@ -10433,21 +10608,21 @@ window.BANKS = {
      "level": 6,
      "target": "spaghetti",
      "gloss": "義大利麵",
-     "ipa": "ˈspəɡɛtiː",
+     "ipa": "spəˈɡɛti",
      "steps": [
       {
        "kind": "word",
        "en": "spaghetti",
        "zh": "義大利麵",
        "src": "6-240",
-       "ipa": "ˈspəɡɛtiː"
+       "ipa": "spəˈɡɛti"
       },
       {
        "kind": "phrase",
        "en": "a spaghetti",
        "zh": "一份義大利麵",
        "src": "table",
-       "ipa": "ə ˈspəɡɛtiː"
+       "ipa": "ə spəˈɡɛti"
       },
       {
        "kind": "word",
@@ -10461,7 +10636,7 @@ window.BANKS = {
        "en": "I'll order salad and spaghetti.",
        "zh": "我要點沙拉和義大利麵",
        "src": "6-240",
-       "ipa": "ˈɔːɹdɚ ˈsæləd ənd ˈspəɡɛtiː"
+       "ipa": "ˈaɪl ˈɔːɹdɚ ˈsæləd ənd spəˈɡɛti"
       }
      ]
     },
@@ -10470,21 +10645,21 @@ window.BANKS = {
      "level": 6,
      "target": "strawberry",
      "gloss": "草莓",
-     "ipa": "ˈstɹɔːˌbɛɹiː",
+     "ipa": "ˈstɹɔːˌbɛɹi",
      "steps": [
       {
        "kind": "word",
        "en": "strawberry",
        "zh": "草莓",
        "src": "6-246",
-       "ipa": "ˈstɹɔːˌbɛɹiː"
+       "ipa": "ˈstɹɔːˌbɛɹi"
       },
       {
        "kind": "phrase",
        "en": "a strawberry",
        "zh": "一顆草莓",
        "src": "table",
-       "ipa": "ə ˈstɹɔːˌbɛɹiː"
+       "ipa": "ə ˈstɹɔːˌbɛɹi"
       },
       {
        "kind": "word",
@@ -10498,7 +10673,7 @@ window.BANKS = {
        "en": "People like to pick strawberries in spring.",
        "zh": "人們喜歡在春天採草莓",
        "src": "6-246",
-       "ipa": "ˈpiːpəl ˈlaɪk ˈtuː ˈpɪk ˈstɹɔːˌbɛɹiːz ɪn ˈspɹɪŋ"
+       "ipa": "ˈpiːpəl ˈlaɪk ˈtuː ˈpɪk ˈstɹɔːˌbɛɹiz ɪn ˈspɹɪŋ"
       }
      ]
     },
@@ -10558,14 +10733,14 @@ window.BANKS = {
        "en": "butter",
        "zh": "奶油",
        "src": "5-024",
-       "ipa": "bʌtɚ"
+       "ipa": "ˈbʌtɚ"
       },
       {
        "kind": "sentence",
        "en": "Can I have butter on my toast?",
        "zh": "可以在我的土司上放點奶油嗎",
        "src": "6-257",
-       "ipa": "ˈkæn ˈaɪ ˈhæv bʌtɚ ˈɑːn ˈmaɪ ˈtoʊst"
+       "ipa": "ˈkæn ˈaɪ ˈhæv ˈbʌtɚ ˈɑːn ˈmaɪ ˈtoʊst"
       }
      ]
     },
@@ -10574,21 +10749,21 @@ window.BANKS = {
      "level": 6,
      "target": "turkey",
      "gloss": "火雞",
-     "ipa": "tɝkiː",
+     "ipa": "ˈtɝki",
      "steps": [
       {
        "kind": "word",
        "en": "turkey",
        "zh": "火雞",
        "src": "6-262",
-       "ipa": "tɝkiː"
+       "ipa": "ˈtɝki"
       },
       {
        "kind": "phrase",
        "en": "a turkey",
        "zh": "一隻火雞",
        "src": "table",
-       "ipa": "ə tɝkiː"
+       "ipa": "ə ˈtɝki"
       },
       {
        "kind": "word",
@@ -10602,7 +10777,7 @@ window.BANKS = {
        "en": "People eat turkey on Thanksgiving.",
        "zh": "人們在感恩節吃火雞",
        "src": "6-262",
-       "ipa": "ˈpiːpəl ˈiːt tɝkiː ˈɑːn ˌθæˈŋksɡɪvɪŋ"
+       "ipa": "ˈpiːpəl ˈiːt ˈtɝki ˈɑːn ˌθæˈŋksɡɪvɪŋ"
       }
      ]
     }
@@ -10619,28 +10794,28 @@ window.BANKS = {
      "level": 1,
      "target": "bird",
      "gloss": "鳥",
-     "ipa": "bɝd",
+     "ipa": "ˈbɝd",
      "steps": [
       {
        "kind": "word",
        "en": "bird",
        "zh": "鳥",
        "src": "1-008",
-       "ipa": "bɝd"
+       "ipa": "ˈbɝd"
       },
       {
        "kind": "phrase",
        "en": "a bird",
        "zh": "一隻鳥",
        "src": "table",
-       "ipa": "ə bɝd"
+       "ipa": "ə ˈbɝd"
       },
       {
        "kind": "sentence",
        "en": "The birds are flying by my window.",
        "zh": "鳥兒在我的窗邊飛",
        "src": "1-008",
-       "ipa": "ðə bɝdz ˈɑːɹ ˈflaɪɪŋ ˈbaɪ ˈmaɪ ˈwɪndoʊ"
+       "ipa": "ðə ˈbɝdz ˈɑːɹ ˈflaɪɪŋ ˈbaɪ ˈmaɪ ˈwɪndoʊ"
       }
      ]
     },
@@ -10700,7 +10875,7 @@ window.BANKS = {
        "en": "My family keeps a dog.",
        "zh": "我們家養了一隻狗",
        "src": "1-015",
-       "ipa": "ˈmaɪ ˈfæməliː ˈkiːps ə ˈdɔːɡ"
+       "ipa": "ˈmaɪ ˈfæməli ˈkiːps ə ˈdɔːɡ"
       }
      ]
     },
@@ -10737,7 +10912,7 @@ window.BANKS = {
        "en": "The lion is the king of animals.",
        "zh": "獅子萬獸之王",
        "src": "1-037",
-       "ipa": "ðə ˈlaɪən ˈɪz ðə ˈkɪŋ ʌv ˈænəməlz"
+       "ipa": "ðə ˈlaɪən ˈɪz ðə ˈkɪŋ ˈʌv ˈænəməlz"
       }
      ]
     },
@@ -10767,7 +10942,7 @@ window.BANKS = {
        "en": "Get the mouse out of the house.",
        "zh": "把老鼠弄出家裡",
        "src": "1-043",
-       "ipa": "ˈɡɛt ðə ˈmaʊs ˈaʊt ʌv ðə ˈhaʊs"
+       "ipa": "ˈɡɛt ðə ˈmaʊs ˈaʊt ˈʌv ðə ˈhaʊs"
       }
      ]
     },
@@ -10841,7 +11016,7 @@ window.BANKS = {
        "en": "There are some ants on the cake.",
        "zh": "蛋糕上有一些螞蟻",
        "src": "2-002",
-       "ipa": "ˈðɛɹ ˈɑːɹ sʌm ˈænts ˈɑːn ðə ˈkeɪk"
+       "ipa": "ˈðɛɹ ˈɑːɹ ˈsʌm ˈænts ˈɑːn ðə ˈkeɪk"
       }
      ]
     },
@@ -10878,7 +11053,7 @@ window.BANKS = {
        "en": "Stay away from bees.",
        "zh": "遠離蜜蜂",
        "src": "2-005",
-       "ipa": "ˈsteɪ ˈəweɪ fɹʌm ˈbiːz"
+       "ipa": "ˈsteɪ əˈweɪ ˈfɹʌm ˈbiːz"
       }
      ]
     },
@@ -10887,28 +11062,28 @@ window.BANKS = {
      "level": 2,
      "target": "bug",
      "gloss": "蟲子",
-     "ipa": "bʌɡ",
+     "ipa": "ˈbʌɡ",
      "steps": [
       {
        "kind": "word",
        "en": "bug",
        "zh": "蟲子",
        "src": "2-007",
-       "ipa": "bʌɡ"
+       "ipa": "ˈbʌɡ"
       },
       {
        "kind": "phrase",
        "en": "a bug",
        "zh": "一隻蟲子",
        "src": "table",
-       "ipa": "ə bʌɡ"
+       "ipa": "ə ˈbʌɡ"
       },
       {
        "kind": "sentence",
        "en": "I hate bugs.",
        "zh": "我討厭蟲子",
        "src": "2-007",
-       "ipa": "ˈaɪ ˈheɪt bʌɡz"
+       "ipa": "ˈaɪ ˈheɪt ˈbʌɡz"
       }
      ]
     },
@@ -10975,14 +11150,14 @@ window.BANKS = {
        "en": "only",
        "zh": "只有",
        "src": "5-091",
-       "ipa": "ˈoʊnliː"
+       "ipa": "ˈoʊnli"
       },
       {
        "kind": "sentence",
        "en": "I saw foxes only in a zoo.",
        "zh": "我只在動物園裡看到狐狸",
        "src": "2-025",
-       "ipa": "ˈaɪ ˈsɔː ˈfɑːksəz ˈoʊnliː ɪn ə ˈzuː"
+       "ipa": "ˈaɪ ˈsɔː ˈfɑːksəz ˈoʊnli ɪn ə ˈzuː"
       }
      ]
     },
@@ -11012,7 +11187,7 @@ window.BANKS = {
        "en": "The frog can jump fast.",
        "zh": "青蛙可以跳很快",
        "src": "2-027",
-       "ipa": "ðə ˈfɹɑːɡ ˈkæn dʒʌmp ˈfæst"
+       "ipa": "ðə ˈfɹɑːɡ ˈkæn ˈdʒʌmp ˈfæst"
       }
      ]
     },
@@ -11042,7 +11217,7 @@ window.BANKS = {
        "en": "The eggs are from the hen.",
        "zh": "這些蛋是那隻母雞生的",
        "src": "2-035",
-       "ipa": "ðə ˈɛɡz ˈɑːɹ fɹʌm ðə ˈhɛn"
+       "ipa": "ðə ˈɛɡz ˈɑːɹ ˈfɹʌm ðə ˈhɛn"
       }
      ]
     },
@@ -11109,14 +11284,14 @@ window.BANKS = {
        "en": "only",
        "zh": "只有",
        "src": "5-091",
-       "ipa": "ˈoʊnliː"
+       "ipa": "ˈoʊnli"
       },
       {
        "kind": "sentence",
        "en": "Sheep only eat grass.",
        "zh": "綿羊只吃草",
        "src": "2-072",
-       "ipa": "ˈʃiːp ˈoʊnliː ˈiːt ˈɡɹæs"
+       "ipa": "ˈʃiːp ˈoʊnli ˈiːt ˈɡɹæs"
       }
      ]
     },
@@ -11146,7 +11321,7 @@ window.BANKS = {
        "en": "Peggy is playing on the swing.",
        "zh": "Peggy在盪鞦韆",
        "src": "2-084",
-       "ipa": "ˈpɛɡiː ˈɪz ˈpleɪɪŋ ˈɑːn ðə ˈswɪŋ"
+       "ipa": "ˈpɛɡi ˈɪz ˈpleɪɪŋ ˈɑːn ðə ˈswɪŋ"
       }
      ]
     },
@@ -11176,7 +11351,7 @@ window.BANKS = {
        "en": "Bats come out at night.",
        "zh": "蝙蝠在晚上出沒",
        "src": "3-007",
-       "ipa": "ˈbæts kʌm ˈaʊt ˈæt ˈnaɪt"
+       "ipa": "ˈbæts ˈkʌm ˈaʊt ˈæt ˈnaɪt"
       }
      ]
     },
@@ -11222,21 +11397,21 @@ window.BANKS = {
      "level": 3,
      "target": "duck",
      "gloss": "鴨子",
-     "ipa": "dʌk",
+     "ipa": "ˈdʌk",
      "steps": [
       {
        "kind": "word",
        "en": "duck",
        "zh": "鴨子",
        "src": "3-029",
-       "ipa": "dʌk"
+       "ipa": "ˈdʌk"
       },
       {
        "kind": "phrase",
        "en": "a duck",
        "zh": "一隻鴨子",
        "src": "table",
-       "ipa": "ə dʌk"
+       "ipa": "ə ˈdʌk"
       },
       {
        "kind": "word",
@@ -11250,7 +11425,7 @@ window.BANKS = {
        "en": "The Yellow Duck is so cute.",
        "zh": "黃色小鴨真可愛",
        "src": "3-029",
-       "ipa": "ðə ˈjɛloʊ dʌk ˈɪz ˈsoʊ ˈkjuːt"
+       "ipa": "ðə ˈjɛloʊ ˈdʌk ˈɪz ˈsoʊ ˈkjuːt"
       }
      ]
     },
@@ -11317,7 +11492,7 @@ window.BANKS = {
        "en": "Lady Gaga has many fans.",
        "zh": "LadyGaga有很多歌迷",
        "src": "3-032",
-       "ipa": "ˈleɪdiː ˈɡɑːɡʌ ˈhæz ˈmɛniː ˈfænz"
+       "ipa": "ˈleɪdi ˈɡɑːˌɡʌ ˈhæz ˈmɛni ˈfænz"
       }
      ]
     },
@@ -11354,7 +11529,7 @@ window.BANKS = {
        "en": "The little kid is afraid of ghosts.",
        "zh": "那個小孩很怕鬼",
        "src": "3-038",
-       "ipa": "ðə ˈlɪtəl ˈkɪd ˈɪz ˈəfɹeɪd ʌv ˈɡoʊsts"
+       "ipa": "ðə ˈlɪtəl ˈkɪd ˈɪz əˈfɹeɪd ˈʌv ˈɡoʊsts"
       }
      ]
     },
@@ -11384,7 +11559,7 @@ window.BANKS = {
        "en": "Horses run very fast.",
        "zh": "馬跑很快",
        "src": "3-049",
-       "ipa": "ˈhɔːɹsəz ɹʌn ˈvɛɹiː ˈfæst"
+       "ipa": "ˈhɔːɹsəz ˈɹʌn ˈvɛɹi ˈfæst"
       }
      ]
     },
@@ -11421,7 +11596,7 @@ window.BANKS = {
        "en": "The blue whale is the biggest animal in the world.",
        "zh": "藍鯨是世界上最大的動物",
        "src": "3-102",
-       "ipa": "ðə ˈbluː ˈweɪl ˈɪz ðə ˈbɪɡəst ˈænəməl ɪn ðə wɝld"
+       "ipa": "ðə ˈbluː ˈweɪl ˈɪz ðə ˈbɪɡəst ˈænəməl ɪn ðə ˈwɝld"
       }
      ]
     },
@@ -11470,6 +11645,13 @@ window.BANKS = {
        "ipa": "ˈbaɪt"
       },
       {
+       "kind": "phrase",
+       "en": "bites people",
+       "zh": "咬人",
+       "src": "table",
+       "ipa": "ˈbaɪts ˈpiːpəl"
+      },
+      {
        "kind": "word",
        "en": "dog",
        "zh": "狗",
@@ -11490,21 +11672,21 @@ window.BANKS = {
      "level": 4,
      "target": "butterfly",
      "gloss": "蝴蝶",
-     "ipa": "ˌbʌtɚflaɪ",
+     "ipa": "ˈbʌtɚˌflaɪ",
      "steps": [
       {
        "kind": "word",
        "en": "butterfly",
        "zh": "蝴蝶",
        "src": "4-015",
-       "ipa": "ˌbʌtɚflaɪ"
+       "ipa": "ˈbʌtɚˌflaɪ"
       },
       {
        "kind": "phrase",
        "en": "a butterfly",
        "zh": "一隻蝴蝶",
        "src": "table",
-       "ipa": "ə ˌbʌtɚflaɪ"
+       "ipa": "ə ˈbʌtɚˌflaɪ"
       },
       {
        "kind": "word",
@@ -11518,7 +11700,7 @@ window.BANKS = {
        "en": "The butterflies are flying in the garden.",
        "zh": "蝴蝶在花園裡飛",
        "src": "4-015",
-       "ipa": "ðə ˌbʌtɚflaɪz ˈɑːɹ ˈflaɪɪŋ ɪn ðə ˈɡɑːɹdən"
+       "ipa": "ðə ˈbʌtɚˌflaɪz ˈɑːɹ ˈflaɪɪŋ ɪn ðə ˈɡɑːɹdən"
       }
      ]
     },
@@ -11592,7 +11774,7 @@ window.BANKS = {
        "en": "Some snakes bite people.",
        "zh": "有些蛇會咬人",
        "src": "4-099",
-       "ipa": "sʌm ˈsneɪks ˈbaɪt ˈpiːpəl"
+       "ipa": "ˈsʌm ˈsneɪks ˈbaɪt ˈpiːpəl"
       }
      ]
     },
@@ -11675,21 +11857,21 @@ window.BANKS = {
      "level": 5,
      "target": "puppy",
      "gloss": "小狗",
-     "ipa": "pʌpiː",
+     "ipa": "ˈpʌpi",
      "steps": [
       {
        "kind": "word",
        "en": "puppy",
        "zh": "小狗",
        "src": "5-120",
-       "ipa": "pʌpiː"
+       "ipa": "ˈpʌpi"
       },
       {
        "kind": "phrase",
        "en": "a puppy",
        "zh": "一隻小狗",
        "src": "table",
-       "ipa": "ə pʌpiː"
+       "ipa": "ə ˈpʌpi"
       },
       {
        "kind": "word",
@@ -11703,7 +11885,7 @@ window.BANKS = {
        "en": "The puppy is sleeping under the bench.",
        "zh": "這隻小狗在長板凳下睡覺",
        "src": "5-120",
-       "ipa": "ðə pʌpiː ˈɪz ˈsliːpɪŋ ʌndɚ ðə ˈbɛntʃ"
+       "ipa": "ðə ˈpʌpi ˈɪz ˈsliːpɪŋ ˈʌndɚ ðə ˈbɛntʃ"
       }
      ]
     },
@@ -11770,7 +11952,7 @@ window.BANKS = {
        "en": "Sharks don't live in lakes.",
        "zh": "湖裡不會有鯊魚",
        "src": "5-149",
-       "ipa": "ˈʃɑːɹks ˈlaɪv ɪn ˈleɪks"
+       "ipa": "ˈʃɑːɹks ˈdoʊnt ˈlaɪv ɪn ˈleɪks"
       }
      ]
     },
@@ -11807,7 +11989,7 @@ window.BANKS = {
        "en": "Some geese are swimming in the lake.",
        "zh": "有幾隻鵝在湖上游水。",
        "src": "6-123",
-       "ipa": "sʌm ˈɡiːs ˈɑːɹ ˈswɪmɪŋ ɪn ðə ˈleɪk"
+       "ipa": "ˈsʌm ˈɡiːs ˈɑːɹ ˈswɪmɪŋ ɪn ðə ˈleɪk"
       }
      ]
     },
@@ -11846,21 +12028,21 @@ window.BANKS = {
      "level": 6,
      "target": "kangaroo",
      "gloss": "袋鼠",
-     "ipa": "ˌkæˈŋɡɚuː",
+     "ipa": "ˌkæŋɡɚˈuː",
      "steps": [
       {
        "kind": "word",
        "en": "kangaroo",
        "zh": "袋鼠",
        "src": "6-155",
-       "ipa": "ˌkæˈŋɡɚuː"
+       "ipa": "ˌkæŋɡɚˈuː"
       },
       {
        "kind": "phrase",
        "en": "a kangaroo",
        "zh": "一隻袋鼠",
        "src": "table",
-       "ipa": "ə ˌkæˈŋɡɚuː"
+       "ipa": "ə ˌkæŋɡɚˈuː"
       },
       {
        "kind": "word",
@@ -11874,7 +12056,7 @@ window.BANKS = {
        "en": "Kangaroos can jump high.",
        "zh": "袋鼠可以跳很高",
        "src": "6-155",
-       "ipa": "ˌkæˈŋɡɚuːz ˈkæn dʒʌmp ˈhaɪ"
+       "ipa": "ˌkæŋɡɚˈuːz ˈkæn ˈdʒʌmp ˈhaɪ"
       }
      ]
     },
@@ -11904,7 +12086,7 @@ window.BANKS = {
        "en": "There are many koalas in Australia.",
        "zh": "澳洲有很多無尾熊",
        "src": "6-158",
-       "ipa": "ˈðɛɹ ˈɑːɹ ˈmɛniː koʊˈɑːləz ɪn ɔːˈstɹeɪljə"
+       "ipa": "ˈðɛɹ ˈɑːɹ ˈmɛni koʊˈɑːləz ɪn ɔˈstɹeɪljə"
       }
      ]
     },
@@ -11941,7 +12123,7 @@ window.BANKS = {
        "en": "An ox doesn't give milk.",
        "zh": "公牛不會產奶",
        "src": "6-200",
-       "ipa": "ˈæn ˈɑːks ˈɡɪv ˈmɪlk"
+       "ipa": "ˈæn ˈɑːks ˈdʌzənt ˈɡɪv ˈmɪlk"
       }
      ]
     },
@@ -12001,14 +12183,14 @@ window.BANKS = {
        "en": "afraid",
        "zh": "害怕",
        "src": "5-004",
-       "ipa": "ˈəfɹeɪd"
+       "ipa": "əˈfɹeɪd"
       },
       {
        "kind": "sentence",
        "en": "Many people are afraid of spiders.",
        "zh": "很多人怕蜘蛛",
        "src": "6-243",
-       "ipa": "ˈmɛniː ˈpiːpəl ˈɑːɹ ˈəfɹeɪd ʌv ˈspaɪdɚz"
+       "ipa": "ˈmɛni ˈpiːpəl ˈɑːɹ əˈfɹeɪd ˈʌv ˈspaɪdɚz"
       }
      ]
     },
@@ -12054,28 +12236,28 @@ window.BANKS = {
      "level": 6,
      "target": "turtle",
      "gloss": "烏龜",
-     "ipa": "tɝtəl",
+     "ipa": "ˈtɝtəl",
      "steps": [
       {
        "kind": "word",
        "en": "turtle",
        "zh": "烏龜",
        "src": "6-263",
-       "ipa": "tɝtəl"
+       "ipa": "ˈtɝtəl"
       },
       {
        "kind": "phrase",
        "en": "a turtle",
        "zh": "一隻烏龜",
        "src": "table",
-       "ipa": "ə tɝtəl"
+       "ipa": "ə ˈtɝtəl"
       },
       {
        "kind": "sentence",
        "en": "Turtles can swim.",
        "zh": "烏龜會游泳",
        "src": "6-263",
-       "ipa": "tɝtəlz ˈkæn ˈswɪm"
+       "ipa": "ˈtɝtəlz ˈkæn ˈswɪm"
       }
      ]
     }
@@ -12231,7 +12413,7 @@ window.BANKS = {
        "en": "I like to lie on the grass on a sunny day.",
        "zh": "我喜歡在晴天躺在草地上",
        "src": "2-030",
-       "ipa": "ˈaɪ ˈlaɪk ˈtuː ˈlaɪ ˈɑːn ðə ˈɡɹæs ˈɑːn ə sʌniː ˈdeɪ"
+       "ipa": "ˈaɪ ˈlaɪk ˈtuː ˈlaɪ ˈɑːn ðə ˈɡɹæs ˈɑːn ə ˈsʌni ˈdeɪ"
       }
      ]
     },
@@ -12268,7 +12450,7 @@ window.BANKS = {
        "en": "The tomatoes are still green.",
        "zh": "這些番茄仍是綠的",
        "src": "2-032",
-       "ipa": "ðə ˈtəmeɪtoʊz ˈɑːɹ ˈstɪl ˈɡɹiːn"
+       "ipa": "ðə təˈmeɪtoʊz ˈɑːɹ ˈstɪl ˈɡɹiːn"
       }
      ]
     },
@@ -12298,7 +12480,7 @@ window.BANKS = {
        "en": "Let's sit on the ground.",
        "zh": "我們坐在地上吧",
        "src": "2-033",
-       "ipa": "ˈsɪt ˈɑːn ðə ˈɡɹaʊnd"
+       "ipa": "ˈlɛts ˈsɪt ˈɑːn ðə ˈɡɹaʊnd"
       }
      ]
     },
@@ -12351,7 +12533,7 @@ window.BANKS = {
        "en": "a lot of land",
        "zh": "很多土地",
        "src": "table",
-       "ipa": "ə ˈlɑːt ʌv ˈlænd"
+       "ipa": "ə ˈlɑːt ˈʌv ˈlænd"
       },
       {
        "kind": "word",
@@ -12365,7 +12547,7 @@ window.BANKS = {
        "en": "China has a lot of land.",
        "zh": "中國有廣大的土地",
        "src": "2-041",
-       "ipa": "ˈtʃaɪnə ˈhæz ə ˈlɑːt ʌv ˈlænd"
+       "ipa": "ˈtʃaɪnə ˈhæz ə ˈlɑːt ˈʌv ˈlænd"
       }
      ]
     },
@@ -12402,7 +12584,7 @@ window.BANKS = {
        "en": "There are some plants in my garden.",
        "zh": "我的花園裡有一些植物",
        "src": "2-058",
-       "ipa": "ˈðɛɹ ˈɑːɹ sʌm ˈplænts ɪn ˈmaɪ ˈɡɑːɹdən"
+       "ipa": "ˈðɛɹ ˈɑːɹ ˈsʌm ˈplænts ɪn ˈmaɪ ˈɡɑːɹdən"
       }
      ]
     },
@@ -12439,7 +12621,7 @@ window.BANKS = {
        "en": "Some fish are swimming in the river.",
        "zh": "河裡有一些魚在游",
        "src": "2-066",
-       "ipa": "sʌm ˈfɪʃ ˈɑːɹ ˈswɪmɪŋ ɪn ðə ˈɹɪvɚ"
+       "ipa": "ˈsʌm ˈfɪʃ ˈɑːɹ ˈswɪmɪŋ ɪn ðə ˈɹɪvɚ"
       }
      ]
     },
@@ -12506,7 +12688,7 @@ window.BANKS = {
        "en": "There is a hill across the river.",
        "zh": "過河後有個小山丘",
        "src": "3-046",
-       "ipa": "ˈðɛɹ ˈɪz ə ˈhɪl ˈəkɹɔːs ðə ˈɹɪvɚ"
+       "ipa": "ˈðɛɹ ˈɪz ə ˈhɪl əˈkɹɔːs ðə ˈɹɪvɚ"
       }
      ]
     },
@@ -12543,7 +12725,7 @@ window.BANKS = {
        "en": "We sometimes fly a kite on a sunny day.",
        "zh": "我們有時會在晴天放風箏",
        "src": "3-061",
-       "ipa": "ˈwiː ˈsəmtaɪmz ˈflaɪ ə ˈkaɪt ˈɑːn ə sʌniː ˈdeɪ"
+       "ipa": "ˈwiː səˈmtaɪmz ˈflaɪ ə ˈkaɪt ˈɑːn ə ˈsʌni ˈdeɪ"
       }
      ]
     },
@@ -12610,7 +12792,7 @@ window.BANKS = {
        "en": "Some pipes are under the ground.",
        "zh": "一些管線在地底下",
        "src": "3-075",
-       "ipa": "sʌm ˈpaɪps ˈɑːɹ ʌndɚ ðə ˈɡɹaʊnd"
+       "ipa": "ˈsʌm ˈpaɪps ˈɑːɹ ˈʌndɚ ðə ˈɡɹaʊnd"
       }
      ]
     },
@@ -12633,7 +12815,7 @@ window.BANKS = {
        "en": "the sun rises",
        "zh": "太陽升起",
        "src": "table",
-       "ipa": "ðə sʌn ˈɹaɪzəz"
+       "ipa": "ðə ˈsʌn ˈɹaɪzəz"
       },
       {
        "kind": "word",
@@ -12647,7 +12829,7 @@ window.BANKS = {
        "en": "My grandma always gets up before the sun rises.",
        "zh": "我的奶奶總是在日出前起床",
        "src": "3-086",
-       "ipa": "ˈmaɪ ˈɡɹændmɑː ˈɔːˌlweɪz ˈɡɛts ʌp bɪˈfɔːɹ ðə sʌn ˈɹaɪzəz"
+       "ipa": "ˈmaɪ ˈɡɹændmɑ ˈɔːˌlweɪz ˈɡɛts ˈʌp bɪˈfɔːɹ ðə ˈsʌn ˈɹaɪzəz"
       }
      ]
     },
@@ -12677,7 +12859,7 @@ window.BANKS = {
        "en": "There are many flowers in the garden.",
        "zh": "花園裡有很多花",
        "src": "5-058",
-       "ipa": "ˈðɛɹ ˈɑːɹ ˈmɛniː ˈflaʊɚz ɪn ðə ˈɡɑːɹdən"
+       "ipa": "ˈðɛɹ ˈɑːɹ ˈmɛni ˈflaʊɚz ɪn ðə ˈɡɑːɹdən"
       }
      ]
     },
@@ -12781,14 +12963,14 @@ window.BANKS = {
        "en": "earth",
        "zh": "地球",
        "src": "6-084",
-       "ipa": "ɝθ"
+       "ipa": "ˈɝθ"
       },
       {
        "kind": "sentence",
        "en": "Earth is a planet.",
        "zh": "地球是一個行星",
        "src": "5-109",
-       "ipa": "ɝθ ˈɪz ə ˈplænət"
+       "ipa": "ˈɝθ ˈɪz ə ˈplænət"
       }
      ]
     },
@@ -12834,21 +13016,21 @@ window.BANKS = {
      "level": 6,
      "target": "earth",
      "gloss": "地球",
-     "ipa": "ɝθ",
+     "ipa": "ˈɝθ",
      "steps": [
       {
        "kind": "word",
        "en": "earth",
        "zh": "地球",
        "src": "6-084",
-       "ipa": "ɝθ"
+       "ipa": "ˈɝθ"
       },
       {
        "kind": "phrase",
        "en": "the earth",
        "zh": "地球",
        "src": "table",
-       "ipa": "ðə ɝθ"
+       "ipa": "ðə ˈɝθ"
       },
       {
        "kind": "word",
@@ -12862,7 +13044,7 @@ window.BANKS = {
        "en": "We all live on Earth.",
        "zh": "我們全都住在地球上",
        "src": "6-084",
-       "ipa": "ˈwiː ˈɔːl ˈlaɪv ˈɑːn ɝθ"
+       "ipa": "ˈwiː ˈɔːl ˈlaɪv ˈɑːn ˈɝθ"
       }
      ]
     },
@@ -12922,14 +13104,14 @@ window.BANKS = {
        "en": "birthday",
        "zh": "生日",
        "src": "2-008",
-       "ipa": "ˌbɝθdeɪ"
+       "ipa": "ˈbɝˌθdeɪ"
       },
       {
        "kind": "sentence",
        "en": "Dad sent Mom some roses on her birthday.",
        "zh": "爸爸在媽媽生日送給她一些玫瑰花",
        "src": "6-223",
-       "ipa": "ˈdæd ˈsɛnt ˈmɑːm sʌm ˈɹoʊzɪz ˈɑːn hɝ ˌbɝθdeɪ"
+       "ipa": "ˈdæd ˈsɛnt ˈmɑːm ˈsʌm ˈɹoʊzɪz ˈɑːn ˈhɝ ˈbɝˌθdeɪ"
       }
      ]
     }
@@ -12967,14 +13149,14 @@ window.BANKS = {
        "en": "only",
        "zh": "只有",
        "src": "5-091",
-       "ipa": "ˈoʊnliː"
+       "ipa": "ˈoʊnli"
       },
       {
        "kind": "sentence",
        "en": "I only drink hot water.",
        "zh": "我只喝熱水",
        "src": "1-026",
-       "ipa": "ˈaɪ ˈoʊnliː ˈdɹɪŋk ˈhɑːt ˈwɔːtɚ"
+       "ipa": "ˈaɪ ˈoʊnli ˈdɹɪŋk ˈhɑːt ˈwɔːtɚ"
       }
      ]
     },
@@ -13011,7 +13193,7 @@ window.BANKS = {
        "en": "The sky turns gray.",
        "zh": "天空變灰了",
        "src": "2-031",
-       "ipa": "ðə ˈskaɪ tɝnz ˈɡɹeɪ"
+       "ipa": "ðə ˈskaɪ ˈtɝnz ˈɡɹeɪ"
       }
      ]
     },
@@ -13048,7 +13230,7 @@ window.BANKS = {
        "en": "Leaves change colors in autumn.",
        "zh": "葉子在秋天變色",
        "src": "3-004",
-       "ipa": "ˈliːvz ˈtʃeɪndʒ kʌlɚz ɪn ˈɔːtəm"
+       "ipa": "ˈliːvz ˈtʃeɪndʒ ˈkʌlɚz ɪn ˈɔːtəm"
       }
      ]
     },
@@ -13078,7 +13260,7 @@ window.BANKS = {
        "en": "I put some ice in my coke.",
        "zh": "我在可樂裡加了一些冰塊",
        "src": "3-051",
-       "ipa": "ˈaɪ ˈpʊt sʌm ˈaɪs ɪn ˈmaɪ ˈkoʊk"
+       "ipa": "ˈaɪ ˈpʊt ˈsʌm ˈaɪs ɪn ˈmaɪ ˈkoʊk"
       }
      ]
     },
@@ -13134,18 +13316,18 @@ window.BANKS = {
        "ipa": "ˈsnoʊ"
       },
       {
+       "kind": "phrase",
+       "en": "seldom snows",
+       "zh": "很少下雪",
+       "src": "table",
+       "ipa": "ˈsɛldəm ˈsnoʊz"
+      },
+      {
        "kind": "word",
        "en": "seldom",
        "zh": "很少",
        "src": "5-143",
        "ipa": "ˈsɛldəm"
-      },
-      {
-       "kind": "word",
-       "en": "Taiwan",
-       "zh": "台灣",
-       "src": "5-168",
-       "ipa": "ˈtaɪˈwɑːn"
       },
       {
        "kind": "sentence",
@@ -13249,7 +13431,7 @@ window.BANKS = {
        "en": "Let's make a snowman.",
        "zh": "我們來堆個雪人吧",
        "src": "5-157",
-       "ipa": "ˈmeɪk ə ˈsnoʊˌmæn"
+       "ipa": "ˈlɛts ˈmeɪk ə ˈsnoʊˌmæn"
       }
      ]
     },
@@ -13286,7 +13468,7 @@ window.BANKS = {
        "en": "It's getting cold outside.",
        "zh": "外面變冷了",
        "src": "6-058",
-       "ipa": "ˈɡɛtɪŋ ˈkoʊld ˈaʊˈtsaɪd"
+       "ipa": "ˈɪts ˈɡɛtɪŋ ˈkoʊld ˈaʊˈtsaɪd"
       }
      ]
     },
@@ -13295,21 +13477,21 @@ window.BANKS = {
      "level": 6,
      "target": "snowy",
      "gloss": "下雪的",
-     "ipa": "ˈsnoʊiː",
+     "ipa": "ˈsnoʊi",
      "steps": [
       {
        "kind": "word",
        "en": "snowy",
        "zh": "下雪的",
        "src": "6-236",
-       "ipa": "ˈsnoʊiː"
+       "ipa": "ˈsnoʊi"
       },
       {
        "kind": "phrase",
        "en": "snowy day",
        "zh": "下雪天",
        "src": "table",
-       "ipa": "ˈsnoʊiː ˈdeɪ"
+       "ipa": "ˈsnoʊi ˈdeɪ"
       },
       {
        "kind": "word",
@@ -13323,7 +13505,7 @@ window.BANKS = {
        "en": "Keep yourself warm on a snowy day.",
        "zh": "下雪天要注意保暖",
        "src": "6-236",
-       "ipa": "ˈkiːp ˈjɚsɛlf ˈwɔːɹm ˈɑːn ə ˈsnoʊiː ˈdeɪ"
+       "ipa": "ˈkiːp jɚˈsɛlf ˈwɔːɹm ˈɑːn ə ˈsnoʊi ˈdeɪ"
       }
      ]
     },
@@ -13360,7 +13542,7 @@ window.BANKS = {
        "en": "The news said a typhoon is coming.",
        "zh": "新聞報導颱風將近",
        "src": "6-265",
-       "ipa": "ðə ˈnuːz ˈsɛd ə ˌtaɪˈfuːn ˈɪz kʌmɪŋ"
+       "ipa": "ðə ˈnuːz ˈsɛd ə ˌtaɪˈfuːn ˈɪz ˈkʌmɪŋ"
       }
      ]
     }
@@ -13502,7 +13684,7 @@ window.BANKS = {
        "en": "You should get home by nine o'clock.",
        "zh": "你應該在九點之前回家",
        "src": "1-048",
-       "ipa": "ˈjuː ˈʃʊd ˈɡɛt ˈhoʊm ˈbaɪ ˈnaɪn"
+       "ipa": "ˈjuː ˈʃʊd ˈɡɛt ˈhoʊm ˈbaɪ ˈnaɪn əˈklɑːk"
       }
      ]
     },
@@ -13511,21 +13693,21 @@ window.BANKS = {
      "level": 1,
      "target": "one",
      "gloss": "一",
-     "ipa": "wʌn",
+     "ipa": "ˈwʌn",
      "steps": [
       {
        "kind": "word",
        "en": "one",
        "zh": "一",
        "src": "1-052",
-       "ipa": "wʌn"
+       "ipa": "ˈwʌn"
       },
       {
        "kind": "phrase",
        "en": "one",
        "zh": "一",
        "src": "table",
-       "ipa": "wʌn"
+       "ipa": "ˈwʌn"
       },
       {
        "kind": "word",
@@ -13539,7 +13721,7 @@ window.BANKS = {
        "en": "The kid can count from one to ten.",
        "zh": "這個小孩會從一數到十",
        "src": "1-052",
-       "ipa": "ðə ˈkɪd ˈkæn ˈkaʊnt fɹʌm wʌn ˈtuː ˈtɛn"
+       "ipa": "ðə ˈkɪd ˈkæn ˈkaʊnt ˈfɹʌm ˈwʌn ˈtuː ˈtɛn"
       }
      ]
     },
@@ -13562,14 +13744,14 @@ window.BANKS = {
        "en": "every morning",
        "zh": "每天早上",
        "src": "table",
-       "ipa": "ˈɛvɚiː ˈmɔːɹnɪŋ"
+       "ipa": "ˈɛvɚi ˈmɔːɹnɪŋ"
       },
       {
        "kind": "sentence",
        "en": "Mom wakes me up at seven every morning.",
        "zh": "我媽每天在七點的時候叫我起床",
        "src": "1-064",
-       "ipa": "ˈmɑːm ˈweɪks ˈmiː ʌp ˈæt ˈsɛvən ˈɛvɚiː ˈmɔːɹnɪŋ"
+       "ipa": "ˈmɑːm ˈweɪks ˈmiː ˈʌp ˈæt ˈsɛvən ˈɛvɚi ˈmɔːɹnɪŋ"
       }
      ]
     },
@@ -13599,14 +13781,14 @@ window.BANKS = {
        "en": "only",
        "zh": "只有",
        "src": "5-091",
-       "ipa": "ˈoʊnliː"
+       "ipa": "ˈoʊnli"
       },
       {
        "kind": "sentence",
        "en": "We only prepared ten copies.",
        "zh": "我們只準備了十份備份",
        "src": "1-070",
-       "ipa": "ˈwiː ˈoʊnliː pɹiːˈpɛɹd ˈtɛn ˈkɑːpiːz"
+       "ipa": "ˈwiː ˈoʊnli pɹiˈpɛɹd ˈtɛn ˈkɑːpiz"
       }
      ]
     },
@@ -13689,35 +13871,35 @@ window.BANKS = {
      "level": 2,
      "target": "birthday",
      "gloss": "生日",
-     "ipa": "ˌbɝθdeɪ",
+     "ipa": "ˈbɝˌθdeɪ",
      "steps": [
       {
        "kind": "word",
        "en": "birthday",
        "zh": "生日",
        "src": "2-008",
-       "ipa": "ˌbɝθdeɪ"
+       "ipa": "ˈbɝˌθdeɪ"
       },
       {
        "kind": "phrase",
        "en": "a birthday",
        "zh": "一個生日",
        "src": "table",
-       "ipa": "ə ˌbɝθdeɪ"
+       "ipa": "ə ˈbɝˌθdeɪ"
       },
       {
        "kind": "word",
        "en": "happy",
        "zh": "快樂的",
        "src": "1-022",
-       "ipa": "ˈhæpiː"
+       "ipa": "ˈhæpi"
       },
       {
        "kind": "sentence",
        "en": "Happy birthday!",
        "zh": "生日快樂",
        "src": "2-008",
-       "ipa": "ˈhæpiː ˌbɝθdeɪ"
+       "ipa": "ˈhæpi ˈbɝˌθdeɪ"
       }
      ]
     },
@@ -13888,14 +14070,14 @@ window.BANKS = {
        "en": "what date",
        "zh": "幾號",
        "src": "table",
-       "ipa": "wʌt ˈdeɪt"
+       "ipa": "ˈwʌt ˈdeɪt"
       },
       {
        "kind": "sentence",
        "en": "What date is today?",
        "zh": "今天是幾月幾號",
        "src": "4-027",
-       "ipa": "wʌt ˈdeɪt ˈɪz ˈtədeɪ"
+       "ipa": "ˈwʌt ˈdeɪt ˈɪz təˈdeɪ"
       }
      ]
     },
@@ -13934,35 +14116,35 @@ window.BANKS = {
      "level": 4,
      "target": "eighty",
      "gloss": "八十",
-     "ipa": "ˈeɪtiː",
+     "ipa": "ˈeɪti",
      "steps": [
       {
        "kind": "word",
        "en": "eighty",
        "zh": "八十",
        "src": "4-034",
-       "ipa": "ˈeɪtiː"
+       "ipa": "ˈeɪti"
       },
       {
        "kind": "phrase",
        "en": "eighty",
        "zh": "八十",
        "src": "table",
-       "ipa": "ˈeɪtiː"
+       "ipa": "ˈeɪti"
       },
       {
        "kind": "word",
        "en": "already",
        "zh": "已經",
        "src": "6-008",
-       "ipa": "ɔːˈlɹɛdiː"
+       "ipa": "ɔˈlɹɛdi"
       },
       {
        "kind": "sentence",
        "en": "This old man is already eighty years old.",
        "zh": "這個老人已經八十歲了",
        "src": "4-034",
-       "ipa": "ˈðɪs ˈoʊld ˈmæn ˈɪz ɔːˈlɹɛdiː ˈeɪtiː ˈjɪɹz ˈoʊld"
+       "ipa": "ˈðɪs ˈoʊld ˈmæn ˈɪz ɔˈlɹɛdi ˈeɪti ˈjɪɹz ˈoʊld"
       }
      ]
     },
@@ -13992,7 +14174,7 @@ window.BANKS = {
        "en": "We took fifteen pictures yesterday.",
        "zh": "我們昨天拍了十五張照片",
        "src": "4-039",
-       "ipa": "ˈwiː ˈtʊk fɪˈftiːn ˈpɪktʃɚz ˈjɛˌstɚdeɪ"
+       "ipa": "ˈwiː ˈtʊk fɪˈftiːn ˈpɪktʃɚz ˈjɛstɚˌdeɪ"
       }
      ]
     },
@@ -14001,28 +14183,28 @@ window.BANKS = {
      "level": 4,
      "target": "fifty",
      "gloss": "五十",
-     "ipa": "ˈfɪftiː",
+     "ipa": "ˈfɪfti",
      "steps": [
       {
        "kind": "word",
        "en": "fifty",
        "zh": "五十",
        "src": "4-040",
-       "ipa": "ˈfɪftiː"
+       "ipa": "ˈfɪfti"
       },
       {
        "kind": "phrase",
        "en": "fifty",
        "zh": "五十",
        "src": "table",
-       "ipa": "ˈfɪftiː"
+       "ipa": "ˈfɪfti"
       },
       {
        "kind": "sentence",
        "en": "There are fifty seats in this room.",
        "zh": "這房間裡有五十個座位",
        "src": "4-040",
-       "ipa": "ˈðɛɹ ˈɑːɹ ˈfɪftiː ˈsiːts ɪn ˈðɪs ˈɹuːm"
+       "ipa": "ˈðɛɹ ˈɑːɹ ˈfɪfti ˈsiːts ɪn ˈðɪs ˈɹuːm"
       }
      ]
     },
@@ -14031,35 +14213,35 @@ window.BANKS = {
      "level": 4,
      "target": "forty",
      "gloss": "四十",
-     "ipa": "ˈfɔːɹtiː",
+     "ipa": "ˈfɔːɹti",
      "steps": [
       {
        "kind": "word",
        "en": "forty",
        "zh": "四十",
        "src": "4-041",
-       "ipa": "ˈfɔːɹtiː"
+       "ipa": "ˈfɔːɹti"
       },
       {
        "kind": "phrase",
        "en": "one",
        "zh": "一",
        "src": "table",
-       "ipa": "wʌn"
+       "ipa": "ˈwʌn"
       },
       {
        "kind": "word",
        "en": "one",
        "zh": "一",
        "src": "1-052",
-       "ipa": "wʌn"
+       "ipa": "ˈwʌn"
       },
       {
        "kind": "sentence",
        "en": "One class is forty minutes.",
        "zh": "一節課四十分鐘",
        "src": "4-041",
-       "ipa": "wʌn ˈklæs ˈɪz ˈfɔːɹtiː ˈmɪnəts"
+       "ipa": "ˈwʌn ˈklæs ˈɪz ˈfɔːɹti ˈmɪnəts"
       }
      ]
     },
@@ -14126,7 +14308,7 @@ window.BANKS = {
        "en": "Do you have any plans for the future?",
        "zh": "你對未來有任何的計劃嗎",
        "src": "4-044",
-       "ipa": "ˈduː ˈjuː ˈhæv ˈɛniː ˈplænz ˈfɔːɹ ðə ˈfjuːtʃɚ"
+       "ipa": "ˈduː ˈjuː ˈhæv ˈɛni ˈplænz ˈfɔːɹ ðə ˈfjuːtʃɚ"
       }
      ]
     },
@@ -14172,21 +14354,21 @@ window.BANKS = {
      "level": 4,
      "target": "ninety",
      "gloss": "九十",
-     "ipa": "ˈnaɪntiː",
+     "ipa": "ˈnaɪnti",
      "steps": [
       {
        "kind": "word",
        "en": "ninety",
        "zh": "九十",
        "src": "4-067",
-       "ipa": "ˈnaɪntiː"
+       "ipa": "ˈnaɪnti"
       },
       {
        "kind": "phrase",
        "en": "ninety",
        "zh": "九十",
        "src": "table",
-       "ipa": "ˈnaɪntiː"
+       "ipa": "ˈnaɪnti"
       },
       {
        "kind": "word",
@@ -14200,7 +14382,7 @@ window.BANKS = {
        "en": "The game is ninety minutes long.",
        "zh": "這場比賽打了九十分鐘",
        "src": "4-067",
-       "ipa": "ðə ˈɡeɪm ˈɪz ˈnaɪntiː ˈmɪnəts ˈlɔːŋ"
+       "ipa": "ðə ˈɡeɪm ˈɪz ˈnaɪnti ˈmɪnəts ˈlɔːŋ"
       }
      ]
     },
@@ -14209,21 +14391,21 @@ window.BANKS = {
      "level": 4,
      "target": "seventeen",
      "gloss": "十七",
-     "ipa": "ˈsɛˈvəntiːn",
+     "ipa": "ˈsɛvəˈntiːn",
      "steps": [
       {
        "kind": "word",
        "en": "seventeen",
        "zh": "十七",
        "src": "4-086",
-       "ipa": "ˈsɛˈvəntiːn"
+       "ipa": "ˈsɛvəˈntiːn"
       },
       {
        "kind": "phrase",
        "en": "seventeen",
        "zh": "十七",
        "src": "table",
-       "ipa": "ˈsɛˈvəntiːn"
+       "ipa": "ˈsɛvəˈntiːn"
       },
       {
        "kind": "word",
@@ -14237,7 +14419,7 @@ window.BANKS = {
        "en": "There are seventeen days left to the end of this month.",
        "zh": "離這個月月底還有十七天",
        "src": "4-086",
-       "ipa": "ˈðɛɹ ˈɑːɹ ˈsɛˈvəntiːn ˈdeɪz ˈlɛft ˈtuː ðə ˈɛnd ʌv ˈðɪs mʌnθ"
+       "ipa": "ˈðɛɹ ˈɑːɹ ˈsɛvəˈntiːn ˈdeɪz ˈlɛft ˈtuː ðə ˈɛnd ˈʌv ˈðɪs ˈmʌnθ"
       }
      ]
     },
@@ -14246,21 +14428,21 @@ window.BANKS = {
      "level": 4,
      "target": "seventy",
      "gloss": "七十",
-     "ipa": "ˈsɛvəntiː",
+     "ipa": "ˈsɛvənti",
      "steps": [
       {
        "kind": "word",
        "en": "seventy",
        "zh": "七十",
        "src": "4-087",
-       "ipa": "ˈsɛvəntiː"
+       "ipa": "ˈsɛvənti"
       },
       {
        "kind": "phrase",
        "en": "seventy",
        "zh": "七十",
        "src": "table",
-       "ipa": "ˈsɛvəntiː"
+       "ipa": "ˈsɛvənti"
       },
       {
        "kind": "word",
@@ -14274,7 +14456,7 @@ window.BANKS = {
        "en": "Please turn to page seventy.",
        "zh": "請翻到第七十頁",
        "src": "4-087",
-       "ipa": "ˈpliːz tɝn ˈtuː ˈpeɪdʒ ˈsɛvəntiː"
+       "ipa": "ˈpliːz ˈtɝn ˈtuː ˈpeɪdʒ ˈsɛvənti"
       }
      ]
     },
@@ -14311,7 +14493,7 @@ window.BANKS = {
        "en": "I was preparing for the big exam when I was sixteen.",
        "zh": "我十六歲時在準備一個重要的考試",
        "src": "4-090",
-       "ipa": "ˈaɪ ˈwɑːz pɹiːˈpɛɹɪŋ ˈfɔːɹ ðə ˈbɪɡ ɪˈɡzæm ˈwɛn ˈaɪ ˈwɑːz sɪˈkstiːn"
+       "ipa": "ˈaɪ ˈwɑːz pɹiˈpɛɹɪŋ ˈfɔːɹ ðə ˈbɪɡ ɪˈɡzæm ˈwɛn ˈaɪ ˈwɑːz sɪˈkstiːn"
       }
      ]
     },
@@ -14320,14 +14502,14 @@ window.BANKS = {
      "level": 4,
      "target": "sixty",
      "gloss": "六十",
-     "ipa": "ˈsɪkstiː",
+     "ipa": "ˈsɪksti",
      "steps": [
       {
        "kind": "word",
        "en": "sixty",
        "zh": "六十",
        "src": "4-091",
-       "ipa": "ˈsɪkstiː"
+       "ipa": "ˈsɪksti"
       },
       {
        "kind": "phrase",
@@ -14348,7 +14530,7 @@ window.BANKS = {
        "en": "An hour is sixty minutes.",
        "zh": "一小時有六十分鐘",
        "src": "4-091",
-       "ipa": "ˈæn ˈaʊɚ ˈɪz ˈsɪkstiː ˈmɪnəts"
+       "ipa": "ˈæn ˈaʊɚ ˈɪz ˈsɪksti ˈmɪnəts"
       }
      ]
     },
@@ -14385,7 +14567,7 @@ window.BANKS = {
        "en": "I'll see you soon.",
        "zh": "我很快就會見到你",
        "src": "4-105",
-       "ipa": "ˈsiː ˈjuː ˈsuːn"
+       "ipa": "ˈaɪl ˈsiː ˈjuː ˈsuːn"
       }
      ]
     },
@@ -14394,35 +14576,35 @@ window.BANKS = {
      "level": 4,
      "target": "thirty",
      "gloss": "三十",
-     "ipa": "ˌθɝdiː",
+     "ipa": "ˈθɝˌdiː",
      "steps": [
       {
        "kind": "word",
        "en": "thirty",
        "zh": "三十",
        "src": "4-119",
-       "ipa": "ˌθɝdiː"
+       "ipa": "ˈθɝˌdiː"
       },
       {
        "kind": "phrase",
        "en": "thirty",
        "zh": "三十",
        "src": "table",
-       "ipa": "ˌθɝdiː"
+       "ipa": "ˈθɝˌdiː"
       },
       {
        "kind": "word",
        "en": "only",
        "zh": "只有",
        "src": "5-091",
-       "ipa": "ˈoʊnliː"
+       "ipa": "ˈoʊnli"
       },
       {
        "kind": "sentence",
        "en": "William only got thirty on his math test.",
        "zh": "William的數學只考了三十分",
        "src": "4-119",
-       "ipa": "ˈwɪljəm ˈoʊnliː ˈɡɑːt ˌθɝdiː ˈɑːn ˈhɪz ˈmæθ ˈtɛst"
+       "ipa": "ˈwɪljəm ˈoʊnli ˈɡɑːt ˈθɝˌdiː ˈɑːn ˈhɪz ˈmæθ ˈtɛst"
       }
      ]
     },
@@ -14431,28 +14613,28 @@ window.BANKS = {
      "level": 4,
      "target": "twenty",
      "gloss": "二十",
-     "ipa": "ˈtwɛntiː",
+     "ipa": "ˈtwɛnti",
      "steps": [
       {
        "kind": "word",
        "en": "twenty",
        "zh": "二十",
        "src": "4-123",
-       "ipa": "ˈtwɛntiː"
+       "ipa": "ˈtwɛnti"
       },
       {
        "kind": "phrase",
        "en": "twenty",
        "zh": "二十",
        "src": "table",
-       "ipa": "ˈtwɛntiː"
+       "ipa": "ˈtwɛnti"
       },
       {
        "kind": "sentence",
        "en": "We need twenty more chairs.",
        "zh": "我們還需要多二十張椅子",
        "src": "4-123",
-       "ipa": "ˈwiː ˈniːd ˈtwɛntiː ˈmɔːɹ ˈtʃɛɹz"
+       "ipa": "ˈwiː ˈniːd ˈtwɛnti ˈmɔːɹ ˈtʃɛɹz"
       }
      ]
     },
@@ -14491,35 +14673,35 @@ window.BANKS = {
      "level": 5,
      "target": "Friday",
      "gloss": "星期五",
-     "ipa": "ˈfɹaɪdiː",
+     "ipa": "ˈfɹaɪdi",
      "steps": [
       {
        "kind": "word",
        "en": "Friday",
        "zh": "星期五",
        "src": "5-056",
-       "ipa": "ˈfɹaɪdiː"
+       "ipa": "ˈfɹaɪdi"
       },
       {
        "kind": "phrase",
        "en": "friday",
        "zh": "星期五",
        "src": "table",
-       "ipa": "ˈfɹaɪdiː"
+       "ipa": "ˈfɹaɪdi"
       },
       {
        "kind": "word",
        "en": "movie",
        "zh": "電影",
        "src": "4-063",
-       "ipa": "ˈmuːviː"
+       "ipa": "ˈmuːvi"
       },
       {
        "kind": "sentence",
        "en": "I'm going to a movie with my friend on Friday night.",
        "zh": "我星期五晚上要和朋友去看電影",
        "src": "5-056",
-       "ipa": "ˈɡoʊɪŋ ˈtuː ə ˈmuːviː ˈwɪð ˈmaɪ ˈfɹɛnd ˈɑːn ˈfɹaɪdiː ˈnaɪt"
+       "ipa": "ˈaɪm ˈɡoʊɪŋ ˈtuː ə ˈmuːvi ˈwɪð ˈmaɪ ˈfɹɛnd ˈɑːn ˈfɹaɪdi ˈnaɪt"
       }
      ]
     },
@@ -14528,21 +14710,21 @@ window.BANKS = {
      "level": 5,
      "target": "Monday",
      "gloss": "星期一",
-     "ipa": "mʌndiː",
+     "ipa": "ˈmʌndi",
      "steps": [
       {
        "kind": "word",
        "en": "Monday",
        "zh": "星期一",
        "src": "5-080",
-       "ipa": "mʌndiː"
+       "ipa": "ˈmʌndi"
       },
       {
        "kind": "phrase",
        "en": "monday",
        "zh": "星期一",
        "src": "table",
-       "ipa": "mʌndiː"
+       "ipa": "ˈmʌndi"
       },
       {
        "kind": "word",
@@ -14556,7 +14738,7 @@ window.BANKS = {
        "en": "We have to go to school on Monday.",
        "zh": "我們星期一要上學",
        "src": "5-080",
-       "ipa": "ˈwiː ˈhæv ˈtuː ˈɡoʊ ˈtuː ˈskuːl ˈɑːn mʌndiː"
+       "ipa": "ˈwiː ˈhæv ˈtuː ˈɡoʊ ˈtuː ˈskuːl ˈɑːn ˈmʌndi"
       }
      ]
     },
@@ -14639,14 +14821,21 @@ window.BANKS = {
      "level": 5,
      "target": "once",
      "gloss": "一次",
-     "ipa": "wʌns",
+     "ipa": "ˈwʌns",
      "steps": [
       {
        "kind": "word",
        "en": "once",
        "zh": "一次",
        "src": "5-090",
-       "ipa": "wʌns"
+       "ipa": "ˈwʌns"
+      },
+      {
+       "kind": "phrase",
+       "en": "once a month",
+       "zh": "每個月一次",
+       "src": "table",
+       "ipa": "ˈwʌns ə ˈmʌnθ"
       },
       {
        "kind": "word",
@@ -14660,7 +14849,7 @@ window.BANKS = {
        "en": "We visit our grandparents once a month.",
        "zh": "我們每個月拜訪祖父母一次",
        "src": "5-090",
-       "ipa": "ˈwiː ˈvɪzɪt ˈaʊɚ ˈɡɹæˌndpɛɹənts wʌns ə mʌnθ"
+       "ipa": "ˈwiː ˈvɪzɪt ˈaʊɚ ˈɡɹæˌndpɛɹənts ˈwʌns ə ˈmʌnθ"
       }
      ]
     },
@@ -14697,7 +14886,7 @@ window.BANKS = {
        "en": "She is a famous singer of the past.",
        "zh": "她過去是個有名的歌手",
        "src": "5-102",
-       "ipa": "ˈʃiː ˈɪz ə ˈfeɪməs ˈsɪŋɚ ʌv ðə ˈpæst"
+       "ipa": "ˈʃiː ˈɪz ə ˈfeɪməs ˈsɪŋɚ ˈʌv ðə ˈpæst"
       }
      ]
     },
@@ -14734,7 +14923,7 @@ window.BANKS = {
        "en": "It's a quarter past two.",
        "zh": "現在兩點十五分",
        "src": "5-122",
-       "ipa": "ə ˈkwɔːɹtɚ ˈpæst ˈtuː"
+       "ipa": "ˈɪts ə ˈkwɔːɹtɚ ˈpæst ˈtuː"
       }
      ]
     },
@@ -14743,21 +14932,21 @@ window.BANKS = {
      "level": 5,
      "target": "Saturday",
      "gloss": "星期六",
-     "ipa": "ˈsætɚdiː",
+     "ipa": "ˈsætɚdi",
      "steps": [
       {
        "kind": "word",
        "en": "Saturday",
        "zh": "星期六",
        "src": "5-140",
-       "ipa": "ˈsætɚdiː"
+       "ipa": "ˈsætɚdi"
       },
       {
        "kind": "phrase",
        "en": "saturday",
        "zh": "星期六",
        "src": "table",
-       "ipa": "ˈsætɚdiː"
+       "ipa": "ˈsætɚdi"
       },
       {
        "kind": "word",
@@ -14771,7 +14960,7 @@ window.BANKS = {
        "en": "We don't have to go to school on Saturday.",
        "zh": "我們星期六不用上學",
        "src": "5-140",
-       "ipa": "ˈwiː ˈhæv ˈtuː ˈɡoʊ ˈtuː ˈskuːl ˈɑːn ˈsætɚdiː"
+       "ipa": "ˈwiː ˈdoʊnt ˈhæv ˈtuː ˈɡoʊ ˈtuː ˈskuːl ˈɑːn ˈsætɚdi"
       }
      ]
     },
@@ -14847,14 +15036,14 @@ window.BANKS = {
      "level": 5,
      "target": "Sunday",
      "gloss": "星期日",
-     "ipa": "ˌsʌndeɪ",
+     "ipa": "ˈsʌˌndeɪ",
      "steps": [
       {
        "kind": "word",
        "en": "Sunday",
        "zh": "星期日",
        "src": "5-166",
-       "ipa": "ˌsʌndeɪ"
+       "ipa": "ˈsʌˌndeɪ"
       },
       {
        "kind": "phrase",
@@ -14875,7 +15064,7 @@ window.BANKS = {
        "en": "I always get up late on Sundays.",
        "zh": "我星期日都很晚起",
        "src": "5-166",
-       "ipa": "ˈaɪ ˈɔːˌlweɪz ˈɡɛt ʌp ˈleɪt ˈɑːn ˌsʌndeɪz"
+       "ipa": "ˈaɪ ˈɔːˌlweɪz ˈɡɛt ˈʌp ˈleɪt ˈɑːn ˈsʌˌndeɪz"
       }
      ]
     },
@@ -14884,35 +15073,35 @@ window.BANKS = {
      "level": 5,
      "target": "third",
      "gloss": "第三的",
-     "ipa": "θɝd",
+     "ipa": "ˈθɝd",
      "steps": [
       {
        "kind": "word",
        "en": "third",
        "zh": "第三的",
        "src": "5-172",
-       "ipa": "θɝd"
+       "ipa": "ˈθɝd"
       },
       {
        "kind": "phrase",
        "en": "one",
        "zh": "一",
        "src": "table",
-       "ipa": "wʌn"
+       "ipa": "ˈwʌn"
       },
       {
        "kind": "word",
        "en": "one",
        "zh": "一",
        "src": "1-052",
-       "ipa": "wʌn"
+       "ipa": "ˈwʌn"
       },
       {
        "kind": "sentence",
        "en": "I'm the third one in the line.",
        "zh": "我在隊伍中排第三個",
        "src": "5-172",
-       "ipa": "ðə θɝd wʌn ɪn ðə ˈlaɪn"
+       "ipa": "ˈaɪm ðə ˈθɝd ˈwʌn ɪn ðə ˈlaɪn"
       }
      ]
     },
@@ -14921,35 +15110,35 @@ window.BANKS = {
      "level": 5,
      "target": "Thursday",
      "gloss": "星期四",
-     "ipa": "ˌθɝzdeɪ",
+     "ipa": "ˈθɝˌzdeɪ",
      "steps": [
       {
        "kind": "word",
        "en": "Thursday",
        "zh": "星期四",
        "src": "5-173",
-       "ipa": "ˌθɝzdeɪ"
+       "ipa": "ˈθɝˌzdeɪ"
       },
       {
        "kind": "phrase",
        "en": "on thursday",
        "zh": "在星期四",
        "src": "table",
-       "ipa": "ˈɑːn ˌθɝzdeɪ"
+       "ipa": "ˈɑːn ˈθɝˌzdeɪ"
       },
       {
        "kind": "word",
        "en": "PE(physical education)",
        "zh": "體育",
        "src": "2-055",
-       "ipa": "ˌɛˈdʒəkeɪʃən"
+       "ipa": "ˌɛdʒəˈkeɪʃən"
       },
       {
        "kind": "sentence",
        "en": "I have PE class on Thursday.",
        "zh": "我星期四有體育課",
        "src": "5-173",
-       "ipa": "ˈaɪ ˈhæv ˈklæs ˈɑːn ˌθɝzdeɪ"
+       "ipa": "ˈaɪ ˈhæv ˈklæs ˈɑːn ˈθɝˌzdeɪ"
       }
      ]
     },
@@ -14958,35 +15147,35 @@ window.BANKS = {
      "level": 5,
      "target": "tonight",
      "gloss": "今晚",
-     "ipa": "ˈtənaɪt",
+     "ipa": "təˈnaɪt",
      "steps": [
       {
        "kind": "word",
        "en": "tonight",
        "zh": "今晚",
        "src": "5-175",
-       "ipa": "ˈtənaɪt"
+       "ipa": "təˈnaɪt"
       },
       {
        "kind": "phrase",
        "en": "tonight",
        "zh": "今晚",
        "src": "table",
-       "ipa": "ˈtənaɪt"
+       "ipa": "təˈnaɪt"
       },
       {
        "kind": "word",
        "en": "together",
        "zh": "一起",
        "src": "3-096",
-       "ipa": "ˈtəɡɛðɚ"
+       "ipa": "təˈɡɛðɚ"
       },
       {
        "kind": "sentence",
        "en": "We'll have dinner together tonight.",
        "zh": "我們今晚會一起吃晚餐",
        "src": "5-175",
-       "ipa": "ˈhæv ˈdɪnɚ ˈtəɡɛðɚ ˈtənaɪt"
+       "ipa": "ˈwiːl ˈhæv ˈdɪnɚ təˈɡɛðɚ təˈnaɪt"
       }
      ]
     },
@@ -15009,7 +15198,7 @@ window.BANKS = {
        "en": "thirty",
        "zh": "三十",
        "src": "table",
-       "ipa": "ˌθɝdiː"
+       "ipa": "ˈθɝˌdiː"
       },
       {
        "kind": "word",
@@ -15023,7 +15212,7 @@ window.BANKS = {
        "en": "The total number of people in the meeting is thirty.",
        "zh": "會議裡總共有三十人",
        "src": "5-177",
-       "ipa": "ðə ˈtoʊtəl nʌmbɚ ʌv ˈpiːpəl ɪn ðə ˈmiːtɪŋ ˈɪz ˌθɝdiː"
+       "ipa": "ðə ˈtoʊtəl ˈnʌmbɚ ˈʌv ˈpiːpəl ɪn ðə ˈmiːtɪŋ ˈɪz ˈθɝˌdiː"
       }
      ]
     },
@@ -15032,21 +15221,21 @@ window.BANKS = {
      "level": 5,
      "target": "Tuesday",
      "gloss": "星期二",
-     "ipa": "ˈtuːzdiː",
+     "ipa": "ˈtuːzdi",
      "steps": [
       {
        "kind": "word",
        "en": "Tuesday",
        "zh": "星期二",
        "src": "5-180",
-       "ipa": "ˈtuːzdiː"
+       "ipa": "ˈtuːzdi"
       },
       {
        "kind": "phrase",
        "en": "on tuesday",
        "zh": "在星期二",
        "src": "table",
-       "ipa": "ˈɑːn ˈtuːzdiː"
+       "ipa": "ˈɑːn ˈtuːzdi"
       },
       {
        "kind": "word",
@@ -15060,7 +15249,7 @@ window.BANKS = {
        "en": "We watch that program on Tuesday night.",
        "zh": "我們在禮拜二晚上看那節目",
        "src": "5-180",
-       "ipa": "ˈwiː ˈwɑːtʃ ˈðæt ˈpɹoʊˌɡɹæm ˈɑːn ˈtuːzdiː ˈnaɪt"
+       "ipa": "ˈwiː ˈwɑːtʃ ˈðæt ˈpɹoʊˌɡɹæm ˈɑːn ˈtuːzdi ˈnaɪt"
       }
      ]
     },
@@ -15069,28 +15258,28 @@ window.BANKS = {
      "level": 5,
      "target": "Wednesday",
      "gloss": "星期三",
-     "ipa": "ˈwɛnzdiː",
+     "ipa": "ˈwɛnzdi",
      "steps": [
       {
        "kind": "word",
        "en": "Wednesday",
        "zh": "星期三",
        "src": "5-188",
-       "ipa": "ˈwɛnzdiː"
+       "ipa": "ˈwɛnzdi"
       },
       {
        "kind": "phrase",
        "en": "on wednesday",
        "zh": "在星期三",
        "src": "table",
-       "ipa": "ˈɑːn ˈwɛnzdiː"
+       "ipa": "ˈɑːn ˈwɛnzdi"
       },
       {
        "kind": "sentence",
        "en": "The game is on Wednesday.",
        "zh": "比賽是在星期三",
        "src": "5-188",
-       "ipa": "ðə ˈɡeɪm ˈɪz ˈɑːn ˈwɛnzdiː"
+       "ipa": "ðə ˈɡeɪm ˈɪz ˈɑːn ˈwɛnzdi"
       }
      ]
     },
@@ -15120,7 +15309,7 @@ window.BANKS = {
        "en": "Children's Day is on April 4th.",
        "zh": "兒童節在四月四號",
        "src": "6-013",
-       "ipa": "ˈdeɪ ˈɪz ˈɑːn ˈeɪpɹəl"
+       "ipa": "ˈtʃɪldɹənz ˈdeɪ ˈɪz ˈɑːn ˈeɪpɹəl"
       }
      ]
     },
@@ -15157,7 +15346,7 @@ window.BANKS = {
        "en": "Father's Day in Taiwan is in August.",
        "zh": "台灣的父親節在八月",
        "src": "6-016",
-       "ipa": "ˈdeɪ ɪn ˈtaɪˈwɑːn ˈɪz ɪn ˈɑːɡəst"
+       "ipa": "ˈfɑːðɚz ˈdeɪ ɪn ˈtaɪˈwɑːn ˈɪz ɪn ˈɑːɡəst"
       }
      ]
     },
@@ -15166,28 +15355,28 @@ window.BANKS = {
      "level": 6,
      "target": "century",
      "gloss": "世紀",
-     "ipa": "ˈsɛntʃɚiː",
+     "ipa": "ˈsɛntʃɚi",
      "steps": [
       {
        "kind": "word",
        "en": "century",
        "zh": "世紀",
        "src": "6-045",
-       "ipa": "ˈsɛntʃɚiː"
+       "ipa": "ˈsɛntʃɚi"
       },
       {
        "kind": "phrase",
        "en": "a century",
        "zh": "一個世紀",
        "src": "table",
-       "ipa": "ə ˈsɛntʃɚiː"
+       "ipa": "ə ˈsɛntʃɚi"
       },
       {
        "kind": "sentence",
        "en": "It happened a century ago.",
        "zh": "這發生在一世紀前",
        "src": "6-045",
-       "ipa": "ˈɪt ˈhæpənd ə ˈsɛntʃɚiː ˈəɡoʊ"
+       "ipa": "ˈɪt ˈhæpənd ə ˈsɛntʃɚi əˈɡoʊ"
       }
      ]
     },
@@ -15217,7 +15406,7 @@ window.BANKS = {
        "en": "December is the last month of the year.",
        "zh": "十二月是一年的最後一個月",
        "src": "6-071",
-       "ipa": "dɪˈsɛmbɚ ˈɪz ðə ˈlæst mʌnθ ʌv ðə ˈjɪɹ"
+       "ipa": "dɪˈsɛmbɚ ˈɪz ðə ˈlæst ˈmʌnθ ˈʌv ðə ˈjɪɹ"
       }
      ]
     },
@@ -15247,14 +15436,14 @@ window.BANKS = {
        "en": "story",
        "zh": "故事",
        "src": "6-245",
-       "ipa": "ˈstɔːɹiː"
+       "ipa": "ˈstɔːɹi"
       },
       {
        "kind": "sentence",
        "en": "This is the end of the story.",
        "zh": "這是故事的結尾",
        "src": "6-091",
-       "ipa": "ˈðɪs ˈɪz ðə ˈɛnd ʌv ðə ˈstɔːɹiː"
+       "ipa": "ˈðɪs ˈɪz ðə ˈɛnd ˈʌv ðə ˈstɔːɹi"
       }
      ]
     },
@@ -15291,7 +15480,7 @@ window.BANKS = {
        "en": "We always have a meal on the New Year's Eve.",
        "zh": "我們在除夕夜吃大餐",
        "src": "6-097",
-       "ipa": "ˈwiː ˈɔːˌlweɪz ˈhæv ə ˈmiːl ˈɑːn ðə ˈnuː ˈiːv"
+       "ipa": "ˈwiː ˈɔːˌlweɪz ˈhæv ə ˈmiːl ˈɑːn ðə ˈnuː ˈjɪɹz ˈiːv"
       }
      ]
     },
@@ -15300,21 +15489,21 @@ window.BANKS = {
      "level": 6,
      "target": "February",
      "gloss": "二月",
-     "ipa": "ˈfɛˌbjəwɛɹiː",
+     "ipa": "ˈfɛbjəˌwɛɹi",
      "steps": [
       {
        "kind": "word",
        "en": "February",
        "zh": "二月",
        "src": "6-109",
-       "ipa": "ˈfɛˌbjəwɛɹiː"
+       "ipa": "ˈfɛbjəˌwɛɹi"
       },
       {
        "kind": "phrase",
        "en": "february",
        "zh": "二月",
        "src": "table",
-       "ipa": "ˈfɛˌbjəwɛɹiː"
+       "ipa": "ˈfɛbjəˌwɛɹi"
       },
       {
        "kind": "word",
@@ -15328,7 +15517,7 @@ window.BANKS = {
        "en": "Our winter break is sometimes in February.",
        "zh": "我們的寒假有時在二月",
        "src": "6-109",
-       "ipa": "ˈaʊɚ ˈwɪntɚ ˈbɹeɪk ˈɪz ˈsəmtaɪmz ɪn ˈfɛˌbjəwɛɹiː"
+       "ipa": "ˈaʊɚ ˈwɪntɚ ˈbɹeɪk ˈɪz səˈmtaɪmz ɪn ˈfɛbjəˌwɛɹi"
       }
      ]
     },
@@ -15337,28 +15526,28 @@ window.BANKS = {
      "level": 6,
      "target": "January",
      "gloss": "一月",
-     "ipa": "ˈdʒænjuːˌɛɹiː",
+     "ipa": "ˈdʒænjuˌɛɹi",
      "steps": [
       {
        "kind": "word",
        "en": "January",
        "zh": "一月",
        "src": "6-151",
-       "ipa": "ˈdʒænjuːˌɛɹiː"
+       "ipa": "ˈdʒænjuˌɛɹi"
       },
       {
        "kind": "phrase",
        "en": "january",
        "zh": "一月",
        "src": "table",
-       "ipa": "ˈdʒænjuːˌɛɹiː"
+       "ipa": "ˈdʒænjuˌɛɹi"
       },
       {
        "kind": "sentence",
        "en": "January is the first month of the year.",
        "zh": "一月是一年的第一個月",
        "src": "6-151",
-       "ipa": "ˈdʒænjuːˌɛɹiː ˈɪz ðə fɝst mʌnθ ʌv ðə ˈjɪɹ"
+       "ipa": "ˈdʒænjuˌɛɹi ˈɪz ðə ˈfɝst ˈmʌnθ ˈʌv ðə ˈjɪɹ"
       }
      ]
     },
@@ -15395,7 +15584,7 @@ window.BANKS = {
        "en": "The summer vacation begins in July.",
        "zh": "暑假七月開始",
        "src": "6-152",
-       "ipa": "ðə sʌmɚ veɪˈkeɪʃən bɪˈɡɪnz ɪn ˌdʒuːˈlaɪ"
+       "ipa": "ðə ˈsʌmɚ veɪˈkeɪʃən bɪˈɡɪnz ɪn ˌdʒuːˈlaɪ"
       }
      ]
     },
@@ -15462,7 +15651,7 @@ window.BANKS = {
        "en": "It's still a little bit cold in March.",
        "zh": "三月依然有一點冷",
        "src": "6-178",
-       "ipa": "ˈstɪl ə ˈlɪtəl ˈbɪt ˈkoʊld ɪn ˈmɑːɹtʃ"
+       "ipa": "ˈɪts ˈstɪl ə ˈlɪtəl ˈbɪt ˈkoʊld ɪn ˈmɑːɹtʃ"
       }
      ]
     },
@@ -15492,14 +15681,14 @@ window.BANKS = {
        "en": "Sunday",
        "zh": "星期日",
        "src": "5-166",
-       "ipa": "ˌsʌndeɪ"
+       "ipa": "ˈsʌˌndeɪ"
       },
       {
        "kind": "sentence",
        "en": "Mother's Day is on the second Sunday of May.",
        "zh": "母親節在五月的第二個星期日",
        "src": "6-182",
-       "ipa": "ˈdeɪ ˈɪz ˈɑːn ðə ˈsɛkənd ˌsʌndeɪ ʌv ˈmeɪ"
+       "ipa": "ˈmʌðɚz ˈdeɪ ˈɪz ˈɑːn ðə ˈsɛkənd ˈsʌˌndeɪ ˈʌv ˈmeɪ"
       }
      ]
     },
@@ -15522,7 +15711,7 @@ window.BANKS = {
        "en": "forty",
        "zh": "四十",
        "src": "table",
-       "ipa": "ˈfɔːɹtiː"
+       "ipa": "ˈfɔːɹti"
       },
       {
        "kind": "word",
@@ -15536,7 +15725,7 @@ window.BANKS = {
        "en": "The program is forty minutes.",
        "zh": "這個節目四十分鐘",
        "src": "6-186",
-       "ipa": "ðə ˈpɹoʊˌɡɹæm ˈɪz ˈfɔːɹtiː ˈmɪnəts"
+       "ipa": "ðə ˈpɹoʊˌɡɹæm ˈɪz ˈfɔːɹti ˈmɪnəts"
       }
      ]
     },
@@ -15566,14 +15755,14 @@ window.BANKS = {
        "en": "forget",
        "zh": "忘記",
        "src": "5-054",
-       "ipa": "ˈfɚɡɛt"
+       "ipa": "fɚˈɡɛt"
       },
       {
        "kind": "sentence",
        "en": "I'll never forget this moment.",
        "zh": "我永遠不會忘記這一刻",
        "src": "6-188",
-       "ipa": "ˈnɛvɚ ˈfɚɡɛt ˈðɪs ˈmoʊmənt"
+       "ipa": "ˈaɪl ˈnɛvɚ fɚˈɡɛt ˈðɪs ˈmoʊmənt"
       }
      ]
     },
@@ -15603,14 +15792,14 @@ window.BANKS = {
        "en": "Thursday",
        "zh": "星期四",
        "src": "5-173",
-       "ipa": "ˌθɝzdeɪ"
+       "ipa": "ˈθɝˌzdeɪ"
       },
       {
        "kind": "sentence",
        "en": "Thanksgiving is on the fourth Thursday of November in the US.",
        "zh": "美國感恩節在十一月第四個星期四",
        "src": "6-196",
-       "ipa": "ˌθæˈŋksɡɪvɪŋ ˈɪz ˈɑːn ðə ˈfɔːɹθ ˌθɝzdeɪ ʌv noʊˈvɛmbɚ ɪn ðə ʌs"
+       "ipa": "ˌθæˈŋksɡɪvɪŋ ˈɪz ˈɑːn ðə ˈfɔːɹθ ˈθɝˌzdeɪ ˈʌv noʊˈvɛmbɚ ɪn ðə ˈʌs"
       }
      ]
     },
@@ -15619,35 +15808,35 @@ window.BANKS = {
      "level": 6,
      "target": "October",
      "gloss": "十月",
-     "ipa": "ɑːˈktoʊbɚ",
+     "ipa": "ɑˈktoʊbɚ",
      "steps": [
       {
        "kind": "word",
        "en": "October",
        "zh": "十月",
        "src": "6-197",
-       "ipa": "ɑːˈktoʊbɚ"
+       "ipa": "ɑˈktoʊbɚ"
       },
       {
        "kind": "phrase",
        "en": "october",
        "zh": "十月",
        "src": "table",
-       "ipa": "ɑːˈktoʊbɚ"
+       "ipa": "ɑˈktoʊbɚ"
       },
       {
        "kind": "word",
        "en": "celebrate",
        "zh": "慶祝",
        "src": "5-027",
-       "ipa": "ˈsɛˌləbɹeɪt"
+       "ipa": "ˈsɛləˌbɹeɪt"
       },
       {
        "kind": "sentence",
        "en": "We celebrate Halloween in October.",
        "zh": "我們在十月慶祝萬聖節",
        "src": "6-197",
-       "ipa": "ˈwiː ˈsɛˌləbɹeɪt ˌhæˈləwiːn ɪn ɑːˈktoʊbɚ"
+       "ipa": "ˈwiː ˈsɛləˌbɹeɪt ˌhæləˈwiːn ɪn ɑˈktoʊbɚ"
       }
      ]
     },
@@ -15714,14 +15903,14 @@ window.BANKS = {
        "en": "violin",
        "zh": "小提琴",
        "src": "5-184",
-       "ipa": "vaɪˈəlɪn"
+       "ipa": "vaɪəˈlɪn"
       },
       {
        "kind": "sentence",
        "en": "I practice violin twice a week.",
        "zh": "我一週練習小提琴兩次",
        "src": "6-264",
-       "ipa": "ˈaɪ ˈpɹæktəs vaɪˈəlɪn ˈtwaɪs ə ˈwiːk"
+       "ipa": "ˈaɪ ˈpɹæktəs vaɪəˈlɪn ˈtwaɪs ə ˈwiːk"
       }
      ]
     }
@@ -15759,14 +15948,14 @@ window.BANKS = {
        "en": "hurt",
        "zh": "疼痛",
        "src": "4-051",
-       "ipa": "hɝt"
+       "ipa": "ˈhɝt"
       },
       {
        "kind": "sentence",
        "en": "Vincent hurt his neck a few days ago.",
        "zh": "Vincent幾天前傷到脖子",
        "src": "1-046",
-       "ipa": "ˈvɪnsənt hɝt ˈhɪz ˈnɛk ə ˈfjuː ˈdeɪz ˈəɡoʊ"
+       "ipa": "ˈvɪnsənt ˈhɝt ˈhɪz ˈnɛk ə ˈfjuː ˈdeɪz əˈɡoʊ"
       }
      ]
     },
@@ -15826,7 +16015,7 @@ window.BANKS = {
        "en": "Rae is trying to stand on her toes.",
        "zh": "Rae試著用腳趾站立",
        "src": "2-088",
-       "ipa": "ˈɹeɪ ˈɪz ˈtɹaɪɪŋ ˈtuː ˈstænd ˈɑːn hɝ ˈtoʊz"
+       "ipa": "ˈɹeɪ ˈɪz ˈtɹaɪɪŋ ˈtuː ˈstænd ˈɑːn ˈhɝ ˈtoʊz"
       }
      ]
     },
@@ -15835,21 +16024,21 @@ window.BANKS = {
      "level": 3,
      "target": "body",
      "gloss": "身體",
-     "ipa": "ˈbɑːdiː",
+     "ipa": "ˈbɑːdi",
      "steps": [
       {
        "kind": "word",
        "en": "body",
        "zh": "身體",
        "src": "3-011",
-       "ipa": "ˈbɑːdiː"
+       "ipa": "ˈbɑːdi"
       },
       {
        "kind": "phrase",
        "en": "a body",
        "zh": "一個身體",
        "src": "table",
-       "ipa": "ə ˈbɑːdiː"
+       "ipa": "ə ˈbɑːdi"
       },
       {
        "kind": "word",
@@ -15863,7 +16052,7 @@ window.BANKS = {
        "en": "His whole body is in the water.",
        "zh": "他整個身體都在水裡",
        "src": "3-011",
-       "ipa": "ˈhɪz ˈhoʊl ˈbɑːdiː ˈɪz ɪn ðə ˈwɔːtɚ"
+       "ipa": "ˈhɪz ˈhoʊl ˈbɑːdi ˈɪz ɪn ðə ˈwɔːtɚ"
       }
      ]
     },
@@ -15872,14 +16061,21 @@ window.BANKS = {
      "level": 3,
      "target": "brush",
      "gloss": "刷",
-     "ipa": "bɹʌʃ",
+     "ipa": "ˈbɹʌʃ",
      "steps": [
       {
        "kind": "word",
        "en": "brush",
        "zh": "刷",
        "src": "3-014",
-       "ipa": "bɹʌʃ"
+       "ipa": "ˈbɹʌʃ"
+      },
+      {
+       "kind": "phrase",
+       "en": "brush my teeth",
+       "zh": "刷牙",
+       "src": "table",
+       "ipa": "ˈbɹʌʃ ˈmaɪ ˈtiːθ"
       },
       {
        "kind": "word",
@@ -15893,7 +16089,7 @@ window.BANKS = {
        "en": "I brush my teeth twice a day.",
        "zh": "我一天刷兩次牙",
        "src": "3-014",
-       "ipa": "ˈaɪ bɹʌʃ ˈmaɪ ˈtiːθ ˈtwaɪs ə ˈdeɪ"
+       "ipa": "ˈaɪ ˈbɹʌʃ ˈmaɪ ˈtiːθ ˈtwaɪs ə ˈdeɪ"
       }
      ]
     },
@@ -15923,7 +16119,7 @@ window.BANKS = {
        "en": "My grandma died many years ago.",
        "zh": "我奶奶多年前去世了",
        "src": "3-026",
-       "ipa": "ˈmaɪ ˈɡɹændmɑː ˈdaɪd ˈmɛniː ˈjɪɹz ˈəɡoʊ"
+       "ipa": "ˈmaɪ ˈɡɹændmɑ ˈdaɪd ˈmɛni ˈjɪɹz əˈɡoʊ"
       }
      ]
     },
@@ -15946,21 +16142,21 @@ window.BANKS = {
        "en": "hurt my knee",
        "zh": "傷到我的膝蓋",
        "src": "table",
-       "ipa": "hɝt ˈmaɪ ˈniː"
+       "ipa": "ˈhɝt ˈmaɪ ˈniː"
       },
       {
        "kind": "word",
        "en": "hurt",
        "zh": "疼痛",
        "src": "4-051",
-       "ipa": "hɝt"
+       "ipa": "ˈhɝt"
       },
       {
        "kind": "sentence",
        "en": "Ben hurt his knee last week.",
        "zh": "Ben上週傷了他的膝蓋",
        "src": "3-062",
-       "ipa": "ˈbɛn hɝt ˈhɪz ˈniː ˈlæst ˈwiːk"
+       "ipa": "ˈbɛn ˈhɝt ˈhɪz ˈniː ˈlæst ˈwiːk"
       }
      ]
     },
@@ -15997,7 +16193,7 @@ window.BANKS = {
        "en": "Let's take a rest and eat.",
        "zh": "我們休息一下吃點東西",
        "src": "3-084",
-       "ipa": "ˈteɪk ə ˈɹɛst ənd ˈiːt"
+       "ipa": "ˈlɛts ˈteɪk ə ˈɹɛst ənd ˈiːt"
       }
      ]
     },
@@ -16020,7 +16216,7 @@ window.BANKS = {
        "en": "get enough sleep",
        "zh": "睡足",
        "src": "table",
-       "ipa": "ˈɡɛt ɪnʌf ˈsliːp"
+       "ipa": "ˈɡɛt ɪˈnʌf ˈsliːp"
       },
       {
        "kind": "word",
@@ -16034,7 +16230,7 @@ window.BANKS = {
        "en": "Vivian goes to sleep at ten every night.",
        "zh": "Vivian每天晚上十點睡覺",
        "src": "3-093",
-       "ipa": "ˈvɪviːən ˈɡoʊz ˈtuː ˈsliːp ˈæt ˈtɛn ˈɛvɚiː ˈnaɪt"
+       "ipa": "ˈvɪviən ˈɡoʊz ˈtuː ˈsliːp ˈæt ˈtɛn ˈɛvɚi ˈnaɪt"
       }
      ]
     },
@@ -16064,7 +16260,7 @@ window.BANKS = {
        "en": "I think I'm having a fever.",
        "zh": "我想我發燒了",
        "src": "4-038",
-       "ipa": "ˈaɪ ˈθɪŋk ˈhævɪŋ ə ˈfiːvɚ"
+       "ipa": "ˈaɪ ˈθɪŋk ˈaɪm ˈhævɪŋ ə ˈfiːvɚ"
       }
      ]
     },
@@ -16073,14 +16269,21 @@ window.BANKS = {
      "level": 4,
      "target": "hurt",
      "gloss": "疼痛",
-     "ipa": "hɝt",
+     "ipa": "ˈhɝt",
      "steps": [
       {
        "kind": "word",
        "en": "hurt",
        "zh": "疼痛",
        "src": "4-051",
-       "ipa": "hɝt"
+       "ipa": "ˈhɝt"
+      },
+      {
+       "kind": "phrase",
+       "en": "cut my finger",
+       "zh": "割到手指",
+       "src": "table",
+       "ipa": "ˈkʌt ˈmaɪ ˈfɪŋɡɚ"
       },
       {
        "kind": "word",
@@ -16094,7 +16297,7 @@ window.BANKS = {
        "en": "I cut my finger and it hurt.",
        "zh": "我切到手指了，好痛",
        "src": "4-051",
-       "ipa": "ˈaɪ kʌt ˈmaɪ ˈfɪŋɡɚ ənd ˈɪt hɝt"
+       "ipa": "ˈaɪ ˈkʌt ˈmaɪ ˈfɪŋɡɚ ənd ˈɪt ˈhɝt"
       }
      ]
     },
@@ -16154,14 +16357,14 @@ window.BANKS = {
        "en": "something",
        "zh": "某些東西",
        "src": "4-103",
-       "ipa": "sʌmθɪŋ"
+       "ipa": "ˈsʌmθɪŋ"
       },
       {
        "kind": "sentence",
        "en": "I smelled something burning.",
        "zh": "我聞到有東西在燒",
        "src": "4-096",
-       "ipa": "ˈaɪ ˈsmɛld sʌmθɪŋ bɝnɪŋ"
+       "ipa": "ˈaɪ ˈsmɛld ˈsʌmθɪŋ ˈbɝnɪŋ"
       }
      ]
     },
@@ -16191,7 +16394,7 @@ window.BANKS = {
        "en": "You can't smoke here.",
        "zh": "你不能在這抽菸",
        "src": "4-097",
-       "ipa": "ˈjuː ˈsmoʊk ˈhiːɹ"
+       "ipa": "ˈjuː ˈkænt ˈsmoʊk ˈhiːɹ"
       }
      ]
     },
@@ -16200,35 +16403,35 @@ window.BANKS = {
      "level": 4,
      "target": "thirsty",
      "gloss": "口渴的",
-     "ipa": "θɝstiː",
+     "ipa": "ˈθɝsti",
      "steps": [
       {
        "kind": "word",
        "en": "thirsty",
        "zh": "口渴的",
        "src": "4-118",
-       "ipa": "θɝstiː"
+       "ipa": "ˈθɝsti"
       },
       {
        "kind": "phrase",
        "en": "feel thirsty",
        "zh": "感到口渴",
        "src": "table",
-       "ipa": "ˈfiːl θɝstiː"
+       "ipa": "ˈfiːl ˈθɝsti"
       },
       {
        "kind": "word",
        "en": "exercise",
        "zh": "運動",
        "src": "5-047",
-       "ipa": "ˈɛˌksɚsaɪz"
+       "ipa": "ˈɛksɚˌsaɪz"
       },
       {
        "kind": "sentence",
        "en": "I felt thirsty after doing exercise.",
        "zh": "運動完我感到口渴",
        "src": "4-118",
-       "ipa": "ˈaɪ ˈfɛlt θɝstiː ˈæftɚ ˈduːɪŋ ˈɛˌksɚsaɪz"
+       "ipa": "ˈaɪ ˈfɛlt ˈθɝsti ˈæftɚ ˈduːɪŋ ˈɛksɚˌsaɪz"
       }
      ]
     },
@@ -16258,14 +16461,14 @@ window.BANKS = {
        "en": "something",
        "zh": "某些東西",
        "src": "4-103",
-       "ipa": "sʌmθɪŋ"
+       "ipa": "ˈsʌmθɪŋ"
       },
       {
        "kind": "sentence",
        "en": "There is something in my throat.",
        "zh": "有東西在我的喉嚨裡",
        "src": "4-120",
-       "ipa": "ˈðɛɹ ˈɪz sʌmθɪŋ ɪn ˈmaɪ ˈθɹoʊt"
+       "ipa": "ˈðɛɹ ˈɪz ˈsʌmθɪŋ ɪn ˈmaɪ ˈθɹoʊt"
       }
      ]
     },
@@ -16295,14 +16498,14 @@ window.BANKS = {
        "en": "brother",
        "zh": "兄弟",
        "src": "2-009",
-       "ipa": "bɹʌðɚ"
+       "ipa": "ˈbɹʌðɚ"
       },
       {
        "kind": "sentence",
        "en": "My brother is afraid of going to the dentist.",
        "zh": "我弟弟很怕看牙醫",
        "src": "5-038",
-       "ipa": "ˈmaɪ bɹʌðɚ ˈɪz ˈəfɹeɪd ʌv ˈɡoʊɪŋ ˈtuː ðə ˈdɛntəst"
+       "ipa": "ˈmaɪ ˈbɹʌðɚ ˈɪz əˈfɹeɪd ˈʌv ˈɡoʊɪŋ ˈtuː ðə ˈdɛntəst"
       }
      ]
     },
@@ -16311,14 +16514,21 @@ window.BANKS = {
      "level": 5,
      "target": "exercise",
      "gloss": "運動",
-     "ipa": "ˈɛˌksɚsaɪz",
+     "ipa": "ˈɛksɚˌsaɪz",
      "steps": [
       {
        "kind": "word",
        "en": "exercise",
        "zh": "運動",
        "src": "5-047",
-       "ipa": "ˈɛˌksɚsaɪz"
+       "ipa": "ˈɛksɚˌsaɪz"
+      },
+      {
+       "kind": "phrase",
+       "en": "good for your health",
+       "zh": "對你的健康有益",
+       "src": "table",
+       "ipa": "ˈɡʊd ˈfɔːɹ ˈjɔːɹ ˈhɛlθ"
       },
       {
        "kind": "word",
@@ -16332,7 +16542,7 @@ window.BANKS = {
        "en": "Doing exercise is good for your health.",
        "zh": "做運動有益你的健康",
        "src": "5-047",
-       "ipa": "ˈduːɪŋ ˈɛˌksɚsaɪz ˈɪz ˈɡʊd ˈfɔːɹ ˈjɔːɹ ˈhɛlθ"
+       "ipa": "ˈduːɪŋ ˈɛksɚˌsaɪz ˈɪz ˈɡʊd ˈfɔːɹ ˈjɔːɹ ˈhɛlθ"
       }
      ]
     },
@@ -16399,7 +16609,7 @@ window.BANKS = {
        "en": "Don't talk with your mouth full.",
        "zh": "嘴巴裡有食物時不要說話",
        "src": "5-083",
-       "ipa": "ˈtɔːk ˈwɪð ˈjɔːɹ ˈmaʊθ ˈfʊl"
+       "ipa": "ˈdoʊnt ˈtɔːk ˈwɪð ˈjɔːɹ ˈmaʊθ ˈfʊl"
       }
      ]
     },
@@ -16408,21 +16618,21 @@ window.BANKS = {
      "level": 5,
      "target": "nurse",
      "gloss": "護士",
-     "ipa": "nɝs",
+     "ipa": "ˈnɝs",
      "steps": [
       {
        "kind": "word",
        "en": "nurse",
        "zh": "護士",
        "src": "5-088",
-       "ipa": "nɝs"
+       "ipa": "ˈnɝs"
       },
       {
        "kind": "phrase",
        "en": "a nurse",
        "zh": "一位護士",
        "src": "table",
-       "ipa": "ə nɝs"
+       "ipa": "ə ˈnɝs"
       },
       {
        "kind": "word",
@@ -16436,7 +16646,7 @@ window.BANKS = {
        "en": "The nurse gave me some medicine.",
        "zh": "護士給了我一些藥",
        "src": "5-088",
-       "ipa": "ðə nɝs ˈɡeɪv ˈmiː sʌm ˈmɛdəsən"
+       "ipa": "ðə ˈnɝs ˈɡeɪv ˈmiː ˈsʌm ˈmɛdəsən"
       }
      ]
     },
@@ -16466,14 +16676,14 @@ window.BANKS = {
        "en": "bird",
        "zh": "鳥",
        "src": "1-008",
-       "ipa": "bɝd"
+       "ipa": "ˈbɝd"
       },
       {
        "kind": "sentence",
        "en": "The bird was flying out of my sight.",
        "zh": "這隻鳥飛出我的視線",
        "src": "5-153",
-       "ipa": "ðə bɝd ˈwɑːz ˈflaɪɪŋ ˈaʊt ʌv ˈmaɪ ˈsaɪt"
+       "ipa": "ðə ˈbɝd ˈwɑːz ˈflaɪɪŋ ˈaʊt ˈʌv ˈmaɪ ˈsaɪt"
       }
      ]
     },
@@ -16540,7 +16750,7 @@ window.BANKS = {
        "en": "I take a bath every night.",
        "zh": "我每天晚上洗澡",
        "src": "6-021",
-       "ipa": "ˈaɪ ˈteɪk ə ˈbæθ ˈɛvɚiː ˈnaɪt"
+       "ipa": "ˈaɪ ˈteɪk ə ˈbæθ ˈɛvɚi ˈnaɪt"
       }
      ]
     },
@@ -16589,11 +16799,18 @@ window.BANKS = {
        "ipa": "ˈkoʊm"
       },
       {
+       "kind": "phrase",
+       "en": "combs my hair",
+       "zh": "梳頭髮",
+       "src": "table",
+       "ipa": "ˈkoʊmz ˈmaɪ ˈhɛɹ"
+      },
+      {
        "kind": "sentence",
        "en": "Mom combs my hair every morning.",
        "zh": "媽媽每天早上幫我梳頭髮",
        "src": "6-059",
-       "ipa": "ˈmɑːm ˈkoʊmz ˈmaɪ ˈhɛɹ ˈɛvɚiː ˈmɔːɹnɪŋ"
+       "ipa": "ˈmɑːm ˈkoʊmz ˈmaɪ ˈhɛɹ ˈɛvɚi ˈmɔːɹnɪŋ"
       }
      ]
     },
@@ -16630,7 +16847,7 @@ window.BANKS = {
        "en": "Her cat is dead.",
        "zh": "她的貓死了",
        "src": "6-069",
-       "ipa": "hɝ ˈkæt ˈɪz ˈdɛd"
+       "ipa": "ˈhɝ ˈkæt ˈɪz ˈdɛd"
       }
      ]
     },
@@ -16667,7 +16884,7 @@ window.BANKS = {
        "en": "You should go to a doctor when you're sick.",
        "zh": "如果你生病了，應該看醫生",
        "src": "6-077",
-       "ipa": "ˈjuː ˈʃʊd ˈɡoʊ ˈtuː ə ˈdɑːktɚ ˈwɛn ˈsɪk"
+       "ipa": "ˈjuː ˈʃʊd ˈɡoʊ ˈtuː ə ˈdɑːktɚ ˈwɛn ˈjʊɹ ˈsɪk"
       }
      ]
     },
@@ -16761,10 +16978,10 @@ window.BANKS = {
       },
       {
        "kind": "phrase",
-       "en": "good health",
-       "zh": "良好的健康",
+       "en": "good for your health",
+       "zh": "對你的健康有益",
        "src": "table",
-       "ipa": "ˈɡʊd ˈhɛlθ"
+       "ipa": "ˈɡʊd ˈfɔːɹ ˈjɔːɹ ˈhɛlθ"
       },
       {
        "kind": "sentence",
@@ -16780,21 +16997,21 @@ window.BANKS = {
      "level": 6,
      "target": "healthy",
      "gloss": "健康的",
-     "ipa": "ˈhɛlθiː",
+     "ipa": "ˈhɛlθi",
      "steps": [
       {
        "kind": "word",
        "en": "healthy",
        "zh": "健康的",
        "src": "6-133",
-       "ipa": "ˈhɛlθiː"
+       "ipa": "ˈhɛlθi"
       },
       {
        "kind": "phrase",
        "en": "a healthy",
        "zh": "一個健康的",
        "src": "table",
-       "ipa": "ə ˈhɛlθiː"
+       "ipa": "ə ˈhɛlθi"
       },
       {
        "kind": "word",
@@ -16808,7 +17025,7 @@ window.BANKS = {
        "en": "Eating vegetables can keep you healthy.",
        "zh": "吃蔬菜能使你保持健康",
        "src": "6-133",
-       "ipa": "ˈiːtɪŋ ˈvɛdʒtəbəlz ˈkæn ˈkiːp ˈjuː ˈhɛlθiː"
+       "ipa": "ˈiːtɪŋ ˈvɛdʒtəbəlz ˈkæn ˈkiːp ˈjuː ˈhɛlθi"
       }
      ]
     },
@@ -16838,7 +17055,7 @@ window.BANKS = {
        "en": "The young lady has a good heart.",
        "zh": "那位年輕女士心地善良",
        "src": "6-134",
-       "ipa": "ðə jʌŋ ˈleɪdiː ˈhæz ə ˈɡʊd ˈhɑːɹt"
+       "ipa": "ðə ˈjʌŋ ˈleɪdi ˈhæz ə ˈɡʊd ˈhɑːɹt"
       }
      ]
     },
@@ -16868,7 +17085,7 @@ window.BANKS = {
        "en": "They sent the man to the hospital quickly.",
        "zh": "他們很快地把人送到醫院",
        "src": "6-141",
-       "ipa": "ˈðeɪ ˈsɛnt ðə ˈmæn ˈtuː ðə ˈhɑːˌspɪtəl ˈkwɪkliː"
+       "ipa": "ˈðeɪ ˈsɛnt ðə ˈmæn ˈtuː ðə ˈhɑːˌspɪtəl ˈkwɪkli"
       }
      ]
     },
@@ -16898,7 +17115,7 @@ window.BANKS = {
        "en": "Her lips are very dry.",
        "zh": "她嘴唇很乾",
        "src": "6-167",
-       "ipa": "hɝ ˈlɪps ˈɑːɹ ˈvɛɹiː ˈdɹaɪ"
+       "ipa": "ˈhɝ ˈlɪps ˈɑːɹ ˈvɛɹi ˈdɹaɪ"
       }
      ]
     },
@@ -16935,7 +17152,7 @@ window.BANKS = {
        "en": "I cut my nails when they are too long.",
        "zh": "指甲太長時我會剪",
        "src": "6-192",
-       "ipa": "ˈaɪ kʌt ˈmaɪ ˈneɪlz ˈwɛn ˈðeɪ ˈɑːɹ ˈtuː ˈlɔːŋ"
+       "ipa": "ˈaɪ ˈkʌt ˈmaɪ ˈneɪlz ˈwɛn ˈðeɪ ˈɑːɹ ˈtuː ˈlɔːŋ"
       }
      ]
     },
@@ -16944,28 +17161,28 @@ window.BANKS = {
      "level": 6,
      "target": "stomach",
      "gloss": "胃",
-     "ipa": "stʌmək",
+     "ipa": "ˈstʌmək",
      "steps": [
       {
        "kind": "word",
        "en": "stomach",
        "zh": "胃",
        "src": "6-244",
-       "ipa": "stʌmək"
+       "ipa": "ˈstʌmək"
       },
       {
        "kind": "phrase",
        "en": "a stomach",
        "zh": "一個胃",
        "src": "table",
-       "ipa": "ə stʌmək"
+       "ipa": "ə ˈstʌmək"
       },
       {
        "kind": "sentence",
        "en": "I feel sick to my stomach.",
        "zh": "我胃不舒服",
        "src": "6-244",
-       "ipa": "ˈaɪ ˈfiːl ˈsɪk ˈtuː ˈmaɪ stʌmək"
+       "ipa": "ˈaɪ ˈfiːl ˈsɪk ˈtuː ˈmaɪ ˈstʌmək"
       }
      ]
     },
@@ -17107,14 +17324,14 @@ window.BANKS = {
        "en": "brother",
        "zh": "兄弟",
        "src": "2-009",
-       "ipa": "bɹʌðɚ"
+       "ipa": "ˈbɹʌðɚ"
       },
       {
        "kind": "sentence",
        "en": "My brother is tall and strong.",
        "zh": "我哥哥又高又壯",
        "src": "1-069",
-       "ipa": "ˈmaɪ bɹʌðɚ ˈɪz ˈtɔːl ənd ˈstɹɔːŋ"
+       "ipa": "ˈmaɪ ˈbɹʌðɚ ˈɪz ˈtɔːl ənd ˈstɹɔːŋ"
       }
      ]
     },
@@ -17174,7 +17391,7 @@ window.BANKS = {
        "en": "This pair of shoes is so cute.",
        "zh": "這雙鞋好可愛",
        "src": "2-054",
-       "ipa": "ˈðɪs ˈpɛɹ ʌv ˈʃuːz ˈɪz ˈsoʊ ˈkjuːt"
+       "ipa": "ˈðɪs ˈpɛɹ ˈʌv ˈʃuːz ˈɪz ˈsoʊ ˈkjuːt"
       }
      ]
     },
@@ -17204,7 +17421,7 @@ window.BANKS = {
        "en": "Peggy has short hair.",
        "zh": "Peggy留短髮",
        "src": "2-074",
-       "ipa": "ˈpɛɡiː ˈhæz ˈʃɔːɹt ˈhɛɹ"
+       "ipa": "ˈpɛɡi ˈhæz ˈʃɔːɹt ˈhɛɹ"
       }
      ]
     },
@@ -17338,14 +17555,14 @@ window.BANKS = {
        "en": "skirt",
        "zh": "裙子",
        "src": "4-093",
-       "ipa": "skɝt"
+       "ipa": "ˈskɝt"
       },
       {
        "kind": "sentence",
        "en": "This skirt is the right size for you.",
        "zh": "這件裙子的尺寸很適合你。",
        "src": "4-092",
-       "ipa": "ˈðɪs skɝt ˈɪz ðə ˈɹaɪt ˈsaɪz ˈfɔːɹ ˈjuː"
+       "ipa": "ˈðɪs ˈskɝt ˈɪz ðə ˈɹaɪt ˈsaɪz ˈfɔːɹ ˈjuː"
       }
      ]
     },
@@ -17354,21 +17571,21 @@ window.BANKS = {
      "level": 4,
      "target": "skirt",
      "gloss": "裙子",
-     "ipa": "skɝt",
+     "ipa": "ˈskɝt",
      "steps": [
       {
        "kind": "word",
        "en": "skirt",
        "zh": "裙子",
        "src": "4-093",
-       "ipa": "skɝt"
+       "ipa": "ˈskɝt"
       },
       {
        "kind": "phrase",
        "en": "a pink skirt",
        "zh": "一件粉紅色的裙子",
        "src": "table",
-       "ipa": "ə ˈpɪŋk skɝt"
+       "ipa": "ə ˈpɪŋk ˈskɝt"
       },
       {
        "kind": "word",
@@ -17382,7 +17599,7 @@ window.BANKS = {
        "en": "The little girl looks cute in that pink skirt.",
        "zh": "那個小女孩穿那件粉紅色的裙子很可愛",
        "src": "4-093",
-       "ipa": "ðə ˈlɪtəl ɡɝl ˈlʊks ˈkjuːt ɪn ˈðæt ˈpɪŋk skɝt"
+       "ipa": "ðə ˈlɪtəl ˈɡɝl ˈlʊks ˈkjuːt ɪn ˈðæt ˈpɪŋk ˈskɝt"
       }
      ]
     },
@@ -17456,7 +17673,7 @@ window.BANKS = {
        "en": "This pair of skates is too big for you.",
        "zh": "這雙溜冰鞋對你來說太大了",
        "src": "5-155",
-       "ipa": "ˈðɪs ˈpɛɹ ʌv ˈskeɪts ˈɪz ˈtuː ˈbɪɡ ˈfɔːɹ ˈjuː"
+       "ipa": "ˈðɪs ˈpɛɹ ˈʌv ˈskeɪts ˈɪz ˈtuː ˈbɪɡ ˈfɔːɹ ˈjuː"
       }
      ]
     },
@@ -17465,21 +17682,21 @@ window.BANKS = {
      "level": 5,
      "target": "uniform",
      "gloss": "制服",
-     "ipa": "ˈjuːˌnəfɔːɹm",
+     "ipa": "ˈjuːnəˌfɔːɹm",
      "steps": [
       {
        "kind": "word",
        "en": "uniform",
        "zh": "制服",
        "src": "5-183",
-       "ipa": "ˈjuːˌnəfɔːɹm"
+       "ipa": "ˈjuːnəˌfɔːɹm"
       },
       {
        "kind": "phrase",
        "en": "school uniform",
        "zh": "校服",
        "src": "table",
-       "ipa": "ˈskuːl ˈjuːˌnəfɔːɹm"
+       "ipa": "ˈskuːl ˈjuːnəˌfɔːɹm"
       },
       {
        "kind": "word",
@@ -17493,7 +17710,7 @@ window.BANKS = {
        "en": "Students have to wear uniforms to school.",
        "zh": "學生必須穿制服上學",
        "src": "5-183",
-       "ipa": "ˈstuːdənts ˈhæv ˈtuː ˈwɛɹ ˈjuːˌnəfɔːɹmz ˈtuː ˈskuːl"
+       "ipa": "ˈstuːdənts ˈhæv ˈtuː ˈwɛɹ ˈjuːnəˌfɔːɹmz ˈtuː ˈskuːl"
       }
      ]
     },
@@ -17502,28 +17719,35 @@ window.BANKS = {
      "level": 6,
      "target": "gloves",
      "gloss": "手套",
-     "ipa": "ɡlʌvz",
+     "ipa": "ˈɡlʌvz",
      "steps": [
       {
        "kind": "word",
        "en": "gloves",
        "zh": "手套",
        "src": "6-122",
-       "ipa": "ɡlʌvz"
+       "ipa": "ˈɡlʌvz"
+      },
+      {
+       "kind": "phrase",
+       "en": "wear gloves",
+       "zh": "戴手套",
+       "src": "table",
+       "ipa": "ˈwɛɹ ˈɡlʌvz"
       },
       {
        "kind": "word",
        "en": "only",
        "zh": "只有",
        "src": "5-091",
-       "ipa": "ˈoʊnliː"
+       "ipa": "ˈoʊnli"
       },
       {
        "kind": "sentence",
        "en": "I wear gloves only in winter.",
        "zh": "我只在冬天戴手套",
        "src": "6-122",
-       "ipa": "ˈaɪ ˈwɛɹ ɡlʌvz ˈoʊnliː ɪn ˈwɪntɚ"
+       "ipa": "ˈaɪ ˈwɛɹ ˈɡlʌvz ˈoʊnli ɪn ˈwɪntɚ"
       }
      ]
     },
@@ -17597,7 +17821,7 @@ window.BANKS = {
        "en": "Our boss wears a tie every day.",
        "zh": "我們老闆每天都打領帶",
        "src": "6-255",
-       "ipa": "ˈaʊɚ ˈbɑːs ˈwɛɹz ə ˈtaɪ ˈɛvɚiː ˈdeɪ"
+       "ipa": "ˈaʊɚ ˈbɑːs ˈwɛɹz ə ˈtaɪ ˈɛvɚi ˈdeɪ"
       }
      ]
     },
@@ -17606,21 +17830,21 @@ window.BANKS = {
      "level": 6,
      "target": "T-shirt",
      "gloss": "T恤",
-     "ipa": "ˈtiː ʃɝt",
+     "ipa": "ˈtiː ˈʃɝt",
      "steps": [
       {
        "kind": "word",
        "en": "T-shirt",
        "zh": "T恤",
        "src": "6-261",
-       "ipa": "ˈtiː ʃɝt"
+       "ipa": "ˈtiː ˈʃɝt"
       },
       {
        "kind": "phrase",
        "en": "a t-shirt",
        "zh": "一件T恤",
        "src": "table",
-       "ipa": "ə ˈtiː ʃɝt"
+       "ipa": "ə ˈtiː ˈʃɝt"
       },
       {
        "kind": "word",
@@ -17634,7 +17858,7 @@ window.BANKS = {
        "en": "This T-shirt is too small for me.",
        "zh": "這件T恤對我來說太小了",
        "src": "6-261",
-       "ipa": "ˈðɪs ˈtiː ʃɝt ˈɪz ˈtuː ˈsmɔːl ˈfɔːɹ ˈmiː"
+       "ipa": "ˈðɪs ˈtiː ˈʃɝt ˈɪz ˈtuː ˈsmɔːl ˈfɔːɹ ˈmiː"
       }
      ]
     },
@@ -17664,14 +17888,14 @@ window.BANKS = {
        "en": "brother",
        "zh": "兄弟",
        "src": "2-009",
-       "ipa": "bɹʌðɚ"
+       "ipa": "ˈbɹʌðɚ"
       },
       {
        "kind": "sentence",
        "en": "My brother wears a vest at home.",
        "zh": "我哥哥在家穿背心",
        "src": "6-268",
-       "ipa": "ˈmaɪ bɹʌðɚ ˈwɛɹz ə ˈvɛst ˈæt ˈhoʊm"
+       "ipa": "ˈmaɪ ˈbɹʌðɚ ˈwɛɹz ə ˈvɛst ˈæt ˈhoʊm"
       }
      ]
     }
@@ -17688,28 +17912,28 @@ window.BANKS = {
      "level": 1,
      "target": "police",
      "gloss": "警察",
-     "ipa": "ˈpəliːs",
+     "ipa": "pəˈliːs",
      "steps": [
       {
        "kind": "word",
        "en": "police",
        "zh": "警察",
        "src": "1-057",
-       "ipa": "ˈpəliːs"
+       "ipa": "pəˈliːs"
       },
       {
        "kind": "phrase",
        "en": "a police",
        "zh": "一位警察",
        "src": "table",
-       "ipa": "ə ˈpəliːs"
+       "ipa": "ə pəˈliːs"
       },
       {
        "kind": "sentence",
        "en": "Call the police right now.",
        "zh": "現在就打給警察",
        "src": "1-057",
-       "ipa": "ˈkɔːl ðə ˈpəliːs ˈɹaɪt ˈnaʊ"
+       "ipa": "ˈkɔːl ðə pəˈliːs ˈɹaɪt ˈnaʊ"
       }
      ]
     },
@@ -17718,21 +17942,21 @@ window.BANKS = {
      "level": 1,
      "target": "world",
      "gloss": "世界",
-     "ipa": "wɝld",
+     "ipa": "ˈwɝld",
      "steps": [
       {
        "kind": "word",
        "en": "world",
        "zh": "世界",
        "src": "1-082",
-       "ipa": "wɝld"
+       "ipa": "ˈwɝld"
       },
       {
        "kind": "phrase",
        "en": "the world",
        "zh": "世界",
        "src": "table",
-       "ipa": "ðə wɝld"
+       "ipa": "ðə ˈwɝld"
       },
       {
        "kind": "word",
@@ -17746,7 +17970,7 @@ window.BANKS = {
        "en": "Is the world round?",
        "zh": "世界是圓的嗎",
        "src": "1-082",
-       "ipa": "ˈɪz ðə wɝld ˈɹaʊnd"
+       "ipa": "ˈɪz ðə ˈwɝld ˈɹaʊnd"
       }
      ]
     },
@@ -17813,7 +18037,7 @@ window.BANKS = {
        "en": "Few people write a letter today.",
        "zh": "現在很少人會寫信了",
        "src": "2-043",
-       "ipa": "ˈfjuː ˈpiːpəl ˈɹaɪt ə ˈlɛtɚ ˈtədeɪ"
+       "ipa": "ˈfjuː ˈpiːpəl ˈɹaɪt ə ˈlɛtɚ təˈdeɪ"
       }
      ]
     },
@@ -17850,7 +18074,7 @@ window.BANKS = {
        "en": "A boat is in the middle of the lake.",
        "zh": "湖中央有一艘船",
        "src": "2-046",
-       "ipa": "ə ˈboʊt ˈɪz ɪn ðə ˈmɪdəl ʌv ðə ˈleɪk"
+       "ipa": "ə ˈboʊt ˈɪz ɪn ðə ˈmɪdəl ˈʌv ðə ˈleɪk"
       }
      ]
     },
@@ -17869,18 +18093,18 @@ window.BANKS = {
        "ipa": "ˈɹɑːk"
       },
       {
+       "kind": "phrase",
+       "en": "in taiwan",
+       "zh": "在台灣",
+       "src": "table",
+       "ipa": "ɪn ˈtaɪˈwɑːn"
+      },
+      {
        "kind": "word",
        "en": "born",
        "zh": "出生的",
        "src": "4-014",
        "ipa": "ˈbɔːɹn"
-      },
-      {
-       "kind": "word",
-       "en": "Taiwan",
-       "zh": "台灣",
-       "src": "5-168",
-       "ipa": "ˈtaɪˈwɑːn"
       },
       {
        "kind": "sentence",
@@ -17917,7 +18141,7 @@ window.BANKS = {
        "en": "How many squares are there in the picture?",
        "zh": "這張圖裡有幾個正方形",
        "src": "2-080",
-       "ipa": "ˈhaʊ ˈmɛniː ˈskwɛɹz ˈɑːɹ ˈðɛɹ ɪn ðə ˈpɪktʃɚ"
+       "ipa": "ˈhaʊ ˈmɛni ˈskwɛɹz ˈɑːɹ ˈðɛɹ ɪn ðə ˈpɪktʃɚ"
       }
      ]
     },
@@ -18000,28 +18224,28 @@ window.BANKS = {
      "level": 3,
      "target": "America",
      "gloss": "美國",
-     "ipa": "ˈəmɛɹəkə",
+     "ipa": "əˈmɛɹəkə",
      "steps": [
       {
        "kind": "word",
        "en": "America",
        "zh": "美國",
        "src": "3-001",
-       "ipa": "ˈəmɛɹəkə"
+       "ipa": "əˈmɛɹəkə"
       },
       {
        "kind": "phrase",
        "en": "in america",
        "zh": "在美國",
        "src": "table",
-       "ipa": "ɪn ˈəmɛɹəkə"
+       "ipa": "ɪn əˈmɛɹəkə"
       },
       {
        "kind": "sentence",
        "en": "Joe comes from America.",
        "zh": "Joe來自美國",
        "src": "3-001",
-       "ipa": "ˈdʒoʊ kʌmz fɹʌm ˈəmɛɹəkə"
+       "ipa": "ˈdʒoʊ ˈkʌmz ˈfɹʌm əˈmɛɹəkə"
       }
      ]
     },
@@ -18030,28 +18254,28 @@ window.BANKS = {
      "level": 3,
      "target": "American",
      "gloss": "美國人;美國的",
-     "ipa": "ˈəmɛɹəkən",
+     "ipa": "əˈmɛɹəkən",
      "steps": [
       {
        "kind": "word",
        "en": "American",
        "zh": "美國人;美國的",
        "src": "3-002",
-       "ipa": "ˈəmɛɹəkən"
+       "ipa": "əˈmɛɹəkən"
       },
       {
        "kind": "phrase",
        "en": "an american",
        "zh": "一個美國人",
        "src": "table",
-       "ipa": "ˈæn ˈəmɛɹəkən"
+       "ipa": "ˈæn əˈmɛɹəkən"
       },
       {
        "kind": "sentence",
        "en": "Sandy has some American friends.",
        "zh": "Sandy有一些美國朋友",
        "src": "3-002",
-       "ipa": "ˈsændiː ˈhæz sʌm ˈəmɛɹəkən ˈfɹɛndz"
+       "ipa": "ˈsændi ˈhæz ˈsʌm əˈmɛɹəkən ˈfɹɛndz"
       }
      ]
     },
@@ -18245,7 +18469,7 @@ window.BANKS = {
        "en": "the city center",
        "zh": "市中心",
        "src": "table",
-       "ipa": "ðə ˈsɪtiː ˈsɛntɚ"
+       "ipa": "ðə ˈsɪti ˈsɛntɚ"
       },
       {
        "kind": "word",
@@ -18259,7 +18483,7 @@ window.BANKS = {
        "en": "The station is in the center of the city.",
        "zh": "車站位在市中心",
        "src": "4-020",
-       "ipa": "ðə ˈsteɪʃən ˈɪz ɪn ðə ˈsɛntɚ ʌv ðə ˈsɪtiː"
+       "ipa": "ðə ˈsteɪʃən ˈɪz ɪn ðə ˈsɛntɚ ˈʌv ðə ˈsɪti"
       }
      ]
     },
@@ -18268,21 +18492,21 @@ window.BANKS = {
      "level": 4,
      "target": "city",
      "gloss": "城市",
-     "ipa": "ˈsɪtiː",
+     "ipa": "ˈsɪti",
      "steps": [
       {
        "kind": "word",
        "en": "city",
        "zh": "城市",
        "src": "4-022",
-       "ipa": "ˈsɪtiː"
+       "ipa": "ˈsɪti"
       },
       {
        "kind": "phrase",
-       "en": "in the city",
-       "zh": "在城市裡",
+       "en": "in taiwan",
+       "zh": "在台灣",
        "src": "table",
-       "ipa": "ɪn ðə ˈsɪtiː"
+       "ipa": "ɪn ˈtaɪˈwɑːn"
       },
       {
        "kind": "word",
@@ -18296,7 +18520,7 @@ window.BANKS = {
        "en": "Taipei is the biggest city in Taiwan.",
        "zh": "台北是台灣最大的城市",
        "src": "4-022",
-       "ipa": "ˈtaɪˌpeɪ ˈɪz ðə ˈbɪɡəst ˈsɪtiː ɪn ˈtaɪˈwɑːn"
+       "ipa": "ˈtaɪˌpeɪ ˈɪz ðə ˈbɪɡəst ˈsɪti ɪn ˈtaɪˈwɑːn"
       }
      ]
     },
@@ -18326,7 +18550,7 @@ window.BANKS = {
        "en": "Dad watches news on TV every night.",
        "zh": "爸爸每晚都看電視新聞",
        "src": "4-064",
-       "ipa": "ˈdæd ˈwɑːtʃəz ˈnuːz ˈɑːn ˈtiːˈviː ˈɛvɚiː ˈnaɪt"
+       "ipa": "ˈdæd ˈwɑːtʃəz ˈnuːz ˈɑːn ˈtiːˈviː ˈɛvɚi ˈnaɪt"
       }
      ]
     },
@@ -18363,7 +18587,7 @@ window.BANKS = {
        "en": "My father reads a newspaper every morning.",
        "zh": "我的爸爸每天早上看報紙",
        "src": "4-065",
-       "ipa": "ˈmaɪ ˈfɑːðɚ ˈɹiːdz ə ˈnuːˌzpeɪpɚ ˈɛvɚiː ˈmɔːɹnɪŋ"
+       "ipa": "ˈmaɪ ˈfɑːðɚ ˈɹiːdz ə ˈnuːˌzpeɪpɚ ˈɛvɚi ˈmɔːɹnɪŋ"
       }
      ]
     },
@@ -18423,7 +18647,7 @@ window.BANKS = {
        "en": "We'll meet at the station.",
        "zh": "我們車站見",
        "src": "4-107",
-       "ipa": "ˈmiːt ˈæt ðə ˈsteɪʃən"
+       "ipa": "ˈwiːl ˈmiːt ˈæt ðə ˈsteɪʃən"
       }
      ]
     },
@@ -18432,21 +18656,21 @@ window.BANKS = {
      "level": 4,
      "target": "supermarket",
      "gloss": "超級市場",
-     "ipa": "ˈsuːˌpɚmɑːɹkɪt",
+     "ipa": "ˈsuːpɚˌmɑːɹkɪt",
      "steps": [
       {
        "kind": "word",
        "en": "supermarket",
        "zh": "超級市場",
        "src": "4-112",
-       "ipa": "ˈsuːˌpɚmɑːɹkɪt"
+       "ipa": "ˈsuːpɚˌmɑːɹkɪt"
       },
       {
        "kind": "phrase",
        "en": "a supermarket",
        "zh": "一家超市",
        "src": "table",
-       "ipa": "ə ˈsuːˌpɚmɑːɹkɪt"
+       "ipa": "ə ˈsuːpɚˌmɑːɹkɪt"
       },
       {
        "kind": "word",
@@ -18460,7 +18684,7 @@ window.BANKS = {
        "en": "You can find it in the supermarket.",
        "zh": "你可以在超級市場找到它",
        "src": "4-112",
-       "ipa": "ˈjuː ˈkæn ˈfaɪnd ˈɪt ɪn ðə ˈsuːˌpɚmɑːɹkɪt"
+       "ipa": "ˈjuː ˈkæn ˈfaɪnd ˈɪt ɪn ðə ˈsuːpɚˌmɑːɹkɪt"
       }
      ]
     },
@@ -18490,14 +18714,14 @@ window.BANKS = {
        "en": "only",
        "zh": "只有",
        "src": "5-091",
-       "ipa": "ˈoʊnliː"
+       "ipa": "ˈoʊnli"
       },
       {
        "kind": "sentence",
        "en": "There is only one theater in Penghu.",
        "zh": "澎湖只有一間電影院",
        "src": "4-117",
-       "ipa": "ˈðɛɹ ˈɪz ˈoʊnliː wʌn ˈθiːətɚ ɪn"
+       "ipa": "ˈðɛɹ ˈɪz ˈoʊnli ˈwʌn ˈθiːətɚ ɪn"
       }
      ]
     },
@@ -18534,7 +18758,7 @@ window.BANKS = {
        "en": "Walk two blocks on this street and you'll see the hospital.",
        "zh": "沿這條街走兩個街區你就會看到那間醫院",
        "src": "5-019",
-       "ipa": "ˈwɔːk ˈtuː ˈblɑːks ˈɑːn ˈðɪs ˈstɹiːt ənd ˈsiː ðə ˈhɑːˌspɪtəl"
+       "ipa": "ˈwɔːk ˈtuː ˈblɑːks ˈɑːn ˈðɪs ˈstɹiːt ənd ˈjuːl ˈsiː ðə ˈhɑːˌspɪtəl"
       }
      ]
     },
@@ -18543,28 +18767,28 @@ window.BANKS = {
      "level": 5,
      "target": "country",
      "gloss": "國家",
-     "ipa": "kʌntɹiː",
+     "ipa": "ˈkʌntɹi",
      "steps": [
       {
        "kind": "word",
        "en": "country",
        "zh": "國家",
        "src": "5-034",
-       "ipa": "kʌntɹiː"
+       "ipa": "ˈkʌntɹi"
       },
       {
        "kind": "phrase",
        "en": "a country",
        "zh": "一個國家",
        "src": "table",
-       "ipa": "ə kʌntɹiː"
+       "ipa": "ə ˈkʌntɹi"
       },
       {
        "kind": "sentence",
        "en": "Which country are you from?",
        "zh": "你從哪個國家來",
        "src": "5-034",
-       "ipa": "ˈwɪtʃ kʌntɹiː ˈɑːɹ ˈjuː fɹʌm"
+       "ipa": "ˈwɪtʃ ˈkʌntɹi ˈɑːɹ ˈjuː ˈfɹʌm"
       }
      ]
     },
@@ -18594,7 +18818,7 @@ window.BANKS = {
        "en": "There are many cows on the farm.",
        "zh": "農場裡有許多乳牛",
        "src": "5-048",
-       "ipa": "ˈðɛɹ ˈɑːɹ ˈmɛniː ˈkaʊz ˈɑːn ðə ˈfɑːɹm"
+       "ipa": "ˈðɛɹ ˈɑːɹ ˈmɛni ˈkaʊz ˈɑːn ðə ˈfɑːɹm"
       }
      ]
     },
@@ -18631,7 +18855,7 @@ window.BANKS = {
        "en": "We will stay in a hotel tonight.",
        "zh": "我們今晚會留在旅館",
        "src": "5-064",
-       "ipa": "ˈwiː ˈwɪl ˈsteɪ ɪn ə hoʊˈtɛl ˈtənaɪt"
+       "ipa": "ˈwiː ˈwɪl ˈsteɪ ɪn ə hoʊˈtɛl təˈnaɪt"
       }
      ]
     },
@@ -18640,21 +18864,21 @@ window.BANKS = {
      "level": 5,
      "target": "Internet",
      "gloss": "網路",
-     "ipa": "ˈɪˌntɚnɛt",
+     "ipa": "ˈɪntɚˌnɛt",
      "steps": [
       {
        "kind": "word",
        "en": "Internet",
        "zh": "網路",
        "src": "5-069",
-       "ipa": "ˈɪˌntɚnɛt"
+       "ipa": "ˈɪntɚˌnɛt"
       },
       {
        "kind": "phrase",
        "en": "the internet",
        "zh": "網路",
        "src": "table",
-       "ipa": "ðə ˈɪˌntɚnɛt"
+       "ipa": "ðə ˈɪntɚˌnɛt"
       },
       {
        "kind": "word",
@@ -18668,7 +18892,7 @@ window.BANKS = {
        "en": "You can find this picture on the Internet.",
        "zh": "你可以在網路上找到這張圖片",
        "src": "5-069",
-       "ipa": "ˈjuː ˈkæn ˈfaɪnd ˈðɪs ˈpɪktʃɚ ˈɑːn ðə ˈɪˌntɚnɛt"
+       "ipa": "ˈjuː ˈkæn ˈfaɪnd ˈðɪs ˈpɪktʃɚ ˈɑːn ðə ˈɪntɚˌnɛt"
       }
      ]
     },
@@ -18705,7 +18929,7 @@ window.BANKS = {
        "en": "Let's play outside.",
        "zh": "我們去外面玩吧",
        "src": "5-095",
-       "ipa": "ˈpleɪ ˈaʊˈtsaɪd"
+       "ipa": "ˈlɛts ˈpleɪ ˈaʊˈtsaɪd"
       }
      ]
     },
@@ -18714,21 +18938,21 @@ window.BANKS = {
      "level": 5,
      "target": "public",
      "gloss": "公開的",
-     "ipa": "pʌblɪk",
+     "ipa": "ˈpʌblɪk",
      "steps": [
       {
        "kind": "word",
        "en": "public",
        "zh": "公開的",
        "src": "5-118",
-       "ipa": "pʌblɪk"
+       "ipa": "ˈpʌblɪk"
       },
       {
        "kind": "phrase",
        "en": "in public",
        "zh": "在公開場合",
        "src": "table",
-       "ipa": "ɪn pʌblɪk"
+       "ipa": "ɪn ˈpʌblɪk"
       },
       {
        "kind": "word",
@@ -18742,7 +18966,7 @@ window.BANKS = {
        "en": "You should not say that in public.",
        "zh": "你不該在公開場合講這種話",
        "src": "5-118",
-       "ipa": "ˈjuː ˈʃʊd ˈnɑːt ˈseɪ ˈðæt ɪn pʌblɪk"
+       "ipa": "ˈjuː ˈʃʊd ˈnɑːt ˈseɪ ˈðæt ɪn ˈpʌblɪk"
       }
      ]
     },
@@ -18779,7 +19003,7 @@ window.BANKS = {
        "en": "Don't ride a bike on the sidewalk.",
        "zh": "別在人行道上騎單車",
        "src": "5-152",
-       "ipa": "ˈɹaɪd ə ˈbaɪk ˈɑːn ðə ˈsaɪˌdwɔːk"
+       "ipa": "ˈdoʊnt ˈɹaɪd ə ˈbaɪk ˈɑːn ðə ˈsaɪˌdwɔːk"
       }
      ]
     },
@@ -18809,7 +19033,7 @@ window.BANKS = {
        "en": "Mr. Lai collects a lot of stamps.",
        "zh": "賴先生收集了很多郵票",
        "src": "5-160",
-       "ipa": "ˈmɪstɚ ˈlaɪ ˈkəlɛkts ə ˈlɑːt ʌv ˈstæmps"
+       "ipa": "ˈmɪstɚ ˈlaɪ kəˈlɛkts ə ˈlɑːt ˈʌv ˈstæmps"
       }
      ]
     },
@@ -18883,7 +19107,7 @@ window.BANKS = {
        "en": "My grandma goes to the temple quite often.",
        "zh": "我的奶奶很常去寺廟",
        "src": "5-169",
-       "ipa": "ˈmaɪ ˈɡɹændmɑː ˈɡoʊz ˈtuː ðə ˈtɛmpəl ˈkwaɪt ˈɔːfən"
+       "ipa": "ˈmaɪ ˈɡɹændmɑ ˈɡoʊz ˈtuː ðə ˈtɛmpəl ˈkwaɪt ˈɔːfən"
       }
      ]
     },
@@ -18913,7 +19137,7 @@ window.BANKS = {
        "en": "Mr. Su is out of town.",
        "zh": "蘇先生出城去了",
        "src": "5-178",
-       "ipa": "ˈmɪstɚ ˈsuː ˈɪz ˈaʊt ʌv ˈtaʊn"
+       "ipa": "ˈmɪstɚ ˈsuː ˈɪz ˈaʊt ˈʌv ˈtaʊn"
       }
      ]
     },
@@ -18932,6 +19156,13 @@ window.BANKS = {
        "ipa": "ˈtʃaɪnə"
       },
       {
+       "kind": "phrase",
+       "en": "a big country",
+       "zh": "一個很大的國家",
+       "src": "table",
+       "ipa": "ə ˈbɪɡ ˈkʌntɹi"
+      },
+      {
        "kind": "word",
        "en": "big",
        "zh": "大的",
@@ -18939,18 +19170,11 @@ window.BANKS = {
        "ipa": "ˈbɪɡ"
       },
       {
-       "kind": "word",
-       "en": "country",
-       "zh": "國家",
-       "src": "5-034",
-       "ipa": "kʌntɹiː"
-      },
-      {
        "kind": "sentence",
        "en": "China is a big country.",
        "zh": "中國是一個很大的國家",
        "src": "6-049",
-       "ipa": "ˈtʃaɪnə ˈɪz ə ˈbɪɡ kʌntɹiː"
+       "ipa": "ˈtʃaɪnə ˈɪz ə ˈbɪɡ ˈkʌntɹi"
       }
      ]
     },
@@ -18959,35 +19183,35 @@ window.BANKS = {
      "level": 6,
      "target": "church",
      "gloss": "教堂",
-     "ipa": "tʃɝtʃ",
+     "ipa": "ˈtʃɝtʃ",
      "steps": [
       {
        "kind": "word",
        "en": "church",
        "zh": "教堂",
        "src": "6-054",
-       "ipa": "tʃɝtʃ"
+       "ipa": "ˈtʃɝtʃ"
       },
       {
        "kind": "phrase",
        "en": "a church",
        "zh": "一座教堂",
        "src": "table",
-       "ipa": "ə tʃɝtʃ"
+       "ipa": "ə ˈtʃɝtʃ"
       },
       {
        "kind": "word",
        "en": "Sunday",
        "zh": "星期日",
        "src": "5-166",
-       "ipa": "ˌsʌndeɪ"
+       "ipa": "ˈsʌˌndeɪ"
       },
       {
        "kind": "sentence",
        "en": "Mary goes to church every Sunday morning.",
        "zh": "Mary每週日早上都上教堂",
        "src": "6-054",
-       "ipa": "ˈmɛɹiː ˈɡoʊz ˈtuː tʃɝtʃ ˈɛvɚiː ˌsʌndeɪ ˈmɔːɹnɪŋ"
+       "ipa": "ˈmɛɹi ˈɡoʊz ˈtuː ˈtʃɝtʃ ˈɛvɚi ˈsʌˌndeɪ ˈmɔːɹnɪŋ"
       }
      ]
     },
@@ -19044,10 +19268,10 @@ window.BANKS = {
       },
       {
        "kind": "phrase",
-       "en": "mail",
-       "zh": "郵件",
+       "en": "an e-mail",
+       "zh": "一封電子郵件",
        "src": "table",
-       "ipa": "ˈmeɪl"
+       "ipa": "ˈæn ˈiː ˈmeɪl"
       },
       {
        "kind": "word",
@@ -19061,7 +19285,7 @@ window.BANKS = {
        "en": "Send an e-mail to me if you have any questions.",
        "zh": "如果你有任何問題的話，寄電子郵件給我",
        "src": "6-090",
-       "ipa": "ˈsɛnd ˈæn ˈiː ˈmeɪl ˈtuː ˈmiː ˈɪf ˈjuː ˈhæv ˈɛniː ˈkwɛstʃənz"
+       "ipa": "ˈsɛnd ˈæn ˈiː ˈmeɪl ˈtuː ˈmiː ˈɪf ˈjuː ˈhæv ˈɛni ˈkwɛstʃənz"
       }
      ]
     },
@@ -19070,21 +19294,21 @@ window.BANKS = {
      "level": 6,
      "target": "envelope",
      "gloss": "信封",
-     "ipa": "ˈɛˌnvəloʊp",
+     "ipa": "ˈɛnvəˌloʊp",
      "steps": [
       {
        "kind": "word",
        "en": "envelope",
        "zh": "信封",
        "src": "6-094",
-       "ipa": "ˈɛˌnvəloʊp"
+       "ipa": "ˈɛnvəˌloʊp"
       },
       {
        "kind": "phrase",
        "en": "an envelope",
        "zh": "一個信封",
        "src": "table",
-       "ipa": "ˈæn ˈɛˌnvəloʊp"
+       "ipa": "ˈæn ˈɛnvəˌloʊp"
       },
       {
        "kind": "word",
@@ -19098,7 +19322,7 @@ window.BANKS = {
        "en": "The letter is in the envelope.",
        "zh": "信在信封裡",
        "src": "6-094",
-       "ipa": "ðə ˈlɛtɚ ˈɪz ɪn ðə ˈɛˌnvəloʊp"
+       "ipa": "ðə ˈlɛtɚ ˈɪz ɪn ðə ˈɛnvəˌloʊp"
       }
      ]
     },
@@ -19107,21 +19331,21 @@ window.BANKS = {
      "level": 6,
      "target": "factory",
      "gloss": "工廠",
-     "ipa": "ˈfæktɚiː",
+     "ipa": "ˈfæktɚi",
      "steps": [
       {
        "kind": "word",
        "en": "factory",
        "zh": "工廠",
        "src": "6-104",
-       "ipa": "ˈfæktɚiː"
+       "ipa": "ˈfæktɚi"
       },
       {
        "kind": "phrase",
        "en": "a factory",
        "zh": "一間工廠",
        "src": "table",
-       "ipa": "ə ˈfæktɚiː"
+       "ipa": "ə ˈfæktɚi"
       },
       {
        "kind": "word",
@@ -19135,7 +19359,7 @@ window.BANKS = {
        "en": "Ann's father owns this factory.",
        "zh": "Ann的爸爸擁有這間工廠",
        "src": "6-104",
-       "ipa": "ˈfɑːðɚ ˈoʊnz ˈðɪs ˈfæktɚiː"
+       "ipa": "ˈænz ˈfɑːðɚ ˈoʊnz ˈðɪs ˈfæktɚi"
       }
      ]
     },
@@ -19172,7 +19396,7 @@ window.BANKS = {
        "en": "Let's go inside.",
        "zh": "我們進去吧",
        "src": "6-145",
-       "ipa": "ˈɡoʊ ˌɪˈnsaɪd"
+       "ipa": "ˈlɛts ˈɡoʊ ˌɪˈnsaɪd"
       }
      ]
     },
@@ -19232,7 +19456,7 @@ window.BANKS = {
        "en": "I didn't get your mail.",
        "zh": "我沒收到你的郵件",
        "src": "6-175",
-       "ipa": "ˈaɪ ˈɡɛt ˈjɔːɹ ˈmeɪl"
+       "ipa": "ˈaɪ ˈdɪdənt ˈɡɛt ˈjɔːɹ ˈmeɪl"
       }
      ]
     },
@@ -19299,7 +19523,7 @@ window.BANKS = {
        "en": "The market opens very early.",
        "zh": "市場很早開",
        "src": "6-179",
-       "ipa": "ðə ˈmɑːɹkət ˈoʊpənz ˈvɛɹiː ɝliː"
+       "ipa": "ðə ˈmɑːɹkət ˈoʊpənz ˈvɛɹi ˈɝli"
       }
      ]
     },
@@ -19308,21 +19532,21 @@ window.BANKS = {
      "level": 6,
      "target": "museum",
      "gloss": "博物館",
-     "ipa": "mjuːˈziːəm",
+     "ipa": "mjuˈziːəm",
      "steps": [
       {
        "kind": "word",
        "en": "museum",
        "zh": "博物館",
        "src": "6-190",
-       "ipa": "mjuːˈziːəm"
+       "ipa": "mjuˈziːəm"
       },
       {
        "kind": "phrase",
        "en": "a museum",
        "zh": "一座博物館",
        "src": "table",
-       "ipa": "ə mjuːˈziːəm"
+       "ipa": "ə mjuˈziːəm"
       },
       {
        "kind": "word",
@@ -19336,7 +19560,7 @@ window.BANKS = {
        "en": "Our art teacher took us to the museum.",
        "zh": "我們美術老師帶我們到博物館",
        "src": "6-190",
-       "ipa": "ˈaʊɚ ˈɑːɹt ˈtiːtʃɚ ˈtʊk ʌs ˈtuː ðə mjuːˈziːəm"
+       "ipa": "ˈaʊɚ ˈɑːɹt ˈtiːtʃɚ ˈtʊk ˈʌs ˈtuː ðə mjuˈziːəm"
       }
      ]
     },
@@ -19373,7 +19597,7 @@ window.BANKS = {
        "en": "I'll take this package to the post office.",
        "zh": "我會把包裹帶到郵局",
        "src": "6-214",
-       "ipa": "ˈteɪk ˈðɪs ˈpækədʒ ˈtuː ðə ˈpoʊst ˈɔːfɪs"
+       "ipa": "ˈaɪl ˈteɪk ˈðɪs ˈpækədʒ ˈtuː ðə ˈpoʊst ˈɔːfɪs"
       }
      ]
     }
@@ -19390,28 +19614,28 @@ window.BANKS = {
      "level": 1,
      "target": "bus",
      "gloss": "公車",
-     "ipa": "bʌs",
+     "ipa": "ˈbʌs",
      "steps": [
       {
        "kind": "word",
        "en": "bus",
        "zh": "公車",
        "src": "1-010",
-       "ipa": "bʌs"
+       "ipa": "ˈbʌs"
       },
       {
        "kind": "phrase",
        "en": "by bus",
        "zh": "搭公車",
        "src": "table",
-       "ipa": "ˈbaɪ bʌs"
+       "ipa": "ˈbaɪ ˈbʌs"
       },
       {
        "kind": "sentence",
        "en": "The bus is late.",
        "zh": "公車遲了",
        "src": "1-010",
-       "ipa": "ðə bʌs ˈɪz ˈleɪt"
+       "ipa": "ðə ˈbʌs ˈɪz ˈleɪt"
       }
      ]
     },
@@ -19545,14 +19769,14 @@ window.BANKS = {
        "en": "exercise",
        "zh": "運動",
        "src": "5-047",
-       "ipa": "ˈɛˌksɚsaɪz"
+       "ipa": "ˈɛksɚˌsaɪz"
       },
       {
        "kind": "sentence",
        "en": "Riding a bicycle is a good exercise.",
        "zh": "騎腳踏車是很好的運動",
        "src": "3-010",
-       "ipa": "ˈɹaɪdɪŋ ə ˈbaɪsɪkəl ˈɪz ə ˈɡʊd ˈɛˌksɚsaɪz"
+       "ipa": "ˈɹaɪdɪŋ ə ˈbaɪsɪkəl ˈɪz ə ˈɡʊd ˈɛksɚˌsaɪz"
       }
      ]
     },
@@ -19612,14 +19836,14 @@ window.BANKS = {
        "en": "birds can",
        "zh": "鳥兒可以",
        "src": "table",
-       "ipa": "bɝdz ˈkæn"
+       "ipa": "ˈbɝdz ˈkæn"
       },
       {
        "kind": "sentence",
        "en": "Birds can fly.",
        "zh": "鳥會飛",
        "src": "3-033",
-       "ipa": "bɝdz ˈkæn ˈflaɪ"
+       "ipa": "ˈbɝdz ˈkæn ˈflaɪ"
       }
      ]
     },
@@ -19642,7 +19866,7 @@ window.BANKS = {
        "en": "out of gas",
        "zh": "沒油了",
        "src": "table",
-       "ipa": "ˈaʊt ʌv ˈɡæs"
+       "ipa": "ˈaʊt ˈʌv ˈɡæs"
       },
       {
        "kind": "word",
@@ -19656,7 +19880,7 @@ window.BANKS = {
        "en": "My car is running out of gas.",
        "zh": "我的車子快沒油了",
        "src": "3-037",
-       "ipa": "ˈmaɪ ˈkɑːɹ ˈɪz ɹʌnɪŋ ˈaʊt ʌv ˈɡæs"
+       "ipa": "ˈmaɪ ˈkɑːɹ ˈɪz ˈɹʌnɪŋ ˈaʊt ˈʌv ˈɡæs"
       }
      ]
     },
@@ -19695,28 +19919,28 @@ window.BANKS = {
      "level": 3,
      "target": "truck",
      "gloss": "卡車",
-     "ipa": "tɹʌk",
+     "ipa": "ˈtɹʌk",
      "steps": [
       {
        "kind": "word",
        "en": "truck",
        "zh": "卡車",
        "src": "3-099",
-       "ipa": "tɹʌk"
+       "ipa": "ˈtɹʌk"
       },
       {
        "kind": "phrase",
        "en": "a truck",
        "zh": "一輛卡車",
        "src": "table",
-       "ipa": "ə tɹʌk"
+       "ipa": "ə ˈtɹʌk"
       },
       {
        "kind": "sentence",
        "en": "A truck stopped in front of me.",
        "zh": "一台卡車停在我前面",
        "src": "3-099",
-       "ipa": "ə tɹʌk ˈstɑːpt ɪn fɹʌnt ʌv ˈmiː"
+       "ipa": "ə ˈtɹʌk ˈstɑːpt ɪn ˈfɹʌnt ˈʌv ˈmiː"
       }
      ]
     },
@@ -19753,7 +19977,7 @@ window.BANKS = {
        "en": "The Penghu Great Bridge is very famous.",
        "zh": "澎湖跨海大橋很有名",
        "src": "4-017",
-       "ipa": "ðə ˈɡɹeɪt ˈbɹɪdʒ ˈɪz ˈvɛɹiː ˈfeɪməs"
+       "ipa": "ðə ˈɡɹeɪt ˈbɹɪdʒ ˈɪz ˈvɛɹi ˈfeɪməs"
       }
      ]
     },
@@ -19820,7 +20044,7 @@ window.BANKS = {
        "en": "You can't stay here.",
        "zh": "你不能待在這",
        "src": "4-108",
-       "ipa": "ˈjuː ˈsteɪ ˈhiːɹ"
+       "ipa": "ˈjuː ˈkænt ˈsteɪ ˈhiːɹ"
       }
      ]
     },
@@ -19869,6 +20093,13 @@ window.BANKS = {
        "ipa": "ˈbæk"
       },
       {
+       "kind": "phrase",
+       "en": "back home",
+       "zh": "回到家",
+       "src": "table",
+       "ipa": "ˈbæk ˈhoʊm"
+      },
+      {
        "kind": "word",
        "en": "home",
        "zh": "家",
@@ -19880,7 +20111,7 @@ window.BANKS = {
        "en": "I'll be back home at 6:00.",
        "zh": "我六點會回到家",
        "src": "5-012",
-       "ipa": "ˈbiː ˈbæk ˈhoʊm ˈæt"
+       "ipa": "ˈaɪl ˈbiː ˈbæk ˈhoʊm ˈæt"
       }
      ]
     },
@@ -19910,14 +20141,14 @@ window.BANKS = {
        "en": "country",
        "zh": "國家",
        "src": "5-034",
-       "ipa": "kʌntɹiː"
+       "ipa": "ˈkʌntɹi"
       },
       {
        "kind": "sentence",
        "en": "Henry comes from a foreign country.",
        "zh": "Henry從國外來",
        "src": "5-052",
-       "ipa": "ˈhɛnɹiː kʌmz fɹʌm ə ˈfɔːɹən kʌntɹiː"
+       "ipa": "ˈhɛnɹi ˈkʌmz ˈfɹʌm ə ˈfɔːɹən ˈkʌntɹi"
       }
      ]
     },
@@ -19954,7 +20185,7 @@ window.BANKS = {
        "en": "Many foreigners study Chinese in Taiwan.",
        "zh": "很多外國人在台灣學中文",
        "src": "5-053",
-       "ipa": "ˈmɛniː ˈfɔːɹənɚz stʌdiː tʃaɪˈniːz ɪn ˈtaɪˈwɑːn"
+       "ipa": "ˈmɛni ˈfɔːɹənɚz ˈstʌdi tʃaɪˈniːz ɪn ˈtaɪˈwɑːn"
       }
      ]
     },
@@ -19963,21 +20194,21 @@ window.BANKS = {
      "level": 5,
      "target": "motorcycle",
      "gloss": "機車",
-     "ipa": "ˈmoʊˌtɚsaɪkəl",
+     "ipa": "ˈmoʊtɚˌsaɪkəl",
      "steps": [
       {
        "kind": "word",
        "en": "motorcycle",
        "zh": "機車",
        "src": "5-081",
-       "ipa": "ˈmoʊˌtɚsaɪkəl"
+       "ipa": "ˈmoʊtɚˌsaɪkəl"
       },
       {
        "kind": "phrase",
        "en": "a motorcycle",
        "zh": "一台機車",
        "src": "table",
-       "ipa": "ə ˈmoʊˌtɚsaɪkəl"
+       "ipa": "ə ˈmoʊtɚˌsaɪkəl"
       },
       {
        "kind": "word",
@@ -19991,7 +20222,7 @@ window.BANKS = {
        "en": "I often ride a motorcycle.",
        "zh": "我常騎機車",
        "src": "5-081",
-       "ipa": "ˈaɪ ˈɔːfən ˈɹaɪd ə ˈmoʊˌtɚsaɪkəl"
+       "ipa": "ˈaɪ ˈɔːfən ˈɹaɪd ə ˈmoʊtɚˌsaɪkəl"
       }
      ]
     },
@@ -20081,7 +20312,7 @@ window.BANKS = {
        "en": "Let's take a photo here.",
        "zh": "我們在這裡拍張照吧",
        "src": "5-104",
-       "ipa": "ˈteɪk ə ˈfoʊˌtoʊ ˈhiːɹ"
+       "ipa": "ˈlɛts ˈteɪk ə ˈfoʊˌtoʊ ˈhiːɹ"
       }
      ]
     },
@@ -20155,7 +20386,7 @@ window.BANKS = {
        "en": "You can either ride a bicycle or take a bus.",
        "zh": "你可以騎單車或搭公車",
        "src": "5-135",
-       "ipa": "ˈjuː ˈkæn ˈiːðɚ ˈɹaɪd ə ˈbaɪsɪkəl ˈɔːɹ ˈteɪk ə bʌs"
+       "ipa": "ˈjuː ˈkæn ˈiːðɚ ˈɹaɪd ə ˈbaɪsɪkəl ˈɔːɹ ˈteɪk ə ˈbʌs"
       }
      ]
     },
@@ -20194,35 +20425,35 @@ window.BANKS = {
      "level": 6,
      "target": "abroad",
      "gloss": "到國外",
-     "ipa": "ˈəbɹɔːd",
+     "ipa": "əˈbɹɔːd",
      "steps": [
       {
        "kind": "word",
        "en": "abroad",
        "zh": "到國外",
        "src": "6-002",
-       "ipa": "ˈəbɹɔːd"
+       "ipa": "əˈbɹɔːd"
       },
       {
        "kind": "phrase",
        "en": "go abroad",
        "zh": "出國",
        "src": "table",
-       "ipa": "ˈɡoʊ ˈəbɹɔːd"
+       "ipa": "ˈɡoʊ əˈbɹɔːd"
       },
       {
        "kind": "word",
        "en": "cousin",
        "zh": "堂(表)兄弟姊妹",
        "src": "6-066",
-       "ipa": "kʌzən"
+       "ipa": "ˈkʌzən"
       },
       {
        "kind": "sentence",
        "en": "My cousin is studying abroad.",
        "zh": "我的表哥在國外念書",
        "src": "6-002",
-       "ipa": "ˈmaɪ kʌzən ˈɪz stʌdiːɪŋ ˈəbɹɔːd"
+       "ipa": "ˈmaɪ ˈkʌzən ˈɪz ˈstʌdiɪŋ əˈbɹɔːd"
       }
      ]
     },
@@ -20252,7 +20483,7 @@ window.BANKS = {
        "en": "Will you take an airplane to Kaohsiung?",
        "zh": "你會搭飛機去高雄嗎",
        "src": "6-005",
-       "ipa": "ˈwɪl ˈjuː ˈteɪk ˈæn ˈɛˌɹpleɪn ˈtuː ˌkeɪˈoʊsiːəŋ"
+       "ipa": "ˈwɪl ˈjuː ˈteɪk ˈæn ˈɛˌɹpleɪn ˈtuː ˌkeɪˈoʊsiəŋ"
       }
      ]
     },
@@ -20289,7 +20520,7 @@ window.BANKS = {
        "en": "Dad will pick me up at the airport.",
        "zh": "爸爸會來機場接我",
        "src": "6-006",
-       "ipa": "ˈdæd ˈwɪl ˈpɪk ˈmiː ʌp ˈæt ðə ˈɛˌɹpɔːɹt"
+       "ipa": "ˈdæd ˈwɪl ˈpɪk ˈmiː ˈʌp ˈæt ðə ˈɛˌɹpɔːɹt"
       }
      ]
     },
@@ -20298,21 +20529,21 @@ window.BANKS = {
      "level": 6,
      "target": "arrive",
      "gloss": "到達",
-     "ipa": "ˈɚaɪv",
+     "ipa": "ɚˈaɪv",
      "steps": [
       {
        "kind": "word",
        "en": "arrive",
        "zh": "到達",
        "src": "6-014",
-       "ipa": "ˈɚaɪv"
+       "ipa": "ɚˈaɪv"
       },
       {
        "kind": "phrase",
        "en": "arrive home",
        "zh": "到家",
        "src": "table",
-       "ipa": "ˈɚaɪv ˈhoʊm"
+       "ipa": "ɚˈaɪv ˈhoʊm"
       },
       {
        "kind": "word",
@@ -20326,7 +20557,7 @@ window.BANKS = {
        "en": "When will you arrive home?",
        "zh": "你什麼時候會到家",
        "src": "6-014",
-       "ipa": "ˈwɛn ˈwɪl ˈjuː ˈɚaɪv ˈhoʊm"
+       "ipa": "ˈwɛn ˈwɪl ˈjuː ɚˈaɪv ˈhoʊm"
       }
      ]
     },
@@ -20400,7 +20631,7 @@ window.BANKS = {
        "en": "Some parents send their kids to summer camps.",
        "zh": "家長會送小孩去夏令營",
        "src": "6-043",
-       "ipa": "sʌm ˈpɛɹənts ˈsɛnd ˈðɛɹ ˈkɪdz ˈtuː sʌmɚ ˈkæmps"
+       "ipa": "ˈsʌm ˈpɛɹənts ˈsɛnd ˈðɛɹ ˈkɪdz ˈtuː ˈsʌmɚ ˈkæmps"
       }
      ]
     },
@@ -20474,7 +20705,7 @@ window.BANKS = {
        "en": "Let's check the map.",
        "zh": "我們來查看一下地圖",
        "src": "6-177",
-       "ipa": "ˈtʃɛk ðə ˈmæp"
+       "ipa": "ˈlɛts ˈtʃɛk ðə ˈmæp"
       }
      ]
     },
@@ -20541,7 +20772,7 @@ window.BANKS = {
        "en": "The traffic is busy in big cities.",
        "zh": "大城市的交通很擁擠",
        "src": "6-259",
-       "ipa": "ðə ˈtɹæfɪk ˈɪz ˈbɪziː ɪn ˈbɪɡ ˈsɪtiːz"
+       "ipa": "ðə ˈtɹæfɪk ˈɪz ˈbɪzi ɪn ˈbɪɡ ˈsɪtiz"
       }
      ]
     }
@@ -20586,7 +20817,7 @@ window.BANKS = {
        "en": "The store is twenty miles from the station.",
        "zh": "那間店離車站二十英哩",
        "src": "3-072",
-       "ipa": "ðə ˈstɔːɹ ˈɪz ˈtwɛntiː ˈmaɪlz fɹʌm ðə ˈsteɪʃən"
+       "ipa": "ðə ˈstɔːɹ ˈɪz ˈtwɛnti ˈmaɪlz ˈfɹʌm ðə ˈsteɪʃən"
       }
      ]
     },
@@ -20642,18 +20873,18 @@ window.BANKS = {
        "ipa": "ˈseɪv"
       },
       {
+       "kind": "phrase",
+       "en": "saved the princess",
+       "zh": "救出了公主",
+       "src": "table",
+       "ipa": "ˈseɪvd ðə ˈpɹɪnsɛs"
+      },
+      {
        "kind": "word",
        "en": "prince",
        "zh": "王子",
        "src": "2-060",
        "ipa": "ˈpɹɪns"
-      },
-      {
-       "kind": "word",
-       "en": "princess",
-       "zh": "公主",
-       "src": "2-061",
-       "ipa": "ˈpɹɪnsɛs"
       },
       {
        "kind": "sentence",
@@ -20669,28 +20900,28 @@ window.BANKS = {
      "level": 4,
      "target": "dozen",
      "gloss": "一打",
-     "ipa": "dʌzən",
+     "ipa": "ˈdʌzən",
      "steps": [
       {
        "kind": "word",
        "en": "dozen",
        "zh": "一打",
        "src": "4-031",
-       "ipa": "dʌzən"
+       "ipa": "ˈdʌzən"
       },
       {
        "kind": "phrase",
        "en": "a dozen",
        "zh": "一打",
        "src": "table",
-       "ipa": "ə dʌzən"
+       "ipa": "ə ˈdʌzən"
       },
       {
        "kind": "sentence",
        "en": "How much is a dozen of eggs?",
        "zh": "一打雞蛋多少錢",
        "src": "4-031",
-       "ipa": "ˈhaʊ mʌtʃ ˈɪz ə dʌzən ʌv ˈɛɡz"
+       "ipa": "ˈhaʊ ˈmʌtʃ ˈɪz ə ˈdʌzən ˈʌv ˈɛɡz"
       }
      ]
     },
@@ -20727,7 +20958,7 @@ window.BANKS = {
        "en": "This book is eight hundred grams.",
        "zh": "這本書重八百克",
        "src": "4-046",
-       "ipa": "ˈðɪs ˈbʊk ˈɪz ˈeɪt hʌndɹəd ˈɡɹæmz"
+       "ipa": "ˈðɪs ˈbʊk ˈɪz ˈeɪt ˈhʌndɹəd ˈɡɹæmz"
       }
      ]
     },
@@ -20773,28 +21004,28 @@ window.BANKS = {
      "level": 4,
      "target": "kilogram (kg)",
      "gloss": "公斤",
-     "ipa": "ˈkɪˌləɡɹæm",
+     "ipa": "ˈkɪləˌɡɹæm",
      "steps": [
       {
        "kind": "word",
        "en": "kilogram (kg)",
        "zh": "公斤",
        "src": "4-055",
-       "ipa": "ˈkɪˌləɡɹæm"
+       "ipa": "ˈkɪləˌɡɹæm"
       },
       {
        "kind": "phrase",
        "en": "a kilogram",
        "zh": "一公斤",
        "src": "table",
-       "ipa": "ə ˈkɪˌləɡɹæm"
+       "ipa": "ə ˈkɪləˌɡɹæm"
       },
       {
        "kind": "sentence",
        "en": "How many kilograms is this box?",
        "zh": "這個盒子幾公斤",
        "src": "4-055",
-       "ipa": "ˈhaʊ ˈmɛniː ˈkɪˌləɡɹæmz ˈɪz ˈðɪs ˈbɑːks"
+       "ipa": "ˈhaʊ ˈmɛni ˈkɪləˌɡɹæmz ˈɪz ˈðɪs ˈbɑːks"
       }
      ]
     },
@@ -20811,6 +21042,13 @@ window.BANKS = {
        "zh": "借出",
        "src": "4-058",
        "ipa": "ˈlɛnd"
+      },
+      {
+       "kind": "phrase",
+       "en": "lend my car",
+       "zh": "把我的車借出去",
+       "src": "table",
+       "ipa": "ˈlɛnd ˈmaɪ ˈkɑːɹ"
       },
       {
        "kind": "word",
@@ -20854,7 +21092,7 @@ window.BANKS = {
        "en": "I'll pay for it.",
        "zh": "我會付錢",
        "src": "4-076",
-       "ipa": "ˈpeɪ ˈfɔːɹ ˈɪt"
+       "ipa": "ˈaɪl ˈpeɪ ˈfɔːɹ ˈɪt"
       }
      ]
     },
@@ -20871,6 +21109,13 @@ window.BANKS = {
        "zh": "改變",
        "src": "5-028",
        "ipa": "ˈtʃeɪndʒ"
+      },
+      {
+       "kind": "phrase",
+       "en": "change your mind",
+       "zh": "改變心意",
+       "src": "table",
+       "ipa": "ˈtʃeɪndʒ ˈjɔːɹ ˈmaɪnd"
       },
       {
        "kind": "word",
@@ -20893,21 +21138,21 @@ window.BANKS = {
      "level": 5,
      "target": "hundred",
      "gloss": "百",
-     "ipa": "hʌndɹəd",
+     "ipa": "ˈhʌndɹəd",
      "steps": [
       {
        "kind": "word",
        "en": "hundred",
        "zh": "百",
        "src": "5-066",
-       "ipa": "hʌndɹəd"
+       "ipa": "ˈhʌndɹəd"
       },
       {
        "kind": "phrase",
        "en": "a hundred",
        "zh": "一百",
        "src": "table",
-       "ipa": "ə hʌndɹəd"
+       "ipa": "ə ˈhʌndɹəd"
       },
       {
        "kind": "word",
@@ -20921,7 +21166,7 @@ window.BANKS = {
        "en": "Each one has to pay one hundred dollars.",
        "zh": "每個人都必須付一百元",
        "src": "5-066",
-       "ipa": "ˈiːtʃ wʌn ˈhæz ˈtuː ˈpeɪ wʌn hʌndɹəd ˈdɑːlɚz"
+       "ipa": "ˈiːtʃ ˈwʌn ˈhæz ˈtuː ˈpeɪ ˈwʌn ˈhʌndɹəd ˈdɑːlɚz"
       }
      ]
     },
@@ -20951,7 +21196,7 @@ window.BANKS = {
        "en": "What's the price of this DVD?",
        "zh": "這片DVD多少錢",
        "src": "5-114",
-       "ipa": "ðə ˈpɹaɪs ʌv ˈðɪs ˌdiːˌviːˈdiː"
+       "ipa": "ˈwʌts ðə ˈpɹaɪs ˈʌv ˈðɪs ˌdiːˌviːˈdiː"
       }
      ]
     },
@@ -20970,18 +21215,25 @@ window.BANKS = {
        "ipa": "ˈbɑːˌɹoʊ"
       },
       {
+       "kind": "phrase",
+       "en": "borrow your dictionary",
+       "zh": "借你的字典",
+       "src": "table",
+       "ipa": "ˈbɑːˌɹoʊ ˈjɔːɹ ˈdɪkʃəˌnɛɹi"
+      },
+      {
        "kind": "word",
        "en": "dictionary",
        "zh": "字典",
        "src": "6-074",
-       "ipa": "ˈdɪˌkʃənɛɹiː"
+       "ipa": "ˈdɪkʃəˌnɛɹi"
       },
       {
        "kind": "sentence",
        "en": "Can I borrow your dictionary?",
        "zh": "我可以借你的字典嗎",
        "src": "6-033",
-       "ipa": "ˈkæn ˈaɪ ˈbɑːˌɹoʊ ˈjɔːɹ ˈdɪˌkʃənɛɹiː"
+       "ipa": "ˈkæn ˈaɪ ˈbɑːˌɹoʊ ˈjɔːɹ ˈdɪkʃəˌnɛɹi"
       }
      ]
     },
@@ -21011,7 +21263,7 @@ window.BANKS = {
        "en": "My uncle spends too much time on his business.",
        "zh": "我的叔叔花太多時間在生意上了",
        "src": "6-038",
-       "ipa": "ˈmaɪ ʌŋkəl ˈspɛndz ˈtuː mʌtʃ ˈtaɪm ˈɑːn ˈhɪz ˈbɪznəs"
+       "ipa": "ˈmaɪ ˈʌŋkəl ˈspɛndz ˈtuː ˈmʌtʃ ˈtaɪm ˈɑːn ˈhɪz ˈbɪznəs"
       }
      ]
     },
@@ -21020,28 +21272,28 @@ window.BANKS = {
      "level": 6,
      "target": "businessman",
      "gloss": "商人",
-     "ipa": "ˈbɪˌznəsmæn",
+     "ipa": "ˈbɪznəˌsmæn",
      "steps": [
       {
        "kind": "word",
        "en": "businessman",
        "zh": "商人",
        "src": "6-039",
-       "ipa": "ˈbɪˌznəsmæn"
+       "ipa": "ˈbɪznəˌsmæn"
       },
       {
        "kind": "phrase",
        "en": "a businessman",
        "zh": "一位商人",
        "src": "table",
-       "ipa": "ə ˈbɪˌznəsmæn"
+       "ipa": "ə ˈbɪznəˌsmæn"
       },
       {
        "kind": "sentence",
        "en": "My uncle is a businessman.",
        "zh": "我的叔叔是個商人",
        "src": "6-039",
-       "ipa": "ˈmaɪ ʌŋkəl ˈɪz ə ˈbɪˌznəsmæn"
+       "ipa": "ˈmaɪ ˈʌŋkəl ˈɪz ə ˈbɪznəˌsmæn"
       }
      ]
     },
@@ -21071,14 +21323,14 @@ window.BANKS = {
        "en": "candy",
        "zh": "糖果",
        "src": "2-012",
-       "ipa": "ˈkændiː"
+       "ipa": "ˈkændi"
       },
       {
        "kind": "sentence",
        "en": "This candy is thirty cents.",
        "zh": "這顆糖果要三十分錢",
        "src": "6-042",
-       "ipa": "ˈðɪs ˈkændiː ˈɪz ˌθɝdiː ˈsɛnts"
+       "ipa": "ˈðɪs ˈkændi ˈɪz ˈθɝˌdiː ˈsɛnts"
       }
      ]
     },
@@ -21087,21 +21339,21 @@ window.BANKS = {
      "level": 6,
      "target": "centimeter (cm)",
      "gloss": "公分",
-     "ipa": "ˈsɛˌntəmiːtɚ",
+     "ipa": "ˈsɛntəˌmiːtɚ",
      "steps": [
       {
        "kind": "word",
        "en": "centimeter (cm)",
        "zh": "公分",
        "src": "6-044",
-       "ipa": "ˈsɛˌntəmiːtɚ"
+       "ipa": "ˈsɛntəˌmiːtɚ"
       },
       {
        "kind": "phrase",
        "en": "a centimeter",
        "zh": "一公分",
        "src": "table",
-       "ipa": "ə ˈsɛˌntəmiːtɚ"
+       "ipa": "ə ˈsɛntəˌmiːtɚ"
       },
       {
        "kind": "word",
@@ -21115,7 +21367,7 @@ window.BANKS = {
        "en": "This pencil is ten centimeters long.",
        "zh": "這支鉛筆長十公分",
        "src": "6-044",
-       "ipa": "ˈðɪs ˈpɛnsəl ˈɪz ˈtɛn ˈsɛˌntəmiːtɚz ˈlɔːŋ"
+       "ipa": "ˈðɪs ˈpɛnsəl ˈɪz ˈtɛn ˈsɛntəˌmiːtɚz ˈlɔːŋ"
       }
      ]
     },
@@ -21145,7 +21397,7 @@ window.BANKS = {
        "en": "These T-shirts are so cheap.",
        "zh": "這些T恤好便宜",
        "src": "6-047",
-       "ipa": "ˈðiːz ˈtiː ʃɝts ˈɑːɹ ˈsoʊ ˈtʃiːp"
+       "ipa": "ˈðiːz ˈtiː ˈʃɝts ˈɑːɹ ˈsoʊ ˈtʃiːp"
       }
      ]
     },
@@ -21242,7 +21494,7 @@ window.BANKS = {
        "en": "The company lost three million dollars.",
        "zh": "這間公司損失了三百萬美元",
        "src": "6-185",
-       "ipa": "ðə ˌkʌmpəniː ˈlɔːst ˈθɹiː ˈmɪljən ˈdɑːlɚz"
+       "ipa": "ðə ˈkʌmpəˌniː ˈlɔːst ˈθɹiː ˈmɪljən ˈdɑːlɚz"
       }
      ]
     },
@@ -21279,7 +21531,7 @@ window.BANKS = {
        "en": "It's a piece of cake.",
        "zh": "這很容易",
        "src": "6-207",
-       "ipa": "ə ˈpiːs ʌv ˈkeɪk"
+       "ipa": "ˈɪts ə ˈpiːs ˈʌv ˈkeɪk"
       }
      ]
     },
@@ -21316,7 +21568,7 @@ window.BANKS = {
        "en": "A lot of things are on sale during the holiday.",
        "zh": "節日有很多東西在特價",
        "src": "6-225",
-       "ipa": "ə ˈlɑːt ʌv ˈθɪŋz ˈɑːɹ ˈɑːn ˈseɪl ˈdʊɹɪŋ ðə ˈhɑːˌlədeɪ"
+       "ipa": "ə ˈlɑːt ˈʌv ˈθɪŋz ˈɑːɹ ˈɑːn ˈseɪl ˈdʊɹɪŋ ðə ˈhɑːləˌdeɪ"
       }
      ]
     },
@@ -21376,14 +21628,14 @@ window.BANKS = {
        "en": "spend too much",
        "zh": "花費太多",
        "src": "table",
-       "ipa": "ˈspɛnd ˈtuː mʌtʃ"
+       "ipa": "ˈspɛnd ˈtuː ˈmʌtʃ"
       },
       {
        "kind": "sentence",
        "en": "Don't spend too much time on your computer.",
        "zh": "別花太多時間在電腦上",
        "src": "6-242",
-       "ipa": "ˈspɛnd ˈtuː mʌtʃ ˈtaɪm ˈɑːn ˈjɔːɹ ˈkəmpjuːtɚ"
+       "ipa": "ˈdoʊnt ˈspɛnd ˈtuː ˈmʌtʃ ˈtaɪm ˈɑːn ˈjɔːɹ kəˈmpjuːtɚ"
       }
      ]
     },
@@ -21420,7 +21672,7 @@ window.BANKS = {
        "en": "I couldn't find my wallet.",
        "zh": "我找不到我的錢包",
        "src": "6-271",
-       "ipa": "ˈaɪ ˈfaɪnd ˈmaɪ ˈwɔːlət"
+       "ipa": "ˈaɪ ˈkʊdənt ˈfaɪnd ˈmaɪ ˈwɔːlət"
       }
      ]
     }
@@ -21458,7 +21710,7 @@ window.BANKS = {
        "en": "Sandy got a new job.",
        "zh": "Sandy得到一份新工作",
        "src": "1-031",
-       "ipa": "ˈsændiː ˈɡɑːt ə ˈnuː ˈdʒɑːb"
+       "ipa": "ˈsændi ˈɡɑːt ə ˈnuː ˈdʒɑːb"
       }
      ]
     },
@@ -21488,7 +21740,7 @@ window.BANKS = {
        "en": "Bryant is a good basketball player.",
        "zh": "Bryant是一位籃球好手",
        "src": "3-076",
-       "ipa": "ˈbɹaɪənt ˈɪz ə ˈɡʊd ˈbæˌskətbɔːl ˈpleɪɚ"
+       "ipa": "ˈbɹaɪənt ˈɪz ə ˈɡʊd ˈbæskəˌtbɔːl ˈpleɪɚ"
       }
      ]
     },
@@ -21525,7 +21777,7 @@ window.BANKS = {
        "en": "The boss has great power in his company.",
        "zh": "這個老闆在公司裡有很大的權力",
        "src": "3-080",
-       "ipa": "ðə ˈbɑːs ˈhæz ˈɡɹeɪt ˈpaʊɚ ɪn ˈhɪz ˌkʌmpəniː"
+       "ipa": "ðə ˈbɑːs ˈhæz ˈɡɹeɪt ˈpaʊɚ ɪn ˈhɪz ˈkʌmpəˌniː"
       }
      ]
     },
@@ -21534,21 +21786,21 @@ window.BANKS = {
      "level": 3,
      "target": "worker",
      "gloss": "工作人員",
-     "ipa": "wɝkɚ",
+     "ipa": "ˈwɝkɚ",
      "steps": [
       {
        "kind": "word",
        "en": "worker",
        "zh": "工作人員",
        "src": "3-104",
-       "ipa": "wɝkɚ"
+       "ipa": "ˈwɝkɚ"
       },
       {
        "kind": "phrase",
        "en": "a worker",
        "zh": "一位工作者",
        "src": "table",
-       "ipa": "ə wɝkɚ"
+       "ipa": "ə ˈwɝkɚ"
       },
       {
        "kind": "word",
@@ -21562,7 +21814,7 @@ window.BANKS = {
        "en": "All the workers are in this office.",
        "zh": "所有的員工都在這辦公室裡",
        "src": "3-104",
-       "ipa": "ˈɔːl ðə wɝkɚz ˈɑːɹ ɪn ˈðɪs ˈɔːfɪs"
+       "ipa": "ˈɔːl ðə ˈwɝkɚz ˈɑːɹ ɪn ˈðɪs ˈɔːfɪs"
       }
      ]
     },
@@ -21592,7 +21844,7 @@ window.BANKS = {
        "en": "Andy Lau is a good actor.",
        "zh": "劉德華是一個好的男演員",
        "src": "4-003",
-       "ipa": "ˈændiː ˈlaʊ ˈɪz ə ˈɡʊd ˈæktɚ"
+       "ipa": "ˈændi ˈlaʊ ˈɪz ə ˈɡʊd ˈæktɚ"
       }
      ]
     },
@@ -21629,7 +21881,7 @@ window.BANKS = {
        "en": "Audrey is my favorite actress.",
        "zh": "Audrey是我最喜歡的女演員",
        "src": "4-004",
-       "ipa": "ˈɔːdɹiː ˈɪz ˈmaɪ ˈfeɪvɚɪt ˈæktɹəs"
+       "ipa": "ˈɔːdɹi ˈɪz ˈmaɪ ˈfeɪvɚɪt ˈæktɹəs"
       }
      ]
     },
@@ -21666,7 +21918,7 @@ window.BANKS = {
        "en": "Who's going to lead the team?",
        "zh": "誰要帶領這個團隊",
        "src": "4-056",
-       "ipa": "ˈɡoʊɪŋ ˈtuː ˈlɛd ðə ˈtiːm"
+       "ipa": "ˈhuːz ˈɡoʊɪŋ ˈtuː ˈlɛd ðə ˈtiːm"
       }
      ]
     },
@@ -21696,14 +21948,14 @@ window.BANKS = {
        "en": "person",
        "zh": "人",
        "src": "5-103",
-       "ipa": "pɝsən"
+       "ipa": "ˈpɝsən"
       },
       {
        "kind": "sentence",
        "en": "Our leader is a cool person.",
        "zh": "我們的領袖是個很酷的人",
        "src": "4-057",
-       "ipa": "ˈaʊɚ ˈliːdɚ ˈɪz ə ˈkuːl pɝsən"
+       "ipa": "ˈaʊɚ ˈliːdɚ ˈɪz ə ˈkuːl ˈpɝsən"
       }
      ]
     },
@@ -21814,7 +22066,7 @@ window.BANKS = {
        "en": "Stay away from the fire.",
        "zh": "遠離火源",
        "src": "5-049",
-       "ipa": "ˈsteɪ ˈəweɪ fɹʌm ðə ˈfaɪɚ"
+       "ipa": "ˈsteɪ əˈweɪ ˈfɹʌm ðə ˈfaɪɚ"
       }
      ]
     },
@@ -21844,7 +22096,7 @@ window.BANKS = {
        "en": "What's the problem?",
        "zh": "出了什麼問題",
        "src": "5-116",
-       "ipa": "ðə ˈpɹɑːbləm"
+       "ipa": "ˈwʌts ðə ˈpɹɑːbləm"
       }
      ]
     },
@@ -21881,7 +22133,7 @@ window.BANKS = {
        "en": "The boss is nice to us.",
        "zh": "老闆對我們很好",
        "src": "6-034",
-       "ipa": "ðə ˈbɑːs ˈɪz ˈnaɪs ˈtuː ʌs"
+       "ipa": "ðə ˈbɑːs ˈɪz ˈnaɪs ˈtuː ˈʌs"
       }
      ]
     },
@@ -21900,6 +22152,13 @@ window.BANKS = {
        "ipa": "ˌdɪˈsaɪd"
       },
       {
+       "kind": "phrase",
+       "en": "decided to go",
+       "zh": "決定要去",
+       "src": "table",
+       "ipa": "ˌdɪˈsaɪdɪd ˈtuː ˈɡoʊ"
+      },
+      {
        "kind": "word",
        "en": "go",
        "zh": "去",
@@ -21907,18 +22166,11 @@ window.BANKS = {
        "ipa": "ˈɡoʊ"
       },
       {
-       "kind": "word",
-       "en": "together",
-       "zh": "一起",
-       "src": "3-096",
-       "ipa": "ˈtəɡɛðɚ"
-      },
-      {
        "kind": "sentence",
        "en": "We decided to go together.",
        "zh": "我們決定一起去",
        "src": "6-072",
-       "ipa": "ˈwiː ˌdɪˈsaɪdɪd ˈtuː ˈɡoʊ ˈtəɡɛðɚ"
+       "ipa": "ˈwiː ˌdɪˈsaɪdɪd ˈtuː ˈɡoʊ təˈɡɛðɚ"
       }
      ]
     },
@@ -21927,28 +22179,28 @@ window.BANKS = {
      "level": 6,
      "target": "engineer",
      "gloss": "工程師",
-     "ipa": "ˈɛˈndʒənɪɹ",
+     "ipa": "ˈɛndʒəˈnɪɹ",
      "steps": [
       {
        "kind": "word",
        "en": "engineer",
        "zh": "工程師",
        "src": "6-092",
-       "ipa": "ˈɛˈndʒənɪɹ"
+       "ipa": "ˈɛndʒəˈnɪɹ"
       },
       {
        "kind": "phrase",
        "en": "an engineer",
        "zh": "一位工程師",
        "src": "table",
-       "ipa": "ˈæn ˈɛˈndʒənɪɹ"
+       "ipa": "ˈæn ˈɛndʒəˈnɪɹ"
       },
       {
        "kind": "sentence",
        "en": "That engineer works very hard.",
        "zh": "那位工程師很努力工作",
        "src": "6-092",
-       "ipa": "ˈðæt ˈɛˈndʒənɪɹ wɝks ˈvɛɹiː ˈhɑːɹd"
+       "ipa": "ˈðæt ˈɛndʒəˈnɪɹ ˈwɝks ˈvɛɹi ˈhɑːɹd"
       }
      ]
     },
@@ -21978,7 +22230,7 @@ window.BANKS = {
        "en": "This farmer gets up early in the morning.",
        "zh": "這位農夫很早起",
        "src": "6-107",
-       "ipa": "ˈðɪs ˈfɑːɹmɚ ˈɡɛts ʌp ɝliː ɪn ðə ˈmɔːɹnɪŋ"
+       "ipa": "ˈðɪs ˈfɑːɹmɚ ˈɡɛts ˈʌp ˈɝli ɪn ðə ˈmɔːɹnɪŋ"
       }
      ]
     },
@@ -21987,14 +22239,14 @@ window.BANKS = {
      "level": 6,
      "target": "fisherman / fishermen",
      "gloss": "漁夫（單數／複數）",
-     "ipa": "ˈfɪˌʃɚmæn ˈfɪʃɚmɪn",
+     "ipa": "ˈfɪʃɚˌmæn ˈfɪʃɚmɪn",
      "steps": [
       {
        "kind": "word",
        "en": "fisherman / fishermen",
        "zh": "漁夫（單數／複數）",
        "src": "6-117",
-       "ipa": "ˈfɪˌʃɚmæn ˈfɪʃɚmɪn"
+       "ipa": "ˈfɪʃɚˌmæn ˈfɪʃɚmɪn"
       },
       {
        "kind": "phrase",
@@ -22008,7 +22260,7 @@ window.BANKS = {
        "en": "There are many fishermen in Penghu.",
        "zh": "澎湖有很多漁夫。",
        "src": "6-117",
-       "ipa": "ˈðɛɹ ˈɑːɹ ˈmɛniː ˈfɪʃɚmɪn ɪn"
+       "ipa": "ˈðɛɹ ˈɑːɹ ˈmɛni ˈfɪʃɚmɪn ɪn"
       }
      ]
     },
@@ -22027,6 +22279,13 @@ window.BANKS = {
        "ipa": "ˈfɑːloʊ"
       },
       {
+       "kind": "phrase",
+       "en": "follow these rules",
+       "zh": "遵守這些規定",
+       "src": "table",
+       "ipa": "ˈfɑːloʊ ˈðiːz ˈɹuːlz"
+      },
+      {
        "kind": "word",
        "en": "should",
        "zh": "應該",
@@ -22038,7 +22297,7 @@ window.BANKS = {
        "en": "All the workers should follow these rules.",
        "zh": "所有的工作人員都必須遵守這些規定",
        "src": "6-119",
-       "ipa": "ˈɔːl ðə wɝkɚz ˈʃʊd ˈfɑːloʊ ˈðiːz ˈɹuːlz"
+       "ipa": "ˈɔːl ðə ˈwɝkɚz ˈʃʊd ˈfɑːloʊ ˈðiːz ˈɹuːlz"
       }
      ]
     },
@@ -22047,21 +22306,21 @@ window.BANKS = {
      "level": 6,
      "target": "interview",
      "gloss": "採訪",
-     "ipa": "ˈɪˌntɚvjuː",
+     "ipa": "ˈɪntɚˌvjuː",
      "steps": [
       {
        "kind": "word",
        "en": "interview",
        "zh": "採訪",
        "src": "6-149",
-       "ipa": "ˈɪˌntɚvjuː"
+       "ipa": "ˈɪntɚˌvjuː"
       },
       {
        "kind": "phrase",
        "en": "an interview",
        "zh": "一次採訪",
        "src": "table",
-       "ipa": "ˈæn ˈɪˌntɚvjuː"
+       "ipa": "ˈæn ˈɪntɚˌvjuː"
       },
       {
        "kind": "word",
@@ -22075,7 +22334,7 @@ window.BANKS = {
        "en": "The reporter is interviewing the actor.",
        "zh": "記者正在訪問那個演員",
        "src": "6-149",
-       "ipa": "ðə ɹɪˈpɔːɹtɚ ˈɪz ˈɪˌntɚvjuːɪŋ ðə ˈæktɚ"
+       "ipa": "ðə ɹɪˈpɔːɹtɚ ˈɪz ˈɪntɚˌvjuːɪŋ ðə ˈæktɚ"
       }
      ]
     },
@@ -22121,21 +22380,21 @@ window.BANKS = {
      "level": 6,
      "target": "lazy",
      "gloss": "懶惰的",
-     "ipa": "ˈleɪziː",
+     "ipa": "ˈleɪzi",
      "steps": [
       {
        "kind": "word",
        "en": "lazy",
        "zh": "懶惰的",
        "src": "6-161",
-       "ipa": "ˈleɪziː"
+       "ipa": "ˈleɪzi"
       },
       {
        "kind": "phrase",
        "en": "be lazy",
        "zh": "懶惰",
        "src": "table",
-       "ipa": "ˈbiː ˈleɪziː"
+       "ipa": "ˈbiː ˈleɪzi"
       },
       {
        "kind": "word",
@@ -22149,7 +22408,7 @@ window.BANKS = {
        "en": "Terri is lazy and always late.",
        "zh": "Terri很懶惰而且老是遲到",
        "src": "6-161",
-       "ipa": "ˈtɛɹiː ˈɪz ˈleɪziː ənd ˈɔːˌlweɪz ˈleɪt"
+       "ipa": "ˈtɛɹi ˈɪz ˈleɪzi ənd ˈɔːˌlweɪz ˈleɪt"
       }
      ]
     },
@@ -22179,14 +22438,14 @@ window.BANKS = {
        "en": "Tuesday",
        "zh": "星期二",
        "src": "5-180",
-       "ipa": "ˈtuːzdiː"
+       "ipa": "ˈtuːzdi"
       },
       {
        "kind": "sentence",
        "en": "These workers have a meeting every Tuesday.",
        "zh": "這些工作人員每週二有個會議",
        "src": "6-184",
-       "ipa": "ˈðiːz wɝkɚz ˈhæv ə ˈmiːtɪŋ ˈɛvɚiː ˈtuːzdiː"
+       "ipa": "ˈðiːz ˈwɝkɚz ˈhæv ə ˈmiːtɪŋ ˈɛvɚi ˈtuːzdi"
       }
      ]
     },
@@ -22216,7 +22475,7 @@ window.BANKS = {
        "en": "We have new officers every year.",
        "zh": "我們每年都有新的職員",
        "src": "6-199",
-       "ipa": "ˈwiː ˈhæv ˈnuː ˈɔːfəsɚz ˈɛvɚiː ˈjɪɹ"
+       "ipa": "ˈwiː ˈhæv ˈnuː ˈɔːfəsɚz ˈɛvɚi ˈjɪɹ"
       }
      ]
     },
@@ -22225,21 +22484,21 @@ window.BANKS = {
      "level": 6,
      "target": "secretary",
      "gloss": "秘書",
-     "ipa": "ˈsɛˌkɹətɛɹiː",
+     "ipa": "ˈsɛkɹəˌtɛɹi",
      "steps": [
       {
        "kind": "word",
        "en": "secretary",
        "zh": "秘書",
        "src": "6-228",
-       "ipa": "ˈsɛˌkɹətɛɹiː"
+       "ipa": "ˈsɛkɹəˌtɛɹi"
       },
       {
        "kind": "phrase",
        "en": "a secretary",
        "zh": "一位秘書",
        "src": "table",
-       "ipa": "ə ˈsɛˌkɹətɛɹiː"
+       "ipa": "ə ˈsɛkɹəˌtɛɹi"
       },
       {
        "kind": "word",
@@ -22253,7 +22512,7 @@ window.BANKS = {
        "en": "Our boss has two secretaries.",
        "zh": "我們的老闆有兩個祕書",
        "src": "6-228",
-       "ipa": "ˈaʊɚ ˈbɑːs ˈhæz ˈtuː ˈsɛˌkɹətɛɹiːz"
+       "ipa": "ˈaʊɚ ˈbɑːs ˈhæz ˈtuː ˈsɛkɹəˌtɛɹiz"
       }
      ]
     },
@@ -22283,7 +22542,7 @@ window.BANKS = {
        "en": "Soldiers have to wear their uniforms.",
        "zh": "軍人必須穿他們的制服",
        "src": "6-237",
-       "ipa": "ˈsoʊldʒɚz ˈhæv ˈtuː ˈwɛɹ ˈðɛɹ ˈjuːˌnəfɔːɹmz"
+       "ipa": "ˈsoʊldʒɚz ˈhæv ˈtuː ˈwɛɹ ˈðɛɹ ˈjuːnəˌfɔːɹmz"
       }
      ]
     }
@@ -22310,6 +22569,13 @@ window.BANKS = {
        "ipa": "ˈdʒɑːɡ"
       },
       {
+       "kind": "phrase",
+       "en": "goes jogging",
+       "zh": "去慢跑",
+       "src": "table",
+       "ipa": "ˈɡoʊz ˈdʒɑːɡɪŋ"
+      },
+      {
        "kind": "word",
        "en": "often",
        "zh": "時常",
@@ -22317,18 +22583,11 @@ window.BANKS = {
        "ipa": "ˈɔːfən"
       },
       {
-       "kind": "word",
-       "en": "around",
-       "zh": "到處",
-       "src": "4-005",
-       "ipa": "ˈɚaʊnd"
-      },
-      {
        "kind": "sentence",
        "en": "Gloria often goes jogging around the park.",
        "zh": "Gloria常繞著公園慢跑",
        "src": "1-032",
-       "ipa": "ˈɡlɔːɹiːə ˈɔːfən ˈɡoʊz ˈdʒɑːɡɪŋ ˈɚaʊnd ðə ˈpɑːɹk"
+       "ipa": "ˈɡlɔːɹiə ˈɔːfən ˈɡoʊz ˈdʒɑːɡɪŋ ɚˈaʊnd ðə ˈpɑːɹk"
       }
      ]
     },
@@ -22345,6 +22604,13 @@ window.BANKS = {
        "zh": "玩",
        "src": "1-056",
        "ipa": "ˈpleɪ"
+      },
+      {
+       "kind": "phrase",
+       "en": "play table tennis",
+       "zh": "打桌球",
+       "src": "table",
+       "ipa": "ˈpleɪ ˈteɪbəl ˈtɛnəs"
       },
       {
        "kind": "word",
@@ -22377,18 +22643,25 @@ window.BANKS = {
        "ipa": "ˈθɹoʊ"
       },
       {
+       "kind": "phrase",
+       "en": "throw it away",
+       "zh": "把它丟掉",
+       "src": "table",
+       "ipa": "ˈθɹoʊ ˈɪt əˈweɪ"
+      },
+      {
        "kind": "word",
        "en": "away",
        "zh": "離開",
        "src": "5-011",
-       "ipa": "ˈəweɪ"
+       "ipa": "əˈweɪ"
       },
       {
        "kind": "sentence",
        "en": "Don't throw it away.",
        "zh": "別把它丟掉",
        "src": "1-075",
-       "ipa": "ˈθɹoʊ ˈɪt ˈəweɪ"
+       "ipa": "ˈdoʊnt ˈθɹoʊ ˈɪt əˈweɪ"
       }
      ]
     },
@@ -22407,18 +22680,18 @@ window.BANKS = {
        "ipa": "ˈhɑːp"
       },
       {
+       "kind": "phrase",
+       "en": "is hopping",
+       "zh": "正在跳",
+       "src": "table",
+       "ipa": "ˈɪz ˈhɑːpɪŋ"
+      },
+      {
        "kind": "word",
        "en": "frog",
        "zh": "青蛙",
        "src": "2-027",
        "ipa": "ˈfɹɑːɡ"
-      },
-      {
-       "kind": "word",
-       "en": "pond",
-       "zh": "池塘",
-       "src": "6-211",
-       "ipa": "ˈpɑːnd"
       },
       {
        "kind": "sentence",
@@ -22462,7 +22735,7 @@ window.BANKS = {
        "en": "My parents will take us to a swimming pool on weekends.",
        "zh": "我父母在週末會帶我們到游泳池",
        "src": "2-059",
-       "ipa": "ˈmaɪ ˈpɛɹənts ˈwɪl ˈteɪk ʌs ˈtuː ə ˈswɪmɪŋ ˈpuːl ˈɑːn ˈwiːˌkɛndz"
+       "ipa": "ˈmaɪ ˈpɛɹənts ˈwɪl ˈteɪk ˈʌs ˈtuː ə ˈswɪmɪŋ ˈpuːl ˈɑːn ˈwiːˌkɛndz"
       }
      ]
     },
@@ -22559,7 +22832,7 @@ window.BANKS = {
        "en": "Some kids are playing on the seesaw.",
        "zh": "一些小孩在玩蹺蹺板",
        "src": "2-070",
-       "ipa": "sʌm ˈkɪdz ˈɑːɹ ˈpleɪɪŋ ˈɑːn ðə ˈsiːˌsɔː"
+       "ipa": "ˈsʌm ˈkɪdz ˈɑːɹ ˈpleɪɪŋ ˈɑːn ðə ˈsiːˌsɔː"
       }
      ]
     },
@@ -22615,18 +22888,25 @@ window.BANKS = {
        "ipa": "ˈhɪt"
       },
       {
+       "kind": "phrase",
+       "en": "don't hit",
+       "zh": "不要打",
+       "src": "table",
+       "ipa": "ˈdoʊnt ˈhɪt"
+      },
+      {
        "kind": "word",
        "en": "brother",
        "zh": "兄弟",
        "src": "2-009",
-       "ipa": "bɹʌðɚ"
+       "ipa": "ˈbɹʌðɚ"
       },
       {
        "kind": "sentence",
        "en": "Don't hit your brother.",
        "zh": "別打你哥哥",
        "src": "3-047",
-       "ipa": "ˈhɪt ˈjɔːɹ bɹʌðɚ"
+       "ipa": "ˈdoʊnt ˈhɪt ˈjɔːɹ ˈbɹʌðɚ"
       }
      ]
     },
@@ -22645,6 +22925,13 @@ window.BANKS = {
        "ipa": "ˈkɪk"
       },
       {
+       "kind": "phrase",
+       "en": "are kicking the soccer",
+       "zh": "正在踢足球",
+       "src": "table",
+       "ipa": "ˈɑːɹ ˈkɪkɪŋ ðə ˈsɑːkɚ"
+      },
+      {
        "kind": "word",
        "en": "soccer",
        "zh": "足球",
@@ -22652,18 +22939,11 @@ window.BANKS = {
        "ipa": "ˈsɑːkɚ"
       },
       {
-       "kind": "word",
-       "en": "playground",
-       "zh": "操場",
-       "src": "4-077",
-       "ipa": "ˈpleɪˌɡɹaʊnd"
-      },
-      {
        "kind": "sentence",
        "en": "Some children are kicking the soccer on the playground.",
        "zh": "一些小孩在操場上踢球",
        "src": "3-057",
-       "ipa": "sʌm ˈtʃɪldɹən ˈɑːɹ ˈkɪkɪŋ ðə ˈsɑːkɚ ˈɑːn ðə ˈpleɪˌɡɹaʊnd"
+       "ipa": "ˈsʌm ˈtʃɪldɹən ˈɑːɹ ˈkɪkɪŋ ðə ˈsɑːkɚ ˈɑːn ðə ˈpleɪˌɡɹaʊnd"
       }
      ]
     },
@@ -22730,7 +23010,7 @@ window.BANKS = {
        "en": "Our team doesn't want to lose the game.",
        "zh": "我們的隊伍不想輸掉比賽",
        "src": "4-059",
-       "ipa": "ˈaʊɚ ˈtiːm ˈwɑːnt ˈtuː ˈluːz ðə ˈɡeɪm"
+       "ipa": "ˈaʊɚ ˈtiːm ˈdʌzənt ˈwɑːnt ˈtuː ˈluːz ðə ˈɡeɪm"
       }
      ]
     },
@@ -22749,6 +23029,13 @@ window.BANKS = {
        "ipa": "ˈɹoʊl"
       },
       {
+       "kind": "phrase",
+       "en": "under the blanket",
+       "zh": "在毯子下面",
+       "src": "table",
+       "ipa": "ˈʌndɚ ðə ˈblæŋkət"
+      },
+      {
        "kind": "word",
        "en": "little",
        "zh": "小的",
@@ -22756,18 +23043,11 @@ window.BANKS = {
        "ipa": "ˈlɪtəl"
       },
       {
-       "kind": "word",
-       "en": "kid",
-       "zh": "小孩",
-       "src": "1-033",
-       "ipa": "ˈkɪd"
-      },
-      {
        "kind": "sentence",
        "en": "The little kid rolled under the blanket.",
        "zh": "那個小孩在毯子下打滾",
        "src": "4-081",
-       "ipa": "ðə ˈlɪtəl ˈkɪd ˈɹoʊld ʌndɚ ðə ˈblæŋkət"
+       "ipa": "ðə ˈlɪtəl ˈkɪd ˈɹoʊld ˈʌndɚ ðə ˈblæŋkət"
       }
      ]
     },
@@ -22823,6 +23103,13 @@ window.BANKS = {
        "ipa": "ˈwɪn"
       },
       {
+       "kind": "phrase",
+       "en": "win this game",
+       "zh": "贏得這場比賽",
+       "src": "table",
+       "ipa": "ˈwɪn ˈðɪs ˈɡeɪm"
+      },
+      {
        "kind": "word",
        "en": "team",
        "zh": "團隊",
@@ -22830,18 +23117,11 @@ window.BANKS = {
        "ipa": "ˈtiːm"
       },
       {
-       "kind": "word",
-       "en": "must",
-       "zh": "必然要",
-       "src": "6-191",
-       "ipa": "mʌst"
-      },
-      {
        "kind": "sentence",
        "en": "Our team must win this game.",
        "zh": "我們的隊伍一定要贏得這場比賽",
        "src": "4-128",
-       "ipa": "ˈaʊɚ ˈtiːm mʌst ˈwɪn ˈðɪs ˈɡeɪm"
+       "ipa": "ˈaʊɚ ˈtiːm ˈmʌst ˈwɪn ˈðɪs ˈɡeɪm"
       }
      ]
     },
@@ -22850,21 +23130,21 @@ window.BANKS = {
      "level": 5,
      "target": "frisbee",
      "gloss": "飛盤",
-     "ipa": "ˈfɹɪsbiː",
+     "ipa": "ˈfɹɪsbi",
      "steps": [
       {
        "kind": "word",
        "en": "frisbee",
        "zh": "飛盤",
        "src": "5-057",
-       "ipa": "ˈfɹɪsbiː"
+       "ipa": "ˈfɹɪsbi"
       },
       {
        "kind": "phrase",
        "en": "a frisbee",
        "zh": "一個飛盤",
        "src": "table",
-       "ipa": "ə ˈfɹɪsbiː"
+       "ipa": "ə ˈfɹɪsbi"
       },
       {
        "kind": "word",
@@ -22878,7 +23158,7 @@ window.BANKS = {
        "en": "I play frisbee with my dog after work.",
        "zh": "我下班後和我的狗玩飛盤",
        "src": "5-057",
-       "ipa": "ˈaɪ ˈpleɪ ˈfɹɪsbiː ˈwɪð ˈmaɪ ˈdɔːɡ ˈæftɚ wɝk"
+       "ipa": "ˈaɪ ˈpleɪ ˈfɹɪsbi ˈwɪð ˈmaɪ ˈdɔːɡ ˈæftɚ ˈwɝk"
       }
      ]
     },
@@ -22908,7 +23188,7 @@ window.BANKS = {
        "en": "I need a pin for my shirt.",
        "zh": "我的襯衫需要一支別針",
        "src": "5-106",
-       "ipa": "ˈaɪ ˈniːd ə ˈpɪn ˈfɔːɹ ˈmaɪ ʃɝt"
+       "ipa": "ˈaɪ ˈniːd ə ˈpɪn ˈfɔːɹ ˈmaɪ ˈʃɝt"
       }
      ]
     },
@@ -22938,7 +23218,7 @@ window.BANKS = {
        "en": "He won first prize.",
        "zh": "他得到第一名",
        "src": "5-115",
-       "ipa": "ˈhiː wʌn fɝst ˈpɹaɪz"
+       "ipa": "ˈhiː ˈwʌn ˈfɝst ˈpɹaɪz"
       }
      ]
     },
@@ -22947,21 +23227,21 @@ window.BANKS = {
      "level": 5,
      "target": "surf",
      "gloss": "衝浪",
-     "ipa": "sɝf",
+     "ipa": "ˈsɝf",
      "steps": [
       {
        "kind": "word",
        "en": "surf",
        "zh": "衝浪",
        "src": "5-167",
-       "ipa": "sɝf"
+       "ipa": "ˈsɝf"
       },
       {
        "kind": "phrase",
        "en": "surf",
        "zh": "衝浪",
        "src": "table",
-       "ipa": "sɝf"
+       "ipa": "ˈsɝf"
       },
       {
        "kind": "word",
@@ -22975,7 +23255,7 @@ window.BANKS = {
        "en": "Let's go surfing.",
        "zh": "我們去衝浪吧",
        "src": "5-167",
-       "ipa": "ˈɡoʊ sɝfɪŋ"
+       "ipa": "ˈlɛts ˈɡoʊ ˈsɝfɪŋ"
       }
      ]
     },
@@ -23272,7 +23552,7 @@ window.BANKS = {
        "en": "Many girls want to marry the prince.",
        "zh": "很多女孩想嫁給王子",
        "src": "2-060",
-       "ipa": "ˈmɛniː ɡɝlz ˈwɑːnt ˈtuː ˈmɛɹiː ðə ˈpɹɪns"
+       "ipa": "ˈmɛni ˈɡɝlz ˈwɑːnt ˈtuː ˈmɛɹi ðə ˈpɹɪns"
       }
      ]
     },
@@ -23302,14 +23582,14 @@ window.BANKS = {
        "en": "story",
        "zh": "故事",
        "src": "6-245",
-       "ipa": "ˈstɔːɹiː"
+       "ipa": "ˈstɔːɹi"
       },
       {
        "kind": "sentence",
        "en": "The princess in the story is kind and beautiful.",
        "zh": "這故事裡的公主既和善又美麗",
        "src": "2-061",
-       "ipa": "ðə ˈpɹɪnsɛs ɪn ðə ˈstɔːɹiː ˈɪz ˈkaɪnd ənd ˈbjuːtəfəl"
+       "ipa": "ðə ˈpɹɪnsɛs ɪn ðə ˈstɔːɹi ˈɪz ˈkaɪnd ənd ˈbjuːtəfəl"
       }
      ]
     },
@@ -23339,7 +23619,7 @@ window.BANKS = {
        "en": "I'm going to sing a song for you.",
        "zh": "我要為你唱首歌",
        "src": "2-076",
-       "ipa": "ˈɡoʊɪŋ ˈtuː ˈsɪŋ ə ˈsɔːŋ ˈfɔːɹ ˈjuː"
+       "ipa": "ˈaɪm ˈɡoʊɪŋ ˈtuː ˈsɪŋ ə ˈsɔːŋ ˈfɔːɹ ˈjuː"
       }
      ]
     },
@@ -23395,11 +23675,18 @@ window.BANKS = {
        "ipa": "ˈdæns"
       },
       {
+       "kind": "phrase",
+       "en": "dances very well",
+       "zh": "舞跳得很好",
+       "src": "table",
+       "ipa": "ˈdænsəz ˈvɛɹi ˈwɛl"
+      },
+      {
        "kind": "sentence",
        "en": "Stacy dances very well.",
        "zh": "Stacy舞跳得很好",
        "src": "3-024",
-       "ipa": "ˈsteɪsiː ˈdænsəz ˈvɛɹiː ˈwɛl"
+       "ipa": "ˈsteɪsi ˈdænsəz ˈvɛɹi ˈwɛl"
       }
      ]
     },
@@ -23408,21 +23695,21 @@ window.BANKS = {
      "level": 3,
      "target": "Halloween",
      "gloss": "萬聖節",
-     "ipa": "ˌhæˈləwiːn",
+     "ipa": "ˌhæləˈwiːn",
      "steps": [
       {
        "kind": "word",
        "en": "Halloween",
        "zh": "萬聖節",
        "src": "3-044",
-       "ipa": "ˌhæˈləwiːn"
+       "ipa": "ˌhæləˈwiːn"
       },
       {
        "kind": "phrase",
        "en": "halloween",
        "zh": "萬聖節",
        "src": "table",
-       "ipa": "ˌhæˈləwiːn"
+       "ipa": "ˌhæləˈwiːn"
       },
       {
        "kind": "word",
@@ -23436,7 +23723,7 @@ window.BANKS = {
        "en": "Kids like to dress up on Halloween.",
        "zh": "小孩子喜歡在萬聖節裝扮自己",
        "src": "3-044",
-       "ipa": "ˈkɪdz ˈlaɪk ˈtuː ˈdɹɛs ʌp ˈɑːn ˌhæˈləwiːn"
+       "ipa": "ˈkɪdz ˈlaɪk ˈtuː ˈdɹɛs ˈʌp ˈɑːn ˌhæləˈwiːn"
       }
      ]
     },
@@ -23473,7 +23760,7 @@ window.BANKS = {
        "en": "Harry Potter has magic power.",
        "zh": "哈利波特擁有魔力",
        "src": "3-068",
-       "ipa": "ˈhɛɹiː ˈpɑːtɚ ˈhæz ˈmædʒɪk ˈpaʊɚ"
+       "ipa": "ˈhɛɹi ˈpɑːtɚ ˈhæz ˈmædʒɪk ˈpaʊɚ"
       }
      ]
     },
@@ -23529,18 +23816,18 @@ window.BANKS = {
        "ipa": "ˈækt"
       },
       {
+       "kind": "phrase",
+       "en": "acts snow white",
+       "zh": "扮演白雪公主",
+       "src": "table",
+       "ipa": "ˈækts ˈsnoʊ ˈwaɪt"
+      },
+      {
        "kind": "word",
        "en": "snow",
        "zh": "雪",
        "src": "4-100",
        "ipa": "ˈsnoʊ"
-      },
-      {
-       "kind": "word",
-       "en": "play",
-       "zh": "玩",
-       "src": "1-056",
-       "ipa": "ˈpleɪ"
       },
       {
        "kind": "sentence",
@@ -23584,7 +23871,7 @@ window.BANKS = {
        "en": "This band is very popular.",
        "zh": "這個樂團非常受歡迎",
        "src": "4-006",
-       "ipa": "ˈðɪs ˈbænd ˈɪz ˈvɛɹiː ˈpɑːpjəlɚ"
+       "ipa": "ˈðɪs ˈbænd ˈɪz ˈvɛɹi ˈpɑːpjəlɚ"
       }
      ]
     },
@@ -23614,14 +23901,14 @@ window.BANKS = {
        "en": "brother",
        "zh": "兄弟",
        "src": "2-009",
-       "ipa": "bɹʌðɚ"
+       "ipa": "ˈbɹʌðɚ"
       },
       {
        "kind": "sentence",
        "en": "My brother reads many comic books.",
        "zh": "我的弟弟看了很多漫畫",
        "src": "4-024",
-       "ipa": "ˈmaɪ bɹʌðɚ ˈɹiːdz ˈmɛniː ˈkɑːmɪk ˈbʊks"
+       "ipa": "ˈmaɪ ˈbɹʌðɚ ˈɹiːdz ˈmɛni ˈkɑːmɪk ˈbʊks"
       }
      ]
     },
@@ -23630,28 +23917,28 @@ window.BANKS = {
      "level": 4,
      "target": "movie",
      "gloss": "電影",
-     "ipa": "ˈmuːviː",
+     "ipa": "ˈmuːvi",
      "steps": [
       {
        "kind": "word",
        "en": "movie",
        "zh": "電影",
        "src": "4-063",
-       "ipa": "ˈmuːviː"
+       "ipa": "ˈmuːvi"
       },
       {
        "kind": "phrase",
        "en": "watch a movie",
        "zh": "看電影",
        "src": "table",
-       "ipa": "ˈwɑːtʃ ə ˈmuːviː"
+       "ipa": "ˈwɑːtʃ ə ˈmuːvi"
       },
       {
        "kind": "sentence",
        "en": "Titanic is an old movie.",
        "zh": "鐵達尼號是部老電影了",
        "src": "4-063",
-       "ipa": "taɪˈtænɪk ˈɪz ˈæn ˈoʊld ˈmuːviː"
+       "ipa": "taɪˈtænɪk ˈɪz ˈæn ˈoʊld ˈmuːvi"
       }
      ]
     },
@@ -23688,7 +23975,7 @@ window.BANKS = {
        "en": "Let's play the tape.",
        "zh": "我們來放錄音帶吧",
        "src": "4-115",
-       "ipa": "ˈpleɪ ðə ˈteɪp"
+       "ipa": "ˈlɛts ˈpleɪ ðə ˈteɪp"
       }
      ]
     },
@@ -23697,14 +23984,21 @@ window.BANKS = {
      "level": 5,
      "target": "celebrate",
      "gloss": "慶祝",
-     "ipa": "ˈsɛˌləbɹeɪt",
+     "ipa": "ˈsɛləˌbɹeɪt",
      "steps": [
       {
        "kind": "word",
        "en": "celebrate",
        "zh": "慶祝",
        "src": "5-027",
-       "ipa": "ˈsɛˌləbɹeɪt"
+       "ipa": "ˈsɛləˌbɹeɪt"
+      },
+      {
+       "kind": "phrase",
+       "en": "will celebrate",
+       "zh": "會慶祝",
+       "src": "table",
+       "ipa": "ˈwɪl ˈsɛləˌbɹeɪt"
       },
       {
        "kind": "word",
@@ -23714,18 +24008,11 @@ window.BANKS = {
        "ipa": "ˈtiːm"
       },
       {
-       "kind": "word",
-       "en": "restaurant",
-       "zh": "餐廳",
-       "src": "4-080",
-       "ipa": "ˈɹɛˌstɚɑːnt"
-      },
-      {
        "kind": "sentence",
        "en": "The team will celebrate in a good restaurant.",
        "zh": "這團隊要在一家好餐廳內慶祝",
        "src": "5-027",
-       "ipa": "ðə ˈtiːm ˈwɪl ˈsɛˌləbɹeɪt ɪn ə ˈɡʊd ˈɹɛˌstɚɑːnt"
+       "ipa": "ðə ˈtiːm ˈwɪl ˈsɛləˌbɹeɪt ɪn ə ˈɡʊd ˈɹɛstɚˌɑːnt"
       }
      ]
     },
@@ -23829,7 +24116,7 @@ window.BANKS = {
        "en": "People have to wear masks at this party.",
        "zh": "派對上的人都必須戴面具",
        "src": "5-076",
-       "ipa": "ˈpiːpəl ˈhæv ˈtuː ˈwɛɹ ˈmæsks ˈæt ˈðɪs ˈpɑːɹtiː"
+       "ipa": "ˈpiːpəl ˈhæv ˈtuː ˈwɛɹ ˈmæsks ˈæt ˈðɪs ˈpɑːɹti"
       }
      ]
     },
@@ -23903,7 +24190,7 @@ window.BANKS = {
        "en": "I got many Christmas presents.",
        "zh": "我在聖誕節得到很多禮物",
        "src": "5-113",
-       "ipa": "ˈaɪ ˈɡɑːt ˈmɛniː ˈkɹɪsməs ˈpɹɛzənts"
+       "ipa": "ˈaɪ ˈɡɑːt ˈmɛni ˈkɹɪsməs ˈpɹɛzənts"
       }
      ]
     },
@@ -23940,7 +24227,7 @@ window.BANKS = {
        "en": "We watch this TV program every night.",
        "zh": "我們每天晚上看這個電視節目",
        "src": "5-117",
-       "ipa": "ˈwiː ˈwɑːtʃ ˈðɪs ˈtiːˈviː ˈpɹoʊˌɡɹæm ˈɛvɚiː ˈnaɪt"
+       "ipa": "ˈwiː ˈwɑːtʃ ˈðɪs ˈtiːˈviː ˈpɹoʊˌɡɹæm ˈɛvɚi ˈnaɪt"
       }
      ]
     },
@@ -23970,14 +24257,14 @@ window.BANKS = {
        "en": "married",
        "zh": "已婚的",
        "src": "5-075",
-       "ipa": "ˈmɛɹiːd"
+       "ipa": "ˈmɛɹid"
       },
       {
        "kind": "sentence",
        "en": "She became the queen after she was married to the king.",
        "zh": "她嫁給國王之後變成為皇后",
        "src": "5-123",
-       "ipa": "ˈʃiː bɪˈkeɪm ðə ˈkwiːn ˈæftɚ ˈʃiː ˈwɑːz ˈmɛɹiːd ˈtuː ðə ˈkɪŋ"
+       "ipa": "ˈʃiː bɪˈkeɪm ðə ˈkwiːn ˈæftɚ ˈʃiː ˈwɑːz ˈmɛɹid ˈtuː ðə ˈkɪŋ"
       }
      ]
     },
@@ -23986,21 +24273,21 @@ window.BANKS = {
      "level": 5,
      "target": "radio",
      "gloss": "收音機",
-     "ipa": "ˈɹeɪdiːˌoʊ",
+     "ipa": "ˈɹeɪdiˌoʊ",
      "steps": [
       {
        "kind": "word",
        "en": "radio",
        "zh": "收音機",
        "src": "5-129",
-       "ipa": "ˈɹeɪdiːˌoʊ"
+       "ipa": "ˈɹeɪdiˌoʊ"
       },
       {
        "kind": "phrase",
        "en": "a radio",
        "zh": "一台收音機",
        "src": "table",
-       "ipa": "ə ˈɹeɪdiːˌoʊ"
+       "ipa": "ə ˈɹeɪdiˌoʊ"
       },
       {
        "kind": "word",
@@ -24014,7 +24301,7 @@ window.BANKS = {
        "en": "You can listen to the news on the radio.",
        "zh": "你可以收聽新聞廣播",
        "src": "5-129",
-       "ipa": "ˈjuː ˈkæn ˈlɪsən ˈtuː ðə ˈnuːz ˈɑːn ðə ˈɹeɪdiːˌoʊ"
+       "ipa": "ˈjuː ˈkæn ˈlɪsən ˈtuː ðə ˈnuːz ˈɑːn ðə ˈɹeɪdiˌoʊ"
       }
      ]
     },
@@ -24044,7 +24331,7 @@ window.BANKS = {
        "en": "Please turn on the recorder.",
        "zh": "請打開錄音機",
        "src": "5-132",
-       "ipa": "ˈpliːz tɝn ˈɑːn ðə ɹɪˈkɔːɹdɚ"
+       "ipa": "ˈpliːz ˈtɝn ˈɑːn ðə ɹɪˈkɔːɹdɚ"
       }
      ]
     },
@@ -24074,14 +24361,14 @@ window.BANKS = {
        "en": "brother",
        "zh": "兄弟",
        "src": "2-009",
-       "ipa": "bɹʌðɚ"
+       "ipa": "ˈbɹʌðɚ"
       },
       {
        "kind": "sentence",
        "en": "My brother always takes his robot with him.",
        "zh": "我的弟弟老是帶著機器人",
        "src": "5-136",
-       "ipa": "ˈmaɪ bɹʌðɚ ˈɔːˌlweɪz ˈteɪks ˈhɪz ˈɹoʊˌbɑːt ˈwɪð ˈhɪm"
+       "ipa": "ˈmaɪ ˈbɹʌðɚ ˈɔːˌlweɪz ˈteɪks ˈhɪz ˈɹoʊˌbɑːt ˈwɪð ˈhɪm"
       }
      ]
     },
@@ -24090,28 +24377,28 @@ window.BANKS = {
      "level": 5,
      "target": "violin",
      "gloss": "小提琴",
-     "ipa": "vaɪˈəlɪn",
+     "ipa": "vaɪəˈlɪn",
      "steps": [
       {
        "kind": "word",
        "en": "violin",
        "zh": "小提琴",
        "src": "5-184",
-       "ipa": "vaɪˈəlɪn"
+       "ipa": "vaɪəˈlɪn"
       },
       {
        "kind": "phrase",
        "en": "a violin",
        "zh": "一把小提琴",
        "src": "table",
-       "ipa": "ə vaɪˈəlɪn"
+       "ipa": "ə vaɪəˈlɪn"
       },
       {
        "kind": "sentence",
        "en": "Michelle practices the violin every day.",
        "zh": "Michelle每天練習小提琴",
        "src": "5-184",
-       "ipa": "mɪˈʃɛl ˈpɹæktəsəz ðə vaɪˈəlɪn ˈɛvɚiː ˈdeɪ"
+       "ipa": "mɪˈʃɛl ˈpɹæktəsəz ðə vaɪəˈlɪn ˈɛvɚi ˈdeɪ"
       }
      ]
     },
@@ -24178,7 +24465,7 @@ window.BANKS = {
        "en": "Merry Christmas.",
        "zh": "聖誕快樂",
        "src": "6-053",
-       "ipa": "ˈmɛɹiː ˈkɹɪsməs"
+       "ipa": "ˈmɛɹi ˈkɹɪsməs"
       }
      ]
     },
@@ -24224,21 +24511,21 @@ window.BANKS = {
      "level": 6,
      "target": "drum",
      "gloss": "鼓",
-     "ipa": "dɹʌm",
+     "ipa": "ˈdɹʌm",
      "steps": [
       {
        "kind": "word",
        "en": "drum",
        "zh": "鼓",
        "src": "6-082",
-       "ipa": "dɹʌm"
+       "ipa": "ˈdɹʌm"
       },
       {
        "kind": "phrase",
        "en": "a drum",
        "zh": "一面鼓",
        "src": "table",
-       "ipa": "ə dɹʌm"
+       "ipa": "ə ˈdɹʌm"
       },
       {
        "kind": "word",
@@ -24252,7 +24539,7 @@ window.BANKS = {
        "en": "Mike plays drums in the band.",
        "zh": "Mike在樂團裡打鼓",
        "src": "6-082",
-       "ipa": "ˈmaɪk ˈpleɪz dɹʌmz ɪn ðə ˈbænd"
+       "ipa": "ˈmaɪk ˈpleɪz ˈdɹʌmz ɪn ðə ˈbænd"
       }
      ]
     },
@@ -24349,14 +24636,14 @@ window.BANKS = {
        "en": "brother",
        "zh": "兄弟",
        "src": "2-009",
-       "ipa": "bɹʌðɚ"
+       "ipa": "ˈbɹʌðɚ"
       },
       {
        "kind": "sentence",
        "en": "My brother can play the guitar.",
        "zh": "我哥哥會彈吉他",
        "src": "6-126",
-       "ipa": "ˈmaɪ bɹʌðɚ ˈkæn ˈpleɪ ðə ɡɪˈtɑːɹ"
+       "ipa": "ˈmaɪ ˈbɹʌðɚ ˈkæn ˈpleɪ ðə ɡɪˈtɑːɹ"
       }
      ]
     },
@@ -24365,21 +24652,21 @@ window.BANKS = {
      "level": 6,
      "target": "holiday",
      "gloss": "節日;假日",
-     "ipa": "ˈhɑːˌlədeɪ",
+     "ipa": "ˈhɑːləˌdeɪ",
      "steps": [
       {
        "kind": "word",
        "en": "holiday",
        "zh": "節日;假日",
        "src": "6-140",
-       "ipa": "ˈhɑːˌlədeɪ"
+       "ipa": "ˈhɑːləˌdeɪ"
       },
       {
        "kind": "phrase",
        "en": "a holiday",
        "zh": "一個假日",
        "src": "table",
-       "ipa": "ə ˈhɑːˌlədeɪ"
+       "ipa": "ə ˈhɑːləˌdeɪ"
       },
       {
        "kind": "word",
@@ -24393,7 +24680,7 @@ window.BANKS = {
        "en": "Dragon Boat Festival is our national holiday.",
        "zh": "端午節是國定假日",
        "src": "6-140",
-       "ipa": "ˈdɹæɡən ˈboʊt ˈfɛstəvəl ˈɪz ˈaʊɚ ˈnæʃənəl ˈhɑːˌlədeɪ"
+       "ipa": "ˈdɹæɡən ˈboʊt ˈfɛstəvəl ˈɪz ˈaʊɚ ˈnæʃənəl ˈhɑːləˌdeɪ"
       }
      ]
     },
@@ -24402,21 +24689,21 @@ window.BANKS = {
      "level": 6,
      "target": "piano",
      "gloss": "鋼琴",
-     "ipa": "piːˈænoʊ",
+     "ipa": "piˈænoʊ",
      "steps": [
       {
        "kind": "word",
        "en": "piano",
        "zh": "鋼琴",
        "src": "6-206",
-       "ipa": "piːˈænoʊ"
+       "ipa": "piˈænoʊ"
       },
       {
        "kind": "phrase",
        "en": "play the piano",
        "zh": "彈鋼琴",
        "src": "table",
-       "ipa": "ˈpleɪ ðə piːˈænoʊ"
+       "ipa": "ˈpleɪ ðə piˈænoʊ"
       },
       {
        "kind": "word",
@@ -24430,7 +24717,7 @@ window.BANKS = {
        "en": "My sister can play the piano.",
        "zh": "我的姊姊會彈鋼琴",
        "src": "6-206",
-       "ipa": "ˈmaɪ ˈsɪstɚ ˈkæn ˈpleɪ ðə piːˈænoʊ"
+       "ipa": "ˈmaɪ ˈsɪstɚ ˈkæn ˈpleɪ ðə piˈænoʊ"
       }
      ]
     },
@@ -24460,14 +24747,14 @@ window.BANKS = {
        "en": "restaurant",
        "zh": "餐廳",
        "src": "4-080",
-       "ipa": "ˈɹɛˌstɚɑːnt"
+       "ipa": "ˈɹɛstɚˌɑːnt"
       },
       {
        "kind": "sentence",
        "en": "My family goes to a good restaurant on special days.",
        "zh": "我們家在特別的日子會去一間好餐廳",
        "src": "6-241",
-       "ipa": "ˈmaɪ ˈfæməliː ˈɡoʊz ˈtuː ə ˈɡʊd ˈɹɛˌstɚɑːnt ˈɑːn ˈspɛʃəl ˈdeɪz"
+       "ipa": "ˈmaɪ ˈfæməli ˈɡoʊz ˈtuː ə ˈɡʊd ˈɹɛstɚˌɑːnt ˈɑːn ˈspɛʃəl ˈdeɪz"
       }
      ]
     },
@@ -24476,35 +24763,35 @@ window.BANKS = {
      "level": 6,
      "target": "story",
      "gloss": "故事",
-     "ipa": "ˈstɔːɹiː",
+     "ipa": "ˈstɔːɹi",
      "steps": [
       {
        "kind": "word",
        "en": "story",
        "zh": "故事",
        "src": "6-245",
-       "ipa": "ˈstɔːɹiː"
+       "ipa": "ˈstɔːɹi"
       },
       {
        "kind": "phrase",
        "en": "a story",
        "zh": "一個故事",
        "src": "table",
-       "ipa": "ə ˈstɔːɹiː"
+       "ipa": "ə ˈstɔːɹi"
       },
       {
        "kind": "word",
        "en": "mother",
        "zh": "媽媽",
        "src": "1-045",
-       "ipa": "mʌðɚ"
+       "ipa": "ˈmʌðɚ"
       },
       {
        "kind": "sentence",
        "en": "That mother tells a story to her kid.",
        "zh": "那位媽媽說故事給她的小孩聽",
        "src": "6-245",
-       "ipa": "ˈðæt mʌðɚ ˈtɛlz ə ˈstɔːɹiː ˈtuː hɝ ˈkɪd"
+       "ipa": "ˈðæt ˈmʌðɚ ˈtɛlz ə ˈstɔːɹi ˈtuː ˈhɝ ˈkɪd"
       }
      ]
     },
@@ -24513,14 +24800,14 @@ window.BANKS = {
      "level": 6,
      "target": "video",
      "gloss": "錄影帶",
-     "ipa": "ˈvɪdiːoʊ",
+     "ipa": "ˈvɪdioʊ",
      "steps": [
       {
        "kind": "word",
        "en": "video",
        "zh": "錄影帶",
        "src": "6-269",
-       "ipa": "ˈvɪdiːoʊ"
+       "ipa": "ˈvɪdioʊ"
       },
       {
        "kind": "phrase",
@@ -24541,7 +24828,7 @@ window.BANKS = {
        "en": "I'll play the video later.",
        "zh": "我待會兒會放錄影帶",
        "src": "6-269",
-       "ipa": "ˈpleɪ ðə ˈvɪdiːoʊ ˈleɪtɚ"
+       "ipa": "ˈaɪl ˈpleɪ ðə ˈvɪdioʊ ˈleɪtɚ"
       }
      ]
     },
@@ -24578,7 +24865,7 @@ window.BANKS = {
        "en": "We wish you a merry Christmas.",
        "zh": "祝你聖誕快樂",
        "src": "6-276",
-       "ipa": "ˈwiː ˈwɪʃ ˈjuː ə ˈmɛɹiː ˈkɹɪsməs"
+       "ipa": "ˈwiː ˈwɪʃ ˈjuː ə ˈmɛɹi ˈkɹɪsməs"
       }
      ]
     }
@@ -24595,28 +24882,28 @@ window.BANKS = {
      "level": 1,
      "target": "happy",
      "gloss": "快樂的",
-     "ipa": "ˈhæpiː",
+     "ipa": "ˈhæpi",
      "steps": [
       {
        "kind": "word",
        "en": "happy",
        "zh": "快樂的",
        "src": "1-022",
-       "ipa": "ˈhæpiː"
+       "ipa": "ˈhæpi"
       },
       {
        "kind": "phrase",
        "en": "feel happy",
        "zh": "感到開心",
        "src": "table",
-       "ipa": "ˈfiːl ˈhæpiː"
+       "ipa": "ˈfiːl ˈhæpi"
       },
       {
        "kind": "sentence",
        "en": "I feel happy.",
        "zh": "我覺得很高興",
        "src": "1-022",
-       "ipa": "ˈaɪ ˈfiːl ˈhæpiː"
+       "ipa": "ˈaɪ ˈfiːl ˈhæpi"
       }
      ]
     },
@@ -24683,7 +24970,7 @@ window.BANKS = {
        "en": "Our leader is very nice.",
        "zh": "我們的領袖非常和善",
        "src": "1-047",
-       "ipa": "ˈaʊɚ ˈliːdɚ ˈɪz ˈvɛɹiː ˈnaɪs"
+       "ipa": "ˈaʊɚ ˈliːdɚ ˈɪz ˈvɛɹi ˈnaɪs"
       }
      ]
     },
@@ -24713,14 +25000,14 @@ window.BANKS = {
        "en": "story",
        "zh": "故事",
        "src": "6-245",
-       "ipa": "ˈstɔːɹiː"
+       "ipa": "ˈstɔːɹi"
       },
       {
        "kind": "sentence",
        "en": "This is a sad story.",
        "zh": "這是一個傷心的故事",
        "src": "1-062",
-       "ipa": "ˈðɪs ˈɪz ə ˈsæd ˈstɔːɹiː"
+       "ipa": "ˈðɪs ˈɪz ə ˈsæd ˈstɔːɹi"
       }
      ]
     },
@@ -24757,7 +25044,7 @@ window.BANKS = {
        "en": "Don't laugh at that guy.",
        "zh": "不要笑那個人",
        "src": "2-042",
-       "ipa": "ˈlæf ˈæt ˈðæt ˈɡaɪ"
+       "ipa": "ˈdoʊnt ˈlæf ˈæt ˈðæt ˈɡaɪ"
       }
      ]
     },
@@ -24844,10 +25131,10 @@ window.BANKS = {
       },
       {
        "kind": "phrase",
-       "en": "a shy",
-       "zh": "一個害羞的",
+       "en": "don't be",
+       "zh": "不要",
        "src": "table",
-       "ipa": "ə ˈʃaɪ"
+       "ipa": "ˈdoʊnt ˈbiː"
       },
       {
        "kind": "word",
@@ -24861,7 +25148,7 @@ window.BANKS = {
        "en": "Don't be shy. We're all nice.",
        "zh": "別害羞，我們都很和善",
        "src": "2-075",
-       "ipa": "ˈbiː ˈʃaɪ ˈɔːl ˈnaɪs"
+       "ipa": "ˈdoʊnt ˈbiː ˈʃaɪ ˈwiːɹ ˈɔːl ˈnaɪs"
       }
      ]
     },
@@ -24880,18 +25167,25 @@ window.BANKS = {
        "ipa": "ˈkɹaɪ"
       },
       {
+       "kind": "phrase",
+       "en": "is crying",
+       "zh": "正在哭",
+       "src": "table",
+       "ipa": "ˈɪz ˈkɹaɪɪŋ"
+      },
+      {
        "kind": "word",
        "en": "baby",
        "zh": "嬰兒",
        "src": "1-005",
-       "ipa": "ˈbeɪbiː"
+       "ipa": "ˈbeɪbi"
       },
       {
        "kind": "sentence",
        "en": "The baby is crying.",
        "zh": "那個寶寶在哭",
        "src": "3-023",
-       "ipa": "ðə ˈbeɪbiː ˈɪz ˈkɹaɪɪŋ"
+       "ipa": "ðə ˈbeɪbi ˈɪz ˈkɹaɪɪŋ"
       }
      ]
     },
@@ -24900,28 +25194,28 @@ window.BANKS = {
      "level": 3,
      "target": "funny",
      "gloss": "有趣的",
-     "ipa": "fʌniː",
+     "ipa": "ˈfʌni",
      "steps": [
       {
        "kind": "word",
        "en": "funny",
        "zh": "有趣的",
        "src": "3-036",
-       "ipa": "fʌniː"
+       "ipa": "ˈfʌni"
       },
       {
        "kind": "phrase",
        "en": "a funny",
        "zh": "一個好笑的",
        "src": "table",
-       "ipa": "ə fʌniː"
+       "ipa": "ə ˈfʌni"
       },
       {
        "kind": "sentence",
        "en": "Wesley is very funny.",
        "zh": "Wesley很有趣",
        "src": "3-036",
-       "ipa": "ˈwɛsliː ˈɪz ˈvɛɹiː fʌniː"
+       "ipa": "ˈwɛsli ˈɪz ˈvɛɹi ˈfʌni"
       }
      ]
     },
@@ -24988,7 +25282,7 @@ window.BANKS = {
        "en": "His words bring me joy.",
        "zh": "他的話讓我開心",
        "src": "3-054",
-       "ipa": "ˈhɪz wɝdz ˈbɹɪŋ ˈmiː ˈdʒɔɪ"
+       "ipa": "ˈhɪz ˈwɝdz ˈbɹɪŋ ˈmiː ˈdʒɔɪ"
       }
      ]
     },
@@ -25025,7 +25319,7 @@ window.BANKS = {
        "en": "What kind of movies do you like?",
        "zh": "你喜歡哪一種電影",
        "src": "3-058",
-       "ipa": "wʌt ˈkaɪnd ʌv ˈmuːviːz ˈduː ˈjuː ˈlaɪk"
+       "ipa": "ˈwʌt ˈkaɪnd ˈʌv ˈmuːviz ˈduː ˈjuː ˈlaɪk"
       }
      ]
     },
@@ -25055,7 +25349,7 @@ window.BANKS = {
        "en": "My dream is to make a lot of money.",
        "zh": "我的夢想是賺很多錢",
        "src": "4-032",
-       "ipa": "ˈmaɪ ˈdɹiːm ˈɪz ˈtuː ˈmeɪk ə ˈlɑːt ʌv mʌniː"
+       "ipa": "ˈmaɪ ˈdɹiːm ˈɪz ˈtuː ˈmeɪk ə ˈlɑːt ˈʌv ˈmʌni"
       }
      ]
     },
@@ -25064,28 +25358,28 @@ window.BANKS = {
      "level": 4,
      "target": "surprise",
      "gloss": "驚喜",
-     "ipa": "ˈsɚpɹaɪz",
+     "ipa": "sɚˈpɹaɪz",
      "steps": [
       {
        "kind": "word",
        "en": "surprise",
        "zh": "驚喜",
        "src": "4-113",
-       "ipa": "ˈsɚpɹaɪz"
+       "ipa": "sɚˈpɹaɪz"
       },
       {
        "kind": "phrase",
        "en": "a surprise",
        "zh": "一個驚喜",
        "src": "table",
-       "ipa": "ə ˈsɚpɹaɪz"
+       "ipa": "ə sɚˈpɹaɪz"
       },
       {
        "kind": "sentence",
        "en": "What a surprise!",
        "zh": "好大的一個驚喜",
        "src": "4-113",
-       "ipa": "wʌt ə ˈsɚpɹaɪz"
+       "ipa": "ˈwʌt ə sɚˈpɹaɪz"
       }
      ]
     },
@@ -25094,28 +25388,28 @@ window.BANKS = {
      "level": 4,
      "target": "trouble",
      "gloss": "麻煩",
-     "ipa": "tɹʌbəl",
+     "ipa": "ˈtɹʌbəl",
      "steps": [
       {
        "kind": "word",
        "en": "trouble",
        "zh": "麻煩",
        "src": "4-122",
-       "ipa": "tɹʌbəl"
+       "ipa": "ˈtɹʌbəl"
       },
       {
        "kind": "phrase",
        "en": "a trouble",
        "zh": "一個麻煩",
        "src": "table",
-       "ipa": "ə tɹʌbəl"
+       "ipa": "ə ˈtɹʌbəl"
       },
       {
        "kind": "sentence",
        "en": "You are in trouble.",
        "zh": "你有麻煩了",
        "src": "4-122",
-       "ipa": "ˈjuː ˈɑːɹ ɪn tɹʌbəl"
+       "ipa": "ˈjuː ˈɑːɹ ɪn ˈtɹʌbəl"
       }
      ]
     },
@@ -25124,28 +25418,28 @@ window.BANKS = {
      "level": 4,
      "target": "worry",
      "gloss": "擔心",
-     "ipa": "wɝiː",
+     "ipa": "ˈwɝi",
      "steps": [
       {
        "kind": "word",
        "en": "worry",
        "zh": "擔心",
        "src": "4-132",
-       "ipa": "wɝiː"
+       "ipa": "ˈwɝi"
       },
       {
        "kind": "phrase",
        "en": "don't worry",
        "zh": "別擔心",
        "src": "table",
-       "ipa": "wɝiː"
+       "ipa": "ˈdoʊnt ˈwɝi"
       },
       {
        "kind": "sentence",
        "en": "Don't worry. We'll be fine.",
        "zh": "別擔心,我們很好",
        "src": "4-132",
-       "ipa": "wɝiː ˈbiː ˈfaɪn"
+       "ipa": "ˈdoʊnt ˈwɝi ˈwiːl ˈbiː ˈfaɪn"
       }
      ]
     },
@@ -25154,28 +25448,28 @@ window.BANKS = {
      "level": 5,
      "target": "afraid",
      "gloss": "害怕",
-     "ipa": "ˈəfɹeɪd",
+     "ipa": "əˈfɹeɪd",
      "steps": [
       {
        "kind": "word",
        "en": "afraid",
        "zh": "害怕",
        "src": "5-004",
-       "ipa": "ˈəfɹeɪd"
+       "ipa": "əˈfɹeɪd"
       },
       {
        "kind": "phrase",
        "en": "be afraid",
        "zh": "害怕",
        "src": "table",
-       "ipa": "ˈbiː ˈəfɹeɪd"
+       "ipa": "ˈbiː əˈfɹeɪd"
       },
       {
        "kind": "sentence",
        "en": "I'm afraid of dogs.",
        "zh": "我怕狗",
        "src": "5-004",
-       "ipa": "ˈəfɹeɪd ʌv ˈdɑːɡz"
+       "ipa": "ˈaɪm əˈfɹeɪd ˈʌv ˈdɑːɡz"
       }
      ]
     },
@@ -25198,14 +25492,14 @@ window.BANKS = {
        "en": "cheer up",
        "zh": "打起精神",
        "src": "table",
-       "ipa": "ˈtʃɪɹ ʌp"
+       "ipa": "ˈtʃɪɹ ˈʌp"
       },
       {
        "kind": "sentence",
        "en": "Cheer up!",
        "zh": "打起精神來",
        "src": "5-030",
-       "ipa": "ˈtʃɪɹ ʌp"
+       "ipa": "ˈtʃɪɹ ˈʌp"
       }
      ]
     },
@@ -25272,7 +25566,7 @@ window.BANKS = {
        "en": "I'm glad you came.",
        "zh": "我很高興你來了",
        "src": "5-059",
-       "ipa": "ˈɡlæd ˈjuː ˈkeɪm"
+       "ipa": "ˈaɪm ˈɡlæd ˈjuː ˈkeɪm"
       }
      ]
     },
@@ -25332,7 +25626,7 @@ window.BANKS = {
        "en": "I'm scared of ghosts.",
        "zh": "我怕鬼",
        "src": "5-141",
-       "ipa": "ˈskɛɹd ʌv ˈɡoʊsts"
+       "ipa": "ˈaɪm ˈskɛɹd ˈʌv ˈɡoʊsts"
       }
      ]
     },
@@ -25341,28 +25635,28 @@ window.BANKS = {
      "level": 5,
      "target": "serious",
      "gloss": "認真的",
-     "ipa": "ˈsɪɹiːəs",
+     "ipa": "ˈsɪɹiəs",
      "steps": [
       {
        "kind": "word",
        "en": "serious",
        "zh": "認真的",
        "src": "5-146",
-       "ipa": "ˈsɪɹiːəs"
+       "ipa": "ˈsɪɹiəs"
       },
       {
        "kind": "phrase",
        "en": "be serious",
        "zh": "認真",
        "src": "table",
-       "ipa": "ˈbiː ˈsɪɹiːəs"
+       "ipa": "ˈbiː ˈsɪɹiəs"
       },
       {
        "kind": "sentence",
        "en": "Are you serious?",
        "zh": "你是認真的嗎",
        "src": "5-146",
-       "ipa": "ˈɑːɹ ˈjuː ˈsɪɹiːəs"
+       "ipa": "ˈɑːɹ ˈjuː ˈsɪɹiəs"
       }
      ]
     },
@@ -25399,7 +25693,7 @@ window.BANKS = {
        "en": "She always wears a smile on her face.",
        "zh": "她的臉上總是掛著微笑",
        "src": "5-156",
-       "ipa": "ˈʃiː ˈɔːˌlweɪz ˈwɛɹz ə ˈsmaɪl ˈɑːn hɝ ˈfeɪs"
+       "ipa": "ˈʃiː ˈɔːˌlweɪz ˈwɛɹz ə ˈsmaɪl ˈɑːn ˈhɝ ˈfeɪs"
       }
      ]
     },
@@ -25473,7 +25767,7 @@ window.BANKS = {
        "en": "Don't go with a stranger.",
        "zh": "別和陌生人走",
        "src": "5-163",
-       "ipa": "ˈɡoʊ ˈwɪð ə ˈstɹeɪndʒɚ"
+       "ipa": "ˈdoʊnt ˈɡoʊ ˈwɪð ə ˈstɹeɪndʒɚ"
       }
      ]
     },
@@ -25482,21 +25776,21 @@ window.BANKS = {
      "level": 5,
      "target": "unhappy",
      "gloss": "不快樂的",
-     "ipa": "ˈənhæpiː",
+     "ipa": "əˈnhæpi",
      "steps": [
       {
        "kind": "word",
        "en": "unhappy",
        "zh": "不快樂的",
        "src": "5-182",
-       "ipa": "ˈənhæpiː"
+       "ipa": "əˈnhæpi"
       },
       {
        "kind": "phrase",
        "en": "be unhappy",
        "zh": "不快樂",
        "src": "table",
-       "ipa": "ˈbiː ˈənhæpiː"
+       "ipa": "ˈbiː əˈnhæpi"
       },
       {
        "kind": "word",
@@ -25510,7 +25804,7 @@ window.BANKS = {
        "en": "Mrs. Hong looks unhappy today.",
        "zh": "洪太太今天看起來不快樂",
        "src": "5-182",
-       "ipa": "ˈmɪsɪz ˈhɔːŋ ˈlʊks ˈənhæpiː ˈtədeɪ"
+       "ipa": "ˈmɪsɪz ˈhɔːŋ ˈlʊks əˈnhæpi təˈdeɪ"
       }
      ]
     },
@@ -25519,21 +25813,21 @@ window.BANKS = {
      "level": 6,
      "target": "angry",
      "gloss": "生氣的",
-     "ipa": "ˈæŋɡɹiː",
+     "ipa": "ˈæŋɡɹi",
      "steps": [
       {
        "kind": "word",
        "en": "angry",
        "zh": "生氣的",
        "src": "6-009",
-       "ipa": "ˈæŋɡɹiː"
+       "ipa": "ˈæŋɡɹi"
       },
       {
        "kind": "phrase",
        "en": "get angry",
        "zh": "生氣",
        "src": "table",
-       "ipa": "ˈɡɛt ˈæŋɡɹiː"
+       "ipa": "ˈɡɛt ˈæŋɡɹi"
       },
       {
        "kind": "word",
@@ -25547,7 +25841,7 @@ window.BANKS = {
        "en": "The Chinese teacher is angry at his students.",
        "zh": "國語老師很氣他的學生",
        "src": "6-009",
-       "ipa": "ðə tʃaɪˈniːz ˈtiːtʃɚ ˈɪz ˈæŋɡɹiː ˈæt ˈhɪz ˈstuːdənts"
+       "ipa": "ðə tʃaɪˈniːz ˈtiːtʃɚ ˈɪz ˈæŋɡɹi ˈæt ˈhɪz ˈstuːdənts"
       }
      ]
     },
@@ -25577,7 +25871,7 @@ window.BANKS = {
        "en": "I can't believe it.",
        "zh": "我無法相信",
        "src": "6-025",
-       "ipa": "ˈaɪ bɪˈliːv ˈɪt"
+       "ipa": "ˈaɪ ˈkænt bɪˈliːv ˈɪt"
       }
      ]
     },
@@ -25607,7 +25901,7 @@ window.BANKS = {
        "en": "Bill is bored with his work.",
        "zh": "Bill覺得他的工作很無聊",
        "src": "6-031",
-       "ipa": "ˈbɪl ˈɪz ˈbɔːɹd ˈwɪð ˈhɪz wɝk"
+       "ipa": "ˈbɪl ˈɪz ˈbɔːɹd ˈwɪð ˈhɪz ˈwɝk"
       }
      ]
     },
@@ -25637,14 +25931,14 @@ window.BANKS = {
        "en": "movie",
        "zh": "電影",
        "src": "4-063",
-       "ipa": "ˈmuːviː"
+       "ipa": "ˈmuːvi"
       },
       {
        "kind": "sentence",
        "en": "This movie is so boring.",
        "zh": "這部電影好無聊",
        "src": "6-032",
-       "ipa": "ˈðɪs ˈmuːviː ˈɪz ˈsoʊ ˈbɔːɹɪŋ"
+       "ipa": "ˈðɪs ˈmuːvi ˈɪz ˈsoʊ ˈbɔːɹɪŋ"
       }
      ]
     },
@@ -25713,28 +26007,28 @@ window.BANKS = {
      "level": 6,
      "target": "crazy",
      "gloss": "瘋狂的",
-     "ipa": "ˈkɹeɪziː",
+     "ipa": "ˈkɹeɪzi",
      "steps": [
       {
        "kind": "word",
        "en": "crazy",
        "zh": "瘋狂的",
        "src": "6-067",
-       "ipa": "ˈkɹeɪziː"
+       "ipa": "ˈkɹeɪzi"
       },
       {
        "kind": "phrase",
        "en": "be crazy",
        "zh": "瘋狂",
        "src": "table",
-       "ipa": "ˈbiː ˈkɹeɪziː"
+       "ipa": "ˈbiː ˈkɹeɪzi"
       },
       {
        "kind": "sentence",
        "en": "This is crazy.",
        "zh": "這真是瘋狂",
        "src": "6-067",
-       "ipa": "ˈðɪs ˈɪz ˈkɹeɪziː"
+       "ipa": "ˈðɪs ˈɪz ˈkɹeɪzi"
       }
      ]
     },
@@ -25771,7 +26065,7 @@ window.BANKS = {
        "en": "We are excited about the coming Christmas.",
        "zh": "我們對將到來的聖誕節興奮",
        "src": "6-099",
-       "ipa": "ˈwiː ˈɑːɹ ɪˈksaɪtəd ˈəbaʊt ðə kʌmɪŋ ˈkɹɪsməs"
+       "ipa": "ˈwiː ˈɑːɹ ɪˈksaɪtəd əˈbaʊt ðə ˈkʌmɪŋ ˈkɹɪsməs"
       }
      ]
     },
@@ -25794,7 +26088,7 @@ window.BANKS = {
        "en": "very exciting",
        "zh": "非常令人興奮",
        "src": "table",
-       "ipa": "ˈvɛɹiː ɪˈksaɪtɪŋ"
+       "ipa": "ˈvɛɹi ɪˈksaɪtɪŋ"
       },
       {
        "kind": "word",
@@ -25838,7 +26132,7 @@ window.BANKS = {
        "en": "What's your favorite food?",
        "zh": "你最喜歡的食物是什麼",
        "src": "6-108",
-       "ipa": "ˈjɔːɹ ˈfeɪvɚɪt ˈfuːd"
+       "ipa": "ˈwʌts ˈjɔːɹ ˈfeɪvɚɪt ˈfuːd"
       }
      ]
     },
@@ -25875,7 +26169,7 @@ window.BANKS = {
        "en": "I keep the habit of reading.",
        "zh": "我保持閱讀的習慣",
        "src": "6-127",
-       "ipa": "ˈaɪ ˈkiːp ðə ˈhæbət ʌv ˈɹiːdɪŋ"
+       "ipa": "ˈaɪ ˈkiːp ðə ˈhæbət ˈʌv ˈɹiːdɪŋ"
       }
      ]
     },
@@ -25905,14 +26199,14 @@ window.BANKS = {
        "en": "really",
        "zh": "真的",
        "src": "3-083",
-       "ipa": "ˈɹɪliː"
+       "ipa": "ˈɹɪli"
       },
       {
        "kind": "sentence",
        "en": "These books are really helpful.",
        "zh": "這些書真的很有幫助",
        "src": "6-135",
-       "ipa": "ˈðiːz ˈbʊks ˈɑːɹ ˈɹɪliː ˈhɛlpfəl"
+       "ipa": "ˈðiːz ˈbʊks ˈɑːɹ ˈɹɪli ˈhɛlpfəl"
       }
      ]
     },
@@ -25921,21 +26215,21 @@ window.BANKS = {
      "level": 6,
      "target": "hobby",
      "gloss": "嗜好",
-     "ipa": "ˈhɑːbiː",
+     "ipa": "ˈhɑːbi",
      "steps": [
       {
        "kind": "word",
        "en": "hobby",
        "zh": "嗜好",
        "src": "6-139",
-       "ipa": "ˈhɑːbiː"
+       "ipa": "ˈhɑːbi"
       },
       {
        "kind": "phrase",
        "en": "a hobby",
        "zh": "一個嗜好",
        "src": "table",
-       "ipa": "ə ˈhɑːbiː"
+       "ipa": "ə ˈhɑːbi"
       },
       {
        "kind": "word",
@@ -25949,7 +26243,7 @@ window.BANKS = {
        "en": "Her hobby is listening to music.",
        "zh": "她的嗜好是聽音樂",
        "src": "6-139",
-       "ipa": "hɝ ˈhɑːbiː ˈɪz ˈlɪsənɪŋ ˈtuː ˈmjuːzɪk"
+       "ipa": "ˈhɝ ˈhɑːbi ˈɪz ˈlɪsənɪŋ ˈtuː ˈmjuːzɪk"
       }
      ]
     },
@@ -26016,7 +26310,7 @@ window.BANKS = {
        "en": "Molly is interested in writing.",
        "zh": "Molly對寫作感興趣",
        "src": "6-147",
-       "ipa": "ˈmɑːliː ˈɪz ˈɪntɹəstɪd ɪn ˈɹaɪtɪŋ"
+       "ipa": "ˈmɑːli ˈɪz ˈɪntɹəstɪd ɪn ˈɹaɪtɪŋ"
       }
      ]
     },
@@ -26046,14 +26340,14 @@ window.BANKS = {
        "en": "story",
        "zh": "故事",
        "src": "6-245",
-       "ipa": "ˈstɔːɹiː"
+       "ipa": "ˈstɔːɹi"
       },
       {
        "kind": "sentence",
        "en": "This story is interesting.",
        "zh": "這個故事很有趣",
        "src": "6-148",
-       "ipa": "ˈðɪs ˈstɔːɹiː ˈɪz ˈɪntɹəstɪŋ"
+       "ipa": "ˈðɪs ˈstɔːɹi ˈɪz ˈɪntɹəstɪŋ"
       }
      ]
     },
@@ -26062,21 +26356,21 @@ window.BANKS = {
      "level": 6,
      "target": "lonely",
      "gloss": "寂寞的",
-     "ipa": "ˈloʊnliː",
+     "ipa": "ˈloʊnli",
      "steps": [
       {
        "kind": "word",
        "en": "lonely",
        "zh": "寂寞的",
        "src": "6-170",
-       "ipa": "ˈloʊnliː"
+       "ipa": "ˈloʊnli"
       },
       {
        "kind": "phrase",
        "en": "feel lonely",
        "zh": "感到寂寞",
        "src": "table",
-       "ipa": "ˈfiːl ˈloʊnliː"
+       "ipa": "ˈfiːl ˈloʊnli"
       },
       {
        "kind": "word",
@@ -26090,7 +26384,7 @@ window.BANKS = {
        "en": "The old man feels quite lonely.",
        "zh": "那個老人感到十分寂寞",
        "src": "6-170",
-       "ipa": "ðə ˈoʊld ˈmæn ˈfiːlz ˈkwaɪt ˈloʊnliː"
+       "ipa": "ðə ˈoʊld ˈmæn ˈfiːlz ˈkwaɪt ˈloʊnli"
       }
      ]
     },
@@ -26136,28 +26430,28 @@ window.BANKS = {
      "level": 6,
      "target": "lovely",
      "gloss": "可愛的",
-     "ipa": "lʌvliː",
+     "ipa": "ˈlʌvli",
      "steps": [
       {
        "kind": "word",
        "en": "lovely",
        "zh": "可愛的",
        "src": "6-172",
-       "ipa": "lʌvliː"
+       "ipa": "ˈlʌvli"
       },
       {
        "kind": "phrase",
        "en": "a lovely",
        "zh": "一個可愛的",
        "src": "table",
-       "ipa": "ə lʌvliː"
+       "ipa": "ə ˈlʌvli"
       },
       {
        "kind": "sentence",
        "en": "She is a lovely young lady.",
        "zh": "她是一個可愛的年輕小姐",
        "src": "6-172",
-       "ipa": "ˈʃiː ˈɪz ə lʌvliː jʌŋ ˈleɪdiː"
+       "ipa": "ˈʃiː ˈɪz ə ˈlʌvli ˈjʌŋ ˈleɪdi"
       }
      ]
     },
@@ -26196,21 +26490,21 @@ window.BANKS = {
      "level": 6,
      "target": "surprised",
      "gloss": "感到驚訝的",
-     "ipa": "ˈsɚpɹaɪzd",
+     "ipa": "sɚˈpɹaɪzd",
      "steps": [
       {
        "kind": "word",
        "en": "surprised",
        "zh": "感到驚訝的",
        "src": "6-248",
-       "ipa": "ˈsɚpɹaɪzd"
+       "ipa": "sɚˈpɹaɪzd"
       },
       {
        "kind": "phrase",
        "en": "be surprised",
        "zh": "感到驚訝",
        "src": "table",
-       "ipa": "ˈbiː ˈsɚpɹaɪzd"
+       "ipa": "ˈbiː sɚˈpɹaɪzd"
       },
       {
        "kind": "word",
@@ -26224,7 +26518,7 @@ window.BANKS = {
        "en": "Everyone is surprised at the news.",
        "zh": "大家對那新聞都感到很驚訝",
        "src": "6-248",
-       "ipa": "ˈɛvɹiːwʌn ˈɪz ˈsɚpɹaɪzd ˈæt ðə ˈnuːz"
+       "ipa": "ˈɛvɹiˌwʌn ˈɪz sɚˈpɹaɪzd ˈæt ðə ˈnuːz"
       }
      ]
     }
@@ -26262,7 +26556,7 @@ window.BANKS = {
        "en": "What can I do?",
        "zh": "我能做什麼呢",
        "src": "1-014",
-       "ipa": "wʌt ˈkæn ˈaɪ ˈduː"
+       "ipa": "ˈwʌt ˈkæn ˈaɪ ˈduː"
       }
      ]
     },
@@ -26279,6 +26573,13 @@ window.BANKS = {
        "zh": "去",
        "src": "1-021",
        "ipa": "ˈɡoʊ"
+      },
+      {
+       "kind": "phrase",
+       "en": "go with you",
+       "zh": "和你一起去",
+       "src": "table",
+       "ipa": "ˈɡoʊ ˈwɪð ˈjuː"
       },
       {
        "kind": "sentence",
@@ -26304,11 +26605,18 @@ window.BANKS = {
        "ipa": "ˈnɑːd"
       },
       {
+       "kind": "phrase",
+       "en": "nodded to me",
+       "zh": "對我點頭",
+       "src": "table",
+       "ipa": "ˈnɑːdəd ˈtuː ˈmiː"
+      },
+      {
        "kind": "sentence",
        "en": "She nodded to me politely.",
        "zh": "她有禮貌地對我點頭",
        "src": "1-049",
-       "ipa": "ˈʃiː ˈnɑːdəd ˈtuː ˈmiː ˈpəlaɪtliː"
+       "ipa": "ˈʃiː ˈnɑːdəd ˈtuː ˈmiː pəˈlaɪtli"
       }
      ]
     },
@@ -26325,6 +26633,13 @@ window.BANKS = {
        "zh": "畫",
        "src": "2-021",
        "ipa": "ˈdɹɔː"
+      },
+      {
+       "kind": "phrase",
+       "en": "draw an elephant",
+       "zh": "畫一隻大象",
+       "src": "table",
+       "ipa": "ˈdɹɔː ˈæn ˈɛləfənt"
       },
       {
        "kind": "word",
@@ -26357,11 +26672,18 @@ window.BANKS = {
        "ipa": "ˈfaɪnd"
       },
       {
+       "kind": "phrase",
+       "en": "can't find him",
+       "zh": "找不到他",
+       "src": "table",
+       "ipa": "ˈkænt ˈfaɪnd ˈhɪm"
+      },
+      {
        "kind": "sentence",
        "en": "I can't find him.",
        "zh": "我找不到他",
        "src": "2-024",
-       "ipa": "ˈaɪ ˈfaɪnd ˈhɪm"
+       "ipa": "ˈaɪ ˈkænt ˈfaɪnd ˈhɪm"
       }
      ]
     },
@@ -26417,6 +26739,13 @@ window.BANKS = {
        "ipa": "ˈweɪk"
       },
       {
+       "kind": "phrase",
+       "en": "wake you up",
+       "zh": "叫醒你",
+       "src": "table",
+       "ipa": "ˈweɪk ˈjuː ˈʌp"
+      },
+      {
        "kind": "word",
        "en": "want",
        "zh": "想要",
@@ -26428,7 +26757,7 @@ window.BANKS = {
        "en": "Do you want me to wake you up?",
        "zh": "你要我叫醒你嗎",
        "src": "2-092",
-       "ipa": "ˈduː ˈjuː ˈwɑːnt ˈmiː ˈtuː ˈweɪk ˈjuː ʌp"
+       "ipa": "ˈduː ˈjuː ˈwɑːnt ˈmiː ˈtuː ˈweɪk ˈjuː ˈʌp"
       }
      ]
     },
@@ -26447,18 +26776,25 @@ window.BANKS = {
        "ipa": "ˈweɪv"
       },
       {
+       "kind": "phrase",
+       "en": "waving at me",
+       "zh": "對我揮手",
+       "src": "table",
+       "ipa": "ˈweɪvɪŋ ˈæt ˈmiː"
+      },
+      {
        "kind": "word",
        "en": "someone",
        "zh": "某人;有人",
        "src": "4-102",
-       "ipa": "sʌmwʌn"
+       "ipa": "ˈsʌˌmwʌn"
       },
       {
        "kind": "sentence",
        "en": "Someone over there is waving at me.",
        "zh": "那裏有個人在跟我揮手",
        "src": "2-093",
-       "ipa": "sʌmwʌn ˈoʊvɚ ˈðɛɹ ˈɪz ˈweɪvɪŋ ˈæt ˈmiː"
+       "ipa": "ˈsʌˌmwʌn ˈoʊvɚ ˈðɛɹ ˈɪz ˈweɪvɪŋ ˈæt ˈmiː"
       }
      ]
     },
@@ -26477,11 +26813,18 @@ window.BANKS = {
        "ipa": "ˈæsk"
       },
       {
+       "kind": "phrase",
+       "en": "ask questions",
+       "zh": "問問題",
+       "src": "table",
+       "ipa": "ˈæsk ˈkwɛstʃənz"
+      },
+      {
        "kind": "sentence",
        "en": "Ms. Chen likes to ask questions in her class.",
        "zh": "陳老師喜歡在她的班上問問題",
        "src": "3-003",
-       "ipa": "ˈmɪz ˈtʃɛn ˈlaɪks ˈtuː ˈæsk ˈkwɛstʃənz ɪn hɝ ˈklæs"
+       "ipa": "ˈmɪz ˈtʃɛn ˈlaɪks ˈtuː ˈæsk ˈkwɛstʃənz ɪn ˈhɝ ˈklæs"
       }
      ]
     },
@@ -26518,7 +26861,7 @@ window.BANKS = {
        "en": "Bow to the teacher when she comes.",
        "zh": "老師來時要向她鞠躬",
        "src": "3-012",
-       "ipa": "ˈbaʊ ˈtuː ðə ˈtiːtʃɚ ˈwɛn ˈʃiː kʌmz"
+       "ipa": "ˈbaʊ ˈtuː ðə ˈtiːtʃɚ ˈwɛn ˈʃiː ˈkʌmz"
       }
      ]
     },
@@ -26535,6 +26878,13 @@ window.BANKS = {
        "zh": "掛",
        "src": "3-045",
        "ipa": "ˈhæŋ"
+      },
+      {
+       "kind": "phrase",
+       "en": "hang the picture",
+       "zh": "掛那幅畫",
+       "src": "table",
+       "ipa": "ˈhæŋ ðə ˈpɪktʃɚ"
       },
       {
        "kind": "sentence",
@@ -26560,6 +26910,13 @@ window.BANKS = {
        "ipa": "ˈdʒɔɪn"
       },
       {
+       "kind": "phrase",
+       "en": "join us",
+       "zh": "加入我們",
+       "src": "table",
+       "ipa": "ˈdʒɔɪn ˈʌs"
+      },
+      {
        "kind": "word",
        "en": "welcome",
        "zh": "歡迎",
@@ -26571,7 +26928,7 @@ window.BANKS = {
        "en": "Welcome to join us.",
        "zh": "歡迎加入我們",
        "src": "3-053",
-       "ipa": "ˈwɛlkəm ˈtuː ˈdʒɔɪn ʌs"
+       "ipa": "ˈwɛlkəm ˈtuː ˈdʒɔɪn ˈʌs"
       }
      ]
     },
@@ -26588,6 +26945,13 @@ window.BANKS = {
        "zh": "保留;保持",
        "src": "3-056",
        "ipa": "ˈkiːp"
+      },
+      {
+       "kind": "phrase",
+       "en": "keep these books",
+       "zh": "保留這些書",
+       "src": "table",
+       "ipa": "ˈkiːp ˈðiːz ˈbʊks"
       },
       {
        "kind": "sentence",
@@ -26624,7 +26988,7 @@ window.BANKS = {
        "en": "My family might move to Kaohsiung next year.",
        "zh": "我們家明年可能搬去高雄",
        "src": "3-073",
-       "ipa": "ˈmaɪ ˈfæməliː ˈmaɪt ˈmuːv ˈtuː ˌkeɪˈoʊsiːəŋ ˈnɛkst ˈjɪɹ"
+       "ipa": "ˈmaɪ ˈfæməli ˈmaɪt ˈmuːv ˈtuː ˌkeɪˈoʊsiəŋ ˈnɛkst ˈjɪɹ"
       }
      ]
     },
@@ -26654,14 +27018,14 @@ window.BANKS = {
        "en": "machine",
        "zh": "機器",
        "src": "6-174",
-       "ipa": "ˈməʃiːn"
+       "ipa": "məˈʃiːn"
       },
       {
        "kind": "sentence",
        "en": "You can set the machine here.",
        "zh": "你可以把機器放在這裡",
        "src": "3-090",
-       "ipa": "ˈjuː ˈkæn ˈsɛt ðə ˈməʃiːn ˈhiːɹ"
+       "ipa": "ˈjuː ˈkæn ˈsɛt ðə məˈʃiːn ˈhiːɹ"
       }
      ]
     },
@@ -26670,28 +27034,28 @@ window.BANKS = {
      "level": 3,
      "target": "touch",
      "gloss": "碰觸",
-     "ipa": "tʌtʃ",
+     "ipa": "ˈtʌtʃ",
      "steps": [
       {
        "kind": "word",
        "en": "touch",
        "zh": "碰觸",
        "src": "3-097",
-       "ipa": "tʌtʃ"
+       "ipa": "ˈtʌtʃ"
       },
       {
        "kind": "phrase",
        "en": "do not touch",
        "zh": "不要碰",
        "src": "table",
-       "ipa": "ˈduː ˈnɑːt tʌtʃ"
+       "ipa": "ˈduː ˈnɑːt ˈtʌtʃ"
       },
       {
        "kind": "sentence",
        "en": "Don't touch me.",
        "zh": "別碰我",
        "src": "3-097",
-       "ipa": "tʌtʃ ˈmiː"
+       "ipa": "ˈdoʊnt ˈtʌtʃ ˈmiː"
       }
      ]
     },
@@ -26758,7 +27122,7 @@ window.BANKS = {
        "en": "It's time to take a break.",
        "zh": "是時候休息一下了",
        "src": "4-016",
-       "ipa": "ˈtaɪm ˈtuː ˈteɪk ə ˈbɹeɪk"
+       "ipa": "ˈɪts ˈtaɪm ˈtuː ˈteɪk ə ˈbɹeɪk"
       }
      ]
     },
@@ -26767,21 +27131,28 @@ window.BANKS = {
      "level": 4,
      "target": "carry",
      "gloss": "攜帶",
-     "ipa": "ˈkæɹiː",
+     "ipa": "ˈkæɹi",
      "steps": [
       {
        "kind": "word",
        "en": "carry",
        "zh": "攜帶",
        "src": "4-018",
-       "ipa": "ˈkæɹiː"
+       "ipa": "ˈkæɹi"
+      },
+      {
+       "kind": "phrase",
+       "en": "carry too much money",
+       "zh": "帶太多錢在身上",
+       "src": "table",
+       "ipa": "ˈkæɹi ˈtuː ˈmʌtʃ ˈmʌni"
       },
       {
        "kind": "sentence",
        "en": "Don't carry too much money with you.",
        "zh": "別帶太多錢在身上",
        "src": "4-018",
-       "ipa": "ˈkæɹiː ˈtuː mʌtʃ mʌniː ˈwɪð ˈjuː"
+       "ipa": "ˈdoʊnt ˈkæɹi ˈtuː ˈmʌtʃ ˈmʌni ˈwɪð ˈjuː"
       }
      ]
     },
@@ -26800,18 +27171,18 @@ window.BANKS = {
        "ipa": "ˈdɪɡ"
       },
       {
+       "kind": "phrase",
+       "en": "digging on the ground",
+       "zh": "在地上挖土",
+       "src": "table",
+       "ipa": "ˈdɪɡɪŋ ˈɑːn ðə ˈɡɹaʊnd"
+      },
+      {
        "kind": "word",
        "en": "dog",
        "zh": "狗",
        "src": "1-015",
        "ipa": "ˈdɔːɡ"
-      },
-      {
-       "kind": "word",
-       "en": "ground",
-       "zh": "地面",
-       "src": "2-033",
-       "ipa": "ˈɡɹaʊnd"
       },
       {
        "kind": "sentence",
@@ -26855,7 +27226,7 @@ window.BANKS = {
        "en": "The little girl holds her mom's hand when they go out.",
        "zh": "那個小女孩和媽媽出門時總握著媽媽的手",
        "src": "4-048",
-       "ipa": "ðə ˈlɪtəl ɡɝl ˈhoʊldz hɝ ˈhænd ˈwɛn ˈðeɪ ˈɡoʊ ˈaʊt"
+       "ipa": "ðə ˈlɪtəl ˈɡɝl ˈhoʊldz ˈhɝ ˈmɑːmz ˈhænd ˈwɛn ˈðeɪ ˈɡoʊ ˈaʊt"
       }
      ]
     },
@@ -26864,21 +27235,28 @@ window.BANKS = {
      "level": 4,
      "target": "hunt",
      "gloss": "打獵",
-     "ipa": "hʌnt",
+     "ipa": "ˈhʌnt",
      "steps": [
       {
        "kind": "word",
        "en": "hunt",
        "zh": "打獵",
        "src": "4-050",
-       "ipa": "hʌnt"
+       "ipa": "ˈhʌnt"
+      },
+      {
+       "kind": "phrase",
+       "en": "goes hunting",
+       "zh": "去打獵",
+       "src": "table",
+       "ipa": "ˈɡoʊz ˈhʌntɪŋ"
       },
       {
        "kind": "sentence",
        "en": "Richard sometimes goes hunting with his dad.",
        "zh": "Richard有時和他的爸爸去打獵",
        "src": "4-050",
-       "ipa": "ˈɹɪtʃɚd ˈsəmtaɪmz ˈɡoʊz hʌntɪŋ ˈwɪð ˈhɪz ˈdæd"
+       "ipa": "ˈɹɪtʃɚd səˈmtaɪmz ˈɡoʊz ˈhʌntɪŋ ˈwɪð ˈhɪz ˈdæd"
       }
      ]
     },
@@ -26895,6 +27273,13 @@ window.BANKS = {
        "zh": "殺害",
        "src": "4-054",
        "ipa": "ˈkɪl"
+      },
+      {
+       "kind": "phrase",
+       "en": "killed the man",
+       "zh": "殺了那個男人",
+       "src": "table",
+       "ipa": "ˈkɪld ðə ˈmæn"
       },
       {
        "kind": "sentence",
@@ -26947,14 +27332,21 @@ window.BANKS = {
      "level": 5,
      "target": "become",
      "gloss": "變成",
-     "ipa": "bɪkʌm",
+     "ipa": "bɪˈkʌm",
      "steps": [
       {
        "kind": "word",
        "en": "become",
        "zh": "變成",
        "src": "5-016",
-       "ipa": "bɪkʌm"
+       "ipa": "bɪˈkʌm"
+      },
+      {
+       "kind": "phrase",
+       "en": "became very quiet",
+       "zh": "變得非常安靜",
+       "src": "table",
+       "ipa": "bɪˈkeɪm ˈvɛɹi ˈkwaɪət"
       },
       {
        "kind": "word",
@@ -26968,7 +27360,7 @@ window.BANKS = {
        "en": "She became very quiet.",
        "zh": "她變得非常安靜",
        "src": "5-016",
-       "ipa": "ˈʃiː bɪˈkeɪm ˈvɛɹiː ˈkwaɪət"
+       "ipa": "ˈʃiː bɪˈkeɪm ˈvɛɹi ˈkwaɪət"
       }
      ]
     },
@@ -26985,6 +27377,13 @@ window.BANKS = {
        "zh": "開始",
        "src": "5-017",
        "ipa": "bɪˈɡɪn"
+      },
+      {
+       "kind": "phrase",
+       "en": "when will the show begin",
+       "zh": "表演什麼時候開始",
+       "src": "table",
+       "ipa": "ˈwɛn ˈwɪl ðə ˈʃoʊ bɪˈɡɪn"
       },
       {
        "kind": "sentence",
@@ -27010,6 +27409,13 @@ window.BANKS = {
        "ipa": "ˈbɪld"
       },
       {
+       "kind": "phrase",
+       "en": "ten years ago",
+       "zh": "十年前",
+       "src": "table",
+       "ipa": "ˈtɛn ˈjɪɹz əˈɡoʊ"
+      },
+      {
        "kind": "word",
        "en": "school",
        "zh": "學校",
@@ -27017,18 +27423,11 @@ window.BANKS = {
        "ipa": "ˈskuːl"
       },
       {
-       "kind": "word",
-       "en": "ten",
-       "zh": "十",
-       "src": "1-070",
-       "ipa": "ˈtɛn"
-      },
-      {
        "kind": "sentence",
        "en": "They built this school ten years ago.",
        "zh": "他們十年前建造了這所學校",
        "src": "5-022",
-       "ipa": "ˈðeɪ ˈbɪlt ˈðɪs ˈskuːl ˈtɛn ˈjɪɹz ˈəɡoʊ"
+       "ipa": "ˈðeɪ ˈbɪlt ˈðɪs ˈskuːl ˈtɛn ˈjɪɹz əˈɡoʊ"
       }
      ]
     },
@@ -27037,14 +27436,21 @@ window.BANKS = {
      "level": 5,
      "target": "burn",
      "gloss": "燃燒",
-     "ipa": "bɝn",
+     "ipa": "ˈbɝn",
      "steps": [
       {
        "kind": "word",
        "en": "burn",
        "zh": "燃燒",
        "src": "5-023",
-       "ipa": "bɝn"
+       "ipa": "ˈbɝn"
+      },
+      {
+       "kind": "phrase",
+       "en": "burning in the kitchen",
+       "zh": "在廚房裡燒起來了",
+       "src": "table",
+       "ipa": "ˈbɝnɪŋ ɪn ðə ˈkɪtʃən"
       },
       {
        "kind": "word",
@@ -27058,7 +27464,7 @@ window.BANKS = {
        "en": "Something's burning in the kitchen.",
        "zh": "廚房裡有東西燒起來了",
        "src": "5-023",
-       "ipa": "bɝnɪŋ ɪn ðə ˈkɪtʃən"
+       "ipa": "ˈsʌmθɪŋz ˈbɝnɪŋ ɪn ðə ˈkɪtʃən"
       }
      ]
     },
@@ -27077,11 +27483,18 @@ window.BANKS = {
        "ipa": "ˈtʃɛk"
       },
       {
+       "kind": "phrase",
+       "en": "check your answers",
+       "zh": "檢查你的答案",
+       "src": "table",
+       "ipa": "ˈtʃɛk ˈjɔːɹ ˈænsɚz"
+      },
+      {
        "kind": "sentence",
        "en": "Check your answers carefully.",
        "zh": "仔細檢查你的答案",
        "src": "5-029",
-       "ipa": "ˈtʃɛk ˈjɔːɹ ˈænsɚz ˈkɛɹfəliː"
+       "ipa": "ˈtʃɛk ˈjɔːɹ ˈænsɚz ˈkɛɹfəli"
       }
      ]
     },
@@ -27100,6 +27513,13 @@ window.BANKS = {
        "ipa": "ˈtʃuːz"
       },
       {
+       "kind": "phrase",
+       "en": "choose the red one",
+       "zh": "選紅色的那個",
+       "src": "table",
+       "ipa": "ˈtʃuːz ðə ˈɹɛd ˈwʌn"
+      },
+      {
        "kind": "word",
        "en": "red",
        "zh": "紅色",
@@ -27107,18 +27527,11 @@ window.BANKS = {
        "ipa": "ˈɹɛd"
       },
       {
-       "kind": "word",
-       "en": "one",
-       "zh": "一",
-       "src": "1-052",
-       "ipa": "wʌn"
-      },
-      {
        "kind": "sentence",
        "en": "I'll choose the red one.",
        "zh": "我會選擇紅色的",
        "src": "5-031",
-       "ipa": "ˈtʃuːz ðə ˈɹɛd wʌn"
+       "ipa": "ˈaɪl ˈtʃuːz ðə ˈɹɛd ˈwʌn"
       }
      ]
     },
@@ -27127,21 +27540,28 @@ window.BANKS = {
      "level": 5,
      "target": "collect",
      "gloss": "收集",
-     "ipa": "ˈkəlɛkt",
+     "ipa": "kəˈlɛkt",
      "steps": [
       {
        "kind": "word",
        "en": "collect",
        "zh": "收集",
        "src": "5-032",
-       "ipa": "ˈkəlɛkt"
+       "ipa": "kəˈlɛkt"
+      },
+      {
+       "kind": "phrase",
+       "en": "a lot of stamps",
+       "zh": "很多郵票",
+       "src": "table",
+       "ipa": "ə ˈlɑːt ˈʌv ˈstæmps"
       },
       {
        "kind": "sentence",
        "en": "Nick collects a lot of stamps.",
        "zh": "Nick收集很多郵票",
        "src": "5-032",
-       "ipa": "ˈnɪk ˈkəlɛkts ə ˈlɑːt ʌv ˈstæmps"
+       "ipa": "ˈnɪk kəˈlɛkts ə ˈlɑːt ˈʌv ˈstæmps"
       }
      ]
     },
@@ -27150,14 +27570,21 @@ window.BANKS = {
      "level": 5,
      "target": "cover",
      "gloss": "覆蓋",
-     "ipa": "kʌvɚ",
+     "ipa": "ˈkʌvɚ",
      "steps": [
       {
        "kind": "word",
        "en": "cover",
        "zh": "覆蓋",
        "src": "5-036",
-       "ipa": "kʌvɚ"
+       "ipa": "ˈkʌvɚ"
+      },
+      {
+       "kind": "phrase",
+       "en": "covers his bed",
+       "zh": "蓋住他的床",
+       "src": "table",
+       "ipa": "ˈkʌvɚz ˈhɪz ˈbɛd"
       },
       {
        "kind": "word",
@@ -27167,18 +27594,11 @@ window.BANKS = {
        "ipa": "ˈbɛd"
       },
       {
-       "kind": "word",
-       "en": "blanket",
-       "zh": "毯子",
-       "src": "6-027",
-       "ipa": "ˈblæŋkət"
-      },
-      {
        "kind": "sentence",
        "en": "Dennis covers his bed with a blanket.",
        "zh": "Dennis在床上蓋了一條毯子。",
        "src": "5-036",
-       "ipa": "ˈdɛnɪs kʌvɚz ˈhɪz ˈbɛd ˈwɪð ə ˈblæŋkət"
+       "ipa": "ˈdɛnɪs ˈkʌvɚz ˈhɪz ˈbɛd ˈwɪð ə ˈblæŋkət"
       }
      ]
     },
@@ -27197,6 +27617,13 @@ window.BANKS = {
        "ipa": "ˈdɹɑːp"
       },
       {
+       "kind": "phrase",
+       "en": "don't drop the juice",
+       "zh": "不要把果汁滴落",
+       "src": "table",
+       "ipa": "ˈdoʊnt ˈdɹɑːp ðə ˈdʒuːs"
+      },
+      {
        "kind": "word",
        "en": "juice",
        "zh": "果汁",
@@ -27204,18 +27631,11 @@ window.BANKS = {
        "ipa": "ˈdʒuːs"
       },
       {
-       "kind": "word",
-       "en": "couch",
-       "zh": "長沙發",
-       "src": "6-064",
-       "ipa": "ˈkaʊtʃ"
-      },
-      {
        "kind": "sentence",
        "en": "Don't drop the juice on the couch.",
        "zh": "不要把果汁滴在沙發上",
        "src": "5-039",
-       "ipa": "ˈdɹɑːp ðə ˈdʒuːs ˈɑːn ðə ˈkaʊtʃ"
+       "ipa": "ˈdoʊnt ˈdɹɑːp ðə ˈdʒuːs ˈɑːn ðə ˈkaʊtʃ"
       }
      ]
     },
@@ -27224,21 +27644,28 @@ window.BANKS = {
      "level": 5,
      "target": "forget",
      "gloss": "忘記",
-     "ipa": "ˈfɚɡɛt",
+     "ipa": "fɚˈɡɛt",
      "steps": [
       {
        "kind": "word",
        "en": "forget",
        "zh": "忘記",
        "src": "5-054",
-       "ipa": "ˈfɚɡɛt"
+       "ipa": "fɚˈɡɛt"
+      },
+      {
+       "kind": "phrase",
+       "en": "don't forget your bag",
+       "zh": "別忘了你的包包",
+       "src": "table",
+       "ipa": "ˈdoʊnt fɚˈɡɛt ˈjɔːɹ ˈbæɡ"
       },
       {
        "kind": "sentence",
        "en": "Don't forget your bag.",
        "zh": "別忘了你的包包",
        "src": "5-054",
-       "ipa": "ˈfɚɡɛt ˈjɔːɹ ˈbæɡ"
+       "ipa": "ˈdoʊnt fɚˈɡɛt ˈjɔːɹ ˈbæɡ"
       }
      ]
     },
@@ -27255,6 +27682,13 @@ window.BANKS = {
        "zh": "猜測",
        "src": "5-061",
        "ipa": "ˈɡɛs"
+      },
+      {
+       "kind": "phrase",
+       "en": "let me guess",
+       "zh": "讓我猜猜看",
+       "src": "table",
+       "ipa": "ˈlɛt ˈmiː ˈɡɛs"
       },
       {
        "kind": "sentence",
@@ -27300,28 +27734,28 @@ window.BANKS = {
      "level": 5,
      "target": "hurry",
      "gloss": "趕緊",
-     "ipa": "hɝiː",
+     "ipa": "ˈhɝi",
      "steps": [
       {
        "kind": "word",
        "en": "hurry",
        "zh": "趕緊",
        "src": "5-067",
-       "ipa": "hɝiː"
+       "ipa": "ˈhɝi"
       },
       {
        "kind": "phrase",
        "en": "hurry up",
        "zh": "趕快",
        "src": "table",
-       "ipa": "hɝiː ʌp"
+       "ipa": "ˈhɝi ˈʌp"
       },
       {
        "kind": "sentence",
        "en": "We have to hurry up.",
        "zh": "我們必須快一點",
        "src": "5-067",
-       "ipa": "ˈwiː ˈhæv ˈtuː hɝiː ʌp"
+       "ipa": "ˈwiː ˈhæv ˈtuː ˈhɝi ˈʌp"
       }
      ]
     },
@@ -27340,11 +27774,18 @@ window.BANKS = {
        "ipa": "ˈnɑːk"
       },
       {
+       "kind": "phrase",
+       "en": "knocking on the door",
+       "zh": "敲門",
+       "src": "table",
+       "ipa": "ˈnɑːkɪŋ ˈɑːn ðə ˈdɔːɹ"
+      },
+      {
        "kind": "sentence",
        "en": "Somebody is knocking on the door.",
        "zh": "有人在敲門",
        "src": "5-071",
-       "ipa": "ˌsʌmbɑːdiː ˈɪz ˈnɑːkɪŋ ˈɑːn ðə ˈdɔːɹ"
+       "ipa": "ˈsʌˌmbɑːdi ˈɪz ˈnɑːkɪŋ ˈɑːn ðə ˈdɔːɹ"
       }
      ]
     },
@@ -27374,14 +27815,14 @@ window.BANKS = {
        "en": "movie",
        "zh": "電影",
        "src": "4-063",
-       "ipa": "ˈmuːviː"
+       "ipa": "ˈmuːvi"
       },
       {
        "kind": "sentence",
        "en": "I'll pick a good movie.",
        "zh": "我會挑一部好電影",
        "src": "5-105",
-       "ipa": "ˈpɪk ə ˈɡʊd ˈmuːviː"
+       "ipa": "ˈaɪl ˈpɪk ə ˈɡʊd ˈmuːvi"
       }
      ]
     },
@@ -27411,7 +27852,7 @@ window.BANKS = {
        "en": "Don't point at the moon.",
        "zh": "不要用手指著月亮",
        "src": "5-110",
-       "ipa": "ˈpɔɪnt ˈæt ðə ˈmuːn"
+       "ipa": "ˈdoʊnt ˈpɔɪnt ˈæt ðə ˈmuːn"
       }
      ]
     },
@@ -27430,6 +27871,13 @@ window.BANKS = {
        "ipa": "ˈpʊl"
       },
       {
+       "kind": "phrase",
+       "en": "pulled his sister down",
+       "zh": "把妹妹拉坐下來",
+       "src": "table",
+       "ipa": "ˈpʊld ˈhɪz ˈsɪstɚ ˈdaʊn"
+      },
+      {
        "kind": "word",
        "en": "sister",
        "zh": "姊妹",
@@ -27437,18 +27885,11 @@ window.BANKS = {
        "ipa": "ˈsɪstɚ"
       },
       {
-       "kind": "word",
-       "en": "couch",
-       "zh": "長沙發",
-       "src": "6-064",
-       "ipa": "ˈkaʊtʃ"
-      },
-      {
        "kind": "sentence",
        "en": "He pulled his sister down onto the couch.",
        "zh": "他拉他妹妹坐到沙發上",
        "src": "5-119",
-       "ipa": "ˈhiː ˈpʊld ˈhɪz ˈsɪstɚ ˈdaʊn ˈɑːntuː ðə ˈkaʊtʃ"
+       "ipa": "ˈhiː ˈpʊld ˈhɪz ˈsɪstɚ ˈdaʊn ˈɑːntu ðə ˈkaʊtʃ"
       }
      ]
     },
@@ -27478,7 +27919,7 @@ window.BANKS = {
        "en": "Push the button to open the door.",
        "zh": "按這個按鈕開門",
        "src": "5-121",
-       "ipa": "ˈpʊʃ ðə bʌtən ˈtuː ˈoʊpən ðə ˈdɔːɹ"
+       "ipa": "ˈpʊʃ ðə ˈbʌtən ˈtuː ˈoʊpən ðə ˈdɔːɹ"
       }
      ]
     },
@@ -27497,11 +27938,18 @@ window.BANKS = {
        "ipa": "ɹɪˈmɛmbɚ"
       },
       {
+       "kind": "phrase",
+       "en": "remember his name",
+       "zh": "記得他的名字",
+       "src": "table",
+       "ipa": "ɹɪˈmɛmbɚ ˈhɪz ˈneɪm"
+      },
+      {
        "kind": "sentence",
        "en": "I don't remember his name.",
        "zh": "我不記得他的名字",
        "src": "5-133",
-       "ipa": "ˈaɪ ɹɪˈmɛmbɚ ˈhɪz ˈneɪm"
+       "ipa": "ˈaɪ ˈdoʊnt ɹɪˈmɛmbɚ ˈhɪz ˈneɪm"
       }
      ]
     },
@@ -27561,7 +28009,7 @@ window.BANKS = {
        "en": "Don't shout at me.",
        "zh": "不要對我吼叫",
        "src": "5-151",
-       "ipa": "ˈʃaʊt ˈæt ˈmiː"
+       "ipa": "ˈdoʊnt ˈʃaʊt ˈæt ˈmiː"
       }
      ]
     },
@@ -27570,28 +28018,28 @@ window.BANKS = {
      "level": 5,
      "target": "understand",
      "gloss": "了解",
-     "ipa": "ˈʌndɚstænd",
+     "ipa": "ˌʌndɚˈstænd",
      "steps": [
       {
        "kind": "word",
        "en": "understand",
        "zh": "了解",
        "src": "5-181",
-       "ipa": "ˈʌndɚstænd"
+       "ipa": "ˌʌndɚˈstænd"
       },
       {
        "kind": "phrase",
        "en": "do not understand",
        "zh": "不懂",
        "src": "table",
-       "ipa": "ˈduː ˈnɑːt ˈʌndɚstænd"
+       "ipa": "ˈduː ˈnɑːt ˌʌndɚˈstænd"
       },
       {
        "kind": "sentence",
        "en": "Do you understand?",
        "zh": "你懂嗎",
        "src": "5-181",
-       "ipa": "ˈduː ˈjuː ˈʌndɚstænd"
+       "ipa": "ˈduː ˈjuː ˌʌndɚˈstænd"
       }
      ]
     },
@@ -27610,11 +28058,18 @@ window.BANKS = {
        "ipa": "ˈwɑːtʃ"
       },
       {
+       "kind": "phrase",
+       "en": "watch ball games",
+       "zh": "看球賽",
+       "src": "table",
+       "ipa": "ˈwɑːtʃ ˈbɔːl ˈɡeɪmz"
+      },
+      {
        "kind": "sentence",
        "en": "Daddy likes to watch ball games.",
        "zh": "爸爸喜歡看球賽",
        "src": "5-187",
-       "ipa": "ˈdædiː ˈlaɪks ˈtuː ˈwɑːtʃ ˈbɔːl ˈɡeɪmz"
+       "ipa": "ˈdædi ˈlaɪks ˈtuː ˈwɑːtʃ ˈbɔːl ˈɡeɪmz"
       }
      ]
     },
@@ -27623,14 +28078,21 @@ window.BANKS = {
      "level": 6,
      "target": "appear",
      "gloss": "出現",
-     "ipa": "ˈəpɪɹ",
+     "ipa": "əˈpɪɹ",
      "steps": [
       {
        "kind": "word",
        "en": "appear",
        "zh": "出現",
        "src": "6-012",
-       "ipa": "ˈəpɪɹ"
+       "ipa": "əˈpɪɹ"
+      },
+      {
+       "kind": "phrase",
+       "en": "behind the trees",
+       "zh": "在樹子後面",
+       "src": "table",
+       "ipa": "bɪˈhaɪnd ðə ˈtɹiːz"
       },
       {
        "kind": "word",
@@ -27644,7 +28106,7 @@ window.BANKS = {
        "en": "A bear appeared behind the trees.",
        "zh": "樹後面出現了一隻熊",
        "src": "6-012",
-       "ipa": "ə ˈbɛɹ ˈəpɪɹd bɪˈhaɪnd ðə ˈtɹiːz"
+       "ipa": "ə ˈbɛɹ əˈpɪɹd bɪˈhaɪnd ðə ˈtɹiːz"
       }
      ]
     },
@@ -27653,14 +28115,21 @@ window.BANKS = {
      "level": 6,
      "target": "attack",
      "gloss": "攻擊",
-     "ipa": "ˈətæk",
+     "ipa": "əˈtæk",
      "steps": [
       {
        "kind": "word",
        "en": "attack",
        "zh": "攻擊",
        "src": "6-015",
-       "ipa": "ˈətæk"
+       "ipa": "əˈtæk"
+      },
+      {
+       "kind": "phrase",
+       "en": "attacked the old lady",
+       "zh": "攻擊那位老太太",
+       "src": "table",
+       "ipa": "əˈtækt ðə ˈoʊld ˈleɪdi"
       },
       {
        "kind": "word",
@@ -27674,7 +28143,7 @@ window.BANKS = {
        "en": "Some bad guy attacked the old lady.",
        "zh": "有個壞蛋攻擊了那位老太太",
        "src": "6-015",
-       "ipa": "sʌm ˈbæd ˈɡaɪ ˈətækt ðə ˈoʊld ˈleɪdiː"
+       "ipa": "ˈsʌm ˈbæd ˈɡaɪ əˈtækt ðə ˈoʊld ˈleɪdi"
       }
      ]
     },
@@ -27691,6 +28160,13 @@ window.BANKS = {
        "zh": "屬於",
        "src": "6-026",
        "ipa": "bɪˈlɔːŋ"
+      },
+      {
+       "kind": "phrase",
+       "en": "belongs to",
+       "zh": "屬於",
+       "src": "table",
+       "ipa": "bɪˈlɔːŋz ˈtuː"
       },
       {
        "kind": "word",
@@ -27721,6 +28197,13 @@ window.BANKS = {
        "zh": "吹",
        "src": "6-029",
        "ipa": "ˈbloʊ"
+      },
+      {
+       "kind": "phrase",
+       "en": "is blowing hard",
+       "zh": "颳得很大",
+       "src": "table",
+       "ipa": "ˈɪz ˈbloʊɪŋ ˈhɑːɹd"
       },
       {
        "kind": "word",
@@ -27764,7 +28247,7 @@ window.BANKS = {
        "en": "Let's clap for the speaker.",
        "zh": "我們一起為講者鼓掌吧",
        "src": "6-055",
-       "ipa": "ˈklæp ˈfɔːɹ ðə ˈspiːkɚ"
+       "ipa": "ˈlɛts ˈklæp ˈfɔːɹ ðə ˈspiːkɚ"
       }
      ]
     },
@@ -27787,21 +28270,21 @@ window.BANKS = {
        "en": "count from",
        "zh": "從…開始數",
        "src": "table",
-       "ipa": "ˈkaʊnt fɹʌm"
+       "ipa": "ˈkaʊnt ˈfɹʌm"
       },
       {
        "kind": "word",
        "en": "one",
        "zh": "一",
        "src": "1-052",
-       "ipa": "wʌn"
+       "ipa": "ˈwʌn"
       },
       {
        "kind": "sentence",
        "en": "Count from one to ten.",
        "zh": "從一數到十",
        "src": "6-065",
-       "ipa": "ˈkaʊnt fɹʌm wʌn ˈtuː ˈtɛn"
+       "ipa": "ˈkaʊnt ˈfɹʌm ˈwʌn ˈtuː ˈtɛn"
       }
      ]
     },
@@ -27820,11 +28303,18 @@ window.BANKS = {
        "ipa": "ˈɛntɚ"
       },
       {
+       "kind": "phrase",
+       "en": "enter this room",
+       "zh": "進入這個房間",
+       "src": "table",
+       "ipa": "ˈɛntɚ ˈðɪs ˈɹuːm"
+      },
+      {
        "kind": "sentence",
        "en": "You can't enter this room.",
        "zh": "你不能進入這個房間",
        "src": "6-093",
-       "ipa": "ˈjuː ˈɛntɚ ˈðɪs ˈɹuːm"
+       "ipa": "ˈjuː ˈkænt ˈɛntɚ ˈðɪs ˈɹuːm"
       }
      ]
     },
@@ -27854,14 +28344,14 @@ window.BANKS = {
        "en": "brother",
        "zh": "兄弟",
        "src": "2-009",
-       "ipa": "bɹʌðɚ"
+       "ipa": "ˈbɹʌðɚ"
       },
       {
        "kind": "sentence",
        "en": "Don't fight with your brother.",
        "zh": "不要和你弟弟打架",
        "src": "6-112",
-       "ipa": "ˈfaɪt ˈwɪð ˈjɔːɹ bɹʌðɚ"
+       "ipa": "ˈdoʊnt ˈfaɪt ˈwɪð ˈjɔːɹ ˈbɹʌðɚ"
       }
      ]
     },
@@ -27880,18 +28370,18 @@ window.BANKS = {
        "ipa": "ˈfɪl"
       },
       {
+       "kind": "phrase",
+       "en": "fill the bottle with water",
+       "zh": "把瓶子裝滿水",
+       "src": "table",
+       "ipa": "ˈfɪl ðə ˈbɑːtəl ˈwɪð ˈwɔːtɚ"
+      },
+      {
        "kind": "word",
        "en": "bottle",
        "zh": "瓶子",
        "src": "6-035",
        "ipa": "ˈbɑːtəl"
-      },
-      {
-       "kind": "word",
-       "en": "water",
-       "zh": "水",
-       "src": "1-080",
-       "ipa": "ˈwɔːtɚ"
       },
       {
        "kind": "sentence",
@@ -27917,11 +28407,18 @@ window.BANKS = {
        "ipa": "ˈfɪnɪʃ"
       },
       {
+       "kind": "phrase",
+       "en": "have to finish it",
+       "zh": "必須把它完成",
+       "src": "table",
+       "ipa": "ˈhæv ˈtuː ˈfɪnɪʃ ˈɪt"
+      },
+      {
        "kind": "sentence",
        "en": "You have to finish it by this afternoon.",
        "zh": "你必須在下午前完成",
        "src": "6-116",
-       "ipa": "ˈjuː ˈhæv ˈtuː ˈfɪnɪʃ ˈɪt ˈbaɪ ˈðɪs ˌæˈftɚnuːn"
+       "ipa": "ˈjuː ˈhæv ˈtuː ˈfɪnɪʃ ˈɪt ˈbaɪ ˈðɪs ˌæftɚˈnuːn"
       }
      ]
     },
@@ -27958,7 +28455,7 @@ window.BANKS = {
        "en": "My dad can fix the computer by himself.",
        "zh": "我爸爸會自己修電腦",
        "src": "6-118",
-       "ipa": "ˈmaɪ ˈdæd ˈkæn ˈfɪks ðə ˈkəmpjuːtɚ ˈbaɪ hɪˈmsɛlf"
+       "ipa": "ˈmaɪ ˈdæd ˈkæn ˈfɪks ðə kəˈmpjuːtɚ ˈbaɪ hɪˈmsɛlf"
       }
      ]
     },
@@ -27981,14 +28478,14 @@ window.BANKS = {
        "en": "what happened",
        "zh": "發生了什麼事",
        "src": "table",
-       "ipa": "wʌt ˈhæpənd"
+       "ipa": "ˈwʌt ˈhæpənd"
       },
       {
        "kind": "sentence",
        "en": "What happened?",
        "zh": "發生了什麼事",
        "src": "6-129",
-       "ipa": "wʌt ˈhæpənd"
+       "ipa": "ˈwʌt ˈhæpənd"
       }
      ]
     },
@@ -28007,6 +28504,13 @@ window.BANKS = {
        "ipa": "ˈhaɪd"
       },
       {
+       "kind": "phrase",
+       "en": "under the bed",
+       "zh": "在床下",
+       "src": "table",
+       "ipa": "ˈʌndɚ ðə ˈbɛd"
+      },
+      {
        "kind": "word",
        "en": "cat",
        "zh": "貓",
@@ -28014,18 +28518,11 @@ window.BANKS = {
        "ipa": "ˈkæt"
       },
       {
-       "kind": "word",
-       "en": "bed",
-       "zh": "床",
-       "src": "1-006",
-       "ipa": "ˈbɛd"
-      },
-      {
        "kind": "sentence",
        "en": "The cat is hiding under the bed.",
        "zh": "貓躲在床下",
        "src": "6-136",
-       "ipa": "ðə ˈkæt ˈɪz ˈhaɪdɪŋ ʌndɚ ðə ˈbɛd"
+       "ipa": "ðə ˈkæt ˈɪz ˈhaɪdɪŋ ˈʌndɚ ðə ˈbɛd"
       }
      ]
     },
@@ -28055,7 +28552,7 @@ window.BANKS = {
        "en": "I didn't notice that.",
        "zh": "我沒注意到那",
        "src": "6-195",
-       "ipa": "ˈaɪ ˈnoʊtəs ˈðæt"
+       "ipa": "ˈaɪ ˈdɪdənt ˈnoʊtəs ˈðæt"
       }
      ]
     },
@@ -28074,18 +28571,25 @@ window.BANKS = {
        "ipa": "ˈʃeɪk"
       },
       {
+       "kind": "phrase",
+       "en": "shake your body",
+       "zh": "搖動身體",
+       "src": "table",
+       "ipa": "ˈʃeɪk ˈjɔːɹ ˈbɑːdi"
+      },
+      {
        "kind": "word",
        "en": "body",
        "zh": "身體",
        "src": "3-011",
-       "ipa": "ˈbɑːdiː"
+       "ipa": "ˈbɑːdi"
       },
       {
        "kind": "sentence",
        "en": "Shake your body.",
        "zh": "身體搖起來",
        "src": "6-231",
-       "ipa": "ˈʃeɪk ˈjɔːɹ ˈbɑːdiː"
+       "ipa": "ˈʃeɪk ˈjɔːɹ ˈbɑːdi"
       }
      ]
     }
@@ -28123,14 +28627,14 @@ window.BANKS = {
        "en": "enough",
        "zh": "足夠的",
        "src": "5-043",
-       "ipa": "ɪnʌf"
+       "ipa": "ɪˈnʌf"
       },
       {
        "kind": "sentence",
        "en": "These shoes are not big enough.",
        "zh": "這些鞋子不夠大",
        "src": "1-007",
-       "ipa": "ˈðiːz ˈʃuːz ˈɑːɹ ˈnɑːt ˈbɪɡ ɪnʌf"
+       "ipa": "ˈðiːz ˈʃuːz ˈɑːɹ ˈnɑːt ˈbɪɡ ɪˈnʌf"
       }
      ]
     },
@@ -28160,7 +28664,7 @@ window.BANKS = {
        "en": "Lucy is getting fat.",
        "zh": "Lucy愈來愈胖",
        "src": "1-017",
-       "ipa": "ˈluːsiː ˈɪz ˈɡɛtɪŋ ˈfæt"
+       "ipa": "ˈluːsi ˈɪz ˈɡɛtɪŋ ˈfæt"
       }
      ]
     },
@@ -28197,7 +28701,7 @@ window.BANKS = {
        "en": "We have a long vacation in summer.",
        "zh": "我們在夏天會放長假",
        "src": "1-038",
-       "ipa": "ˈwiː ˈhæv ə ˈlɔːŋ veɪˈkeɪʃən ɪn sʌmɚ"
+       "ipa": "ˈwiː ˈhæv ə ˈlɔːŋ veɪˈkeɪʃən ɪn ˈsʌmɚ"
       }
      ]
     },
@@ -28253,6 +28757,13 @@ window.BANKS = {
        "ipa": "ˈsɪks"
       },
       {
+       "kind": "phrase",
+       "en": "six candles",
+       "zh": "六根蠟燭",
+       "src": "table",
+       "ipa": "ˈsɪks ˈkændəlz"
+      },
+      {
        "kind": "word",
        "en": "cake",
        "zh": "蛋糕",
@@ -28294,7 +28805,7 @@ window.BANKS = {
        "en": "Jenny has brown eyes.",
        "zh": "Jenny的眼睛是褐色的",
        "src": "2-010",
-       "ipa": "ˈdʒɛniː ˈhæz ˈbɹaʊn ˈaɪz"
+       "ipa": "ˈdʒɛni ˈhæz ˈbɹaʊn ˈaɪz"
       }
      ]
     },
@@ -28331,7 +28842,7 @@ window.BANKS = {
        "en": "Birds can fly high in the sky.",
        "zh": "鳥能在天上高飛",
        "src": "2-037",
-       "ipa": "bɝdz ˈkæn ˈflaɪ ˈhaɪ ɪn ðə ˈskaɪ"
+       "ipa": "ˈbɝdz ˈkæn ˈflaɪ ˈhaɪ ɪn ðə ˈskaɪ"
       }
      ]
     },
@@ -28361,14 +28872,14 @@ window.BANKS = {
        "en": "story",
        "zh": "故事",
        "src": "6-245",
-       "ipa": "ˈstɔːɹiː"
+       "ipa": "ˈstɔːɹi"
       },
       {
        "kind": "sentence",
        "en": "This is a real story.",
        "zh": "這是真實故事",
        "src": "2-064",
-       "ipa": "ˈðɪs ˈɪz ə ˈɹiːl ˈstɔːɹiː"
+       "ipa": "ˈðɪs ˈɪz ə ˈɹiːl ˈstɔːɹi"
       }
      ]
     },
@@ -28405,7 +28916,7 @@ window.BANKS = {
        "en": "Use a sharp knife to cut it.",
        "zh": "用支尖銳的刀來切",
        "src": "2-071",
-       "ipa": "ˈjuːs ə ˈʃɑːɹp ˈnaɪf ˈtuː kʌt ˈɪt"
+       "ipa": "ˈjuːs ə ˈʃɑːɹp ˈnaɪf ˈtuː ˈkʌt ˈɪt"
       }
      ]
     },
@@ -28465,14 +28976,14 @@ window.BANKS = {
        "en": "world",
        "zh": "世界",
        "src": "1-082",
-       "ipa": "wɝld"
+       "ipa": "ˈwɝld"
       },
       {
        "kind": "sentence",
        "en": "What a small world!",
        "zh": "世界真小",
        "src": "2-081",
-       "ipa": "wʌt ə ˈsmɔːl wɝld"
+       "ipa": "ˈwʌt ə ˈsmɔːl ˈwɝld"
       }
      ]
     },
@@ -28509,7 +29020,7 @@ window.BANKS = {
        "en": "Yellow is a bright color.",
        "zh": "黃色是一個明亮的顏色",
        "src": "2-095",
-       "ipa": "ˈjɛloʊ ˈɪz ə ˈbɹaɪt kʌlɚ"
+       "ipa": "ˈjɛloʊ ˈɪz ə ˈbɹaɪt ˈkʌlɚ"
       }
      ]
     },
@@ -28518,21 +29029,21 @@ window.BANKS = {
      "level": 3,
      "target": "circle",
      "gloss": "圓圈",
-     "ipa": "sɝkəl",
+     "ipa": "ˈsɝkəl",
      "steps": [
       {
        "kind": "word",
        "en": "circle",
        "zh": "圓圈",
        "src": "3-019",
-       "ipa": "sɝkəl"
+       "ipa": "ˈsɝkəl"
       },
       {
        "kind": "phrase",
        "en": "a circle",
        "zh": "一個圓圈",
        "src": "table",
-       "ipa": "ə sɝkəl"
+       "ipa": "ə ˈsɝkəl"
       },
       {
        "kind": "word",
@@ -28546,7 +29057,7 @@ window.BANKS = {
        "en": "Draw a circle on your paper.",
        "zh": "在你的紙上畫一個圓",
        "src": "3-019",
-       "ipa": "ˈdɹɔː ə sɝkəl ˈɑːn ˈjɔːɹ ˈpeɪpɚ"
+       "ipa": "ˈdɹɔː ə ˈsɝkəl ˈɑːn ˈjɔːɹ ˈpeɪpɚ"
       }
      ]
     },
@@ -28576,7 +29087,7 @@ window.BANKS = {
        "en": "It's dark in here.",
        "zh": "這裡面很黑",
        "src": "3-025",
-       "ipa": "ˈdɑːɹk ɪn ˈhiːɹ"
+       "ipa": "ˈɪts ˈdɑːɹk ɪn ˈhiːɹ"
       }
      ]
     },
@@ -28613,7 +29124,7 @@ window.BANKS = {
        "en": "Birds are free to fly.",
        "zh": "鳥兒可以自由地飛",
        "src": "3-034",
-       "ipa": "bɝdz ˈɑːɹ ˈfɹiː ˈtuː ˈflaɪ"
+       "ipa": "ˈbɝdz ˈɑːɹ ˈfɹiː ˈtuː ˈflaɪ"
       }
      ]
     },
@@ -28643,14 +29154,14 @@ window.BANKS = {
        "en": "pumpkin",
        "zh": "南瓜",
        "src": "6-216",
-       "ipa": "pʌmpkɪn"
+       "ipa": "ˈpʌmpkɪn"
       },
       {
        "kind": "sentence",
        "en": "Look at the giant pumpkin.",
        "zh": "看那個巨大的南瓜",
        "src": "3-039",
-       "ipa": "ˈlʊk ˈæt ðə ˈdʒaɪənt pʌmpkɪn"
+       "ipa": "ˈlʊk ˈæt ðə ˈdʒaɪənt ˈpʌmpkɪn"
       }
      ]
     },
@@ -28680,7 +29191,7 @@ window.BANKS = {
        "en": "That poor man doesn't have a house.",
        "zh": "那個窮人沒有家",
        "src": "3-078",
-       "ipa": "ˈðæt ˈpuːɹ ˈmæn ˈhæv ə ˈhaʊs"
+       "ipa": "ˈðæt ˈpuːɹ ˈmæn ˈdʌzənt ˈhæv ə ˈhaʊs"
       }
      ]
     },
@@ -28754,7 +29265,7 @@ window.BANKS = {
        "en": "My grandma lives a simple life.",
        "zh": "我祖母的生活很簡單",
        "src": "3-092",
-       "ipa": "ˈmaɪ ˈɡɹændmɑː ˈlɪvz ə ˈsɪmpəl ˈlaɪf"
+       "ipa": "ˈmaɪ ˈɡɹændmɑ ˈlɪvz ə ˈsɪmpəl ˈlaɪf"
       }
      ]
     },
@@ -28800,14 +29311,21 @@ window.BANKS = {
      "level": 4,
      "target": "medium",
      "gloss": "中號的",
-     "ipa": "ˈmiːdiːəm",
+     "ipa": "ˈmiːdiəm",
      "steps": [
       {
        "kind": "word",
        "en": "medium",
        "zh": "中號的",
        "src": "4-061",
-       "ipa": "ˈmiːdiːəm"
+       "ipa": "ˈmiːdiəm"
+      },
+      {
+       "kind": "phrase",
+       "en": "small or medium",
+       "zh": "小的或中型的",
+       "src": "table",
+       "ipa": "ˈsmɔːl ˈɔːɹ ˈmiːdiəm"
       },
       {
        "kind": "word",
@@ -28821,7 +29339,7 @@ window.BANKS = {
        "en": "Small or medium?",
        "zh": "小的或中的",
        "src": "4-061",
-       "ipa": "ˈsmɔːl ˈɔːɹ ˈmiːdiːəm"
+       "ipa": "ˈsmɔːl ˈɔːɹ ˈmiːdiəm"
       }
      ]
     },
@@ -28858,7 +29376,7 @@ window.BANKS = {
        "en": "This song is very popular in Taiwan.",
        "zh": "這首歌在台灣很受歡迎",
        "src": "4-078",
-       "ipa": "ˈðɪs ˈsɔːŋ ˈɪz ˈvɛɹiː ˈpɑːpjəlɚ ɪn ˈtaɪˈwɑːn"
+       "ipa": "ˈðɪs ˈsɔːŋ ˈɪz ˈvɛɹi ˈpɑːpjəlɚ ɪn ˈtaɪˈwɑːn"
       }
      ]
     },
@@ -28888,7 +29406,7 @@ window.BANKS = {
        "en": "The weather is terrible today.",
        "zh": "今天天氣很糟",
        "src": "4-116",
-       "ipa": "ðə ˈwɛðɚ ˈɪz ˈtɛɹəbəl ˈtədeɪ"
+       "ipa": "ðə ˈwɛðɚ ˈɪz ˈtɛɹəbəl təˈdeɪ"
       }
      ]
     },
@@ -28918,14 +29436,14 @@ window.BANKS = {
        "en": "enough",
        "zh": "足夠的",
        "src": "5-043",
-       "ipa": "ɪnʌf"
+       "ipa": "ɪˈnʌf"
       },
       {
        "kind": "sentence",
        "en": "The man is wise enough to choose the better one.",
        "zh": "這個男人夠明智能選出較好的",
        "src": "4-130",
-       "ipa": "ðə ˈmæn ˈɪz ˈwaɪz ɪnʌf ˈtuː ˈtʃuːz ðə ˈbɛtɚ wʌn"
+       "ipa": "ðə ˈmæn ˈɪz ˈwaɪz ɪˈnʌf ˈtuː ˈtʃuːz ðə ˈbɛtɚ ˈwʌn"
       }
      ]
     },
@@ -28934,28 +29452,28 @@ window.BANKS = {
      "level": 4,
      "target": "wonderful",
      "gloss": "很棒的",
-     "ipa": "wʌndɚfəl",
+     "ipa": "ˈwʌndɚfəl",
      "steps": [
       {
        "kind": "word",
        "en": "wonderful",
        "zh": "很棒的",
        "src": "4-131",
-       "ipa": "wʌndɚfəl"
+       "ipa": "ˈwʌndɚfəl"
       },
       {
        "kind": "phrase",
        "en": "a wonderful",
        "zh": "一個很棒的",
        "src": "table",
-       "ipa": "ə wʌndɚfəl"
+       "ipa": "ə ˈwʌndɚfəl"
       },
       {
        "kind": "sentence",
        "en": "It's a wonderful day.",
        "zh": "這是很棒的一天",
        "src": "4-131",
-       "ipa": "ə wʌndɚfəl ˈdeɪ"
+       "ipa": "ˈɪts ə ˈwʌndɚfəl ˈdeɪ"
       }
      ]
     },
@@ -28985,7 +29503,7 @@ window.BANKS = {
        "en": "The sun is so bright.",
        "zh": "太陽十分明亮",
        "src": "5-021",
-       "ipa": "ðə sʌn ˈɪz ˈsoʊ ˈbɹaɪt"
+       "ipa": "ðə ˈsʌn ˈɪz ˈsoʊ ˈbɹaɪt"
       }
      ]
     },
@@ -29059,7 +29577,7 @@ window.BANKS = {
        "en": "It's common to have a computer at home.",
        "zh": "家裡有電腦是很常見的",
        "src": "5-033",
-       "ipa": "ˈkɑːmən ˈtuː ˈhæv ə ˈkəmpjuːtɚ ˈæt ˈhoʊm"
+       "ipa": "ˈɪts ˈkɑːmən ˈtuː ˈhæv ə kəˈmpjuːtɚ ˈæt ˈhoʊm"
       }
      ]
     },
@@ -29096,7 +29614,7 @@ window.BANKS = {
        "en": "I can't see these quick moves clearly.",
        "zh": "我看不清楚這些快速的動作",
        "src": "5-125",
-       "ipa": "ˈaɪ ˈsiː ˈðiːz ˈkwɪk ˈmuːvz ˈklɪɹliː"
+       "ipa": "ˈaɪ ˈkænt ˈsiː ˈðiːz ˈkwɪk ˈmuːvz ˈklɪɹli"
       }
      ]
     },
@@ -29115,25 +29633,25 @@ window.BANKS = {
        "ipa": "ˈkwaɪt"
       },
       {
+       "kind": "phrase",
+       "en": "quite short",
+       "zh": "相當短",
+       "src": "table",
+       "ipa": "ˈkwaɪt ˈʃɔːɹt"
+      },
+      {
        "kind": "word",
        "en": "movie",
        "zh": "電影",
        "src": "4-063",
-       "ipa": "ˈmuːviː"
-      },
-      {
-       "kind": "word",
-       "en": "short",
-       "zh": "短的;矮的",
-       "src": "2-074",
-       "ipa": "ˈʃɔːɹt"
+       "ipa": "ˈmuːvi"
       },
       {
        "kind": "sentence",
        "en": "The movie is quite short.",
        "zh": "這部電影十分簡短",
        "src": "5-126",
-       "ipa": "ðə ˈmuːviː ˈɪz ˈkwaɪt ˈʃɔːɹt"
+       "ipa": "ðə ˈmuːvi ˈɪz ˈkwaɪt ˈʃɔːɹt"
       }
      ]
     },
@@ -29170,7 +29688,7 @@ window.BANKS = {
        "en": "It's not safe to go out late at night.",
        "zh": "深夜出門不安全",
        "src": "5-139",
-       "ipa": "ˈnɑːt ˈseɪf ˈtuː ˈɡoʊ ˈaʊt ˈleɪt ˈæt ˈnaɪt"
+       "ipa": "ˈɪts ˈnɑːt ˈseɪf ˈtuː ˈɡoʊ ˈaʊt ˈleɪt ˈæt ˈnaɪt"
       }
      ]
     },
@@ -29193,7 +29711,7 @@ window.BANKS = {
        "en": "the sun shines",
        "zh": "太陽閃耀",
        "src": "table",
-       "ipa": "ðə sʌn ˈʃaɪnz"
+       "ipa": "ðə ˈsʌn ˈʃaɪnz"
       },
       {
        "kind": "word",
@@ -29207,7 +29725,7 @@ window.BANKS = {
        "en": "The sun shines high in the sky.",
        "zh": "太陽在高空中閃耀",
        "src": "5-150",
-       "ipa": "ðə sʌn ˈʃaɪnz ˈhaɪ ɪn ðə ˈskaɪ"
+       "ipa": "ðə ˈsʌn ˈʃaɪnz ˈhaɪ ɪn ðə ˈskaɪ"
       }
      ]
     },
@@ -29244,7 +29762,7 @@ window.BANKS = {
        "en": "Go straight and you'll see the store on your right.",
        "zh": "直走你就會看到那間店在你的右手邊",
        "src": "5-161",
-       "ipa": "ˈɡoʊ ˈstɹeɪt ənd ˈsiː ðə ˈstɔːɹ ˈɑːn ˈjɔːɹ ˈɹaɪt"
+       "ipa": "ˈɡoʊ ˈstɹeɪt ənd ˈjuːl ˈsiː ðə ˈstɔːɹ ˈɑːn ˈjɔːɹ ˈɹaɪt"
       }
      ]
     },
@@ -29274,7 +29792,7 @@ window.BANKS = {
        "en": "Don't do stupid things.",
        "zh": "別做蠢事",
        "src": "5-165",
-       "ipa": "ˈduː ˈstuːpəd ˈθɪŋz"
+       "ipa": "ˈdoʊnt ˈduː ˈstuːpəd ˈθɪŋz"
       }
      ]
     },
@@ -29283,28 +29801,28 @@ window.BANKS = {
      "level": 6,
      "target": "convenient",
      "gloss": "方便的",
-     "ipa": "ˈkənviːnjənt",
+     "ipa": "kəˈnviːnjənt",
      "steps": [
       {
        "kind": "word",
        "en": "convenient",
        "zh": "方便的",
        "src": "6-061",
-       "ipa": "ˈkənviːnjənt"
+       "ipa": "kəˈnviːnjənt"
       },
       {
        "kind": "phrase",
        "en": "a convenient",
        "zh": "一個方便的",
        "src": "table",
-       "ipa": "ə ˈkənviːnjənt"
+       "ipa": "ə kəˈnviːnjənt"
       },
       {
        "kind": "sentence",
        "en": "Cars make our lives more convenient.",
        "zh": "汽車使我們的生活更便利",
        "src": "6-061",
-       "ipa": "ˈkɑːɹz ˈmeɪk ˈaʊɚ ˈlɪvz ˈmɔːɹ ˈkənviːnjənt"
+       "ipa": "ˈkɑːɹz ˈmeɪk ˈaʊɚ ˈlɪvz ˈmɔːɹ kəˈnviːnjənt"
       }
      ]
     },
@@ -29341,7 +29859,7 @@ window.BANKS = {
        "en": "It's dangerous to play on the road.",
        "zh": "在馬路上玩耍是很危險的",
        "src": "6-068",
-       "ipa": "ˈdeɪndʒɚəs ˈtuː ˈpleɪ ˈɑːn ðə ˈɹoʊd"
+       "ipa": "ˈɪts ˈdeɪndʒɚəs ˈtuː ˈpleɪ ˈɑːn ðə ˈɹoʊd"
       }
      ]
     },
@@ -29401,14 +29919,14 @@ window.BANKS = {
        "en": "one",
        "zh": "一",
        "src": "1-052",
-       "ipa": "wʌn"
+       "ipa": "ˈwʌn"
       },
       {
        "kind": "sentence",
        "en": "No one can answer this difficult question.",
        "zh": "沒人能回答這個難題",
        "src": "6-076",
-       "ipa": "ˈnoʊ wʌn ˈkæn ˈænsɚ ˈðɪs ˈdɪfəkəlt ˈkwɛstʃən"
+       "ipa": "ˈnoʊ ˈwʌn ˈkæn ˈænsɚ ˈðɪs ˈdɪfəkəlt ˈkwɛstʃən"
       }
      ]
     },
@@ -29505,7 +30023,7 @@ window.BANKS = {
        "en": "become famous",
        "zh": "變得有名",
        "src": "table",
-       "ipa": "bɪkʌm ˈfeɪməs"
+       "ipa": "bɪˈkʌm ˈfeɪməs"
       },
       {
        "kind": "sentence",
@@ -29542,14 +30060,14 @@ window.BANKS = {
        "en": "enough",
        "zh": "足夠的",
        "src": "5-043",
-       "ipa": "ɪnʌf"
+       "ipa": "ɪˈnʌf"
       },
       {
        "kind": "sentence",
        "en": "It's important to get enough sleep.",
        "zh": "足夠的睡眠是很重要的",
        "src": "6-143",
-       "ipa": "ˌɪˈmpɔːɹtənt ˈtuː ˈɡɛt ɪnʌf ˈsliːp"
+       "ipa": "ˈɪts ˌɪˈmpɔːɹtənt ˈtuː ˈɡɛt ɪˈnʌf ˈsliːp"
       }
      ]
     },
@@ -29568,18 +30086,18 @@ window.BANKS = {
        "ipa": "ˈloʊ"
       },
       {
+       "kind": "phrase",
+       "en": "keep your voice low",
+       "zh": "把音量放低",
+       "src": "table",
+       "ipa": "ˈkiːp ˈjɔːɹ ˈvɔɪs ˈloʊ"
+      },
+      {
        "kind": "word",
        "en": "keep",
        "zh": "保留;保持",
        "src": "3-056",
        "ipa": "ˈkiːp"
-      },
-      {
-       "kind": "word",
-       "en": "voice",
-       "zh": "聲音",
-       "src": "6-270",
-       "ipa": "ˈvɔɪs"
       },
       {
        "kind": "sentence",
@@ -29623,7 +30141,7 @@ window.BANKS = {
        "en": "People don't dress like that in modern times.",
        "zh": "現今人們不穿那樣了",
        "src": "6-187",
-       "ipa": "ˈpiːpəl ˈdɹɛs ˈlaɪk ˈðæt ɪn ˈmɑːdɚn ˈtaɪmz"
+       "ipa": "ˈpiːpəl ˈdoʊnt ˈdɹɛs ˈlaɪk ˈðæt ɪn ˈmɑːdɚn ˈtaɪmz"
       }
      ]
     },
@@ -29653,7 +30171,7 @@ window.BANKS = {
        "en": "Basketballs are round.",
        "zh": "籃球是圓的",
        "src": "6-224",
-       "ipa": "ˈbæˌskətbɔːlz ˈɑːɹ ˈɹaʊnd"
+       "ipa": "ˈbæskəˌtbɔːlz ˈɑːɹ ˈɹaʊnd"
       }
      ]
     },
@@ -29690,7 +30208,7 @@ window.BANKS = {
        "en": "We cut the paper into different shapes.",
        "zh": "我們在這張紙上剪出不同形狀",
        "src": "6-232",
-       "ipa": "ˈwiː kʌt ðə ˈpeɪpɚ ˈɪntuː ˈdɪfɚənt ˈʃeɪps"
+       "ipa": "ˈwiː ˈkʌt ðə ˈpeɪpɚ ˈɪntu ˈdɪfɚənt ˈʃeɪps"
       }
      ]
     },
@@ -29699,35 +30217,35 @@ window.BANKS = {
      "level": 6,
      "target": "successful",
      "gloss": "成功的",
-     "ipa": "ˈsəksɛsfəl",
+     "ipa": "səˈksɛsfəl",
      "steps": [
       {
        "kind": "word",
        "en": "successful",
        "zh": "成功的",
        "src": "6-247",
-       "ipa": "ˈsəksɛsfəl"
+       "ipa": "səˈksɛsfəl"
       },
       {
        "kind": "phrase",
        "en": "a successful",
        "zh": "一個成功的",
        "src": "table",
-       "ipa": "ə ˈsəksɛsfəl"
+       "ipa": "ə səˈksɛsfəl"
       },
       {
        "kind": "word",
        "en": "businessman",
        "zh": "商人",
        "src": "6-039",
-       "ipa": "ˈbɪˌznəsmæn"
+       "ipa": "ˈbɪznəˌsmæn"
       },
       {
        "kind": "sentence",
        "en": "Mr. Hsu is a successful businessman.",
        "zh": "許先生是位成功的商人",
        "src": "6-247",
-       "ipa": "ˈmɪstɚ ˈʃuː ˈɪz ə ˈsəksɛsfəl ˈbɪˌznəsmæn"
+       "ipa": "ˈmɪstɚ ˈʃuː ˈɪz ə səˈksɛsfəl ˈbɪznəˌsmæn"
       }
      ]
     },
@@ -29750,21 +30268,21 @@ window.BANKS = {
        "en": "very thick",
        "zh": "非常厚",
        "src": "table",
-       "ipa": "ˈvɛɹiː ˈθɪk"
+       "ipa": "ˈvɛɹi ˈθɪk"
       },
       {
        "kind": "word",
        "en": "dictionary",
        "zh": "字典",
        "src": "6-074",
-       "ipa": "ˈdɪˌkʃənɛɹiː"
+       "ipa": "ˈdɪkʃəˌnɛɹi"
       },
       {
        "kind": "sentence",
        "en": "This dictionary is so thick.",
        "zh": "這本字典好厚",
        "src": "6-252",
-       "ipa": "ˈðɪs ˈdɪˌkʃənɛɹiː ˈɪz ˈsoʊ ˈθɪk"
+       "ipa": "ˈðɪs ˈdɪkʃəˌnɛɹi ˈɪz ˈsoʊ ˈθɪk"
       }
      ]
     },
@@ -29787,14 +30305,14 @@ window.BANKS = {
        "en": "really useful",
        "zh": "真的很有用",
        "src": "table",
-       "ipa": "ˈɹɪliː ˈjuːsfəl"
+       "ipa": "ˈɹɪli ˈjuːsfəl"
       },
       {
        "kind": "sentence",
        "en": "These books are very useful.",
        "zh": "這些書非常有用",
        "src": "6-267",
-       "ipa": "ˈðiːz ˈbʊks ˈɑːɹ ˈvɛɹiː ˈjuːsfəl"
+       "ipa": "ˈðiːz ˈbʊks ˈɑːɹ ˈvɛɹi ˈjuːsfəl"
       }
      ]
     }
@@ -29839,7 +30357,7 @@ window.BANKS = {
        "en": "Miss Chen is very kind.",
        "zh": "陳小姐非常友善",
        "src": "1-042",
-       "ipa": "ˈmɪs ˈtʃɛn ˈɪz ˈvɛɹiː ˈkaɪnd"
+       "ipa": "ˈmɪs ˈtʃɛn ˈɪz ˈvɛɹi ˈkaɪnd"
       }
      ]
     },
@@ -29869,7 +30387,7 @@ window.BANKS = {
        "en": "Mrs. Wu just called.",
        "zh": "吳太太剛打電話過來",
        "src": "1-044",
-       "ipa": "ˈmɪsɪz ˈwuː dʒʌst ˈkɔːld"
+       "ipa": "ˈmɪsɪz ˈwuː ˈdʒʌst ˈkɔːld"
       }
      ]
     },
@@ -29878,28 +30396,28 @@ window.BANKS = {
      "level": 1,
      "target": "sir",
      "gloss": "先生",
-     "ipa": "sɝ",
+     "ipa": "ˈsɝ",
      "steps": [
       {
        "kind": "word",
        "en": "sir",
        "zh": "先生",
        "src": "1-066",
-       "ipa": "sɝ"
+       "ipa": "ˈsɝ"
       },
       {
        "kind": "phrase",
        "en": "a sir",
        "zh": "一位先生",
        "src": "table",
-       "ipa": "ə sɝ"
+       "ipa": "ə ˈsɝ"
       },
       {
        "kind": "sentence",
        "en": "Good evening, sir.",
        "zh": "先生，晚安",
        "src": "1-066",
-       "ipa": "ˈɡʊd ˈiːvnɪŋ sɝ"
+       "ipa": "ˈɡʊd ˈiːvnɪŋ ˈsɝ"
       }
      ]
     },
@@ -29918,18 +30436,25 @@ window.BANKS = {
        "ipa": "ˈjæ"
       },
       {
+       "kind": "phrase",
+       "en": "i agree with you",
+       "zh": "我同意你",
+       "src": "table",
+       "ipa": "ˈaɪ əˈɡɹiː ˈwɪð ˈjuː"
+      },
+      {
        "kind": "word",
        "en": "agree",
        "zh": "同意",
        "src": "6-004",
-       "ipa": "ˈəɡɹiː"
+       "ipa": "əˈɡɹiː"
       },
       {
        "kind": "sentence",
        "en": "Yeah, I agree with you.",
        "zh": "是的,我同意你",
        "src": "1-083",
-       "ipa": "ˈjæ ˈaɪ ˈəɡɹiː ˈwɪð ˈjuː"
+       "ipa": "ˈjæ ˈaɪ əˈɡɹiː ˈwɪð ˈjuː"
       }
      ]
     },
@@ -29948,11 +30473,18 @@ window.BANKS = {
        "ipa": "ˈheɪ"
       },
       {
+       "kind": "phrase",
+       "en": "what's up",
+       "zh": "最近怎麼樣",
+       "src": "table",
+       "ipa": "ˈwʌts ˈʌp"
+      },
+      {
        "kind": "sentence",
        "en": "Hey, what's up?",
        "zh": "嗨!最近怎麼樣",
        "src": "2-036",
-       "ipa": "ˈheɪ ʌp"
+       "ipa": "ˈheɪ ˈwʌts ˈʌp"
       }
      ]
     },
@@ -30135,11 +30667,18 @@ window.BANKS = {
        "ipa": "aɪˈdiːə"
       },
       {
+       "kind": "phrase",
+       "en": "have any ideas",
+       "zh": "有什麼點子嗎",
+       "src": "table",
+       "ipa": "ˈhæv ˈɛni aɪˈdiːəz"
+      },
+      {
        "kind": "sentence",
        "en": "Do you have any ideas?",
        "zh": "你有任何點子嗎",
        "src": "6-142",
-       "ipa": "ˈduː ˈjuː ˈhæv ˈɛniː aɪˈdiːəz"
+       "ipa": "ˈduː ˈjuː ˈhæv ˈɛni aɪˈdiːəz"
       }
      ]
     },
@@ -30162,14 +30701,14 @@ window.BANKS = {
        "en": "what's the matter",
        "zh": "發生了什麼事",
        "src": "table",
-       "ipa": "wʌts ðə ˈmætɚ"
+       "ipa": "ˈwʌts ðə ˈmætɚ"
       },
       {
        "kind": "sentence",
        "en": "What's the matter?",
        "zh": "發生了什麼事",
        "src": "6-181",
-       "ipa": "ðə ˈmætɚ"
+       "ipa": "ˈwʌts ðə ˈmætɚ"
       }
      ]
     },
@@ -30199,7 +30738,7 @@ window.BANKS = {
        "en": "It's my pleasure.",
        "zh": "這是我的榮幸",
        "src": "6-209",
-       "ipa": "ˈmaɪ ˈplɛʒɚ"
+       "ipa": "ˈɪts ˈmaɪ ˈplɛʒɚ"
       }
      ]
     },

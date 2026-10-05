@@ -200,25 +200,28 @@ window.BANKS.scenarios.forEach(sc => sc.units.forEach(u =>
 ok('詞組步驟全部來自對照表', phrases.every(p => p.src === 'table'),
    phrases.filter(p => p.src !== 'table').slice(0, 3).map(p => p.en + '/' + p.src).join(' '));
 ok('每個詞組都有非空中文', phrases.every(p => p.zh && p.zh.length > 0));
-let withPh = 0, totU = 0;
+let withPh = 0, totU = 0, noPh = [];
 window.BANKS.scenarios.forEach(sc => sc.units.forEach(u => {
   totU++;
   if (u.steps.some(s => s.kind === 'phrase')) withPh++;
+  else noPh.push(sc.id + '/' + u.target);
 }));
-ok('詞組覆蓋率 > 85%', withPh / totU > 0.85, withPh + '/' + totU);
-// 步驟數上限 4。下限容許 2：有少數例句本身就極短（例如 "I can swim."、
-// "Birds can fly."），硬湊步驟只會生出假內容，所以寧可短也不要假。
+// 2024 起要求 100%：每個單元都一定要有「單字 → 詞組 → 整句」三段式。
+// tools/phrase_expected.json 另外把那 110 個後補的詞組釘死，比對英文與中文。
+ok('每個單元都有詞組步驟（100%）', withPh === totU,
+   withPh + '/' + totU + ' 缺：' + noPh.slice(0, 5).join(' '));
+// 每個單元現在都一定有「單字 → 詞組 → 整句」，所以最少 3 步、最多 4 步。
+// 2024 補齊詞組之後，已經沒有 2 步的單元了（例句過短也不會少掉詞組那一關）。
 const lengths = new Set();
-let twoStep = 0, allUnits = 0;
+let minLen = 99, allUnits = 0;
 window.BANKS.scenarios.forEach(sc => sc.units.forEach(u => {
   lengths.add(u.steps.length);
   allUnits++;
-  if (u.steps.length <= 2) twoStep++;
+  if (u.steps.length < minLen) minLen = u.steps.length;
 }));
-ok('步驟數只有 2/3/4 三種且不超過 4', [...lengths].sort().join(',') === '2,3,4',
+ok('步驟數只有 3/4 兩種（不少於 3、不超過 4）', [...lengths].sort().join(',') === '3,4',
    'step counts: ' + [...lengths].sort().join(','));
-ok('只有少數（<6%）單元因例句過短而只有 2 步', twoStep / allUnits < 0.06,
-   twoStep + '/' + allUnits);
+ok('每個單元至少 3 步', minLen >= 3, 'min=' + minLen + '/' + allUnits);
 
 console.log('\n=== 深層連結（直接開某個步驟）===');
 // 每個場景、每種步驟都用 hash 開一次。

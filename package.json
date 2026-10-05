@@ -5,7 +5,7 @@
   "description": "依生活場景分類的英文單字／片語／句子輸入練習（內容取自《英語單字口袋書（1-6級）》）",
   "scripts": {
     "start": "python -m http.server 8848 --bind 127.0.0.1",
-    "build": "python tools/parse_pdf.py && python tools/apply_fixes.py && python tools/check_lexicon.py && python tools/build_bank.py && python tools/audit_simplified.py",
+    "build": "python tools/parse_pdf.py && python tools/apply_fixes.py && python tools/check_lexicon.py && python tools/build_bank.py && python tools/check_phrases.py && python tools/check_ipa.py && python tools/audit_simplified.py",
     "fix:s2t": "python tools/audit_simplified.py --fix",
     "test": "node tools/test_app.js"
   },
