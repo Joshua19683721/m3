@@ -2706,6 +2706,83 @@ function prepFn(w) {
       }
     }
 
+// ④ 數字後面的可數名詞要用複數：two brothers、three apples
+    //    台灣學生最常漏掉的是這個 s（中文沒有單複數變化）。
+    //    題庫本身是正確的，所以 (X) 是把 s 拿掉、還原成學生常寫錯的樣子。
+    var num = sent.match(/\b(two|three|four|five|six|seven|eight|nine|ten)\s+([A-Za-z]+)\b/i);
+    if (num) {
+      // 數字後面可能連著好幾個形容詞（two older brothers），
+      // 真正要加 s 的是最後那個名詞。
+      // 但遇到介系詞、限定詞、標點就要停，不能跨過去抓
+      //（"four lessons in the morning" 的 morning 不是數字的名詞）。
+      var rest = sent.slice(sent.indexOf(num[0]) + num[0].length).trim();
+      var toks = rest.split(/\s+/);
+      var cand = num[2];
+      for (var ti = 0; ti < toks.length; ti++) {
+        var tokRaw = toks[ti].replace(/[.,!?;:"']+$/, '');
+        var tokLow = tokRaw.toLowerCase();
+        if (!tokRaw) break;
+        if (PREPS[tokLow] || DETS[tokLow] || DETS2[tokLow] || PRONOUNS[tokLow] ||
+            BE[tokLow] || MODALS[tokLow] || tokRaw === num[1]) break;
+        cand = tokRaw;
+        if (ADJECTIVES[tokLow] !== 1) break;
+      }
+      var candLow = cand.toLowerCase();
+      // 只看「單數可數名詞」——不可數、專有名詞、形容詞都不適用。
+      // 注意：這裡不跳過「已经是複數」的字，因為這個規則的目的
+      // 就是拿正確的複數句當 (O)、把 s 拿掉當 (X) 來教學。
+      var uncountable = MASS_NOUNS[candLow] === 1;
+      var isProper = /^[A-Z]/.test(cand);
+      var isAdj = ADJECTIVES[candLow] === 1;
+      // 結尾是 s 才會有「漏 s」的問題可以教（bus 這種單複同形除外）
+      var hasS = /s$/i.test(cand) && !SINGULAR_S_EXTRA[candLow];
+      if (!uncountable && !isProper && !isAdj && hasS) {
+        var wrong = candLow.replace(/s$/i, '');
+        if (wrong && wrong !== candLow && !/ss$/.test(candLow)) {
+          out.push({
+            title: '數字後面的名詞要變複數',
+            bad: '(X) ' + sent.replace(new RegExp('\\b' + cand + '\\b', 'i'), wrong),
+            ok: '(O) ' + sent,
+            why: '英文裡兩隻以上的可數名詞要用複數：two brothers、three apples。中文沒有單複數變化，所以一到數字後面就容易漏掉這個 s。'
+          });
+        }
+      }
+    }
+
+// ⑤ 星期與日期用 on、月份用 in、幾點用 at。
+    //    題庫大部分是正確的，所以 (X) 是把介系詞換成錯的那個；
+    //    但題庫若已經寫錯，就要反過來：(X) 是錯的那句、(O) 是改正後的句子。
+    var MONTHS = /^(January|February|March|April|May|June|July|August|September|October|November|December)$/;
+    var DAYS = /^(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)$/;
+    var when = sent.match(/\b(in|on)\s+(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday|January|February|March|April|May|June|July|August|September|October|November|December)\b/);
+    if (when) {
+      var prep = when[1].toLowerCase();
+      var word = when[2];
+      var want = DAYS.test(word) ? 'on' : 'in';
+      var other = DAYS.test(word) ? 'in' : 'on';
+      var isDay = DAYS.test(word);
+      if (prep === want) {
+        // 題庫正確：(O) 是原句，(X) 是把介系詞換錯
+        out.push({
+          title: isDay ? '星期前面用 on' : '月份前面用 in',
+          bad: '(X) ' + sent.replace(new RegExp('\\b' + prep + '\\s+' + word + '\\b'), other + ' ' + word),
+          ok: '(O) ' + sent,
+          why: isDay
+            ? '星期前面固定用 on：on Monday、on Friday。月份才用 in。寫之前先想「這是星期幾」。'
+            : '月份前面固定用 in：in July、in October。星期才用 on（on Friday），幾點用 at（at ten）。'
+        });
+      } else {
+        // 題庫本身寫錯（這種情況很少，但要能正確顯示）
+        out.push({
+          title: isDay ? '星期前面用 on' : '月份前面用 in',
+          bad: '(X) ' + sent,
+          ok: '(O) ' + sent.replace(new RegExp('\\b' + prep + '\\s+' + word + '\\b'), want + ' ' + word),
+          why: isDay
+            ? '星期前面固定用 on：on Monday、on Friday。這句用了 ' + prep + '，要改成 on。'
+            : '月份前面固定用 in：in July、in October。這句用了 ' + prep + '，要改成 in。'
+        });
+      }
+    }
     if (!out.length) {
       var t = String(target || '');
       var here = t && sent.toLowerCase().indexOf(t.toLowerCase()) >= 0;
