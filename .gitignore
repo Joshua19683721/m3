@@ -27,3 +27,6 @@ shot-*.png
 # 原始 PDF 版權／檔案較大，預設不進版控；
 # 若希望保留出處，把下面這行註解掉即可
 source.pdf
+
+# OpenCode 本機工作階段資料（loop log、session json），不進版控
+.opencode/

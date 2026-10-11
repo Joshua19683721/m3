@@ -92,7 +92,8 @@ def convert(text):
 # 那份檔案裡有 110 筆中文卻完全沒被掃到。改成自動走訪，以後不會再漏。
 TEXT_SUFFIX = {".py", ".js", ".json", ".html", ".css", ".md", ".bat",
                ".txt", ".yml", ".yaml", ".toml", ".cfg", ".ini"}
-SKIP_DIRS = {".git", "node_modules", "cache", "__pycache__", ".idea", ".vscode"}
+SKIP_DIRS = {".git", "node_modules", "cache", "__pycache__", ".idea", ".vscode",
+              ".opencode"}
 # 只排除「本來就必須含簡體字」的檔案。
 # data/banks.js 雖然是產物，但它是使用者實際看到的中文，照樣要掃。
 SKIP_NAMES = {
