@@ -77,9 +77,46 @@
   }
 
   /* ------------------------------------------------------------ 語音 */
+  /* 全部朗讀固定使用微軟的 Mark（en-US）。
+     Mark 是 Windows 內建的自然男聲，咬字清楚、尾音收得完整，
+     適合國小學生跟著唸；統一音色也讓全班聽起來一致。
+     找不到 Mark 時（例如 macOS 或沒裝語音包）才退回一般英文語音，
+     否則整個網頁會沒有聲音。 */
+  var PREFERRED_VOICE_RE = /microsoft\s+mark/i;
+
+  function pickPreferredVoice(voices) {
+    var cands = (voices || []).filter(function (v) {
+      return PREFERRED_VOICE_RE.test(String(v.name || ''));
+    });
+    if (!cands.length) return null;
+    // 先找 en-US，找不到再用同一個 Mark 的其他語系
+    var us = cands.filter(function (v) { return /^en[-_]US/i.test(v.lang || ''); });
+    return us[0] || cands[0];
+  }
+
   function initVoices() {
     if (!('speechSynthesis' in window)) return;
     var voices = speechSynthesis.getVoices() || [];
+    var sel = $('voiceSelect');
+
+    var mark = pickPreferredVoice(voices);
+    if (mark) {
+      voice = mark;
+      // 語音固定後就不需要讓使用者再選一次，只顯示目前用的聲音。
+      sel.innerHTML = '';
+      var only = document.createElement('option');
+      only.value = mark.name;
+      only.textContent = mark.name + ' (' + mark.lang + ')';
+      only.selected = true;
+      sel.appendChild(only);
+      sel.disabled = true;
+      sel.title = '固定使用 Microsoft Mark（en-US）朗讀';
+      return;
+    }
+
+    // 這台裝置沒有 Mark：退回原本的英文語音清單，至少還聽得到聲音。
+    sel.disabled = false;
+    sel.title = '這台裝置沒有 Microsoft Mark，改用其他英文語音';
     var en = voices.filter(function (v) { return /^en/i.test(v.lang); });
     en.sort(function (a, b) {
       function score(v) {
@@ -89,7 +126,6 @@
       }
       return score(b) - score(a);
     });
-    var sel = $('voiceSelect');
     sel.innerHTML = '';
     if (!en.length) {
       var o = document.createElement('option');
@@ -117,10 +153,17 @@
     // 語速由上方選單控制，存進 localStorage；預設 0.85（稍慢，適合跟著唸）
     var rate = parseFloat(state.settings.rate);
     if (!isFinite(rate) || rate <= 0) rate = 0.85;
+    // voices 是非同步載入的（onvoiceschanged），有時第一次點朗讀
+    // voice 還是 null。這裡再確認一次有沒有 Microsoft Mark 可用。
+    if (!voice) {
+      var markNow = pickPreferredVoice(speechSynthesis.getVoices() || []);
+      if (markNow) voice = markNow;
+    }
     speechSynthesis.cancel();
     for (var i = 0; i < (times || 1); i++) {
       var u = new SpeechSynthesisUtterance(clean);
       if (voice) u.voice = voice;
+      u.lang = voice && voice.lang ? voice.lang : 'en-US';
       u.rate = rate;
       u.pitch = 1;
       speechSynthesis.speak(u);

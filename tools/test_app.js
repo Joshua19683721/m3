@@ -537,7 +537,8 @@ ok('匯入後語速選單還原成 0.5', doc.getElementById('rateSelect').value 
 // 因為 syncSettings() 只在 boot 時跑一次，直接改 localStorage 不會重跑。
 // 注意：boot() 是在 DOMContentLoaded 跑的，eval 完還要等一個 tick 才真的啟動，
 // 不等會讀到 HTML 的預設值而不是 localStorage 的值（測試會假通過）。
-async function freshDom(storedSettings) {
+// voices 可帶入假語音清單，用來測「固定使用 Microsoft Mark」這件事。
+async function freshDom(storedSettings, voices) {
   const d = new JSDOM(html, {
     runScripts: 'dangerously', url: 'http://127.0.0.1:8848/index.html', pretendToBeVisual: true
   });
@@ -545,11 +546,13 @@ async function freshDom(storedSettings) {
     d.window.localStorage.setItem('scen.settings.v1', JSON.stringify(storedSettings));
   }
   const rec = [];
+  const vlist = voices || [];
   d.window.SpeechSynthesisUtterance = function (t) {
-    this.text = t; this.rate = 1; this.pitch = 1; this.voice = null;
+    this.text = t; this.rate = 1; this.pitch = 1; this.voice = null; this.lang = '';
   };
   d.window.speechSynthesis = {
-    cancel() {}, speak(u) { rec.push(u); }, getVoices() { return []; }, onvoiceschanged: null
+    cancel() {}, speak(u) { rec.push(u); },
+    getVoices() { return vlist; }, onvoiceschanged: null
   };
   d.window.eval(fs.readFileSync(path.join(root, 'data/banks.js'), 'utf8'));
   d.window.eval(fs.readFileSync(path.join(root, 'assets/js/app.js'), 'utf8'));
@@ -576,6 +579,69 @@ async function freshDom(storedSettings) {
   ok('壞值 rate="abc" 回退 0.85，語音仍可朗讀',
      sBad.length >= 1 && Math.abs(sBad[sBad.length - 1].rate - 0.85) < 1e-9,
      JSON.stringify(sBad[sBad.length - 1]));
+}
+
+console.log('\n=== 朗讀語音固定用 Microsoft Mark ===');
+{
+  // 模擬 Windows 常見的語音清單：Mark 夾在其他聲音中間，
+  // 而且還有 Google US English、Samantha 這些原本排序會贏的字。
+  const VOICES = [
+    { name: 'Google US English', lang: 'en-US' },
+    { name: 'Samantha', lang: 'en-US' },
+    { name: 'Microsoft David', lang: 'en-US' },
+    { name: 'Microsoft Mark', lang: 'en-US' },
+    { name: 'Microsoft Zira', lang: 'en-US' },
+    { name: 'Microsoft Mark', lang: 'en-GB' }
+  ];
+  const { doc: dV, spoken: sV, dom: domV } = await freshDom({}, VOICES);
+  const sel = dV.getElementById('voiceSelect');
+  ok('有 Microsoft Mark 時，語音選單只顯示 Mark',
+     sel.options.length === 1 && /Microsoft Mark/.test(sel.options[0].textContent),
+     sel.options.length + ' 個選項: ' +
+       Array.prototype.map.call(sel.options, o => o.textContent).join(' | '));
+  ok('顯示的是 en-US 那個 Mark',
+     sel.options[0] && /en-US/.test(sel.options[0].textContent),
+     sel.options[0] && sel.options[0].textContent);
+  ok('語音選單鎖定，避免被改掉', sel.disabled === true);
+
+  domV.window.location.hash = '#school/0/3';
+  await tick2(domV.window);
+  sV.length = 0;
+  dV.getElementById('speakBtn').dispatchEvent(
+    new domV.window.Event('click', { bubbles: true }));
+  const used = sV.length ? sV[sV.length - 1].voice : null;
+  ok('朗讀真的用 Microsoft Mark，不是 Google / Samantha',
+     !!used && /^Microsoft Mark/i.test(used.name) && used.lang === 'en-US',
+     used ? used.name + ' (' + used.lang + ')' : '(沒有語音)');
+}
+{
+  // 沒有 Mark 的裝置（例如 macOS）要退回一般英文語音，不能整個沒聲音。
+  const VOICES = [
+    { name: 'Google US English', lang: 'en-US' },
+    { name: 'Samantha', lang: 'en-US' }
+  ];
+  const { doc: dN, spoken: sN, dom: domN } = await freshDom({}, VOICES);
+  const sel = dN.getElementById('voiceSelect');
+  ok('沒有 Mark 時仍列出其他英文語音（不會沒聲音）',
+     sel.options.length === VOICES.length, sel.options.length + ' 個選項');
+  ok('沒有 Mark 時選單可切換', sel.disabled === false);
+
+  domN.window.location.hash = '#school/0/3';
+  await tick2(domN.window);
+  sN.length = 0;
+  dN.getElementById('speakBtn').dispatchEvent(
+    new domN.window.Event('click', { bubbles: true }));
+  const used = sN.length ? sN[sN.length - 1].voice : null;
+  ok('沒有 Mark 時改用其他英文語音朗讀',
+     !!used && /^en/i.test(used.lang), used ? used.name + ' (' + used.lang + ')' : '(沒有語音)');
+}
+{
+  // 完全沒有英文語音時，選單要有提示而不是空白。
+  const { doc: dZ } = await freshDom({}, []);
+  const sel = dZ.getElementById('voiceSelect');
+  ok('完全沒有英文語音時選單有提示文字',
+     sel.options.length === 1 && sel.options[0].textContent.indexOf('沒有英文語音') >= 0,
+     sel.options.length + ' 個選項');
 }
 
 console.log('\n================  ' + pass + ' passed, ' + fail + ' failed  ================\n');
