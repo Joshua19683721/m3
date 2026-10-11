@@ -475,6 +475,51 @@ ok('資料裡仍看得到台灣寫法（台、後）',
    /台/.test(JSON.stringify(window.BANKS)) &&
    /後/.test(JSON.stringify(window.BANKS)));
 
+console.log('\n=== 朗讀語速 ===');
+// jsdom 沒有語音合成，做一個會記錄 rate 的假件
+const spoken = [];
+window.SpeechSynthesisUtterance = function (t) { this.text = t; this.rate = 1; this.pitch = 1; this.voice = null; };
+window.speechSynthesis = {
+  cancel() {}, speak(u) { spoken.push(u); }, getVoices() { return []; }, onvoiceschanged: null
+};
+const rateSel = doc.getElementById('rateSelect');
+ok('語速選單存在', !!rateSel);
+ok('預設語速 0.85（稍慢）', rateSel && rateSel.value === '0.85', rateSel && rateSel.value);
+ok('語速有慢／正常／快多種選項', rateSel && rateSel.options.length >= 5,
+   rateSel && String(rateSel.options.length));
+ok('語速選項值都是正數', rateSel && [].every.call(rateSel.options, o => parseFloat(o.value) > 0));
+
+window.location.hash = '#school/0/3';
+await tick();
+spoken.length = 0;
+rateSel.value = '0.5';
+rateSel.dispatchEvent(new window.Event('change', { bubbles: true }));
+await tick();
+const rateSetting = JSON.parse(window.localStorage.getItem('scen.settings.v1') || '{}');
+ok('切換語速後寫入 localStorage', parseFloat(rateSetting.rate) === 0.5,
+   JSON.stringify(rateSetting));
+ok('切換語速後立刻用新語速朗讀', spoken.length >= 1 && Math.abs(spoken[spoken.length - 1].rate - 0.5) < 1e-9,
+   JSON.stringify(spoken[spoken.length - 1]));
+
+spoken.length = 0;
+rateSel.value = '1';
+rateSel.dispatchEvent(new window.Event('change', { bubbles: true }));
+await tick();
+ok('語速 1× 正常有被套用', spoken.length >= 1 && Math.abs(spoken[spoken.length - 1].rate - 1) < 1e-9,
+   JSON.stringify(spoken[spoken.length - 1]));
+
+// 重開畫面後仍記得住
+spoken.length = 0;
+rateSel.value = '0.5';
+rateSel.dispatchEvent(new window.Event('change', { bubbles: true }));
+await tick();
+window.location.hash = '#food/0/0';
+await tick();
+window.location.hash = '#school/0/3';
+await tick();
+ok('重新載入步驟後語速仍是 0.5', doc.getElementById('rateSelect').value === '0.5',
+   doc.getElementById('rateSelect').value);
+
 console.log('\n================  ' + pass + ' passed, ' + fail + ' failed  ================\n');
 process.exit(fail ? 1 : 0);
 }

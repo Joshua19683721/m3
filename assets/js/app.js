@@ -27,7 +27,7 @@
     stepIndex: 0,
     progress: {},              // sid -> { done:{unitId:[stepIdx]}, cur:{unit,step}, words:{key:[idx]} }
     mistakes: {},              // wordKey -> {en,zh,n,sid,unitId}
-    settings: { hideZh: false, autoNext: true, autoSpeak: true, repeat: 3 }
+    settings: { hideZh: false, autoNext: true, autoSpeak: true, repeat: 3, rate: 0.85 }
   };
 
   var voice = null;
@@ -114,11 +114,14 @@
     // 先 canon 成半形：語音合成引擎對 ASCII 撇號的處理最穩
     var clean = canon(text).replace(/[^A-Za-z0-9\s'\-]/g, ' ').trim();
     if (!clean) return;
+    // 語速由上方選單控制，存進 localStorage；預設 0.85（稍慢，適合跟著唸）
+    var rate = parseFloat(state.settings.rate);
+    if (!isFinite(rate) || rate <= 0) rate = 0.85;
     speechSynthesis.cancel();
     for (var i = 0; i < (times || 1); i++) {
       var u = new SpeechSynthesisUtterance(clean);
       if (voice) u.voice = voice;
-      u.rate = 0.85;
+      u.rate = rate;
       u.pitch = 1;
       speechSynthesis.speak(u);
     }
@@ -2277,6 +2280,13 @@
     $('repeatSelect').onchange = function () {
       state.settings.repeat = this.value; saveAll();
     };
+    $('rateSelect').onchange = function () {
+      state.settings.rate = parseFloat(this.value) || 0.85;
+      saveAll();
+      // 立刻用新語速唸一次，讓學生直接聽出差別
+      var st = curStep();
+      if (st && st.en) speak(st.en, 1);
+    };
     $('zhToggle').onchange = function () {
       state.settings.hideZh = this.checked; saveAll(); renderPractice();
     };
@@ -2341,6 +2351,9 @@
     $('autoNextToggle').checked = state.settings.autoNext;
     $('autoSpeakToggle').checked = state.settings.autoSpeak;
     $('repeatSelect').value = String(state.settings.repeat);
+    // 語速：舊進度沒有這個鍵時用預設 0.85
+    var r = parseFloat(state.settings.rate);
+    $('rateSelect').value = String(isFinite(r) && r > 0 ? r : 0.85);
   }
 
   /* ------------------------------------------------------------ 啟動 */
