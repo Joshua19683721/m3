@@ -1602,73 +1602,51 @@
 
   /* 常用形容詞：顏色、大小、感覺、評價都在這裡 */
   var ADJECTIVES = {};
-  ('big small large little long short tall high low wide narrow thick thin deep ' +
-   'shallow heavy light fast slow quick hot cold warm cool wet dry clean dirty ' +
-   'new old young fresh early late good bad nice fine great awful terrible ' +
-   'wonderful excellent perfect lovely beautiful pretty cute handsome ugly ' +
-   'smart clever wise foolish stupid silly brave afraid scared happy sad angry ' +
-   'glad sorry tired hungry thirsty sick ill healthy strong weak rich poor ' +
-   'easy hard difficult simple complex cheap expensive free busy quiet loud ' +
-   'noisy soft hard smooth rough sharp dull straight curved round square flat ' +
-   'safe dangerous famous popular common strange normal usual special different ' +
-   'same similar important necessary useful helpful kind friendly polite rude ' +
-   'honest brave careful careless lucky unlucky true false real right wrong ready ' +
-   'sure certain open closed full empty clean dirty near far close distant ' +
-   'red orange yellow green blue purple pink brown black white gray gray colorful ' +
-   'bright dark clear cloudy sunny rainy snowy windy foggy stormy fair chilly ' +
-   'freezing boiling lukewarm tepid mild gentle wild tame domestic foreign ' +
-   'local national international modern ancient old-fashioned trendy stylish ' +
-   'casual formal comfortable uncomfortable convenient inconvenient possible ' +
-   'impossible probable likely unlikely certain uncertain obvious clear evident ' +
-   'apparent visible invisible audible silent fragrant stinky smelly tasty ' +
-   'delicious yummy disgusting sweet sour bitter salty spicy bland fresh stale ' +
-   'ripe raw cooked burnt tender tough juicy crispy crunchy chewy smooth creamy ' +
-   'thick runny watery fatty greasy lean nutritious healthy unhealthy fattening ' +
-   'hourly nightly daily everyday everyday sunny cloudy rainy stormy snowy ' +
-   'windy foggy misty hazy clear bright dark dim gloomy cheerful merry jolly ' +
-   'joyful delighted pleased content satisfied grateful thankful appreciative ' +
-   'proud ashamed embarrassed shy confident eager enthusiastic passionate ' +
-   'indifferent apathetic bored curious interested fascinated intrigued ' +
-   'confused puzzled baffled bewildered lost found amazed astonished astounded ' +
-   'surprised shocked startled stunned appalled horrified terrified panicked ' +
-   'nervous anxious worried concerned uneasy restless impatient patient calm ' +
-   'relaxed serene tranquil peaceful still quiet silent noisy loud deafening ' +
-   'annoying irritating frustrating satisfying rewarding fulfilling meaningful ' +
-   'pointless useless worthless valuable precious priceless cheap affordable ' +
-   'expensive overpriced reasonable fair unfair just unjust equal uneven ' +
-   'balanced stable unstable steady shaky firm rigid flexible elastic ' +
-   'stretchable durable sturdy fragile delicate sturdy robust tough resilient ' +
-   /* 分詞形容詞：和進行式動詞拼法一樣，
-      不收的話 "Science is interesting" 的 interesting
-      會被標成動詞（-ing）。 */
-   'interesting exciting boring tiring surprising amazing confusing ' +
-   'pleasing relaxing worrying frightening charming promising disappointed ' +
-   'embarrassing encouraging discouraging exhausting refreshing thrilling ' +
-   'stretchable durable sturdy fragile delicate sturdy robust tough resilient ' +
-   // 分詞形容詞：和進行式動詞拼法一樣，
-   // 不放這裡的話 "Science is interesting" 的 interesting
-   // 會被標成動詞（-ing）。
-   'interesting exciting boring tiring surprising amazing confusing ' +
-   'pleasing relaxing worrying frightening charming promising disappointed ' +
-   // able / mad / married 是常見的形容詞，
-   // 漏掉會讓 "Jane is able to come" 的 able 掉成名詞。
-   'able mad married single alive asleep awake afraid aware sure ' +
-   'worth ready full empty careful careless useful useless ' +
-   'similar different common strange normal usual particular ' +
-   'favorite favourite perfect wonderful terrible lovely ' +
-   'bored excited interested surprised tired scared frightened relaxed ' +
-   'delighted pleased content satisfied grateful thankful ' +
-   'embarrassed ashamed shy confident eager enthusiastic passionate ' +
-   'indifferent apathetic curious fascinated intrigued confused ' +
-   'puzzled baffled bewildered amazed astonished astounded ' +
-   'surprised shocked startled stunned appalled horrified terrified ' +
-   'panicked nervous anxious worried concerned uneasy restless ' +
-   'impatient patient calm serene tranquil peaceful annoying ' +
-   'irritating frustrating satisfying rewarding fulfilling meaningful ' +
-   'pointless worthless valuable precious priceless affordable ' +
-   'reasonable fair unjust equal uneven balanced stable unstable ' +
-   'steady shaky firm rigid flexible elastic durable ' +
-   'embarrassed interested bored excited tired surprised frightened relaxed')
+  ('able absent affordable afraid alive alone amazed amazing ancient angry ' +
+   'annoyed annoying anxious apathetic appalled apparent appreciative ashamed asleep astonished ' +
+   'astounded audible awake aware awful bad baffled balanced beautiful bewildered ' +
+   'big bitter black bland blind blue boiled boiling bored boring ' +
+   'brave bright brown burnt busy calm careful careless casual certain ' +
+   'charming cheap cheerful chewy chilled chilly circular clean clear clever ' +
+   'close closed cloudy cold colorful comfortable common complex concerned confident ' +
+   'confused confusing content convenient cooked cool correct courageous crazy creamy ' +
+   'crispy crooked crunchy curious curved cute daily dangerous dark dead ' +
+   'deaf deafening deep delicate delicious delighted different difficult dim dirty ' +
+   'disappointed discouraging disgusting distant domestic dry dull durable eager early ' +
+   'easy elastic embarrassed embarrassing empty encouraging enthusiastic equal everyday evident ' +
+   'excellent excited exciting exhausting expensive fair false famous fancy far ' +
+   'fascinated fast fat fattening fatty favorite favourite fine firm flat ' +
+   'flavorless flexible foggy foolish foreign formal found fragile fragrant free ' +
+   'freezing fresh friendly frightened frightening frustrating fulfilling full fun funny ' +
+   'gentle giant glad gloomy good gorgeous grateful gray greasy great ' +
+   'green handsome happy hard hazy healthy heavy helpful high honest ' +
+   'horrified hot hourly huge hungry icy ill impatient important impossible ' +
+   'inconvenient indifferent interested interesting international intrigued invaluable invisible irritated irritating ' +
+   'jolly joyful juicy just kind large late lazy lean light ' +
+   'likely little local lonely long loose lost loud lovely low ' +
+   'lucky lukewarm mad married mean meaningful meaningless merry mild misty ' +
+   'modern muddy narrow national near neat necessary nervous new nice ' +
+   'nightly noisy normal nutritious obese obvious old old-fashioned open orange ' +
+   'ordinary oval overpriced pale panicked particular passionate patient peaceful perfect ' +
+   'pink plain pleased pleasing plenty pointed pointless polite poor popular ' +
+   'possible precious pretty priceless probable promising proud public purple puzzled ' +
+   'quick quiet rainy rare raw ready real reasonable rectangular red ' +
+   'refreshing relaxed relaxing reliable resilient restless rewarding rich right rigid ' +
+   'ripe robust rotten rough round rude runny rural sad safe ' +
+   'salty same satisfied satisfying scared scary scientific seafood serene shaky ' +
+   'shallow sharp shiny shocked short shy sick silent silky silly ' +
+   'similar simple single skinny slow sluggish small smart smelly smooth ' +
+   'snowy soft sore sorry sour special spicy spoiled square stable ' +
+   'stale startled steady still stinky stormy straight strange stretchable strong ' +
+   'stunned stupid sturdy stylish sunny sure surprised surprising sweaty sweet ' +
+   'tall tame tasty tender tepid terrible terrified thankful thick thin ' +
+   'thirsty thrilling tidy tiny tired tiring tough tranquil trendy triangular ' +
+   'troublesome true typical ugly unable uncertain uncomfortable uneasy uneven unfair ' +
+   'unfortunate unhappy unhealthy uninteresting unjust unlikely unlucky unpleasant unreal unsafe ' +
+   'unstable untidy unusual upset urban useful useless usual valuable various ' +
+   'visible warm warm-hearted watery weak wealthy welcome wet white whole ' +
+   'wide wild windy wise wonderful wooden worried worrying worse worst ' +
+   'worth worthless wrong yellow young yummy')
     .split(/\s+/).forEach(function (w) { if (w) ADJECTIVES[w] = 1; });
 
   /* 比較級／最高級只能用「列出來的」，不能用 -er / -est 後綴猜——
@@ -1823,7 +1801,70 @@
 
   /* 介系詞裡 at / on / in 的時間地點用法
      是學生最愛損的，單獨提出來。 */
-  function prepFn(w) {
+  /* 限定詞四類，功能不同：冠詞、指示詞、領屬、數量。
+   原本一律寫「決定後面的名詞用單複數」，那只對前三類成立；
+   對 my 這類領屬並不成立——它講的是「誰的」。 */
+  function detFn(w) {
+    if (w === 'a' || w === 'an') return 'a / an 表示「一個」，看發音不看拼字（an hour）';
+    if (w === 'the') return 'the 表示「那一個」，對方已知或唯一的事物';
+    if (w === 'this' || w === 'that') return '這個∕那個，指近或指遠，後面接單數名詞';
+    if (w === 'these' || w === 'those') return '這些∕那些，後面一定接複數名詞';
+    if (w === 'my' || w === 'your' || w === 'his' || w === 'her' ||
+        w === 'its' || w === 'our' || w === 'their') {
+      return '領屬限定詞，表示「誰的」，後面接名詞';
+    }
+    if (w === 'every' || w === 'each') return '每一個，後面接單數名詞';
+    if (w === 'all' || w === 'both') return '全部∕兩者都是，後面接複數名詞';
+    if (w === 'no') return 'no 表示「沒有」，後面可接單數或複數名詞';
+    return '放在名詞前面，限定它指的是哪一個或多少';
+  }
+
+  /* 連接詞分並列與從屬：and / or / but 把平行成分接起來；
+     because / if / when / although 帶子句，前後有主從關係。 */
+  function conjFn(w) {
+    if (w === 'and') return 'and 把平行的成分接起來：Tom and Jerry';
+    if (w === 'or') return 'or 表示「或者」，用在選擇';
+    if (w === 'but') return 'but 表示「但是」，前後是轉折';
+    if (w === 'so') return 'so 表示「所以」，前後是原因與結果';
+    if (w === 'because') return 'because 帶原因子句：because it is raining';
+    if (w === 'if') return 'if 帶條件子句：如果…就…';
+    if (w === 'when') return 'when 帶時間子句：當…的時候';
+    if (w === 'while') return 'while 帶時間子句，強調兩件事同時發生';
+    if (w === 'although' || w === 'though') return '表示「雖然」，前後是讓步';
+    if (w === 'since' || w === 'until' || w === 'after' || w === 'before') {
+      return '帶時間子句，說明動作發生的時間點';
+    }
+    return '把兩個詞或子句接起來';
+  }
+
+  /* 副詞三類：頻率、程度、地點。
+     原本一律寫「修飾動詞、形容詞或整句」，可識別度不夠。 */
+  var FREQ_ADV = {};
+  ('always often sometimes usually seldom rarely never hardly ever ' +
+   'normally generally typically occasionally frequently constantly')
+    .split(/\s+/).forEach(function (w) { if (w) FREQ_ADV[w] = 1; });
+
+  var DEGREE_ADV = {};
+  ('very really quite pretty rather too so extremely incredibly ' +
+   'absolutely completely totally especially particularly')
+    .split(/\s+/).forEach(function (w) { if (w) DEGREE_ADV[w] = 1; });
+
+  var PLACE_ADV = {};
+  ('here there everywhere nowhere anywhere somewhere upstairs ' +
+   'downstairs inside outside abroad away back home indoors outdoors')
+    .split(/\s+/).forEach(function (w) { if (w) PLACE_ADV[w] = 1; });
+
+  function advFn(w) {
+    if (FREQ_ADV[w]) return '頻率副詞，回答「多久做一次」，放在動詞前面';
+    if (DEGREE_ADV[w]) return '程度副詞，修飾形容詞或副詞（多麼、太…）';
+    if (PLACE_ADV[w]) return '地點副詞，說明在哪裡或往哪裡';
+    if (/ly$/.test(w)) return '-ly 副詞，說明動作怎麼做的';
+    if (w === 'now' || w === 'then' || w === 'today' || w === 'tomorrow' || w === 'yesterday') {
+      return '時間副詞，說明什麼時候發生';
+    }
+    return '修飾動詞、形容詞或整句話，補充說明';
+  }
+function prepFn(w) {
     if (w === 'at') return 'at 用於幾點（at ten）、小地點（at school）、街\u9053號碼';
     if (w === 'on') return 'on 用於星期（on Monday）、日期、表面接觸（on the table）';
     if (w === 'in') return 'in 用於早上\u2215下午\u2215晚上、月份、年、大地點與內部（in the box）';
@@ -1857,6 +1898,8 @@
     var prevWasLet = false;          // Let's get / Let me know → 下一個是動詞
     var prevWasBe = false;           // be born / was opened → 後面是過去分詞
     var prevWasBeAt = -1;            // be 動詞的位置，用來確保分詞緊接在後
+    var lastNonAdvAt = -1;           // 最近一個「非副詞」字的位置，見 emit()
+    var lastNonAdvWasBe = false;      // 那個非副詞字是不是 be 動詞
     var prevWasAdj = false;          // big enough → enough 是副詞不是限定詞
     var prevWasPrep = false;         // 介系詞後面的名詞是賓語
 
@@ -1904,6 +1947,10 @@
       var w = tok.toLowerCase();
 
       function emit(pos, fn, showTok) {
+        // 記住最近一個非副詞字的位置。副詞可以插在 be 動詞和其後面形容詞之間
+        // （"She is often late." 的 late），所以不能只比對 prevWasBeAt === i - 1，
+        // 要確認 be 動詞之後一路到這裡都是副詞。
+        if (pos !== '副詞') { lastNonAdvAt = i; lastNonAdvWasBe = (pos === 'be 動詞'); }
         rows.push({ tok: showTok || tok, pos: pos, fn: fn, mark: 'O' });
       }
 
@@ -1911,6 +1958,9 @@
       if (/^[^\sA-Za-z0-9']$/.test(tok)) {
         afterDet = false; prevWasPronounObj = false; prevWasTo = false;
         prevWasModal = false; prevWasConj = false; prevWasLet = false; prevWasBe = false; prevWasBeAt = -1;
+        // 逗號∕分號∕冒號後面往往是新子句，主詞要重新判斷。
+        // 沒這行的話 "If it rains, we will stay home." 的 we 會被判成受詞代名詞。
+        if (/[,;:]/.test(tok)) { sawVerb = false; }
         emit('標點', punctFn(tok));
         return;
       }
@@ -2041,7 +2091,7 @@
         if (SUBORD.test(w)) { sawVerb = false; }
         afterDet = false; prevWasTo = false; prevWasModal = false;
         prevWasConj = /^(and|or|but)$/.test(w);
-        emit('連接詞', '把兩個詞或子句接起來');
+        emit('連接詞', conjFn(w));
         return;
       }
       // ⑧ 助動詞縮寫 've / 'll / 'd
@@ -2059,7 +2109,7 @@
         var nextIsVerb = nextTok && (BE[nextTok] || VERBS[nextTok] || verbBase(nextTok));
         if (nextIsVerb) {
           prevWasTo = true; afterDet = false; prevWasModal = false;
-          emit('不定詞 to', 'to + 動詞原形，表示目的或想要做的事');
+        emit('不定詞 to', 'to + 動詞原形，表示目的、對象或未來的動作');
           return;
         }
         afterDet = true; prevWasModal = false;
@@ -2100,7 +2150,7 @@
       // ⑩-2 並列／全體限定詞
       if (DETS2[w] && !PRONOUNS[w]) {
         afterDet = true; prevWasTo = false;
-        emit('限定詞', '放在名詞前，決定後面的名詞用單數還是複數');
+        emit('限定詞', detFn(w));
         return;
       }
       // ⑪ 介系詞
@@ -2112,16 +2162,18 @@
       // ⑪ 限定詞／所有格
       if (DETS[w]) {
         afterDet = true; prevWasTo = false; prevWasModal = false;
-        emit('限定詞', '放在名詞前，決定後面的名詞用單數還是複數');
+        emit('限定詞', detFn(w));
         return;
       }
       // ⑬ 副詞
       // 但 be 動詞後面要優先當形容詞："The bus is late" 的 late 是形容詞，
       // "I get up late" 的 late 才是副詞。late / early / right 都算。
+      // 中間可以夾副詞（"She is often late."），所以用 lastNonAdvAt 判斷：
+      // 若上一次的非副詞字就是 be 動詞，說明形容詞直接跟在 be 動詞的語意位置。
       if ((ADVERBS[w] || /ly$/.test(w)) &&
-          !(prevWasBe && prevWasBeAt === i - 1 && CONTEXT_ADJ[w])) {
+          !((prevWasBe || lastNonAdvWasBe) && CONTEXT_ADJ[w])) {
         afterDet = false; prevWasTo = false; prevWasModal = false;
-        emit('副詞', '修飾動詞、形容詞或整句話，說明怎麼做或多麼');
+        emit('副詞', advFn(w));
         return;
       }
       // ⑬-2 形容詞後面接 enough：enough 是副詞（"not big enough"），不是限定詞
