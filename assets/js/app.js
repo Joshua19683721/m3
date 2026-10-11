@@ -1390,6 +1390,18 @@
   var DETS2 = {};
   ('both either neither each every all some any most many few several enough other another')
     .split(/\s+/).forEach(function (w) { if (w) DETS2[w] = 1; });
+
+  /* 「粒子 + 名詞」的固定搭配，這些都是介系詞。
+     沒有這份表的話 in summer / on sale 會被誤判成副詞粒子——
+     它們和「get off work」的 off 一樣是「粒子 + 小寫名詞」，只能靠對照表分辨。 */
+  var PREP_COLLOCATIONS = {};
+  ('in fact,in art,in class,in music,in writing,in trouble,in public,in front,'
+   + 'in spring,in summer,in autumn,in fall,in winter,in lakes,in big,in modern,'
+   + 'in elementary,in junior,in senior,in time,in town,in bed,in school,in church,'
+   + 'on sale,on vacation,on weekends,on special,on glasses,on business,on time,'
+   + 'on thursday,on tuesday,on wednesday,on monday,on friday,on saturday,on sunday,'
+   + 'on you,on tv,on foot,on purpose,on holiday')
+    .split(',').forEach(function (k) { if (k) PREP_COLLOCATIONS[k] = 1; });
   var MODALS = { 'can': 1, 'could': 1, 'should': 1, 'would': 1, 'will': 1,
                  'must': 1, 'may': 1, 'might': 1, 'shall': 1 };
   var BE = { 'is': 1, 'am': 1, 'are': 1, 'was': 1, 'were': 1, 'be': 1, 'been': 1, 'being': 1 };
@@ -1687,10 +1699,17 @@
       }
       // ⑩ 片語動詞粒子：後面接名詞片語時是介系詞，否則是副詞
       if (PARTICLES[w]) {
-        var nxt = toks[i + 1] ? toks[i + 1].toLowerCase() : '';
-        var nxtIsNounish = nxt && (DETS[nxt] || DETS2[nxt] || CARDINALS[nxt] ||
-                                   /^(the|a|an|my|your|his|her|its|our|their|this|that|these|those)$/.test(nxt));
-        if (nxtIsNounish) {
+        var nxt = toks[i + 1] ? toks[i + 1] : '';
+        var nxtLow = nxt.toLowerCase();
+        var nxtIsPunct = nxt && /^[^\sA-Za-z0-9']$/.test(nxt);
+        // 句中大寫開頭的專有名詞（on Thanksgiving / on TV / in Taiwan）→ 介系詞。
+        // 句首的 In / It / The 這種不是專有名詞，要濾掉。
+        var nxtIsProper = !!nxt && /^[A-Z]/.test(nxt) &&
+          !/^(I|An|The|It|He|She|We|They|You|My|Your|His|Her|Its|Our|Their|This|That|These|Those|There|What|Who|Where|When|How|Why|Let|Don|Do|Does|Did|Is|Are|Am|Was|Were|Be|Can|Could|Will|Would|Should|Has|Have|Had|Mrs|Mr|Ms|Dr)$/.test(nxt);
+        var nxtIsNounish = !!nxt && !nxtIsPunct && !nxtIsProper &&
+          (DETS[nxtLow] || DETS2[nxtLow] || CARDINALS[nxtLow]);
+        var collocationIsPrep = PREP_COLLOCATIONS[(w + ' ' + nxtLow).replace(/\s+$/, '')] === 1;
+        if (nxtIsNounish || nxtIsProper || collocationIsPrep) {
           afterDet = true; prevWasTo = false;
           emit('介系詞', '後面接名詞或 -ing，不能接動詞原形');
         } else {
