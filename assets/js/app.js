@@ -953,7 +953,7 @@
   ('still often seldom always never sometimes usually normally generally typically ' +
    'just also really very already hardly rarely certainly probably definitely simply ' +
    'already almost nearly quite rather too enough especially particularly mainly ' +
-   'now then soon later today tomorrow yesterday here there ' +
+   'now then soon later today tomorrow tonight yesterday here there ' +
    // 地點／方向副詞與禮語：這些字不是名詞，
    // 漏收會讓 "go abroad" 的 abroad、"Come in, please" 的 please
    // 都掉成名詞。
@@ -972,7 +972,59 @@
      verbBase() 只會去 -s / -ed，處理不了 came / born 這類，
      沒有這張表的話它們會整顆掉成名詞。                    */
   var IRREG_PAST = {};
-  ('came=come went=go saw=see ate=eat drank=drink ran=run sang=sing swam=swim ' +
+  ('has=have does=do says=say gets=get goes=go comes=come makes=make ' +
+   'takes=take sees=see knows=know thinks=think tells=tell asks=ask ' +
+   'gives=give finds=find puts=put keeps=keep lets=let begins=begin ' +
+   'seems=seem helps=help talks=talk turns=turn starts=start shows=show ' +
+   'hears=hear runs=run moves=move lives=live believes=believe holds=hold ' +
+   'brings=bring happens=happen writes=write sits=sit stands=stand ' +
+   'loses=lose pays=pay meets=meet includes=include continues=continue ' +
+   'sets=set learns=learn changes=change leads=lead understands=understand ' +
+   'watches=watch follows=follow stops=stop creates=create speaks=speak ' +
+   'reads=read allows=allow adds=add spends=spend grows=grow opens=open ' +
+   'walks=walk wins=win offers=offer loves=love considers=consider ' +
+   'appears=appear buys=buy waits=wait serves=serve dies=die sends=send ' +
+   'expects=expect builds=build stays=stay falls=fall cuts=cut reaches=reach ' +
+   'kills=kill remains=remain eats=eat drinks=drink sleeps=sleep wakes=wake ' +
+   'wears=wear carries=carry breaks=break chooses=choose draws=draw ' +
+   'drives=drive feels=feel fights=fight flies=fly forgets=forget ' +
+   'forgives=forgive hides=hide hits=hit hurts=hurt lays=lay leaves=leave ' +
+   'lends=lend lies=lie lights=light means=mean quits=quit rides=ride ' +
+   'rings=ring rises=rise sells=sell shakes=shake shoots=shoot shuts=shut ' +
+   'sings=sing sinks=sink smells=smell spells=spell steals=steal sticks=stick ' +
+   'strikes=strike swears=swear swims=swim teaches=teach tears=tear ' +
+   'throws=throw wakes=wake wishes=wish works=work plays=play studies=study ' +
+   'tries=try uses=use calls=call enjoys=enjoy finishes=finish ' +
+   'practices=practice cleans=clean washes=wash dresses=dress cooks=cook ' +
+   'boils=boil fries=fry orders=order visits=visit jogs=jog dances=dance ' +
+   'jumps=jump kicks=kick catches=catch scores=score joins=join ' +
+   'looks=look listens=listen waits=wait arrives=arrive returns=return ' +
+   'enters=enter exits=exit closes=close pushes=push pulls=pull picks=pick ' +
+   'drops=drop raises=raise touches=touch fixes=fix paints=paint ' +
+   'colors=color counts=count copies=copy answers=answer hates=hate ' +
+   'prefers=prefer agrees=agree disagrees=disagree decides=decide ' +
+   'plans=plan prepares=prepare organizes=organize arranges=arrange ' +
+   'schedules=schedule books=book reserves=reserve cancels=cancel ' +
+   'confirms=confirm checks=check verifies=verify compares=compare ' +
+   'shares=share borrows=borrow lends=lend owes=owe earns=earn ' +
+   'saves=save wastes=waste costs=cost charges=charge bills=bill ' +
+   'shops=shop affords=afford collects=collect feeds=feed tastes=taste ' +
+   'sips=lip chews=chew swallows=swallow digests=digest bakes=bake ' +
+   'roasts=roast grills=grill burns=burn freezes=freeze melts=melt ' +
+   'heats=heat cools=cool warms=warm pours=pour mixes=mix stirs=stir ' +
+   'chops=chop slices=slice peels=peel rinses=rinse dries=dry ' +
+   'wraps=wrap packs=pack loads=load delivers=deliver ships=ship ' +
+   'mails=mail receives=receive accepts=accept rejects=reject ' +
+   'exchanges=exchange replaces=replace repairs=repair tidies=tidy ' +
+   'decorates=decorate furnishes=furnish rents=rent leases=lease ' +
+   'owns=own morts=mortgage moves=move relocates=relocate settles=settle ' +
+   'travels=travel tours=tour explores=explore discovers=discover ' +
+   'journeys=journey commutes=commute departs=depart passes=pass ' +
+   'crosses=cross turns=turn hurries=hurry rushes=rush slows=slow ' +
+   'speeds=speed sprints=sprint climbs=climb crawls=crawl dives=dive ' +
+   'floats=float ' +
+   // 真正的過去式與過去分詞
+   'came=come went=go saw=see ate=eat drank=drink ran=run sang=sing swam=swim ' +
    'wrote=write rode=ride drove=drive flew=fly blew=blow grew=grow ' +
    'threw=throw knew=know took=take gave=give made=make said=say told=tell ' +
    'felt=feel found=find thought=think brought=bring bought=buy caught=catch ' +
@@ -1681,6 +1733,54 @@
     return out;
   }
 
+  /* 結尾是 -s 但其實是單數的字：bus / is / news / series …
+     以題庫的 unit.target 為測試標準（那些都是單數原型），
+     再補一份常見的 -s 單數字。
+     沒這個判斷的話，"The bus is late" 的 bus 會被標成名詞（複數）。 */
+  /* 結尾是 -s 但其實是單數「名詞」：bus / news / series …
+     注意：is / was / has / its / this / plus / us 這些是動詞或限定詞，不是名詞，
+     放進來會讓 "lady has a heart" 的 has 被誨成單數名詞而不去當動詞。 */
+  var SINGULAR_S_EXTRA = {};
+  ('bus news series species gas glass class ' +
+   'dress kiss miss box tax axis boss loss ' +
+   'bias campus circus focus basis analysis crisis thesis ' +
+   'christmas business illness weakness stress success address guess press ' +
+   'usage damage courage language marriage voyage ' +
+   'base case house mouse exercise please')
+    .split(/\s+/).forEach(function (w) { if (w) SINGULAR_S_EXTRA[w] = 1; });
+
+  /* 這些副詞跟在 be 動詞後面時要當形容詞：
+     "The bus is late" 的 late 是形容詞，"I get up late" 的 late 才是副詞。 */
+  var CONTEXT_ADJ = {};
+  ('late early right back straight sure fine')
+    .split(/\s+/).forEach(function (w) { if (w) CONTEXT_ADJ[w] = 1; });
+  var _singularSCache = null;
+  function isSingularS(w) {
+    if (!_singularSCache) {
+      _singularSCache = Object.create(null);
+      // 題庫 target 裡的字都是單數原型
+      (window.BANKS && window.BANKS.scenarios || []).forEach(function (sc) {
+        (sc.units || []).forEach(function (u) {
+          var base = String(u.target || '').toLowerCase()
+            .replace(/\s*[（(][^）)]*[）)]\s*$/, '')
+            .replace(/\s*=.*$/, '').split(/\s+/)[0]
+            .replace(/[.,;:!?]+$/, '');
+          if (/^[a-z]+s$/.test(base)) _singularSCache[base] = 1;
+        });
+      });
+    }
+    return SINGULAR_S_EXTRA[w] === 1 || _singularSCache[w] === 1;
+  }
+
+  /* 名詞的功能要按它在句子裡的位置來說，
+     不然每個名詞都寫「句中的名詞成分」就沒教到東西。 */
+  function nounFn(hasVerb, afterPrep, afterBe) {
+    if (!hasVerb) return '句子的主詞，動詞要跟它配單複數';
+    if (afterBe) return '主詞補語，接在 be 動詞後面說明主詞是什麼';
+    if (afterPrep) return '介系詞後面的賓語，接在介系詞後面';
+    return '動詞的受詞，接在動詞後面接受動作';
+  }
+
   function structure(sent) {
     var toks = splitContractions(
       sent.match(/[A-Za-z'\u2019]+|[0-9]+|[^\sA-Za-z0-9']/g) || []);
@@ -1695,6 +1795,8 @@
     var prevWasLet = false;          // Let's get / Let me know → 下一個是動詞
     var prevWasBe = false;           // be born / was opened → 後面是過去分詞
     var prevWasBeAt = -1;            // be 動詞的位置，用來確保分詞緊接在後
+    var prevWasAdj = false;          // big enough → enough 是副詞不是限定詞
+    var prevWasPrep = false;         // 介系詞後面的名詞是賓語
 
     // 動詞的第三人稱／複原：knows → know、studies → study、watches → watch
     // 注意 -es 只能在「標準拼字」出現時去掉（watches→watch、goes→go）。
@@ -1750,6 +1852,23 @@
         emit('標點', '決定句子怎麼斷氣，逗號後面用小寫開頭');
         return;
       }
+      // ⇒ 句首複數主詞：「句首 -s 字 + 第二個字是動詞」時，句首那個是複數名詞。
+      //   "Leaves change colors in autumn." 的 Leaves 是葉子（複數名詞）
+      //   "plants grow" 的 plants 是植物（複數名詞）
+      // 排除第二個字是 -ing 的情況："goes jogging" 的 goes 才是動詞，
+      // jogging 是動名詞補語。
+      if (i === 0 && /s$/.test(w) && !isSingularS(w)) {
+        var nxtTok = toks[1] ? toks[1].toLowerCase() : '';
+        var nxtIsMainVerb = !!nxtTok && !/ing$/.test(nxtTok) &&
+          (BE[nxtTok] || VERBS[nxtTok] || VERBS[nxtTok.replace(/s$/, '')] ||
+           VERBS[nxtTok.replace(/es$/, '')] || IRREG_PAST[nxtTok]);
+        if (nxtIsMainVerb) {
+          sawSubject = true; afterDet = false; prevWasPronounObj = false;
+          prevWasTo = false; prevWasModal = false; prevWasConj = false;
+          emit('名詞（複數）', '句首的主詞，複數名詞別漏掉 s');
+          return;
+        }
+      }
       // ⇒ 提早判斷專有名詞：只要位於句中（i > 0）、大寫開頭、
       // 且不是任何功能詞就當專有名詞。
       // 必須提早，否則 Thanksgiving 會先被 -ing 覆蓋、
@@ -1789,7 +1908,12 @@
         var isNounNext = nx3 && !BE[nx3] && !MODALS[nx3] && !QW.test(nx3) &&
                          !VERBS[nx3] && verbBase(nx3) === null &&
                          !ADVERBS[nx3] && !/ly$/.test(nx3) &&
-                         !/(ing|ed)$/.test(nx3) && !ADJECTIVES[nx3] && !COMPARATIVE[nx3];
+                         !/(ing|ed)$/.test(nx3) && !ADJECTIVES[nx3] && !COMPARATIVE[nx3] &&
+                         // this / that / these / those / my / your 也是限定詞，
+                         // 不收的話 "What's this?" 的 's 會被誤判成所有格
+                         !DETS[nx3] && !DETS2[nx3] && !CARDINALS[nx3] &&
+                         !PRONOUNS[nx3] && !PREPS[nx3] && !PARTICLES[nx3] &&
+                         !CONJUNCTIONS[nx3];
         if (isNounNext) {
           prevWasBe = false; prevWasBeAt = -1; afterDet = true; prevWasTo = false;
           emit('所有格', '表示「…的」，後面的名詞是它所屬的人或物');
@@ -1819,7 +1943,7 @@
         sawVerb = true; afterDet = false; prevWasTo = false;
         prevWasModal = doIsAux;
         emit(doIsAux ? '助動詞' : '動詞',
-             doIsAux ? '和 not 一起構成否定，後面接動詞原形' : '句子的主要動作，人稱和時態要正確');
+             doIsAux ? '和 not 一起構成否定句，後面接動詞原形' : '句子的主要動作，人稱和時態要正確');
         return;
       }
       // ⑤-3 Let：後面的字是動詞原形（Let's get / Let me know）
@@ -1841,7 +1965,7 @@
       var isQuestionSent = /\?\s*$/.test(sent) || /^(who|what|where|when|why|how|which|whose|is|are|am|do|does|did|can|could|will|would|should|have|has)\b/i.test(sent.trim());
       if (QW.test(w) && !(w === 'when' && !isQuestionSent)) {
         afterDet = false; prevWasTo = false; prevWasModal = false;
-        emit('疑問詞', '放在句首提問，後面用一般疑問句語序');
+        emit('疑問詞', '問「什麼／誰／哪裡／為什麼」，後面接主詞與動詞（不用倒裝）');
         return;
       }
       // ⑦-2 從屬連接詞（when / if / because ...）
@@ -1854,8 +1978,11 @@
       }
       // ⑧ 助動詞縮寫 've / 'll / 'd
       if (w === "'ve" || w === "'ll" || w === "'d") {
-        sawVerb = true; afterDet = false; prevWasTo = false; prevWasModal = false;
-        emit('助動詞', '與主要動詞一起構成完成式或未來式');
+        var auxFn = w === "'ve" ? 'have + 過去分詞，構成現在完成式'
+                   : w === "'ll" ? 'will 的縮寫，構成未來式'
+                   : 'would 的縮寫，表示假設或過去習慣';
+        sawVerb = true; afterDet = false; prevWasTo = false; prevWasModal = true;
+        emit('助動詞', auxFn);
         return;
       }
       // ⑨ to：後面是動詞原形 → 不定詞標記
@@ -1873,8 +2000,7 @@
       }
       // ⑩ 片語動詞粒子：後面接名詞片語時是介系詞，否則是副詞
       if (PARTICLES[w]) {
-        var nxt = toks[i + 1] ? toks[i + 1] : '';
-        var nxtLow = nxt.toLowerCase();
+        var nxt = toks[i + 1] ? toks[i + 1] : '';        var nxtLow = nxt.toLowerCase();
         var nxtIsPunct = nxt && /^[^\sA-Za-z0-9']$/.test(nxt);
         // 句中大寫開頭的專有名詞（on Thanksgiving / on TV / in Taiwan）→ 介系詞。
         // 句首的 In / It / The 這種不是專有名詞，要濾掉。
@@ -1884,12 +2010,23 @@
           (DETS[nxtLow] || DETS2[nxtLow] || CARDINALS[nxtLow]);
         var collocationIsPrep = PREP_COLLOCATIONS[(w + ' ' + nxtLow).replace(/\s+$/, '')] === 1;
         if (nxtIsNounish || nxtIsProper || collocationIsPrep) {
-          afterDet = true; prevWasTo = false;
+          afterDet = true; prevWasTo = false; prevWasPrep = true;
           emit('介系詞', '後面接名詞或 -ing，不能接動詞原形');
         } else {
-          afterDet = false; prevWasTo = false;
+          afterDet = false; prevWasTo = false; prevWasPrep = false;
           emit('副詞（粒子）', '和前面的動詞組成片語動詞，例如 stand up / go out');
         }
+        return;
+      }
+      // ⑩-1 enough：形容詞後面是副詞（"not big enough"），名詞前面是限定詞（"enough money"）
+      if (w === 'enough') {
+        if (prevWasAdj) {
+          afterDet = false; prevWasTo = false; prevWasModal = false;
+          emit('副詞', '放在形容詞後面表示「夠…」，修飾前面的形容詞');
+          return;
+        }
+        afterDet = true; prevWasTo = false;
+        emit('限定詞', '放在名詞前表示「足夠的…」');
         return;
       }
       // ⑩-2 並列／全體限定詞
@@ -1900,7 +2037,7 @@
       }
       // ⑪ 介系詞
       if (PREPS[w]) {
-        afterDet = true; prevWasTo = false; prevWasModal = false;
+        afterDet = true; prevWasTo = false; prevWasModal = false; prevWasPrep = true;
         emit('介系詞', '後面接名詞或 -ing，不能接動詞原形');
         return;
       }
@@ -1911,9 +2048,18 @@
         return;
       }
       // ⑬ 副詞
-      if (ADVERBS[w] || /ly$/.test(w)) {
+      // 但 be 動詞後面要優先當形容詞："The bus is late" 的 late 是形容詞，
+      // "I get up late" 的 late 才是副詞。late / early / right 都算。
+      if ((ADVERBS[w] || /ly$/.test(w)) &&
+          !(prevWasBe && prevWasBeAt === i - 1 && CONTEXT_ADJ[w])) {
         afterDet = false; prevWasTo = false; prevWasModal = false;
         emit('副詞', '修飾動詞、形容詞或整句話，說明怎麼做或多麼');
+        return;
+      }
+      // ⑬-2 形容詞後面接 enough：enough 是副詞（"not big enough"），不是限定詞
+      if (w === 'enough' && prevWasAdj) {
+        afterDet = false; prevWasTo = false; prevWasModal = false;
+        emit('副詞', '放在形容詞後面表示「夠…」，修飾前面的形容詞');
         return;
       }
       // ⑭ 代名詞
@@ -1930,7 +2076,15 @@
       // ⑮ 比較級／最高級（只用字表，不猜後綴）
       if (COMPARATIVE[w]) {
         afterDet = false; prevWasTo = false; prevWasModal = false;
-        emit('形容詞（比較）', '比較兩個東西或三者以上，通常後面接 than');
+        // -est / most 是最高級（三者以上），其餘是比較級（兩個）
+        var isSuperlative = /est$/.test(w) || w === 'most' || w === 'best' || w === 'worst' ||
+                            w === 'least' || w === 'furthest' || w === 'farthest';
+        if (isSuperlative) {
+          emit('形容詞（最高級）', '三者以上比出最怎麼樣的，前面通常加 the');
+        } else {
+          emit('形容詞（比較級）', '兩個東西比誰比較怎麼樣的，後面通常接 than');
+        }
+        prevWasAdj = true;
         return;
       }
       // ⑯-4 's 是所有格還是 be 動詞？
@@ -1952,6 +2106,7 @@
       if (ADJECTIVES[w]) {
         afterDet = false; prevWasTo = false; prevWasModal = false;
         emit('形容詞', '描述名詞的樣子、大小、顏色或感覺');
+        prevWasAdj = true;
         return;
       }
       // ⑯-3 be 動詞 + 過去分詞（被動語態）：be born / was born / will be opened。
@@ -1968,20 +2123,24 @@
         }
         prevWasBe = false;
       }
+      // 限定詞後面的名詞要排在 -ing 之前：
+      // "The king lives" 的 king 結尾是 -ing 但是名詞；
+      // "The bus is late" 的 bus 結尾是 -s 但是單數。
+      if (afterDet) {
+        var isPluralS = /s$/.test(w) && !isSingularS(w);
+        var wasAfterPrep = prevWasPrep;
+        var wasAfterBe = prevWasBe;   // be 後面的名詞是主詞補語，不要求緊鄰
+        afterDet = false; prevWasTo = false; prevWasModal = false; prevWasConj = false;
+        sawSubject = true; prevWasPronounObj = false; prevWasPrep = false;
+        if (isPluralS) emit('名詞（複數）', nounFn(sawVerb, wasAfterPrep, wasAfterBe) + '，別漏掉 s');
+        else emit('名詞', nounFn(sawVerb, wasAfterPrep, wasAfterBe));
+        return;
+      }
       // ⑯-2 現在分詞
       if (/ing$/.test(w)) {
         afterDet = false; prevWasTo = false; prevWasModal = false;
         emit('動詞（-ing）', '表示正在進行，前面搭配 be 動詞');
         sawVerb = true;
-        return;
-      }
-      // 限定詞後面的名詞要排在動詞判斷之前：a book / the work / my play 都是名詞，
-      // 而 book / work / play 同時也是動詞，先判動詞會把這些名詞誤標成動詞。
-      if (afterDet) {
-        afterDet = false; prevWasTo = false; prevWasModal = false; prevWasConj = false;
-        sawSubject = true; prevWasPronounObj = false;
-        if (/s$/i.test(w)) emit('名詞（複數）', '前面的限定詞決定它要用複數，別漏掉 s');
-        else emit('名詞', '句中的名詞成分，依數量決定單複數');
         return;
       }
       // ⑱ 動詞（含第三人稱、過去式等變化型）
@@ -2014,15 +2173,25 @@
       // ⑳-3 Let + 代名詞 + 動詞（Let's get / Let me know）
       // 不能用 !sawVerb 當條件：let 自己已經把 sawVerb 設成 true 了。
       if (prevWasLet) {
-        prevWasLet = false; sawVerb = true;
-        afterDet = false; prevWasPronounObj = false;
-        emit('動詞', 'Let 後面的動作，用原形：Let us go / Let me know');
-        return;
+        // "Let's go get some lunch" 的 go、get 都是 bare infinitive，
+        // 所以這裡只在「不是動詞」時才把旗標清掉，讓連續動作都能被認出來。
+        if (verbBase(w)) {
+          sawVerb = true; afterDet = false; prevWasPronounObj = false;
+          emit('動詞', 'Let 後面的動作，用原形：Let us go / Let me know');
+          return;
+        }
+        prevWasLet = false;
       }
       // ㉑ 句首第一個實詞
+      // 但「句首 -s 字 + 第二個字是動詞」時，句首那個是複數主詞：
+      //   "Leaves change colors in autumn." 的 Leaves 是葉子（複數名詞）
+      //   "plants grow" 的 plants 是植物（複數名詞）
+      // 排除第二個字是 -ing 的情況：「goes jogging」的 goes 才是動詞，
+      // jogging 是動名詞補語。
       if (i === 0) {
         sawSubject = true; prevWasPronounObj = false; prevWasTo = false; prevWasModal = false;
-        emit('名詞', '句子的主詞');
+        if (/s$/.test(w) && !isSingularS(w)) emit('名詞（複數）', '句首的主詞，複數名詞別漏掉 s');
+        else emit('名詞', '句子的主詞');
         return;
       }
       // ㉒ 有主詞還沒動詞 → 主要動詞
@@ -2033,8 +2202,11 @@
       }
       // ㉓ 其餘：動詞後面多半是受詞名詞
       prevWasPronounObj = false; prevWasTo = false; prevWasModal = false; prevWasConj = false;
-      if (/s$/i.test(w)) emit('名詞（複數）', '前面的限定詞決定它要用複數，別漏掉 s');
-      else emit('名詞', '句中的名詞成分，依數量決定單複數');
+      var wasAfterPrep2 = prevWasPrep;
+        var wasAfterBe = prevWasBe;   // be 後面的名詞是主詞補語，不要求緊鄰
+      prevWasPrep = false;
+      if (/s$/i.test(w) && !isSingularS(w)) emit('名詞（複數）', nounFn(sawVerb, wasAfterPrep2, wasAfterBe) + '，別漏掉 s');
+      else emit('名詞', nounFn(sawVerb, wasAfterPrep2, wasAfterBe));
     });
     return rows;
   }
