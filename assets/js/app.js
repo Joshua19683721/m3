@@ -950,8 +950,49 @@
   ('still often seldom always never sometimes usually normally generally typically ' +
    'just also really very already hardly rarely certainly probably definitely simply ' +
    'already almost nearly quite rather too enough especially particularly mainly ' +
-   'now then soon later today tomorrow yesterday here there').split(/\s+/)
-    .forEach(function (w) { if (w) ADVERBS[w] = 1; });
+   'now then soon later today tomorrow yesterday here there ' +
+   // 地點／方向副詞與禮語：這些字不是名詞，
+   // 漏收會讓 "go abroad" 的 abroad、"Come in, please" 的 please
+   // 都掉成名詞。
+   'abroad ahead inside outside upstairs downstairs everywhere nowhere anywhere ' +
+   'somewhere away back forth please ago least instead however aloud apart ' +
+   'almost well fast hard late early together alone maybe perhaps ' +
+   // so 是副詞不是連接詞："The baby is so small"、"so much"、"so proud"
+   'so such quite really very ' +
+   // 單字片語步驟會用到這些頻率／肯定／否定副詞，
+   // 漏收會讓獨立的 "ever" / "once" / "yes" 掉成名詞。
+   'else ever even yet yes once twice again no not barely absolutely ' +
+   'certainly indeed surely moreover nevertheless nonetheless instead')
+    .split(/\s+/).forEach(function (w) { if (w) ADVERBS[w] = 1; });
+
+  /* 不規則過去式與過去分詞 → 原形。
+     verbBase() 只會去 -s / -ed，處理不了 came / born 這類，
+     沒有這張表的話它們會整顆掉成名詞。                    */
+  var IRREG_PAST = {};
+  ('came=come went=go saw=see ate=eat drank=drink ran=run sang=sing swam=swim ' +
+   'wrote=write rode=ride drove=drive flew=fly blew=blow grew=grow ' +
+   'threw=throw knew=know took=take gave=give made=make said=say told=tell ' +
+   'felt=feel found=find thought=think brought=bring bought=buy caught=catch ' +
+   'taught=teach fought=fight lost=lose paid=pay met=meet sat=sit stood=stand ' +
+   'understood=understand forgot=forget woke=wake wore=wear tore=tear ' +
+   'broke=break chose=choose froze=freeze spoke=speak stole=steal shook=shake ' +
+   'shot=shoot shone=shine sank=sink lay=lie led=lead left=leave lent=lend ' +
+   'sent=send spent=spend built=build dealt=deal meant=mean dreamt=dream ' +
+   'learnt=learn burnt=burn spelt=spell knelt=kneel crept=creep leapt=leap ' +
+   'wept=weep swept=sweep slept=sleep slid=slide bit=bite hid=hide held=hold ' +
+   'let=let set=set shut=shut split=split spread=spread put=put ' +
+   'cut=cut hit=hit cost=cost read=read beat=beat become=become began=begin ' +
+   'drunk=drink rung=ring sung=sing swum=swim written=write ridden=ride ' +
+   'driven=drive flown=fly blown=blow grown=grow thrown=throw known=know ' +
+   'taken=take given=give seen=see eaten=eat fallen=fall hidden=hide ' +
+   'broken=break chosen=choose frozen=freeze spoken=speak stolen=steal ' +
+   'woken=wake worn=wear torn=tear risen=rise borne=bear born=bear ' +
+   'beaten=beat bitten=bite gotten=get forgotten=forgive raised=raise')
+    .split(/\s+/).forEach(function (kv) {
+      if (!kv) return;
+      var p = kv.split('=');
+      if (p.length === 2 && p[0] && p[1]) IRREG_PAST[p[0]] = p[1];
+    });
 
   /* 冠詞後面的字如果是這些功能詞，表示前面那個 a / A 不是冠詞
      （例：Class A and Class B ... 的 A 是班級代號）。                  */
@@ -1377,7 +1418,9 @@
                 'along': 1, 'without': 1, 'except': 1, 'onto': 1, 'past': 1,
                 'among': 1, 'through': 1, 'across': 1, 'upon': 1, 'within': 1,
                 'during': 1, 'besides': 1, 'toward': 1, 'towards': 1, 'against': 1,
-                'beyond': 1, 'beneath': 1, 'underneath': 1, 'alongside': 1 };
+                'beyond': 1, 'beneath': 1, 'underneath': 1, 'alongside': 1,
+                'above': 1, 'below': 1, 'upstairs': 1, 'downstairs': 1,
+                'indoors': 1, 'outdoors': 1 };
 
   /* 片語動詞的副詞粒子：這些字既能當副詞也能當介系詞，
      「stand up」的 up 是副詞，「walk up the hill」的 up 是介系詞。
@@ -1388,7 +1431,10 @@
 
   /* 並列／全體限定詞：both / either / neither 放在名詞前，當限定詞教最恰當 */
   var DETS2 = {};
-  ('both either neither each every all some any most many few several enough other another')
+  ('both either neither each every all some any most many few several enough other another '
+   + 'more most less fewer much '
+   // such 也是限定詞：「such as」、「such a good idea」
+   + 'such')
     .split(/\s+/).forEach(function (w) { if (w) DETS2[w] = 1; });
 
   /* 「粒子 + 名詞」的固定搭配，這些都是介系詞。
@@ -1416,27 +1462,22 @@
      學生看到的詞性對照表有一半以上是錯的。
      這裡補上代名詞、連接詞、副詞、常用動詞與形容詞字表，
      再用狀態機判斷主詞與動詞，寧可標「不確定」也不標錯。          */
-  var PRONOUNS = {};(
-  'i me my mine myself you your yours yourself we us our ours ourselves ' +
-  'he him his himself she her hers herself it its itself they them their theirs ' +
-  'themselves one ones someone somebody something anyone anybody anything ' +
-  'everyone everybody everything nobody nothing everyone everybody').split(/\s+/)
-    .forEach(function (w) { if (w) PRONOUNS[w] = 1; });
+  var PRONOUNS = {};
+  ('i me my mine myself you your yours yourself we us our ours ourselves ' +
+   'he him his himself she her hers herself it its itself they them their theirs ' +
+   'themselves one ones someone somebody something anyone anybody anything ' +
+   'everyone everybody everything nobody nothing everyone everybody ' +
+   // 不定副詞也當代名詞教："somewhere else" 的 somewhere
+   'somewhere anywhere everywhere nowhere')
+    .split(/\s+/).forEach(function (w) { if (w) PRONOUNS[w] = 1; });
 
-  var CONJUNCTIONS = {};(
-  'and or but so because if when while after before until since although though ' +
-  'whether as than that however therefore also besides moreover otherwise ' +
-  'instead whenever wherever whatever whoever however').split(/\s+/)
-    .forEach(function (w) { if (w) CONJUNCTIONS[w] = 1; });
-
-  var ADVERBS = {};(
-  'very really too also still just only even almost enough quite rather ' +
-  'always never often sometimes usually seldom rarely now then here there ' +
-  'today tomorrow yesterday soon later already yet again once twice ' +
-  'well fast hard late early together alone aloud maybe perhaps probably ' +
-  'certainly definitely absolutely simply certainly ever ' +
-  'else instead perhaps maybe almost nearly hardly barely seldom').split(/\s+/)
-    .forEach(function (w) { if (w) ADVERBS[w] = 1; });
+  var CONJUNCTIONS = {};
+  ('and or but because if while after before until since although though ' +
+   'whether as than that however therefore besides moreover otherwise ' +
+   'instead whenever wherever whatever whoever ' +
+   // so 不放在這裡："The baby is so small" 的 so 是副詞不是連接詞。
+   // when 也不放：疑問詞與連接詞由句子結構決定。
+   'when').split(/\s+/).forEach(function (w) { if (w) CONJUNCTIONS[w] = 1; });
 
   /* 常用動詞：只用「原型／第三人稱都在這張表裡」的高頻字，
      這樣 know / knows、go / goes 都能命中，又不會把名詞誤判成動詞。 */
@@ -1483,7 +1524,25 @@
    'open unlock lock close seal fasten tie bind wrap cover uncover expose reveal ' +
    'hide conceal disguise mask camouflage show display exhibit demonstrate illustrate ' +
    'prove confirm verify validate refute disprove deny admit confess concede ' +
-   'agree comply obey disobey rebel revolt resist surrender yield submit capitulate')
+   'agree comply obey disobey rebel revolt resist surrender yield submit capitulate ' +
+   // 額外補上：題庫的句子裡有這些常規動詞。
+   // 沒收的話 verbBase() 找不到原型，
+   // attacked / rolled / cheated 這類 -ed 字會整個掉成名詞。
+   'attack bite bear become cheat fail fill kiss marry name nod plant point roll ' +
+   'stop surprise excite interest bore scare tire touch knock bang crash clap bow ' +
+   'wave laugh smile cry shout whisper hug pat grab seize release spill splash ' +
+   'drip leak flow stream hang attach fasten knot twist weave sew knit dig bury ' +
+   'sow water prune trim mow rake hammer nail screw drill saw chop split carve ' +
+   'sculpt mold shape beat whip fold bend stretch shrink expand count add subtract ' +
+   'multiply divide calculate measure weigh spell pronounce translate interpret ' +
+   'summarize compare contrast classify sort group arrange solve answer explain ' +
+   'describe define discuss imitate copy repeat practice review memorize recite ' +
+   'observe notice recognize identify discover explore investigate test examine ' +
+   'inspect monitor track record improve develop progress advance decline worsen ' +
+   'increase decrease reduce raise lower expand begin start end finish complete ' +
+   'quit pause resume win lose tie draw lead trail follow chase defend guard ' +
+   'protect escape flee argue quarrel disagree marry divorce engage produce ' +
+   'deliver belong own possess lack need able unable mad angry calm married single')
     .split(/\s+/).forEach(function (w) { if (w) VERBS[w] = 1; });
 
   /* 常用形容詞：顏色、大小、感覺、評價都在這裡 */
@@ -1523,30 +1582,67 @@
    'pointless useless worthless valuable precious priceless cheap affordable ' +
    'expensive overpriced reasonable fair unfair just unjust equal uneven ' +
    'balanced stable unstable steady shaky firm rigid flexible elastic ' +
-   'stretchable durable sturdy fragile delicate sturdy robust tough resilient')
+   'stretchable durable sturdy fragile delicate sturdy robust tough resilient ' +
+   /* 分詞形容詞：和進行式動詞拼法一樣，
+      不收的話 "Science is interesting" 的 interesting
+      會被標成動詞（-ing）。 */
+   'interesting exciting boring tiring surprising amazing confusing ' +
+   'pleasing relaxing worrying frightening charming promising disappointed ' +
+   'embarrassing encouraging discouraging exhausting refreshing thrilling ' +
+   'stretchable durable sturdy fragile delicate sturdy robust tough resilient ' +
+   // 分詞形容詞：和進行式動詞拼法一樣，
+   // 不放這裡的話 "Science is interesting" 的 interesting
+   // 會被標成動詞（-ing）。
+   'interesting exciting boring tiring surprising amazing confusing ' +
+   'pleasing relaxing worrying frightening charming promising disappointed ' +
+   // able / mad / married 是常見的形容詞，
+   // 漏掉會讓 "Jane is able to come" 的 able 掉成名詞。
+   'able mad married single alive asleep awake afraid aware sure ' +
+   'worth ready full empty careful careless useful useless ' +
+   'similar different common strange normal usual particular ' +
+   'favorite favourite perfect wonderful terrible lovely ' +
+   'bored excited interested surprised tired scared frightened relaxed ' +
+   'delighted pleased content satisfied grateful thankful ' +
+   'embarrassed ashamed shy confident eager enthusiastic passionate ' +
+   'indifferent apathetic curious fascinated intrigued confused ' +
+   'puzzled baffled bewildered amazed astonished astounded ' +
+   'surprised shocked startled stunned appalled horrified terrified ' +
+   'panicked nervous anxious worried concerned uneasy restless ' +
+   'impatient patient calm serene tranquil peaceful annoying ' +
+   'irritating frustrating satisfying rewarding fulfilling meaningful ' +
+   'pointless worthless valuable precious priceless affordable ' +
+   'reasonable fair unjust equal uneven balanced stable unstable ' +
+   'steady shaky firm rigid flexible elastic durable ' +
+   'embarrassed interested bored excited tired surprised frightened relaxed')
     .split(/\s+/).forEach(function (w) { if (w) ADJECTIVES[w] = 1; });
 
   /* 比較級／最高級只能用「列出來的」，不能用 -er / -est 後綴猜——
      brother / father / teacher / water / never ever / dinner / summer / paper
      全部以 -er 結尾但都是名詞，猜後綴會把整張詞性表污染掉。          */
+  /* 比較級並最高級只能「列出來的」，而且只能收單字。
+     一定不要寫 more dangerous 這種「多字」條目：
+     .split(/\s+/) 會把它分成 more 和 dangerous 兩個鍵，
+     結果 dangerous / expensive / popular / beautiful 這些普通形容詞
+     全被誨成比較級，整張詞性表都不對。
+     more 和 most 也不收，因為這些句子裡它們是
+     量詞（Drink more water / twenty more chairs，不是比較級）。 */
   var COMPARATIVE = {};
-  ('more most bigger bigger biggest smaller smallest larger largest longer longest ' +
-   'shorter shortest taller tallest higher highest lower lowest older oldest ' +
-   'younger youngest newer newest faster fastest slower slowest hotter hottest ' +
-   'colder coldest warmer warmest cooler coolest better best worse worst ' +
-   'greater greatest finer finest easier easiest harder hardest simpler simplest ' +
-   'cheaper cheapest dearer dearest closer closest farther farthest further ' +
-   'furthest happier happiest sadder saddest angrier angriest busier busiest ' +
-   'heavier heaviest lighter lightest richer richest poorer poorest ' +
-   'cleaner cleanest dirtier dirtier tidier tidiest safer safest more dangerous ' +
-   'more expensive more important more interesting more beautiful nicer nicest ' +
-   'prettier prettiest uglier ugliest smarter smartest cleverer cleverest ' +
-   'stronger strongest weaker weakest thicker thickest thinner thinnest ' +
-   'wider widest deeper deepest shallower shallowest fuller fullest emptier ' +
-   'emptiest louder loudest quieter quietest sooner soonest later latest ' +
-   'earlier earliest faster quickest quicker happier friendlier friendliest ' +
-   'politer politest ruder rudest kinder kindest braver bravest ' +
-   'more popular more famous more comfortable more delicious more delicious')
+  ('bigger biggest smaller smallest larger largest longer longest '
+   + 'shorter shortest taller tallest higher highest lower lowest older oldest '
+   + 'younger youngest newer newest faster fastest slower slowest hotter hottest '
+   + 'colder coldest warmer warmest cooler coolest better best worse worst '
+   + 'greater greatest finer finest easier easiest harder hardest '
+   + 'simpler simplest cheaper cheapest dearer dearest closer closest '
+   + 'farther farthest further furthest happier happiest sadder saddest '
+   + 'angrier angriest busier busiest heavier heaviest lighter lightest '
+   + 'richer richest poorer poorest cleaner cleanest dirtier dirtiest '
+   + 'tidier tidiest safer safest nicer nicest prettier prettiest '
+   + 'uglier ugliest smarter smartest cleverer cleverest stronger strongest '
+   + 'weaker weakest thicker thickest thinner thinnest wider widest '
+   + 'deeper deepest shallower shallowest fuller fullest emptier emptiest '
+   + 'louder loudest quieter quietest sooner soonest earlier earliest '
+   + 'quicker quickest friendlier friendliest politer politest ruder rudest '
+   + 'kinder kindest braver bravest elder eldest')
     .split(/\s+/).forEach(function (w) { if (w) COMPARATIVE[w] = 1; });
 
   /* 基數詞：one..twenty, thirty..ninety, hundred / thousand / million */
@@ -1593,6 +1689,9 @@
     var prevWasTo = false;           // want to be → be 是動詞原形
     var prevWasModal = false;        // should do → do 是動詞
     var prevWasConj = false;         // Mina and Mike → Mike 也是名詞
+    var prevWasLet = false;          // Let's get / Let me know → 下一個是動詞
+    var prevWasBe = false;           // be born / was opened → 後面是過去分詞
+    var prevWasBeAt = -1;            // be 動詞的位置，用來確保分詞緊接在後
 
     // 動詞的第三人稱／複原：knows → know、studies → study、watches → watch
     // 注意 -es 只能在「標準拼字」出現時去掉（watches→watch、goes→go）。
@@ -1600,20 +1699,39 @@
     // 把 bees（bee 的複數）誤判成 be 的變化型。
     function verbBase(w) {
       if (VERBS[w]) return w;
+      if (IRREG_PAST[w] && VERBS[IRREG_PAST[w]]) return IRREG_PAST[w];
       if (VERBS[w.replace(/ies$/, 'y')]) return w.replace(/ies$/, 'y');
       if (/(ches|shes|sses|xes|zes|oes)$/i.test(w)) {
         var b1 = w.replace(/es$/i, '');
         if (VERBS[b1]) return b1;
       }
+      // 重複子音過去式：nodded → nod、stopped → stop、planned → plan。
+      // 去掉 -ed 會得到 nodd／stopp／plann，還要再退一個重複字母才對。
+      var dd = /^([a-z]+)([a-z])\2ed$/.exec(w);
+      if (dd && dd[1].length >= 2 && VERBS[dd[1] + dd[2]]) return dd[1] + dd[2];
       var b2 = w.replace(/s$/i, '');
       if (VERBS[b2]) return b2;
       if (VERBS[w.replace(/ing$/, '')]) return w.replace(/ing$/, '');
       if (VERBS[w.replace(/ing$/, 'e')]) return w.replace(/ing$/, 'e');
       if (VERBS[w.replace(/ed$/, '')]) return w.replace(/ed$/, '');
+      if (VERBS[w.replace(/d$/, '')]) return w.replace(/d$/, '');
       return null;
     }
     // 從屬連接詞：後面是新子句，要重新找動詞（if it rains → rains 是動詞）
     var SUBORD = /^(if|when|while|because|although|though|after|before|until|since|unless|so)$/;
+
+    // 句中大寫開頭、但不是功能詞的字 → 專有名詞（人名地名）
+    // "Mr. Lin was..." 的 Lin / "except Ted" 的 Ted / "see Frank" 的 Frank
+    // 英文正寫法裡功能詞不會在句中被大寫，所以「大寫 + 在句中」基本上就是專有名詞：
+    // May（五月，不是情態動詞 may）、Mark、Will 都是這種情況。
+    function isFunctionWordMidSentence(tok) {
+      // 大寫開頭（但不是全大寫、也不是 I）→ 當專有名詞，不查功能詞表
+      if (/^[A-Z][a-z]/.test(tok) && tok !== 'I') return false;
+      var w = tok.toLowerCase();
+      return BE[w] || MODALS[w] || QW.test(w) || DETS[w] || DETS2[w] ||
+             PREPS[w] || CONJUNCTIONS[w] || PRONOUNS[w] || ADVERBS[w] ||
+             COMPARATIVE[w] || CARDINALS[w] || ADJECTIVES[w] || PARTICLES[w];
+    }
 
     toks.forEach(function (tok, i) {
       var w = tok.toLowerCase();
@@ -1622,12 +1740,31 @@
         rows.push({ tok: showTok || tok, pos: pos, fn: fn, mark: 'O' });
       }
 
-      // ① 標點
+      // ⑴ 標點
       if (/^[^\sA-Za-z0-9']$/.test(tok)) {
         afterDet = false; prevWasPronounObj = false; prevWasTo = false;
-        prevWasModal = false; prevWasConj = false;
+        prevWasModal = false; prevWasConj = false; prevWasLet = false; prevWasBe = false; prevWasBeAt = -1;
         emit('標點', '決定句子怎麼斷氣，逗號後面用小寫開頭');
         return;
+      }
+      // ⇒ 提早判斷專有名詞：只要位於句中（i > 0）、大寫開頭、
+      // 且不是任何功能詞就當專有名詞。
+      // 必須提早，否則 Thanksgiving 會先被 -ing 覆蓋、
+      // May 會先被情態動詞覆蓋。
+      // 除外：前面是句號時不當專有名詞〈“It's OK. This is...”的 This〉，
+      // 但 J.K. Rowling 這種【前面是單字母頭字母 + 句號】的仍然是。
+      if (i > 0 && /^[A-Z]/.test(tok) && tok !== 'I' && !isFunctionWordMidSentence(tok)) {
+        var prevTok = toks[i - 1] || '';
+        var prevIsSentenceEnd = /^[.!?]$/.test(prevTok) &&
+                                 !(i >= 2 && /^[A-Z]$/.test(toks[i - 2] || ''));
+        if (!prevIsSentenceEnd) {
+          afterDet = false; prevWasConj = false; prevWasPronounObj = false;
+          prevWasTo = false; prevWasModal = false; prevWasLet = false;
+          prevWasBe = false; prevWasBeAt = -1;
+          sawSubject = true;
+          emit('名詞（專有名詞）', '人名、地名或特有名稱，第一個字母永遠大寫');
+          return;
+        }
       }
       // ② 純數字
       if (/^[0-9]+$/.test(tok)) {
@@ -1642,9 +1779,26 @@
         return;
       }
       // ④ be 動詞（含縮寫 'm / 's / 're，顯示成 am / is / are 比較好懂）
+      // 's 是所有格還是 be 動詞？要先在 BE 分支之前判斷，
+      // 否則 "Jessie's grandparents" 的 's 會被 BE 分支吃掉。
+      if (w === "'s") {
+        var nx3 = toks[i + 1] ? toks[i + 1].toLowerCase() : '';
+        var isNounNext = nx3 && !BE[nx3] && !MODALS[nx3] && !QW.test(nx3) &&
+                         !VERBS[nx3] && verbBase(nx3) === null &&
+                         !ADVERBS[nx3] && !/ly$/.test(nx3) &&
+                         !/(ing|ed)$/.test(nx3) && !ADJECTIVES[nx3] && !COMPARATIVE[nx3];
+        if (isNounNext) {
+          prevWasBe = false; prevWasBeAt = -1; afterDet = true; prevWasTo = false;
+          emit('所有格', '表示「…的」，後面的名詞是它所屬的人或物');
+          return;
+        }
+      }
       if (BE[w] || w === "'m" || w === "'s" || w === "'re") {
         var showBe = w === "'m" ? 'am' : (w === "'s" ? 'is' : (w === "'re" ? 'are' : tok));
-        sawVerb = true; afterDet = false; prevWasTo = false; prevWasModal = false;
+        // 不清 prevWasModal：be 動詞在 "will be opened" 裡是助動詞，
+        // 後面 opened 才是主要動詞，旗標要留到那一步。
+        sawVerb = true; afterDet = false; prevWasTo = false;
+        prevWasBe = true; prevWasBeAt = i;
         emit('be 動詞', '表示身分或狀態，要跟主詞單複數一致', showBe);
         return;
       }
@@ -1665,6 +1819,12 @@
              doIsAux ? '和 not 一起構成否定，後面接動詞原形' : '句子的主要動作，人稱和時態要正確');
         return;
       }
+      // ⑤-3 Let：後面的字是動詞原形（Let's get / Let me know）
+      if (w === 'let') {
+        prevWasLet = true; afterDet = false; prevWasTo = false; sawVerb = true;
+        emit('動詞', '祈使句開頭，後面接代名詞與動詞原形：Let us go / Let me know');
+        return;
+      }
       // ⑥ 否定詞
       if (w === 'not' || w === "n't" || w === 'never' || (w === 'no' && !DETS[w])) {
         // 不清 prevWasModal：won't go / don't like 的動詞在否定詞後面
@@ -1672,10 +1832,21 @@
         emit('否定詞', '放在 be 動詞或助動詞之後');
         return;
       }
-      // ⑦ 疑問詞
-      if (QW.test(w)) {
+      // ⑦ 疑問詞（when 要看句子是不是疑問句）
+      // "What's this?" 的 When 是疑問詞；
+      // "Turn on the lamp when you read." 的 when 是從屬連接詞。
+      var isQuestionSent = /\?\s*$/.test(sent) || /^(who|what|where|when|why|how|which|whose|is|are|am|do|does|did|can|could|will|would|should|have|has)\b/i.test(sent.trim());
+      if (QW.test(w) && !(w === 'when' && !isQuestionSent)) {
         afterDet = false; prevWasTo = false; prevWasModal = false;
         emit('疑問詞', '放在句首提問，後面用一般疑問句語序');
+        return;
+      }
+      // ⑦-2 從屬連接詞（when / if / because ...）
+      if (CONJUNCTIONS[w] || (w === 'when' && !isQuestionSent)) {
+        if (SUBORD.test(w)) { sawVerb = false; }
+        afterDet = false; prevWasTo = false; prevWasModal = false;
+        prevWasConj = /^(and|or|but)$/.test(w);
+        emit('連接詞', '把兩個詞或子句接起來');
         return;
       }
       // ⑧ 助動詞縮寫 've / 'll / 'd
@@ -1736,14 +1907,6 @@
         emit('限定詞', '放在名詞前，決定後面的名詞用單數還是複數');
         return;
       }
-      // ⑫ 連接詞（從屬連接詞之後重新找動詞）
-      if (CONJUNCTIONS[w]) {
-        if (SUBORD.test(w)) { sawVerb = false; }
-        afterDet = false; prevWasTo = false; prevWasModal = false;
-        prevWasConj = /^(and|or|but)$/.test(w);
-        emit('連接詞', '把兩個詞或子句接起來');
-        return;
-      }
       // ⑬ 副詞
       if (ADVERBS[w] || /ly$/.test(w)) {
         afterDet = false; prevWasTo = false; prevWasModal = false;
@@ -1753,6 +1916,9 @@
       // ⑭ 代名詞
       if (PRONOUNS[w]) {
         if (sawVerb && !afterDet) prevWasPronounObj = true;
+        // "Let's get" 拆成 Let + 's，'s 走 be 動詞分支，
+        // 但 get 仍是 Let 後面的動詞，所以要保留 prevWasLet。
+        if (!prevWasLet) prevWasLet = false;
         sawSubject = true; afterDet = false; prevWasTo = false;
         prevWasModal = false; prevWasConj = false;
         emit('代名詞', '代替前面提過的人或物，注意單複數決定動詞');
@@ -1764,17 +1930,46 @@
         emit('形容詞（比較）', '比較兩個東西或三者以上，通常後面接 than');
         return;
       }
-      // ⑯ 現在分詞
+      // ⑯-4 's 是所有格還是 be 動詞？
+      // "Jessie's grandparents" → 所有格；"It's raining" → be 動詞。
+      if (w === "'s") {
+        var nxt2 = toks[i + 1] ? toks[i + 1].toLowerCase() : '';
+        var looksLikeNoun = nxt2 && !BE[nxt2] && !MODALS[nxt2] && !QW.test(nxt2) &&
+                            !VERBS[nxt2] && verbBase(nxt2) === null &&
+                            !ADVERBS[nxt2] && !/ly$/.test(nxt2) &&
+                            !/(ing|ed)$/.test(nxt2) && !ADJECTIVES[nxt2];
+        if (looksLikeNoun) {
+          prevWasBe = false; afterDet = true; prevWasTo = false;
+          emit('所有格', '表示「…的」，後面的名詞是它所屬的人或物');
+          return;
+        }
+      }
+      // ⑯ 形容詞要排在 -ing 之前：interesting / exciting / boring 是
+      // 分詞形容詞（Science is interesting），不是進行式動詞。
+      if (ADJECTIVES[w]) {
+        afterDet = false; prevWasTo = false; prevWasModal = false;
+        emit('形容詞', '描述名詞的樣子、大小、顏色或感覺');
+        return;
+      }
+      // ⑯-3 be 動詞 + 過去分詞（被動語態）：be born / was born / will be opened。
+      // 只在 be 動詞「立刻接著」分詞時才判斷，
+      // 且必須看得出是分詞形（結尾 -ed 或不規則過去分詞）。
+      // 否則 "I'm glad" 的 glad 這類形容詞會被報成過去分詞。
+      if (prevWasBe && prevWasBeAt === i - 1) {
+        var wb = verbBase(w);
+        var looksParticiple = (/ed$/.test(w) || IRREG_PAST[w]) && wb;
+        if (looksParticiple) {
+          prevWasBe = false; afterDet = false; prevWasTo = false;
+          emit('動詞（過去分詞）', '搭配前面的 be 動詞構成被動語態：be born / was opened');
+          return;
+        }
+        prevWasBe = false;
+      }
+      // ⑯-2 現在分詞
       if (/ing$/.test(w)) {
         afterDet = false; prevWasTo = false; prevWasModal = false;
         emit('動詞（-ing）', '表示正在進行，前面搭配 be 動詞');
         sawVerb = true;
-        return;
-      }
-      // ⑰ 形容詞
-      if (ADJECTIVES[w]) {
-        afterDet = false; prevWasTo = false; prevWasModal = false;
-        emit('形容詞', '描述名詞的樣子、大小、顏色或感覺');
         return;
       }
       // 限定詞後面的名詞要排在動詞判斷之前：a book / the work / my play 都是名詞，
@@ -1801,6 +1996,24 @@
         prevWasConj = false; prevWasPronounObj = false;
         sawSubject = true;
         emit('名詞', '和前面的名詞一起當主詞，用複數動詞');
+        return;
+      }
+      // ⑳-2 句中大寫開頭的專有名詞（Mr. Lin / Ted / Annie / Frank）。
+      // 沒有這條的話 "Mr. Lin was so mad" 的 Lin 會被當成主要動詞。
+      // 不用 !sawVerb 當條件："see Frank" 的 Frank 前面已經有動詞了，
+      // 但 Frank 仍是專有名詞。
+      if (i > 0 && /^[A-Z]/.test(tok) && !isFunctionWordMidSentence(tok)) {
+        afterDet = false; prevWasConj = false; prevWasPronounObj = false;
+        sawSubject = true;
+        emit('名詞（專有名詞）', '人名、地名或特有名稱，第一個字母永遠大寫');
+        return;
+      }
+      // ⑳-3 Let + 代名詞 + 動詞（Let's get / Let me know）
+      // 不能用 !sawVerb 當條件：let 自己已經把 sawVerb 設成 true 了。
+      if (prevWasLet) {
+        prevWasLet = false; sawVerb = true;
+        afterDet = false; prevWasPronounObj = false;
+        emit('動詞', 'Let 後面的動作，用原形：Let us go / Let me know');
         return;
       }
       // ㉑ 句首第一個實詞
