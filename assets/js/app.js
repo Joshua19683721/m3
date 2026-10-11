@@ -975,7 +975,7 @@
      verbBase() 只會去 -s / -ed，處理不了 came / born 這類，
      沒有這張表的話它們會整顆掉成名詞。                    */
   var IRREG_PAST = {};
-  ('has=have had=have does=do says=say gets=get goes=go comes=come makes=make ' +
+  ('has=have had=have got=get won=win does=do says=say gets=get goes=go comes=come makes=make ' +
    'takes=take sees=see knows=know thinks=think tells=tell asks=ask ' +
    'gives=give finds=find puts=put keeps=keep lets=let begins=begin ' +
    'seems=seem helps=help talks=talk turns=turn starts=start shows=show ' +
@@ -1542,6 +1542,7 @@
   var VERBS = {};
   ('be have do go come get make take see look want need like know think say tell ' +
    'ask give find put keep let begin seem help talk turn start show hear run move ' +
+    'blow hop ' +
    'live believe hold bring happen write sit stand lose pay meet include continue ' +
    'set learn change lead understand watch follow stop create speak read allow add ' +
    'spend grow open walk win offer love consider appear buy wait serve die send ' +
@@ -1755,6 +1756,32 @@
    'earth birth month death mouth truth faith youth health wealth ' +
    'breath cloth north south east west east')
     .split(/\s+/).forEach(function (w) { if (w) NOUN_NOT_VERB[w] = 1; });
+
+  /* 結尾是 -ing 但其實是名詞的字：去掉 -ing 之後查不到動詞字根。
+     thing / morning / evening / king / spring / nothing … */
+  var NOUN_ING = {};
+  ('thing morning evening night spring king wing string son son')
+    .split(/\s+/).forEach(function (w) { if (w) NOUN_ING[w] = 1; });
+
+  /* 動名詞（gerund）：形式是 -ing，但當名詞用。
+     "No smoking"、"the coming Christmas"、"No hunting"。
+     這裡只放「後面接名詞就一定是名詞」的字，
+     其他 -ing 動詞要看語境（keep reading 是動名詞、is blowing 是進行式）。 */
+  var GERUND_NOUNS = {};
+  ('smoking hunting swimming fishing skating camping dancing singing ' +
+   'shopping parking driving diving rowing hiking climbing ' +
+   'sitting standing waiting looking watching talking walking ' +
+   'working playing cleaning sweeping washing resting ' +
+   'exercising fishing drawing painting sewing knitting typing printing ' +
+   'running jogging walking boating skating surfing')
+    .split(/\s+/).forEach(function (w) { if (w) GERUND_NOUNS[w] = 1; });
+
+  /* 同時也是動詞、但在某些固定片語裡是名詞的字：
+     "after work"（下班）、"go to work"（上班）。 */
+  var NOUN_USE_WORDS = {};
+  ('work school home class lunch dinner breakfast supper bed rest ' +
+   'office shop store church hospital party meeting study research')
+    .split(/\s+/).forEach(function (w) { if (w) NOUN_USE_WORDS[w] = 1; });
 
   /* 複合名詞的前半段：這些名詞後面接另一個名詞時，整組是一個名詞。
      "summer vacation"（暑假）、"art teacher"（美術老師）、
@@ -2041,7 +2068,8 @@ function prepFn(w) {
       // May 會先被情態動詞覆蓋。
       // 除外：前面是句號時不當專有名詞〈“It's OK. This is...”的 This〉，
       // 但 J.K. Rowling 這種【前面是單字母頭字母 + 句號】的仍然是。
-      if (i > 0 && /^[A-Z]/.test(tok) && tok !== 'I' && !isFunctionWordMidSentence(tok)) {
+      if (i > 0 && /^[A-Z]/.test(tok) && tok !== 'I' && !isFunctionWordMidSentence(tok) &&
+          !DETS[w] && !DETS2[w] && !CARDINALS[w]) {
         var prevTok = toks[i - 1] || '';
         var prevIsSentenceEnd = /^[.!?]$/.test(prevTok) &&
                                  !(i >= 2 && /^[A-Z]$/.test(toks[i - 2] || ''));
@@ -2165,7 +2193,10 @@ function prepFn(w) {
       if (w === 'to') {
         var nextTok = toks[i + 1] ? toks[i + 1].toLowerCase() : '';
         var nextIsVerb = nextTok && (BE[nextTok] || VERBS[nextTok] || verbBase(nextTok));
-        if (nextIsVerb) {
+        // 「to work」「at home」「for lunch」這類後面是名詞，
+        // 不能因為 work 剛好也是動詞就說成「不定詞 to」。
+        var nextIsWorkNoun = nextTok === 'work' && nextTok !== '';
+        if (nextIsVerb && !nextIsWorkNoun) {
           prevWasTo = true; afterDet = false; prevWasModal = false;
         emit('不定詞 to', 'to + 動詞原形，表示目的、對象或未來的動作');
           return;
@@ -2318,30 +2349,64 @@ function prepFn(w) {
         return;
       }
       // ⑯-2 現在分詞
+      // 不能只看結尾是 -ing：thing / morning / evening / king / spring
+      // 都是名詞，判成「正在進行」會教錯。
+      // 真的分詞要去掉 -ing 後查得到動詞字根。
       if (/ing$/.test(w)) {
-        afterDet = false; prevWasTo = false; prevWasModal = false;
-        emit('動詞（-ing）', '表示正在進行，前面搭配 be 動詞');
-        sawVerb = true;
-        return;
+        var ingStem = w.replace(/ing$/, '');
+        var ingIsVerb = VERBS[ingStem] || IRREG_PAST[ingStem] || BE[ingStem];
+        // make → making：去掉 e 再查
+        if (!ingIsVerb && /e$/.test(ingStem)) ingIsVerb = VERBS[ingStem.slice(0, -1)] || IRREG_PAST[ingStem.slice(0, -1)];
+        // wave → waving：wav + e = wave（母音 + 啞音 e 的動詞，寫 -ing 時 e 不保留）
+        if (!ingIsVerb) ingIsVerb = VERBS[ingStem + 'e'] || IRREG_PAST[ingStem + 'e'];
+        // hop → hopping：重複子音要去掉一個（hopp → hop）
+        if (!ingIsVerb && /(.)\1$/.test(ingStem)) {
+          var dedup = ingStem.slice(0, -1);
+          ingIsVerb = VERBS[dedup] || IRREG_PAST[dedup];
+        }
+        // lie → lying（i 變 y）、dig → digging
+        if (!ingIsVerb && /i$/.test(ingStem)) ingIsVerb = VERBS[ingStem.slice(0, -1) + 'e'] || IRREG_PAST[ingStem.slice(0, -1)];
+        // 動名詞（"go shopping"、"keep reading"）→ 名詞化的用法
+        var afterPrepIng = i > 0 && rows[i - 1] &&
+          (rows[i - 1].pos === '介系詞' || rows[i - 1].pos === '動詞');
+        var nounIng = NOUN_ING[ingStem] === 1 || GERUND_NOUNS[w] === 1;
+        // 名詞性很明確的字（thing/morning/spring），且後面接名詞 → 是名詞
+        var nextIsNounish = i + 1 < toks.length &&
+          (DETS[toks[i + 1].toLowerCase()] || ADJECTIVES[toks[i + 1].toLowerCase()]);
+        // be 動詞後面的 -ing 一定是進行式，不會是動名詞：
+        // "are climbing"、"is hopping" 不能說成名詞。
+        var afterBeIng = prevWasBe || lastNonAdvWasBe;
+        if (nounIng && !afterBeIng && (nextIsNounish || !ingIsVerb)) {
+          afterDet = false; prevWasTo = false; prevWasModal = false;
+          prevWasPrep = false;
+          emit('名詞', afterPrepIng ? '動名詞，接在動詞或介系詞後面當受詞' : '名詞，不是進行式');
+          return;
+        }
+        if (ingIsVerb || !nounIng) {
+          afterDet = false; prevWasTo = false; prevWasModal = false;
+          emit('動詞（-ing）', afterPrepIng && !afterBeIng && !prevWasBe
+            ? '動名詞，接在動詞後面當受詞' : '表示正在進行，前面搭配 be 動詞');
+          sawVerb = true;
+          return;
+        }
       }
       // ⑱ 動詞（含第三人稱、過去式等變化型）
       // NOUN_NOT_VERB 的字要去掉字尾猜（bed→be、seed→see、wind→win），
       // 那是硬砍出來的假字根；讓它落到後面的名詞分支。
       var vb = NOUN_NOT_VERB[w] ? null : verbBase(w);
-      // 複合名詞的後半段不是動詞："summer vacation"、"art teacher"、
-      // "breakfast time" 都是「名詞 + 名詞」。
-      // 判準要嚴：前一個 token 必須已經被判定成名詞，
-      // 而且當前這個字本身在英文裡不是常用動詞（teacher / vacation 這類）。
-      var prevTok3 = i > 0 ? toks[i - 1].toLowerCase() : '';
-      var prevWasPlainNoun = i > 0 &&
-        (rows[i - 1].pos === '名詞' || rows[i - 1].pos === '名詞（複數）') &&
-        !prevWasPrep && !prevWasBe && !prevWasAdj;
-      if (vb !== null && prevWasPlainNoun && COMPOUND_HEADS[prevTok3] === 1 &&
-          !prevWasTo && !prevWasPronounObj && !prevWasModal && !prevWasConjVerb) {
-        prevWasPrep = false;
-        emit('名詞', '和前面的名詞組成複合名詞，整組當主詞');
-        return;
+      // 連接詞（after / before / until …）後面接名詞時，那個名詞是名詞。
+      // "I will go home after work." 的 work 是「下班」，不是動詞。
+      // 放在動詞判斷之前，否則 sawVerb 已成立時 work 會被當成句子的動詞。
+      if (vb !== null && i > 0 && NOUN_USE_WORDS[w] === 1) {
+        var pTokC = toks[i - 1].toLowerCase();
+        var pRowC = rows[i - 1];
+        if (pRowC.pos === '連接詞' && SUBORD.test(pTokC) && !/^ing$/.test(w)) {
+          emit('名詞', '表示活動或場所；在這個片語裡不是動詞');
+          return;
+        }
       }
+      // 複合名詞的判斷統一放在 ㉒-0（動詞分支之後），
+      // 這裡只判斷「這是動詞」的條件。
       var isVerbUse = vb !== null &&
         (!sawVerb || prevWasTo || prevWasPronounObj || prevWasModal || prevWasConjVerb);
       if (isVerbUse) {
@@ -2406,7 +2471,10 @@ function prepFn(w) {
         var afterPlainNoun = (pRow.pos === '名詞' || pRow.pos === '名詞（複數）') &&
           !prevWasPrep && !prevWasBe && !prevWasAdj && !prevWasPronounObj && !pIsCompoundTail;
         if (afterPlainNoun && COMPOUND_HEADS[pTok] === 1 &&
-            !CONJUNCTIONS[w] && !PREPS[w] && !MODALS[w] && !BE[w]) {
+            !CONJUNCTIONS[w] && !PREPS[w] && !MODALS[w] && !BE[w] &&
+            // 關鍵防線：這個字本身是動詞就不能當複合名詞的後半。
+            // "My brother ran ahead of me." 的 ran 是動詞，不是「brother ran」。
+            !IRREG_PAST[w] && !/^(ing|ed|s)$/.test(w) && !ADJECTIVES[w] && !ADVERBS[w]) {
           prevWasPrep = false;
           emit('名詞', '和前面的名詞組成複合名詞，整組當主詞');
           return;
