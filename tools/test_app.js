@@ -121,11 +121,20 @@ console.log('\n=== 解析面板 ===');
 doc.getElementById('explainBtn').dispatchEvent(new window.Event('click', { bubbles: true }));
 ok('面板開啟', doc.getElementById('panel').hidden === false);
 const body = doc.getElementById('panelBody').innerHTML;
-ok('面板含五個章節', (body.match(/sec__title/g) || []).length === 5,
+// 七個固定章節；「資料檢核結果」只在有問題時出現，所以這裡用 >= 7
+ok('面板含七個章節', (body.match(/sec__title/g) || []).length >= 7,
    (body.match(/sec__title/g) || []).length + '');
+ok('章節編號連續（一~七）',
+   ['一、', '二、', '三、', '四、', '五、', '六、', '七、']
+     .every(function (n) { return body.indexOf(n) >= 0; }));
 ok('面板含詞性對照表', body.indexOf('class="pos"') >= 0);
 ok('面板含常犯錯誤', body.indexOf('mistake__t') >= 0);
 ok('面板帶 O/X 標記', body.indexOf('mark--o') >= 0 && body.indexOf('mark--x') >= 0);
+// 新增：108 課綱常見錯誤與延伸範例句
+ok('面板含 108 課綱常見錯誤', body.indexOf('108 課綱常見錯誤與修正技巧') >= 0);
+ok('面板含理解技巧', body.indexOf('理解技巧') >= 0);
+ok('面板含延伸範例句', body.indexOf('延伸範例') >= 0);
+ok('範例句帶地雷提示', body.indexOf('地雷提示') >= 0);
 doc.getElementById('panelClose').dispatchEvent(new window.Event('click', { bubbles: true }));
 ok('面板關閉', doc.getElementById('panel').hidden === true);
 
