@@ -918,10 +918,96 @@
     // is/box/bus/brush 加 es；子音 + y 變 ies。
     // 注意：-o 不在這個規則裡——zoo/radio/photo/piano/video 都只加 s，
     //       只有 potato/tomato/hero 這幾個才加 es，題庫沒有這些字。
+    // ch 結尾也不一律加 es：stomach → stomachs（不是 stomaches）、
+    //                   sandwich → sandwiches、church → churches。
+    var noEs = { stomach: 1, sandwich: 1, stomachache: 1 };
+    if (noEs[word]) return word + 's';
     if (/[sx]$/i.test(word) || /(ch|sh)$/i.test(word)) return word + 'es';
     if (/[^aeiou]y$/i.test(word)) return word.replace(/y$/i, 'ies');
     return word + 's';
   }
+
+  /* 不能套名詞模板的字。
+     1. 副詞／介系詞／連接詞／代名詞：加了複數就是錯英文
+        （abroads / durings / howevers / everyones / sinces）。
+     2. 不可數名詞：沒有複數形式（knowledges、rices、advices）。
+     3. 單複數同形或已是複數：sheep → sheep、chopsticks → chopsticks。
+     4. 不規則複數：man → men、child → children、tooth → teeth。
+     這四類都不該產生 "These <複數> are very good." 這種句子。 */
+  /* 不可數名詞：沒有複數、也不能加 a / an。 */
+  var MASS_NOUNS = {};
+  ('water rice bread milk juice soup meat fish cheese sugar salt coffee tea '
+   + 'money knowledge homework information furniture equipment luggage '
+   + 'weather traffic news music art advice help progress work '
+   + 'homework staff police physics economics gymnastics aerobics billiards '
+   + 'chinese japanese english paper plastic glass wood metal coal oil '
+   + 'air fire water electricity money cash travel ')
+    .split(/\s+/).forEach(function (w) { if (w) MASS_NOUNS[w] = 1; });
+
+  /* 不規則複數對照：規則加 -s 會錯的字。 */
+  var IRREG_PLURAL_OF = {};
+  (function () {
+    var pairs = [['man', 'men'], ['child', 'children'], ['tooth', 'teeth'],
+      ['foot', 'feet'], ['goose', 'geese'], ['mouse', 'mice'], ['person', 'people'],
+      ['ox', 'oxen'], ['woman', 'women'], ['knife', 'knives'], ['leaf', 'leaves'],
+      ['wolf', 'wolves'], ['shelf', 'shelves'], ['half', 'halves'],
+      ['loaf', 'loaves'], ['thief', 'thieves'], ['sheep', 'sheep'], ['deer', 'deer'],
+      ['fish', 'fish'], ['chopsticks', 'chopsticks'], ['glasses', 'glasses'],
+      ['parents', 'parents'], ['clothes', 'clothes'], ['stairs', 'stairs'],
+      ['gloves', 'gloves'], ['scissors', 'scissors'], ['series', 'series'],
+      ['species', 'species']];
+    pairs.forEach(function (pr) { IRREG_PLURAL_OF[pr[0]] = pr[1]; });
+  })();
+
+  /* 只當動詞用的字：中文釋義開頭看不出來（出現 / 閱讀 / 修理 / 傷害…），
+     但套名詞模板會生出 "I have an appear."、"I have a read." 這種錯句子。
+     這裡只收「在這個課程裡從來不當名詞用」的字，避免影響
+     answer（答案）、book（書）、break（休息）這種兼類詞。 */
+  var VERB_ONLY_WORDS = {};
+  ('appear disappear arrive depart return stay remain '
+   + 'enjoy receive accept refuse admit avoid '
+   + 'read write speak talk listen hear watch look see '
+   + 'buy sell pay cost spend save earn borrow lend owe '
+   + 'repair fix build make create destroy repair '
+   + 'hurt heal cure treat examine check '
+   + 'happen occur seem appear become grow '
+   + 'join leave enter exit rise fall rise '
+   + 'hang hang keep hold carry bring take put '
+   + 'follow lead guide manage control '
+   + 'imagine guess wonder realize notice observe '
+   + 'clap cheer celebrate greet hug kiss '
+   + 'belong consist include contain remain '
+   + 'examine wonder doubt trust fear hope wish '
+   + 'matter happen matter ')
+     .split(/\s+/)
+     .forEach(function (w) { if (w) VERB_ONLY_WORDS[w] = 1; });
+
+  var NOT_PLURAL_TEMPLATE = {};
+  ('above abroad ahead along already always around because below beside during '
+   + 'either ever every except however inside later maybe never often once outside '
+   + 'perhaps quite seldom since soon though together tonight until very '
+   + 'whether without yesterday tomorrow alone also too well '
+   + 'anyone anything everybody everyone nobody nothing someone something somewhere '
+   + 'anywhere everywhere nowhere '
+   // 形容詞／副詞：加 -s 就是錯英文（finalies、alreadies、sads）
+   + 'final finally ready simple tall sad able enough away back '
+   // 專有名詞：月份、星期、國家、語言不會有複數
+   + 'america china taiwan usa britain england france germany japan korea '
+   + 'january february march april may june july august september october '
+   + 'november december monday tuesday wednesday thursday friday saturday sunday '
+   + 'english chinese japanese french german spanish italian russian internet '
+   // 量詞與固定片語
+   + 'pe roc badminthon as eve everything everybody anything something '
+   // 不可數名詞
+   + 'knowledge rice advice information furniture equipment jewelry bread money '
+   + 'water milk sugar weather homework news progress traffic luggage '
+   + 'staff police music physics politics economics gymnastics maths aerobics '
+   + 'billiards spaghetti popcorn garbage honey glue juice ice butter '
+   // 單複同形 / 已經是複數
+   + 'sheep deer moose fish series species aircraft '
+   + 'chopsticks clothes glasses gloves stairs parents jeans pants shorts scissors ')
+     .split(/\s+/)
+     .forEach(function (w) { if (w) NOT_PLURAL_TEMPLATE[w] = 1; });
 
   /* 拼寫 h 不發音的字：前面要用 an，不能用 a。教科書等級的例外只有這幾個。 */
   var SILENT_H = { hour: 1, hours: 1, honest: 1, honestly: 1, honor: 1, honours: 1, honorable: 1 };
@@ -1428,7 +1514,10 @@
       return out.slice(0, 5);
     }
 
-    var isVerb = VERB_HINT.test(gloss);
+    // 判斷是不是動詞：中文釋義的字頭，加上「只當動詞用」的字表。
+    // 只看中文會漏掉「出現」「閱讀」「修理」這類譯法，
+    // 結果生出 "I have an appear."、"Do you like enjoys?" 這種錯句子。
+    var isVerb = VERB_HINT.test(gloss) || VERB_ONLY_WORDS[lw] === 1;
     var isAdj = !isVerb && (/的$/.test(gloss) ||
       /(紅色|綠色|藍色|黃色|黑色|白色|顏色|大的|小的|長的|短的|高的|矮的|胖的|瘦的|快的|慢的|新的|舊的|好的|壞的|多的|少的|冷的|熱的|暖的|亮的|暗的|乾淨|髒的|整齊|吵的|忙的|累的|餓的|渴的|開心|難過|生氣|害怕|重要|容易|困難|危險|安全|有名|聰明|誠實|友善|勇敢|客氣|努力|有趣|無聊|奇怪|認真|瘋狂|自由|真實|方便|優秀|棒的|漂亮|帥的|可愛|可憐|特別|普通|同一|不同|完整|足夠|正確|真的|假的|早的|晚的|遲的|閒的|滿的|空的|深的|淺的|厚的|薄的|寬的|窄的|粗的|細的|尖的|鈍的|彎的|直的|圓的|方的|平的|斜的|舒適|舒服|快樂|悲傷|憤怒|恐懼|緊張|放鬆|驚喜|感動|感激|感恩|欣慰|滿足|失望|絕望|無奈|無助|孤單|寂寞|充實|空虛|茫然|迷失|徬徨|猶豫|果斷|堅定|軟弱|頑強|倔強|固執|隨和|包容|體貼|溫柔|仁慈|慈悲|殘忍|冷酷|無情|自私|無私|奉獻|犧牲|付出|收穫|成長|茁壯|衰落|腐敗|清廉|貪污|公正|偏頗|客觀|主觀|理性|感性|冷靜|衝動|謹慎|魯莽|大膽|膽小|勇敢|懦弱)/.test(gloss));
 
@@ -1455,16 +1544,46 @@
       // a / an 依發音決定；h 不發音的字（hour / honest）也要用 an。
       // 只看首字母的話，hour 會產生"a hour"這種錯英文。
       var art = (/^[aeiou]/.test(lw) || SILENT_H[lw] === 1) ? 'an' : 'a';
+      // 不可數名詞（water / knowledge / music）本來就沒有 a 與複數，
+      // 硬套會生出 "I have a knowledge."、"These rices are..." 這種錯英文。
+      var isMass = MASS_NOUNS[lw] === 1;
+      if (isMass) {
+        add('I drink some ' + lw + '.', '我喝一些' + gloss + '。',
+            gloss + '是不可數名詞，沒有複數形式，也不能加 a / an；'
+            + '要表示份量要用 some 或量詞。');
+        add('There is a lot of ' + lw + ' here.', '這裡有很多' + gloss + '。',
+            'a lot of 後面接不可數名詞，表示「很多」，不加 -s。');
+        add('Look at the ' + lw + '.', '你看這個' + gloss + '。',
+            'the 可以用在不可數名詞前面，表示特指那一份。');
+        return out.slice(0, 5);
+      }
       var plural = es3(lw);
       add('I have ' + art + ' ' + lw + '.', '我有一個' + gloss + '。',
           art === 'an' ? 'an 用於母音開頭的字，看發音不看拼字。' :
           '單數可數名詞不能單獨出現，前面要加 a / an / the / my。');
+      add('Look at the ' + lw + '.', '你看這個' + gloss + '。',
+          '祈使句用動詞原形開頭，主詞 you 省略。');
+      // 不規則複數（man → men、child → children）要用對，不然會教錯字。
+      if (IRREG_PLURAL_OF[lw]) {
+        var irr = IRREG_PLURAL_OF[lw];
+        add('Do you like ' + irr + '?', '你喜歡' + gloss + '嗎？',
+            lw + ' 的複數是 ' + irr + '，不能直接加 -s。');
+        add('These ' + irr + ' are very good.', '這些' + gloss + '很好。',
+            'these / those 後面一定接複數名詞。');
+        return out.slice(0, 5);
+      }
+      // 這些字不能產生複數句型（副詞、介系詞、代名詞、單複同形…）
+      if (NOT_PLURAL_TEMPLATE[lw] === 1) {
+        add('Look at the ' + lw + ' here.', '你看這裡的' + gloss + '。',
+            lw + ' 在這裡是用在句子裡，不是可數名詞，所以不會有複數形式。');
+        add('These ' + lw + ' are fine.', '這些' + gloss + '沒問題。',
+            lw + ' 本身表示「這些」的意思，後面不要再加 are。');
+        return out.slice(0, 5);
+      }
       add('Do you like ' + plural + '?', '你喜歡' + gloss + '嗎？',
           'like 後面接複數表示「喜歡這一類」（' + plural + '，注意拼字），不加 the。');
       add('These ' + plural + ' are very good.', '這些' + gloss + '很好。',
           'these / those 後面一定接複數名詞。');
-      add('Look at the ' + lw + '.', '你看這個' + gloss + '。',
-          '祈使句用動詞原形開頭，主詞 you 省略。');
     }
 
     return out.slice(0, 5);
