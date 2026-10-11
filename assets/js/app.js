@@ -1373,7 +1373,23 @@
   var PREPS = { 'of': 1, 'in': 1, 'on': 1, 'at': 1, 'for': 1, 'from': 1, 'to': 1,
                 'with': 1, 'by': 1, 'about': 1, 'into': 1, 'than': 1, 'after': 1,
                 'before': 1, 'under': 1, 'over': 1, 'near': 1, 'behind': 1,
-                'beside': 1, 'between': 1 };
+                'beside': 1, 'between': 1,
+                'along': 1, 'without': 1, 'except': 1, 'onto': 1, 'past': 1,
+                'among': 1, 'through': 1, 'across': 1, 'upon': 1, 'within': 1,
+                'during': 1, 'besides': 1, 'toward': 1, 'towards': 1, 'against': 1,
+                'beyond': 1, 'beneath': 1, 'underneath': 1, 'alongside': 1 };
+
+  /* 片語動詞的副詞粒子：這些字既能當副詞也能當介系詞，
+     「stand up」的 up 是副詞，「walk up the hill」的 up 是介系詞。
+     用「後面有沒有接名詞片語」來分辨，比一律當某一類準。            */
+  var PARTICLES = {};
+  ('up down off out away around back along apart aside over under in on').split(/\s+/)
+    .forEach(function (w) { if (w) PARTICLES[w] = 1; });
+
+  /* 並列／全體限定詞：both / either / neither 放在名詞前，當限定詞教最恰當 */
+  var DETS2 = {};
+  ('both either neither each every all some any most many few several enough other another')
+    .split(/\s+/).forEach(function (w) { if (w) DETS2[w] = 1; });
   var MODALS = { 'can': 1, 'could': 1, 'should': 1, 'would': 1, 'will': 1,
                  'must': 1, 'may': 1, 'might': 1, 'shall': 1 };
   var BE = { 'is': 1, 'am': 1, 'are': 1, 'was': 1, 'were': 1, 'be': 1, 'been': 1, 'being': 1 };
@@ -1567,11 +1583,18 @@
     var prevWasConj = false;         // Mina and Mike → Mike 也是名詞
 
     // 動詞的第三人稱／複原：knows → know、studies → study、watches → watch
+    // 注意 -es 只能在「標準拼字」出現時去掉（watches→watch、goes→go）。
+    // 無條件去掉的話 'bees'.replace(/es$/,'') 會變成 'be'，
+    // 把 bees（bee 的複數）誤判成 be 的變化型。
     function verbBase(w) {
       if (VERBS[w]) return w;
-      if (VERBS[w.replace(/s$/, '')]) return w.replace(/s$/, '');
-      if (VERBS[w.replace(/es$/, '')]) return w.replace(/es$/, '');
       if (VERBS[w.replace(/ies$/, 'y')]) return w.replace(/ies$/, 'y');
+      if (/(ches|shes|sses|xes|zes|oes)$/i.test(w)) {
+        var b1 = w.replace(/es$/i, '');
+        if (VERBS[b1]) return b1;
+      }
+      var b2 = w.replace(/s$/i, '');
+      if (VERBS[b2]) return b2;
       if (VERBS[w.replace(/ing$/, '')]) return w.replace(/ing$/, '');
       if (VERBS[w.replace(/ing$/, 'e')]) return w.replace(/ing$/, 'e');
       if (VERBS[w.replace(/ed$/, '')]) return w.replace(/ed$/, '');
@@ -1619,6 +1642,17 @@
         emit('情態動詞', '後面一律接動詞原形，不加 to、不加 -s');
         return;
       }
+      // ⑤-2 助動詞 do / does / did：「I don't want to go」的 want 是主要動詞，
+      //  要靠這個旗標才認得出來。判斷方法：下一個 token 是不是 not / n't。
+      if (w === 'do' || w === 'does' || w === 'did') {
+        var nxtAux = toks[i + 1] ? toks[i + 1].toLowerCase() : '';
+        var doIsAux = (nxtAux === 'not' || nxtAux === "n't");
+        sawVerb = true; afterDet = false; prevWasTo = false;
+        prevWasModal = doIsAux;
+        emit(doIsAux ? '助動詞' : '動詞',
+             doIsAux ? '和 not 一起構成否定，後面接動詞原形' : '句子的主要動作，人稱和時態要正確');
+        return;
+      }
       // ⑥ 否定詞
       if (w === 'not' || w === "n't" || w === 'never' || (w === 'no' && !DETS[w])) {
         // 不清 prevWasModal：won't go / don't like 的動詞在否定詞後面
@@ -1651,7 +1685,27 @@
         emit('介系詞', '後面接名詞或 -ing，不能接動詞原形');
         return;
       }
-      // ⑩ 介系詞
+      // ⑩ 片語動詞粒子：後面接名詞片語時是介系詞，否則是副詞
+      if (PARTICLES[w]) {
+        var nxt = toks[i + 1] ? toks[i + 1].toLowerCase() : '';
+        var nxtIsNounish = nxt && (DETS[nxt] || DETS2[nxt] || CARDINALS[nxt] ||
+                                   /^(the|a|an|my|your|his|her|its|our|their|this|that|these|those)$/.test(nxt));
+        if (nxtIsNounish) {
+          afterDet = true; prevWasTo = false;
+          emit('介系詞', '後面接名詞或 -ing，不能接動詞原形');
+        } else {
+          afterDet = false; prevWasTo = false;
+          emit('副詞（粒子）', '和前面的動詞組成片語動詞，例如 stand up / go out');
+        }
+        return;
+      }
+      // ⑩-2 並列／全體限定詞
+      if (DETS2[w] && !PRONOUNS[w]) {
+        afterDet = true; prevWasTo = false;
+        emit('限定詞', '放在名詞前，決定後面的名詞用單數還是複數');
+        return;
+      }
+      // ⑪ 介系詞
       if (PREPS[w]) {
         afterDet = true; prevWasTo = false; prevWasModal = false;
         emit('介系詞', '後面接名詞或 -ing，不能接動詞原形');
