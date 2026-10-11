@@ -2783,6 +2783,111 @@ function prepFn(w) {
         });
       }
     }
+
+// ⑥ 沒有數字時，複數名詞還是要加 s
+    //    "I like to sit under the trees." 的 trees 是複數，
+    //    學生常寫成 "under the tree"。
+    //    題庫本身是正確的，所以 (X) 是把 s 拿掉、還原成學生常寫錯的樣子。
+    // 只有在沒有數字、沒有被 ④ 規則處理時才觸發
+    var hasNumber = /\b(two|three|four|five|six|seven|eight|nine|ten|many|several|a few|a couple of)\b/i.test(sent);
+    var pluralNoun = sent.match(/\b(I have|I like|I see|There are|These are|Those are|We have|They have|People have|People like|People see)\b/i);
+    if (pluralNoun && !hasNumber) {
+      // 動詞後面可能接 to / a / the 等功能字，要跨過它們找到真正名詞
+      var searchStart = sent.indexOf(pluralNoun[0]) + pluralNoun[0].length;
+      var rest = sent.slice(searchStart).trim();
+      var toks = rest.split(/\s+/);
+      var pnCand = "";
+      for (var pti = 0; pti < toks.length; pti++) {
+        var pnRaw = toks[pti].replace(/[.,!?;:"']+$/, '');
+        var pnLow = pnRaw.toLowerCase();
+        if (!pnRaw) break;
+        if (PREPS[pnLow] || DETS[pnLow] || DETS2[pnLow] || PRONOUNS[pnLow] ||
+            BE[pnLow] || MODALS[pnLow] || VERBS[pnLow] || pnRaw === 'to') continue;
+        pnCand = pnRaw;
+        break;
+      }
+      var pn = pnCand.toLowerCase();
+      var pnUncountable = MASS_NOUNS[pn] === 1;
+      var pnProper = /^[A-Z]/.test(pnCand);
+      var pnAdj = ADJECTIVES[pn] === 1;
+      // 結尾是 s 才會有「漏 s」的問題可以教
+      var pnHasS = /s$/i.test(pnCand) && !SINGULAR_S_EXTRA[pnCand];
+      if (pnCand && !pnUncountable && !pnProper && !pnAdj && pnHasS) {
+        var pnWrong = pn.replace(/s$/i, '');
+        if (pnWrong && pnWrong !== pn && !/ss$/.test(pn)) {
+          out.push({
+            title: '複數名詞要加 s',
+            bad: '(X) ' + sent.replace(new RegExp('\\b' + pnCand + '\\b', 'i'), pnWrong),
+            ok: '(O) ' + sent,
+            why: '英文裡可數名詞複數要加 s：trees、books、apples。中文沒有單複數變化，所以「一個」以外的數量都要記得加 s。'
+          });
+        }
+      }
+    }
+    // ⑦ 介系詞後面接動名詞（-ing），不是動詞原形
+    //    "I keep the habit of reading." 的 of 後面要接 reading。
+    var prepIng = sent.match(/\b(about|of|for|in|on|at|by|with|without)\s+([a-z]+ing)\b/i);
+    if (prepIng) {
+      var piPrep = prepIng[1].toLowerCase();
+      var piIng = prepIng[2];
+      var piStem = piIng.replace(/ing$/, '');
+      var piBase = VERBS[piStem] || VERBS[piStem + 'e'] || IRREG_PAST[piStem];
+      if (piBase) {
+        out.push({
+          title: '介系詞後面接動名詞',
+          bad: '(X) ' + sent.replace(new RegExp('\\b' + piIng + '\\b', 'i'), piStem),
+          ok: '(O) ' + sent,
+          why: '介系詞（in / on / at / of / for / with）後面要接動名詞（-ing），不是動詞原形。例如 of reading、in spring。'
+        });
+      }
+    }
+
+    // ⑧ 特定動詞後面接動名詞（-ing），不是動詞原形
+    //    go surfing、stop making、enjoy walking、like playing
+    //    注意：這條規則要優先於 ⑥ 規則（複數名詞要加 s）
+    var verbIng = sent.match(/\b(go|stop|enjoy|like|hate|love|keep|practice|finish|mind)\s+([a-z]+ing)\b/i);
+    if (verbIng) {
+      var viVerb = verbIng[1].toLowerCase();
+      var viIng = verbIng[2];
+      var viStem = viIng.replace(/ing$/, '');
+      var viBase = VERBS[viStem] || VERBS[viStem + 'e'] || IRREG_PAST[viStem];
+      if (viBase) {
+        out.push({
+          title: viVerb + ' 後面接動名詞',
+          bad: '(X) ' + sent.replace(new RegExp('\\b' + viIng + '\\b', 'i'), viStem),
+          ok: '(O) ' + sent,
+          why: viVerb + ' 後面要接動名詞（-ing）：' + viVerb + ' ' + viIng + '。不能接動詞原形。'
+        });
+      }
+    }
+
+    // ⑨ don't / doesn't / can't 後面接動詞原形，不加 -s
+    //    題庫本身是正確的，所以 (X) 是把動詞變成第三人稱單數、還原成學生常寫錯的樣子。
+    var dontV = sent.match(/\b(don't|doesn't|didn't|can't|won't|isn't|aren't)\s+([a-z]+)\b/i);
+    if (dontV) {
+      var dvAux = dontV[1].toLowerCase();
+      var dvVerb = dontV[2].toLowerCase();
+      var dvBase = VERBS[dvVerb] || IRREG_PAST[dvVerb];
+      if (dvBase) {
+        // 產生第三人稱單數形式作為錯誤示範
+        var dvWrong;
+        if (/[sxz]$/.test(dvVerb) || /[cs]h$/.test(dvVerb)) {
+          dvWrong = dvVerb + 'es';
+        } else if (/o$/.test(dvVerb)) {
+          dvWrong = dvVerb + 'es';
+        } else if (/y$/.test(dvVerb) && !/[aeiou]y$/.test(dvVerb)) {
+          dvWrong = dvVerb.replace(/y$/, 'ies');
+        } else {
+          dvWrong = dvVerb + 's';
+        }
+        out.push({
+          title: '否定助動詞後面接動詞原形',
+          bad: '(X) ' + sent.replace(new RegExp('\\b' + dontV[2] + '\\b', 'i'), dvWrong),
+          ok: '(O) ' + sent,
+          why: dvAux + ' 後面要接動詞原形，不加 -s：' + dvAux + ' ' + dvVerb + '。'
+        });
+      }
+    }
     if (!out.length) {
       var t = String(target || '');
       var here = t && sent.toLowerCase().indexOf(t.toLowerCase()) >= 0;
