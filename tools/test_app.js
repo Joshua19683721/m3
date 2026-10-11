@@ -482,10 +482,10 @@ window.SpeechSynthesisUtterance = function (t) { this.text = t; this.rate = 1; t
 window.speechSynthesis = {
   cancel() {}, speak(u) { spoken.push(u); }, getVoices() { return []; }, onvoiceschanged: null
 };
+const tick2 = w => new Promise(r => w.setTimeout(r, 0));
 const rateSel = doc.getElementById('rateSelect');
 ok('語速選單存在', !!rateSel);
-ok('預設語速 0.85（稍慢）', rateSel && rateSel.value === '0.85', rateSel && rateSel.value);
-ok('語速有慢／正常／快多種選項', rateSel && rateSel.options.length >= 5,
+ok('預設語速 0.85（稍慢）', rateSel && rateSel.value === '0.85', rateSel && rateSel.value);ok('語速有慢／正常／快多種選項', rateSel && rateSel.options.length >= 5,
    rateSel && String(rateSel.options.length));
 ok('語速選項值都是正數', rateSel && [].every.call(rateSel.options, o => parseFloat(o.value) > 0));
 
@@ -519,6 +519,64 @@ window.location.hash = '#school/0/3';
 await tick();
 ok('重新載入步驟後語速仍是 0.5', doc.getElementById('rateSelect').value === '0.5',
    doc.getElementById('rateSelect').value);
+
+// 匯出／匯入 round-trip：換裝置時語速要跟著走
+doc.getElementById('dataBtn').dispatchEvent(new window.Event('click', { bubbles: true }));
+doc.getElementById('exportBtn').dispatchEvent(new window.Event('click', { bubbles: true }));
+await tick();
+const exportedJson = doc.getElementById('dataArea').value;
+ok('匯出的 JSON 含語速', /"rate"\s*:\s*0\.5/.test(exportedJson), exportedJson.slice(0, 120));
+
+doc.getElementById('dataArea').value = exportedJson;
+doc.getElementById('importBtn').dispatchEvent(new window.Event('click', { bubbles: true }));
+await tick();
+ok('匯入後語速選單還原成 0.5', doc.getElementById('rateSelect').value === '0.5',
+   doc.getElementById('rateSelect').value);
+
+// 舊版進度（沒有 rate 鍵）與壞值都要用「重新啟動 App」才測得到，
+// 因為 syncSettings() 只在 boot 時跑一次，直接改 localStorage 不會重跑。
+// 注意：boot() 是在 DOMContentLoaded 跑的，eval 完還要等一個 tick 才真的啟動，
+// 不等會讀到 HTML 的預設值而不是 localStorage 的值（測試會假通過）。
+async function freshDom(storedSettings) {
+  const d = new JSDOM(html, {
+    runScripts: 'dangerously', url: 'http://127.0.0.1:8848/index.html', pretendToBeVisual: true
+  });
+  if (storedSettings !== undefined) {
+    d.window.localStorage.setItem('scen.settings.v1', JSON.stringify(storedSettings));
+  }
+  const rec = [];
+  d.window.SpeechSynthesisUtterance = function (t) {
+    this.text = t; this.rate = 1; this.pitch = 1; this.voice = null;
+  };
+  d.window.speechSynthesis = {
+    cancel() {}, speak(u) { rec.push(u); }, getVoices() { return []; }, onvoiceschanged: null
+  };
+  d.window.eval(fs.readFileSync(path.join(root, 'data/banks.js'), 'utf8'));
+  d.window.eval(fs.readFileSync(path.join(root, 'assets/js/app.js'), 'utf8'));
+  await new Promise(r => d.window.setTimeout(r, 0));
+  return { dom: d, spoken: rec, doc: d.window.document };
+}
+
+{
+  const { doc: dLegacy } = await freshDom({ hideZh: true, repeat: 2 });
+  ok('舊版進度（無 rate 鍵）仍正常啟動，回退預設 0.85',
+     dLegacy.getElementById('rateSelect').value === '0.85',
+     dLegacy.getElementById('rateSelect').value);
+  ok('舊版進度其餘設定仍保留',
+     dLegacy.getElementById('zhToggle').checked === true &&
+     dLegacy.getElementById('repeatSelect').value === '2');
+}
+{
+  const { doc: dBad, spoken: sBad, dom: domBad } = await freshDom({ rate: 'abc' });
+  domBad.window.location.hash = '#school/0/3';
+  await tick2(domBad.window);
+  sBad.length = 0;
+  dBad.getElementById('speakBtn').dispatchEvent(
+    new domBad.window.Event('click', { bubbles: true }));
+  ok('壞值 rate="abc" 回退 0.85，語音仍可朗讀',
+     sBad.length >= 1 && Math.abs(sBad[sBad.length - 1].rate - 0.85) < 1e-9,
+     JSON.stringify(sBad[sBad.length - 1]));
+}
 
 console.log('\n================  ' + pass + ' passed, ' + fail + ' failed  ================\n');
 process.exit(fail ? 1 : 0);
