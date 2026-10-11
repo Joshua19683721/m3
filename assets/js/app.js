@@ -965,14 +965,17 @@
    // 單字片語步驟會用到這些頻率／肯定／否定副詞，
    // 漏收會讓獨立的 "ever" / "once" / "yes" 掉成名詞。
    'else ever even yet yes once twice again no not barely absolutely ' +
-   'certainly indeed surely moreover nevertheless nonetheless instead')
+   'certainly indeed surely moreover nevertheless nonetheless instead ' +
+   // only 是副詞（You can only use...），不能被 /ly$/ 誤判成別的詞性。
+   // 「只有」的意思，常跟 can / could / will 連用。
+   'only just even merely')
     .split(/\s+/).forEach(function (w) { if (w) ADVERBS[w] = 1; });
 
   /* 不規則過去式與過去分詞 → 原形。
      verbBase() 只會去 -s / -ed，處理不了 came / born 這類，
      沒有這張表的話它們會整顆掉成名詞。                    */
   var IRREG_PAST = {};
-  ('has=have does=do says=say gets=get goes=go comes=come makes=make ' +
+  ('has=have had=have does=do says=say gets=get goes=go comes=come makes=make ' +
    'takes=take sees=see knows=know thinks=think tells=tell asks=ask ' +
    'gives=give finds=find puts=put keeps=keep lets=let begins=begin ' +
    'seems=seem helps=help talks=talk turns=turn starts=start shows=show ' +
@@ -1732,6 +1735,49 @@
   var CONTEXT_ADJ = {};
   ('late early right back straight sure fine')
     .split(/\s+/).forEach(function (w) { if (w) CONTEXT_ADJ[w] = 1; });
+
+  /* 結尾是 -ly 但「不是」副詞的字。不能只靠 /ly$/ 就判副詞，
+     否則 "My family keeps a dog." 的 family、"fly a kite" 的 fly、
+     "friendly" 的 friendly 都會被誤判成副詞。
+     這裡放的都是名詞、形容詞或專有名詞。 */
+  var LY_NOT_ADVERB = {};
+  ('butterfly family fly friendly lovely lonely july june molly ' +
+   'assembly belly bully jolly rally supply apply reply ' +
+   'italy germany turkey steady ugly silly holy ally')
+    .split(/\s+/).forEach(function (w) { if (w) LY_NOT_ADVERB[w] = 1; });
+
+  /* 結尾像變化型、但本身是名詞的字：
+     bed → be、seed → see、wind → win 都是去掉字尾硬猜出來的假動詞。
+     這裡的字要永遠當名詞（或依語境判定），不能走「X 的變化型」分支。 */
+  var NOUN_NOT_VERB = {};
+  ('bed seed wind weed feed deed need bread head red shed sled ' +
+   'beard breed creed friend sheet street beach teach reach ' +
+   'earth birth month death mouth truth faith youth health wealth ' +
+   'breath cloth north south east west east')
+    .split(/\s+/).forEach(function (w) { if (w) NOUN_NOT_VERB[w] = 1; });
+
+  /* 複合名詞的前半段：這些名詞後面接另一個名詞時，整組是一個名詞。
+     "summer vacation"（暑假）、"art teacher"（美術老師）、
+     "breakfast time"（早餐時間）、"PE class"（體育課）。
+     少了這張表的話後半段會被拿去當動詞：「The summer vacation begins…」
+     的 vacation 會被說成是動詞。 */
+  var COMPOUND_HEADS = {};
+  ('summer winter spring autumn morning afternoon evening night ' +
+   'breakfast lunch dinner supper tea coffee ' +
+   'art music sport science math history english chinese ' +
+   'home work house school class room ' +
+   'birthday weekend holiday ' +
+   'shoe shirt dress skirt hat jacket coat ' +
+   'food fruit vegetable meat rice bread milk egg ' +
+   'car bus train bike bicycle motor ' +
+   'rain snow wind sun moon star weather cloud ' +
+   'baby child kid father mother brother sister parent grandparent ' +
+   'letter word name phone computer camera ' +
+   'paper pen pencil book notebook desk chair door window wall floor ' +
+   'time day week month year hour minute ' +
+   'football basketball baseball tennis swimming running')
+    .split(/\s+/).forEach(function (w) { if (w) COMPOUND_HEADS[w] = 1; });
+
   var _singularSCache = null;
   function isSingularS(w) {
     if (!_singularSCache) {
@@ -1855,6 +1901,9 @@
     .split(/\s+/).forEach(function (w) { if (w) PLACE_ADV[w] = 1; });
 
   function advFn(w) {
+    if (w === 'only') return 'only 表示「只有、僅僅」，常跟 can / could / will 連用';
+    if (w === 'just') return 'just 表示「剛才、只是」，常跟過去式連用';
+    if (w === 'even') return 'even 表示「甚至、連…都」，加強語氣';
     if (FREQ_ADV[w]) return '頻率副詞，回答「多久做一次」，放在動詞前面';
     if (DEGREE_ADV[w]) return '程度副詞，修飾形容詞或副詞（多麼、太…）';
     if (PLACE_ADV[w]) return '地點副詞，說明在哪裡或往哪裡';
@@ -1895,6 +1944,7 @@ function prepFn(w) {
     var prevWasTo = false;           // want to be → be 是動詞原形
     var prevWasModal = false;        // should do → do 是動詞
     var prevWasConj = false;         // Mina and Mike → Mike 也是名詞
+    var prevWasConjVerb = false;       // and / but 接到動詞 → 下一個字還是動詞
     var prevWasLet = false;          // Let's get / Let me know → 下一個是動詞
     var prevWasBe = false;           // be born / was opened → 後面是過去分詞
     var prevWasBeAt = -1;            // be 動詞的位置，用來確保分詞緊接在後
@@ -1951,13 +2001,17 @@ function prepFn(w) {
         // （"She is often late." 的 late），所以不能只比對 prevWasBeAt === i - 1，
         // 要確認 be 動詞之後一路到這裡都是副詞。
         if (pos !== '副詞') { lastNonAdvAt = i; lastNonAdvWasBe = (pos === 'be 動詞'); }
+        // and / but 之後只有「非副詞」字才會讓下一個動詞失效。
+        // 副詞插在中間不算："...and then went home." 的 went 還是動詞。
+        if (pos !== '副詞') { prevWasConjVerb = false; }
         rows.push({ tok: showTok || tok, pos: pos, fn: fn, mark: 'O' });
       }
 
       // ⑴ 標點
       if (/^[^\sA-Za-z0-9']$/.test(tok)) {
         afterDet = false; prevWasPronounObj = false; prevWasTo = false;
-        prevWasModal = false; prevWasConj = false; prevWasLet = false; prevWasBe = false; prevWasBeAt = -1;
+        prevWasModal = false; prevWasConj = false; prevWasConjVerb = false;
+        prevWasLet = false; prevWasBe = false; prevWasBeAt = -1;
         // 逗號∕分號∕冒號後面往往是新子句，主詞要重新判斷。
         // 沒這行的話 "If it rains, we will stay home." 的 we 會被判成受詞代名詞。
         if (/[,;:]/.test(tok)) { sawVerb = false; }
@@ -2025,7 +2079,7 @@ function prepFn(w) {
         var nx3 = toks[i + 1] ? toks[i + 1].toLowerCase() : '';
         var isNounNext = nx3 && !BE[nx3] && !MODALS[nx3] && !QW.test(nx3) &&
                          !VERBS[nx3] && verbBase(nx3) === null &&
-                         !ADVERBS[nx3] && !/ly$/.test(nx3) &&
+                         !ADVERBS[nx3] && !/ly$/.test(nx3) && !LY_NOT_ADVERB[nx3] &&
                          !/(ing|ed)$/.test(nx3) && !ADJECTIVES[nx3] && !COMPARATIVE[nx3] &&
                          // this / that / these / those / my / your 也是限定詞，
                          // 不收的話 "What's this?" 的 's 會被誤判成所有格
@@ -2092,6 +2146,10 @@ function prepFn(w) {
         afterDet = false; prevWasTo = false; prevWasModal = false;
         prevWasConj = /^(and|or|but)$/.test(w);
         emit('連接詞', conjFn(w));
+        // and / or / but 接的是平行的另一個動作：
+        // "David had a headache and went home." 的 went 是動詞，不是受詞名詞。
+        // 設在 emit 之後，因為 emit 會把非副詞的旗標清掉。
+        if (prevWasConj) { prevWasConjVerb = true; }
         return;
       }
       // ⑧ 助動詞縮寫 've / 'll / 'd
@@ -2170,9 +2228,12 @@ function prepFn(w) {
       // "I get up late" 的 late 才是副詞。late / early / right 都算。
       // 中間可以夾副詞（"She is often late."），所以用 lastNonAdvAt 判斷：
       // 若上一次的非副詞字就是 be 動詞，說明形容詞直接跟在 be 動詞的語意位置。
-      if ((ADVERBS[w] || /ly$/.test(w)) &&
+      if ((ADVERBS[w] || (/ly$/.test(w) && !LY_NOT_ADVERB[w])) &&
           !((prevWasBe || lastNonAdvWasBe) && CONTEXT_ADJ[w])) {
-        afterDet = false; prevWasTo = false; prevWasModal = false;
+        // 副詞不會斷掉「情態動詞 → 動詞原形」的關係：
+        // "You can only use a pen." 的 only 插在中間，use 還是情態動詞的受詞。
+        // 但 prevWasTo 要清掉，否則 "want to only come" 的 come 會誤判。
+        afterDet = false; prevWasTo = false; prevWasPronounObj = false;
         emit('副詞', advFn(w));
         return;
       }
@@ -2213,7 +2274,7 @@ function prepFn(w) {
         var nxt2 = toks[i + 1] ? toks[i + 1].toLowerCase() : '';
         var looksLikeNoun = nxt2 && !BE[nxt2] && !MODALS[nxt2] && !QW.test(nxt2) &&
                             !VERBS[nxt2] && verbBase(nxt2) === null &&
-                            !ADVERBS[nxt2] && !/ly$/.test(nxt2) &&
+                            !ADVERBS[nxt2] && !/ly$/.test(nxt2) && !LY_NOT_ADVERB[nxt2] &&
                             !/(ing|ed)$/.test(nxt2) && !ADJECTIVES[nxt2];
         if (looksLikeNoun) {
           prevWasBe = false; afterDet = true; prevWasTo = false;
@@ -2264,11 +2325,28 @@ function prepFn(w) {
         return;
       }
       // ⑱ 動詞（含第三人稱、過去式等變化型）
-      var vb = verbBase(w);
-      var isVerbUse = vb !== null && (!sawVerb || prevWasTo || prevWasPronounObj || prevWasModal);
+      // NOUN_NOT_VERB 的字要去掉字尾猜（bed→be、seed→see、wind→win），
+      // 那是硬砍出來的假字根；讓它落到後面的名詞分支。
+      var vb = NOUN_NOT_VERB[w] ? null : verbBase(w);
+      // 複合名詞的後半段不是動詞："summer vacation"、"art teacher"、
+      // "breakfast time" 都是「名詞 + 名詞」。
+      // 判準要嚴：前一個 token 必須已經被判定成名詞，
+      // 而且當前這個字本身在英文裡不是常用動詞（teacher / vacation 這類）。
+      var prevTok3 = i > 0 ? toks[i - 1].toLowerCase() : '';
+      var prevWasPlainNoun = i > 0 &&
+        (rows[i - 1].pos === '名詞' || rows[i - 1].pos === '名詞（複數）') &&
+        !prevWasPrep && !prevWasBe && !prevWasAdj;
+      if (vb !== null && prevWasPlainNoun && COMPOUND_HEADS[prevTok3] === 1 &&
+          !prevWasTo && !prevWasPronounObj && !prevWasModal && !prevWasConjVerb) {
+        prevWasPrep = false;
+        emit('名詞', '和前面的名詞組成複合名詞，整組當主詞');
+        return;
+      }
+      var isVerbUse = vb !== null &&
+        (!sawVerb || prevWasTo || prevWasPronounObj || prevWasModal || prevWasConjVerb);
       if (isVerbUse) {
         sawVerb = true; prevWasTo = false; prevWasPronounObj = false; prevWasModal = false;
-        prevWasConj = false; afterDet = false;
+        prevWasConj = false; prevWasConjVerb = false; afterDet = false;
         if (w === vb) emit('動詞', '句子的主要動作，人稱和時態要正確');
         else emit('動詞', vb + ' 的變化型，注意人稱和時態');
         return;
@@ -2314,6 +2392,26 @@ function prepFn(w) {
         else emit('名詞', '句子的主詞');
         return;
       }
+      // ㉒-0 複合名詞的後半段
+      // "summer vacation"（暑假）、"art teacher"（美術老師）是「名詞 + 名詞」，
+      // 後半段不是動詞。少了這個判斷，The summer vacation begins in July.
+// 的 vacation 會被說成句子的主要動詞。
+      // 只在前一個字是普通名詞（不是介系詞受詞、不是 be 補語）時才成立。
+      if (i > 0) {
+        var pTok = toks[i - 1].toLowerCase();
+        var pRow = rows[i - 1];
+        // 前半段不能本身已經是複合名詞的後半段，否則會連鎖成
+        // "summer vacation begins" 三個字都變名詞。
+        var pIsCompoundTail = pRow.fn.indexOf('複合名詞') === 0;
+        var afterPlainNoun = (pRow.pos === '名詞' || pRow.pos === '名詞（複數）') &&
+          !prevWasPrep && !prevWasBe && !prevWasAdj && !prevWasPronounObj && !pIsCompoundTail;
+        if (afterPlainNoun && COMPOUND_HEADS[pTok] === 1 &&
+            !CONJUNCTIONS[w] && !PREPS[w] && !MODALS[w] && !BE[w]) {
+          prevWasPrep = false;
+          emit('名詞', '和前面的名詞組成複合名詞，整組當主詞');
+          return;
+        }
+      }
       // ㉒ 有主詞還沒動詞 → 主要動詞
       if (sawSubject && !sawVerb) {
         sawVerb = true; prevWasPronounObj = false; prevWasTo = false; prevWasModal = false;
@@ -2321,9 +2419,13 @@ function prepFn(w) {
         return;
       }
       // ㉓ 其餘：動詞後面多半是受詞名詞
+      // 例外：be 動詞後面直接接名詞（而且中間沒有其他實詞），
+      // 那個名詞是主詞補語，不是動詞的受詞。
+      //   "We are friends." 的 friends / "Knowledge is power." 的 power
+      // 中間夾副詞也算（"The soup is still hot."），用 lastNonAdvWasBe 判斷。
       prevWasPronounObj = false; prevWasTo = false; prevWasModal = false; prevWasConj = false;
       var wasAfterPrep2 = prevWasPrep;
-        var wasAfterBe = prevWasBe;   // be 後面的名詞是主詞補語，不要求緊鄰
+      var wasAfterBe = prevWasBe || lastNonAdvWasBe;   // be 後面的名詞是主詞補語
       prevWasPrep = false;
       if (/s$/i.test(w) && !isSingularS(w)) emit('名詞（複數）', nounFn(sawVerb, wasAfterPrep2, wasAfterBe) + '，別漏掉 s');
       else emit('名詞', nounFn(sawVerb, wasAfterPrep2, wasAfterBe));
