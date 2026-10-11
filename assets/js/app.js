@@ -1774,6 +1774,68 @@
 
   /* 名詞的功能要按它在句子裡的位置來說，
      不然每個名詞都寫「句中的名詞成分」就沒教到東西。 */
+  /* 序數（first / second / third…）和基數（one / two…）
+     在句子裡的功能完全不同：一個數數量，一個數順序。 */
+  var ordinalSet = {};
+  ('first second third fourth fifth sixth seventh eighth ninth tenth ' +
+   'eleventh twelfth thirteenth fourteenth fifteenth sixteenth seventeenth ' +
+   'eighteenth nineteenth twentieth thirtieth fortieth fiftieth sixtieth ' +
+   'seventieth eightieth ninetieth hundredth thousandth millionth ' +
+   'twenty-first twenty-second twenty-third thirtieth')
+    .split(/\s+/).forEach(function (w) { if (w) ordinalSet[w] = 1; });
+
+  /* 代名詞四類，功能各不相同：
+     主詞、受詞、所有格、反身。
+     一律寫「代替前面提過的人或物」對 I / you 這類並不成立，
+     因為它們不是指回前文。 */
+  var SUBJECT_PRON = {};
+  ('i you he she it we they who whoever').split(/\s+/)
+    .forEach(function (w) { if (w) SUBJECT_PRON[w] = 1; });
+  var POSSESSIVE_PRON = {};
+  ('my your his her its our their whose').split(/\s+/)
+    .forEach(function (w) { if (w) POSSESSIVE_PRON[w] = 1; });
+  var REFLEXIVE_PRON = {};
+  ('myself yourself himself herself itself ourselves themselves ' +
+   'oneself').split(/\s+/).forEach(function (w) { if (w) REFLEXIVE_PRON[w] = 1; });
+
+  function pronounFn(w, inObjectPosition) {
+    var lw = w.toLowerCase();
+    if (REFLEXIVE_PRON[lw]) return '反身代名詞，動作回到主詞自己身上';
+    if (POSSESSIVE_PRON[lw]) return '所有格代名詞，表示「…的」，後面接名詞';
+    if (SUBJECT_PRON[lw] && !inObjectPosition) {
+      return '主詞代名詞，代替講話者、對方或講到的人，動詞要跟它配單複數';
+    }
+    return '受詞代名詞，放在動詞或介系詞後面';
+  }
+
+  /* 標點的功能：句號、逗號、問號、感嘆號各不相同。
+     原本一律寫「逗號後面用小寫開頭」，對 ? 和 ! 並不成立。 */
+  function punctFn(tok) {
+    if (tok === '.') return '句子結束，下一句開頭要大寫';
+    if (tok === ',') return '句中短短停一下，後面接小寫';
+    if (tok === '?') return '疑問句結束，前面通常有疑問詞或 be ∕助動詞';
+    if (tok === '!' || tok === '\u203c') return '感嘆或命令，語氣強烈';
+    if (tok === ':' || tok === ';') return '連結前後，後面通常接列舉或說明';
+    if (tok === "'" || tok === '\u2019') return '所有格或縮寫，表示所屬或動詞縮寫';
+    if (tok === '"') return '引語，把別人謚的話包起來';
+    return '標點符號，幫助句子方便閱讀';
+  }
+
+  /* 介系詞裡 at / on / in 的時間地點用法
+     是學生最愛損的，單獨提出來。 */
+  function prepFn(w) {
+    if (w === 'at') return 'at 用於幾點（at ten）、小地點（at school）、街\u9053號碼';
+    if (w === 'on') return 'on 用於星期（on Monday）、日期、表面接觸（on the table）';
+    if (w === 'in') return 'in 用於早上\u2215下午\u2215晚上、月份、年、大地點與內部（in the box）';
+    if (w === 'of') return 'of 表示所屬或分量；a cup of tea、the king of animals';
+    if (w === 'for') return 'for 表示目的、時間長度或對象：for you、for three days';
+    if (w === 'with') return 'with 表示一起、工具或帶有：with me、write with a pen';
+    if (w === 'from') return 'from 表示起點或來源：from Taiwan、a letter from Mom';
+    if (w === 'to') return 'to 表示方向或目的地：go to school';
+    if (w === 'by') return 'by 表示交通工具、方式或動作主體：by bus、written by Mom';
+    return '後面接名詞或 -ing，不能接動詞原形';
+  }
+
   function nounFn(hasVerb, afterPrep, afterBe) {
     if (!hasVerb) return '句子的主詞，動詞要跟它配單複數';
     if (afterBe) return '主詞補語，接在 be 動詞後面說明主詞是什麼';
@@ -1849,7 +1911,7 @@
       if (/^[^\sA-Za-z0-9']$/.test(tok)) {
         afterDet = false; prevWasPronounObj = false; prevWasTo = false;
         prevWasModal = false; prevWasConj = false; prevWasLet = false; prevWasBe = false; prevWasBeAt = -1;
-        emit('標點', '決定句子怎麼斷氣，逗號後面用小寫開頭');
+        emit('標點', punctFn(tok));
         return;
       }
       // ⇒ 句首複數主詞：「句首 -s 字 + 第二個字是動詞」時，句首那個是複數名詞。
@@ -1891,13 +1953,19 @@
       // ② 純數字
       if (/^[0-9]+$/.test(tok)) {
         afterDet = true; prevWasTo = false;
-        emit('數詞', '表示數量或順序，two 以上後面的可數名詞要用複數');
+        emit(ordinalSet[w] ? '數詞（序數）' : '數詞（基數）',
+             ordinalSet[w]
+               ? '表示順序（第幾），前面通常加 the'
+               : '表示數量；two 以上後面的可數名詞要用複數（one 則用單數）');
         return;
       }
       // ③ 基數詞
       if (CARDINALS[w] && !DETS[w]) {
         afterDet = true; prevWasTo = false;
-        emit('數詞', '表示數量或順序，two 以上後面的可數名詞要用複數');
+        emit(ordinalSet[w] ? '數詞（序數）' : '數詞（基數）',
+             ordinalSet[w]
+               ? '表示順序（第幾），前面通常加 the'
+               : '表示數量；two 以上後面的可數名詞要用複數（one 則用單數）');
         return;
       }
       // ④ be 動詞（含縮寫 'm / 's / 're，顯示成 am / is / are 比較好懂）
@@ -1995,7 +2063,7 @@
           return;
         }
         afterDet = true; prevWasModal = false;
-        emit('介系詞', '後面接名詞或 -ing，不能接動詞原形');
+        emit('介系詞', prepFn(w));
         return;
       }
       // ⑩ 片語動詞粒子：後面接名詞片語時是介系詞，否則是副詞
@@ -2011,7 +2079,7 @@
         var collocationIsPrep = PREP_COLLOCATIONS[(w + ' ' + nxtLow).replace(/\s+$/, '')] === 1;
         if (nxtIsNounish || nxtIsProper || collocationIsPrep) {
           afterDet = true; prevWasTo = false; prevWasPrep = true;
-          emit('介系詞', '後面接名詞或 -ing，不能接動詞原形');
+        emit('介系詞', prepFn(w));
         } else {
           afterDet = false; prevWasTo = false; prevWasPrep = false;
           emit('副詞（粒子）', '和前面的動詞組成片語動詞，例如 stand up / go out');
@@ -2038,7 +2106,7 @@
       // ⑪ 介系詞
       if (PREPS[w]) {
         afterDet = true; prevWasTo = false; prevWasModal = false; prevWasPrep = true;
-        emit('介系詞', '後面接名詞或 -ing，不能接動詞原形');
+        emit('介系詞', prepFn(w));
         return;
       }
       // ⑪ 限定詞／所有格
@@ -2070,7 +2138,7 @@
         if (!prevWasLet) prevWasLet = false;
         sawSubject = true; afterDet = false; prevWasTo = false;
         prevWasModal = false; prevWasConj = false;
-        emit('代名詞', '代替前面提過的人或物，注意單複數決定動詞');
+        emit('代名詞', pronounFn(w, sawVerb || afterDet));
         return;
       }
       // ⑮ 比較級／最高級（只用字表，不猜後綴）
