@@ -2142,6 +2142,8 @@ function prepFn(w) {
     var lastNonAdvWasBe = false;      // 那個非副詞字是不是 be 動詞
     var prevWasAdj = false;          // big enough → enough 是副詞不是限定詞
     var prevWasPrep = false;         // 介系詞後面的名詞是賓語
+    var prevWasAux = false;          // 上一個動詞是否為助動詞
+    var prevWasAux = false;          // 上一個動詞是否為助動詞
 
     // 動詞的第三人稱／複原：knows → know、studies → study、watches → watch
     // 注意 -es 只能在「標準拼字」出現時去掉（watches→watch、goes→go）。
@@ -2294,19 +2296,39 @@ function prepFn(w) {
       }
       // ⑤ 情態動詞
       if (MODALS[w]) {
-        sawVerb = true; afterDet = false; prevWasTo = false; prevWasModal = true;
+        /* sawVerb not set for modals - they don't make next pronoun object */; afterDet = false; prevWasTo = false; prevWasModal = true;
+          prevWasAux = true;
         emit('情態動詞', '後面一律接動詞原形，不加 to、不加 -s');
+          prevWasAux = true;
         return;
       }
-      // ⑤-2 助動詞 do / does / did：「I don't want to go」的 want 是主要動詞，
-      //  要靠這個旗標才認得出來。判斷方法：下一個 token 是不是 not / n't。
+      // ⑤-2 助動詞 do / does / did：判斷是否為助動詞
+      // 1. 後面接 not / n't 肯定是助動詞
+      // 2. 疑問句結構：Do/Does/Did + 主詞(代名詞/名詞) + 動詞原形 → 助動詞
+      // 3. 否定/強調句：do/does/did + not + 動詞原形 → 助動詞
+      // 否則是主要動詞（如 I do my homework）
       if (w === 'do' || w === 'does' || w === 'did') {
         var nxtAux = toks[i + 1] ? toks[i + 1].toLowerCase() : '';
-        var doIsAux = (nxtAux === 'not' || nxtAux === "n't");
-        sawVerb = true; afterDet = false; prevWasTo = false;
-        prevWasModal = doIsAux;
-        emit(doIsAux ? '助動詞' : '動詞',
-             doIsAux ? '和 not 一起構成否定句，後面接動詞原形' : '句子的主要動作，人稱和時態要正確');
+        var isAux = false;
+        // 情況 1: 後面接 not / n't
+        if (nxtAux === 'not' || nxtAux === "n't") { isAux = true; }
+        // 情況 2: 疑問句結構 - 後面是代名詞/名詞且再下一個是動詞原形
+        else {
+          var nxt2 = toks[i + 2] ? toks[i + 2].toLowerCase() : '';
+          var isSubject = PRONOUNS[nxtAux] || /^[A-Z]/.test(toks[i + 1]) || CARDINALS[nxtAux] || DETS[nxtAux] || DETS2[nxtAux];
+          var isBareVerb = nxt2 && (VERBS[nxt2] || VERBS[nxt2.replace(/es$/, '')] || IRREG_PAST[nxt2]);
+          if (isSubject && isBareVerb) { isAux = true; }
+        }
+        var doIsAux = isAux;
+        if (isAux) {
+          // 助動詞：不設 sawVerb，後面的代名詞是主詞
+          prevWasModal = true; afterDet = false; prevWasTo = false;
+          emit('助動詞', '和 not 一起構成否定句，或構成疑問句/強調句，後面接動詞原形');
+        } else {
+          // 主要動詞：I do my homework
+          sawVerb = true; afterDet = false; prevWasTo = false; prevWasModal = false; prevWasAux = false;
+          emit('動詞', '句子的主要動作，人稱和時態要正確');
+        }
         return;
       }
       // ⑤-3 Let：後面的字是動詞原形（Let's get / Let me know）
@@ -2450,13 +2472,18 @@ function prepFn(w) {
       }
       // ⑭ 代名詞
       if (PRONOUNS[w]) {
-        if (sawVerb && !afterDet) prevWasPronounObj = true;
+        // 判斷是否為受詞位置：
+        // 1. 若前面有主要動詞（非助動詞）且非介系詞後、非限定詞後 → 受詞
+        // 2. 否則為主詞（句首、be動詞後、介系詞後的主詞、連接詞後等）
+        var isObjPos = (sawVerb && !afterDet && !prevWasModal && !prevWasAux);
+        if (isObjPos) prevWasPronounObj = true;
         // "Let's get" 拆成 Let + 's，'s 走 be 動詞分支，
         // 但 get 仍是 Let 後面的動詞，所以要保留 prevWasLet。
         if (!prevWasLet) prevWasLet = false;
         sawSubject = true; afterDet = false; prevWasTo = false;
         prevWasModal = false; prevWasConj = false;
-        emit('代名詞', pronounFn(w, sawVerb || afterDet));
+        prevWasAux = false;
+        emit('代名詞', pronounFn(w, isObjPos));
         return;
       }
       // ⑮ 比較級／最高級（只用字表，不猜後綴）
