@@ -406,6 +406,21 @@ ul.tips--num li::before {
 .mrow__z { color: var(--txt-2); font-size: .84rem; flex: 1; }
 .mrow__n { font-size: .74rem; color: var(--err); font-family: var(--mono); }
 
+/* 錯字本 SRS */
+.mistakes__header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; gap: 10px; flex-wrap: wrap; }
+.mistakes__title { font-weight: 700; font-size: 1rem; }
+.mistakes__controls { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.mistakes__stats { font-size: .74rem; color: var(--txt-3); font-variant-numeric: tabular-nums; }
+.mrow--review { flex-wrap: wrap; align-items: flex-start; }
+.mrow__srs { display: flex; gap: 8px; font-size: .7rem; color: var(--txt-3); font-family: var(--mono); flex-wrap: wrap; }
+.srs__overdue { color: var(--err); }
+.srs__buttons { display: flex; gap: 6px; width: 100%; margin-top: 8px; }
+.btn--again { background: #7f1d1d; color: #fecaca; border-color: #991b1b; }
+.btn--hard  { background: #78350f; color: #fde68a; border-color: #92400e; }
+.btn--good  { background: #14532d; color: #bbf7d0; border-color: #166534; }
+.btn--easy  { background: #1e3a8a; color: #bfdbfe; border-color: #1d4ed8; }
+.btn--sm { padding: 4px 10px; font-size: .74rem; }
+
 .statRow {
   display: flex; align-items: center; gap: 12px;
   padding: 10px 0; border-bottom: 1px solid #ffffff0d;

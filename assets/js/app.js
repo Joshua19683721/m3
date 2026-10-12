@@ -27,7 +27,8 @@
     stepIndex: 0,
     progress: {},              // sid -> { done:{unitId:[stepIdx]}, cur:{unit,step}, words:{key:[idx]} }
     mistakes: {},              // wordKey -> {en,zh,n,sid,unitId}
-    settings: { hideZh: false, autoNext: true, autoSpeak: true, repeat: 3, rate: 0.85 }
+    settings: { hideZh: false, autoNext: true, autoSpeak: true, repeat: 3, rate: 0.85 },
+    mistakesReviewMode: false  // 錯字本複習模式
   };
 
   var voice = null;
@@ -629,9 +630,13 @@
         // 顯示成字庫裡的另一種寫法（例如 a (an)）反而不好找。
         // canon 保留字典正解，中文與音標都取自它。
         ? { en: word, canon: idx.en, zh: idx.zh, ipa: idx.ipa,
-            n: 0, sid: idx.sid, uid: idx.uid }
+            n: 0, sid: idx.sid, uid: idx.uid,
+            // SRS fields
+            ease: 2.5, interval: 0, reps: 0, lapses: 0, due: Date.now() }
         : { en: word, canon: '', zh: '（字庫中查無此字）', ipa: '', n: 0,
-            sid: state.scenarioId, uid: u.id };
+            sid: state.scenarioId, uid: u.id,
+            // SRS fields
+            ease: 2.5, interval: 0, reps: 0, lapses: 0, due: Date.now() };
     }
     rec.n++;
     saveAll();          // 錯字要立刻落盤，等不及下一次存檔
@@ -651,48 +656,374 @@
       box.innerHTML = '<div class="empty">還沒有錯字，繼續保持！</div>';
       return;
     }
-    keys.forEach(function (k) {
-      var m = state.mistakes[k];
-      var row = document.createElement('div');
-      row.className = 'mrow';
-      row.title = '點這裡直接重練這個字所在的單元（會清掉該步已打的字）' +
-        (m.canon && m.canon !== m.en ? '\n字庫條目：' + m.canon : '');
-      row.innerHTML =
-        '<span class="mrow__w">' + esc(m.en) + '</span>' +
-        '<span class="mrow__z">' + esc(m.zh || '') +
-        (m.ipa ? ' <span class="mono" style="opacity:.65">/' + esc(m.ipa) + '/</span>' : '') +
-        '</span>' +
-        '<span class="mrow__n">錯 ' + m.n + ' 次</span>';
-      row.onclick = function () {
-        openScenario(m.sid);
-        var us = curUnits();
-        for (var i = 0; i < us.length; i++) {
-          if (us[i].id !== m.uid) continue;
-          state.unitIndex = i;
-          // 跳到「真的會出現這個字」的那一步，讓學生重打的就是錯過的字
-          var si = 0;
-          for (var j = 0; j < us[i].steps.length; j++) {
-            if (wordKeys(us[i].steps[j].en).indexOf(k) >= 0) { si = j; break; }
-          }
-          state.stepIndex = si;
-          progressOf(m.sid).cur = { unit: i, step: si };
-          // 清掉該步已存的字，確保是真的重打而不是看到舊答案
-          delete progressOf(m.sid).words[m.sid + '|' + us[i].id + '|' + si];
-          saveAll();
-          renderPractice();
-          break;
-        }
-      };
-      box.appendChild(row);
+    
+    // Add review mode toggle
+    var reviewMode = state.mistakesReviewMode || false;
+    
+    // Add header with review mode toggle
+    var header = document.createElement('div');
+    header.className = 'mistakes__header';
+    header.innerHTML = 
+      '<div class="mistakes__title">錯字本</div>' +
+      '<div class="mistakes__controls">' +
+        '<button class="btn btn--ghost btn--sm" id="toggleReviewMode">' +
+          (reviewMode ? '退出複習模式' : '進入複習模式') +
+        '</button>' +
+        '<span class="mistakes__stats" id="mistakesStats"></span>' +
+      '</div>';
+    box.appendChild(header);
+    
+    // Add event listener for review mode toggle
+    header.querySelector('#toggleReviewMode').onclick = function() {
+      state.mistakesReviewMode = !state.mistakesReviewMode;
+      renderMistakes();
+    };
+    
+    // Update stats
+    updateMistakesStats();
+    
+    var keys = Object.keys(state.mistakes).sort(function (a, b) {
+      return state.mistakes[b].n - state.mistakes[a].n;
     });
+    
+    if (reviewMode) {
+      // Review mode: show only due cards, with SRS buttons
+      var dueCards = [];
+      Object.keys(state.mistakes).forEach(function(k) {
+        var m = state.mistakes[k];
+        if (m.due && m.due <= Date.now()) {
+          dueCards.push({ key: k, card: m, overdue: Date.now() - m.due });
+        }
+      });
+      
+      // Sort by most overdue first
+      dueCards.sort(function(a, b) { return b.overdue - a.overdue; });
+      
+      if (dueCards.length === 0) {
+        box.innerHTML += '<div class="empty">太棒了！沒有需要複習的卡片 🎉</div>';
+        return;
+      }
+      
+      dueCards.forEach(function(item) {
+        var k = item.key;
+        var m = item.card;
+        var overdueDays = Math.floor(item.overdue / (1000 * 60 * 60 * 24));
+        
+        var row = document.createElement('div');
+        row.className = 'mrow mrow--review';
+        row.innerHTML =
+          '<span class="mrow__w">' + esc(m.en) + '</span>' +
+          '<span class="mrow__z">' + esc(m.zh || '') +
+          (m.ipa ? ' <span class="mono" style="opacity:.65">/' + esc(m.ipa) + '/</span>' : '') +
+          '</span>' +
+          '<span class="mrow__n">錯 ' + m.n + ' 次</span>' +
+          '<span class="mrow__srs">' +
+            '<span class="srs__ease">Ease: ' + formatEase(m.ease) + '</span>' +
+            '<span class="srs__interval">間隔: ' + formatInterval(m.interval) + '</span>' +
+            '<span class="srs__reps">複習: ' + m.reps + ' 次</span>' +
+            (item.overdue > 0 ? '<span class="srs__overdue">逾期 ' + overdueDays + ' 天</span>' : '') +
+          '</span>' +
+          '<div class="srs__buttons">' +
+            '<button class="btn btn--sm btn--again" data-key="' + k + '" data-quality="0">再來一次</button>' +
+            '<button class="btn btn--sm btn--hard" data-key="' + k + '" data-quality="1">困難</button>' +
+            '<button class="btn btn--sm btn--good" data-key="' + k + '" data-quality="2">良好</button>' +
+            '<button class="btn btn--sm btn--easy" data-key="' + k + '" data-quality="3">簡單</button>' +
+          '</div>';
+        
+        // Add event listeners for SRS buttons
+        row.querySelectorAll('.srs__buttons button').forEach(function(btn) {
+          btn.onclick = function(e) {
+            e.stopPropagation();
+            var key = btn.dataset.key;
+            var quality = parseInt(btn.dataset.quality, 10);
+            reviewCard(key, quality);
+          };
+        });
+        
+        box.appendChild(row);
+      });
+    } else {
+      // Normal mode: show all mistakes sorted by error count
+      var keys = Object.keys(state.mistakes).sort(function (a, b) {
+        return state.mistakes[b].n - state.mistakes[a].n;
+      });
+      
+      keys.forEach(function (k) {
+        var m = state.mistakes[k];
+        var row = document.createElement('div');
+        row.className = 'mrow';
+        row.title = '點這裡直接重練這個字所在的單元（會清掉該步已打的字）' +
+          (m.canon && m.canon !== m.en ? '\n字庫條目：' + m.canon : '');
+        row.innerHTML =
+          '<span class="mrow__w">' + esc(m.en) + '</span>' +
+          '<span class="mrow__z">' + esc(m.zh || '') +
+          (m.ipa ? ' <span class="mono" style="opacity:.65">/' + esc(m.ipa) + '/</span>' : '') +
+          '</span>' +
+          '<span class="mrow__n">錯 ' + m.n + ' 次</span>' +
+          (m.due ? '<span class="mrow__srs">下次複習: ' + formatDue(m.due) + '</span>' : '');
+        row.onclick = function () {
+          openScenario(m.sid);
+          var us = curUnits();
+          for (var i = 0; i < us.length; i++) {
+            if (us[i].id !== m.uid) continue;
+            state.unitIndex = i;
+            var si = 0;
+            for (var j = 0; j < us[i].steps.length; j++) {
+              if (wordKeys(us[i].steps[j].en).indexOf(k) >= 0) { si = j; break; }
+            }
+            state.stepIndex = si;
+            progressOf(m.sid).cur = { unit: i, step: si };
+            delete progressOf(m.sid).words[m.sid + '|' + us[i].id + '|' + si];
+            saveAll();
+            renderPractice();
+            break;
+          }
+        };
+        box.appendChild(row);
+      });
+    }
   }
-
+  
   function gotoUnitTo(i, step) {
     state.unitIndex = i;
     state.stepIndex = step || 0;
     progressOf(state.scenarioId).cur = { unit: i, step: state.stepIndex };
     saveAll();
     renderPractice();
+  }
+  
+  // SRS helper functions
+  function formatEase(ease) {
+    return (ease || 2.5).toFixed(1);
+  }
+  
+  function formatInterval(interval) {
+    if (!interval) return '新卡片';
+    if (interval < 1) return '今日';
+    if (interval === 1) return '1 天';
+    if (interval < 7) return interval + ' 天';
+    if (interval < 30) return Math.round(interval / 7) + ' 週';
+    if (interval < 365) return Math.round(interval / 30) + ' 個月';
+    return Math.round(interval / 365) + ' 年';
+  }
+  
+  function formatDue(due) {
+    if (!due) return '—';
+    var diff = due - Date.now();
+    if (diff <= 0) return '現在複習';
+    
+    var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    
+    if (days > 0) return days + ' 天後';
+    if (hours > 0) return hours + ' 小時後';
+    if (minutes > 0) return minutes + ' 分鐘後';
+    return '剛剛';
+  }
+  
+  function reviewCard(key, quality) {
+    var m = state.mistakes[key];
+    if (!m) return;
+    
+    // SM-2 Algorithm
+    if (m.ease === undefined) m.ease = 2.5;
+    if (m.interval === undefined) m.interval = 0;
+    if (m.reps === undefined) m.reps = 0;
+    if (m.lapses === undefined) m.lapses = 0;
+    if (m.due === undefined) m.due = Date.now();
+    
+    var now = Date.now();
+    
+    if (quality < 3) {
+      // Failed - reset interval, increase lapses
+      m.lapses = (m.lapses || 0) + 1;
+      m.reps = 0;
+      m.interval = 0;
+      m.due = now; // Due immediately
+    } else {
+      // Success
+      m.reps = (m.reps || 0) + 1;
+      
+      if (m.reps === 1) {
+        m.interval = 1; // 1 day
+      } else if (m.reps === 2) {
+        m.interval = 6; // 6 days
+      } else {
+        m.interval = Math.round((m.interval || 1) * m.ease);
+      }
+      
+      // Update ease factor based on quality
+      // quality: 0=Again, 1=Hard, 2=Good, 3=Easy
+      var q = quality + 3; // Map 0-3 to 3-6 for SM-2 formula
+      var newEase = m.ease + (0.1 - (5 - q) * (0.08 + (5 - q) * 0.02));
+      m.ease = Math.max(1.3, newEase);
+      
+      // Schedule next review
+      var intervalMs = m.interval * 24 * 60 * 60 * 1000; // days to ms
+      m.due = Date.now() + intervalMs;
+    }
+    
+    // Store last review time
+    m.lastReview = Date.now();
+    m.lastQuality = quality;
+    
+    saveAll();
+    renderMistakes();
+  }
+
+  function formatEase(ease) {
+    return (ease || 2.5).toFixed(1);
+  }
+  
+  function formatInterval(interval) {
+    if (!interval) return '新卡片';
+    if (interval < 1) return '今日';
+    if (interval === 1) return '1 天';
+    if (interval < 7) return interval + ' 天';
+    if (interval < 30) return Math.round(interval / 7) + ' 週';
+    if (interval < 365) return Math.round(interval / 30) + ' 個月';
+    return Math.round(interval / 365) + ' 年';
+  }
+  
+  function formatDue(due) {
+    if (!due) return '—';
+    var diff = due - Date.now();
+    if (diff <= 0) return '現在複習';
+    
+    var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    
+    if (days > 0) return days + ' 天後';
+    if (hours > 0) return hours + ' 小時後';
+    if (minutes > 0) return minutes + ' 分鐘後';
+    return '剛剛';
+  }
+  
+  function formatInterval(interval) {
+    if (!interval) return '新卡片';
+    if (interval < 1) return '今日';
+    if (interval === 1) return '1 天';
+    if (interval < 7) return interval + ' 天';
+    if (interval < 30) return Math.round(interval / 7) + ' 週';
+    if (interval < 365) return Math.round(interval / 30) + ' 個月';
+    return Math.round(interval / 365) + ' 年';
+  }
+
+  function formatDue(due) {
+    if (!due) return '—';
+    var diff = due - Date.now();
+    if (diff <= 0) return '現在複習';
+    
+    var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    
+    if (days > 0) return days + ' 天後';
+    if (hours > 0) return hours + ' 小時後';
+    if (minutes > 0) return minutes + ' 分鐘後';
+    return '剛剛';
+  }
+
+  function reviewCard(key, quality) {
+    var m = state.mistakes[key];
+    if (!m) return;
+    
+    // SM-2 Algorithm
+    if (m.ease === undefined) m.ease = 2.5;
+    if (m.interval === undefined) m.interval = 0;
+    if (m.reps === undefined) m.reps = 0;
+    if (m.lapses === undefined) m.lapses = 0;
+    if (m.due === undefined) m.due = Date.now();
+    
+    var now = Date.now();
+    
+    if (quality < 3) {
+      // Failed - reset interval, increase lapses
+      m.lapses = (m.lapses || 0) + 1;
+      m.reps = 0;
+      m.interval = 0;
+      m.due = now; // Due immediately
+    } else {
+      // Success
+      m.reps = (m.reps || 0) + 1;
+      
+      if (m.reps === 1) {
+        m.interval = 1; // 1 day
+      } else if (m.reps === 2) {
+        m.interval = 6; // 6 days
+      } else {
+        m.interval = Math.round((m.interval || 1) * m.ease);
+      }
+      
+      // Update ease factor based on quality
+      // quality: 0=Again, 1=Hard, 2=Good, 3=Easy
+      var q = quality + 3; // Map 0-3 to 3-6 for SM-2 formula
+      var newEase = m.ease + (0.1 - (5 - q) * (0.08 + (5 - q) * 0.02));
+      m.ease = Math.max(1.3, newEase);
+      
+      // Schedule next review
+      var intervalMs = m.interval * 24 * 60 * 60 * 1000; // days to ms
+      m.due = Date.now() + intervalMs;
+    }
+    
+    // Store last review time
+    m.lastReview = Date.now();
+    m.lastQuality = quality;
+    
+    saveAll();
+    renderMistakes();
+  }
+
+  function formatEase(ease) {
+    return (ease || 2.5).toFixed(1);
+  }
+  
+  function formatInterval(interval) {
+    if (!interval) return '新卡片';
+    if (interval < 1) return '今日';
+    if (interval === 1) return '1 天';
+    if (interval < 7) return interval + ' 天';
+    if (interval < 30) return Math.round(interval / 7) + ' 週';
+    if (interval < 365) return Math.round(interval / 30) + ' 個月';
+    return Math.round(interval / 365) + ' 年';
+  }
+  
+  function formatDue(due) {
+    if (!due) return '—';
+    var diff = due - Date.now();
+    if (diff <= 0) return '現在複習';
+    
+    var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    
+    if (days > 0) return days + ' 天後';
+    if (hours > 0) return hours + ' 小時後';
+    if (minutes > 0) return minutes + ' 分鐘後';
+    return '剛剛';
+  }
+
+  function updateMistakesStats() {
+    var statsEl = $('mistakesStats');
+    if (!statsEl) return;
+    
+    var total = 0, due = 0, overdue = 0, learning = 0, review = 0, newCards = 0;
+    var now = Date.now();
+    Object.keys(state.mistakes).forEach(function(k) {
+      var m = state.mistakes[k];
+      if (m.due && m.due <= Date.now()) {
+        due++;
+        if (m.due < Date.now()) overdue++;
+      }
+      if (!m.reps || m.reps === 0) newCards++;
+      else if (m.reps < 2) learning++;
+      else review++;
+      total++;
+    });
+    var html = '總計: ' + total + ' | 到期: ' + due + (overdue > 0 ? ' (逾期 ' + overdue + ')' : '') + ' | 新卡: ' + newCards + ' | 學習中: ' + learning + ' | 複習中: ' + review;
+    statsEl.innerHTML = html;
   }
 
   /* ------------------------------------------------------------ 查單字 */
