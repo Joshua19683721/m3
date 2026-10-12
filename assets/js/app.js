@@ -383,7 +383,6 @@
       }
     });
 
-    restoreWords();
     // 焦點停在第一個還沒打好的字（整句都打過時停在最後一個）
     setTimeout(function () {
       var next = null;
