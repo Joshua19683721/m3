@@ -2428,6 +2428,20 @@ function prepFn(w) {
         return;
       }
       // ⑪ 介系詞
+      if (w === 'like' && i > 0 && (VERBS['like'] || (toks[i - 1] && (PRONOUNS[toks[i - 1].toLowerCase()] || /^[A-Z]/.test(toks[i - 1])))) ) {
+        // like 作動詞：like / likes / liked / liking
+        // 但在 like a... / like a... 這種介系詞用法時，後面接名詞
+        var nxtLike = toks[i + 1] ? toks[i + 1].toLowerCase() : '';
+        if (nxtLike && (DETS[nxtLike] || DETS2[nxtLike] || ADJECTIVES[nxtLike] || CARDINALS[nxtLike] || /^[A-Z]/.test(toks[i + 1]))) {
+          afterDet = true; prevWasTo = false; prevWasModal = false; prevWasPrep = true;
+          emit('介系詞', prepFn(w));
+          return;
+        }
+        sawVerb = true; afterDet = false; prevWasTo = false; prevWasModal = false; prevWasAux = false;
+        emit('動詞', '句子的主要動作，人稱和時態要正確');
+        return;
+      }
+      // ⑪ 介系詞
       if (PREPS[w]) {
         afterDet = true; prevWasTo = false; prevWasModal = false; prevWasPrep = true;
         emit('介系詞', prepFn(w));
@@ -2768,7 +2782,7 @@ function prepFn(w) {
       }
       var candLow = cand.toLowerCase();
       // 只看「單數可數名詞」——不可數、專有名詞、形容詞都不適用。
-      // 注意：這裡不跳過「已经是複數」的字，因為這個規則的目的
+      // 注意：這裡不跳過「已經是複數」的字，因為這個規則的目的
       // 就是拿正確的複數句當 (O)、把 s 拿掉當 (X) 來教學。
       var uncountable = MASS_NOUNS[candLow] === 1;
       var isProper = /^[A-Z]/.test(cand);
