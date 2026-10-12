@@ -1640,6 +1640,7 @@
                 'during': 1, 'besides': 1, 'toward': 1, 'towards': 1, 'against': 1,
                 'beyond': 1, 'beneath': 1, 'underneath': 1, 'alongside': 1,
                 'above': 1, 'below': 1, 'upstairs': 1, 'downstairs': 1,
+                'like': 1,
                 'indoors': 1, 'outdoors': 1 };
 
   /* 片語動詞的副詞粒子：這些字既能當副詞也能當介系詞，
@@ -2124,7 +2125,7 @@ function prepFn(w) {
 
   function structure(sent) {
     var toks = splitContractions(
-      sent.match(/[A-Za-z'\u2019]+|[0-9]+|[^\sA-Za-z0-9']/g) || []);
+      sent.match(/[A-Za-z'\u2019]+|[0-9]+(st|nd|rd|th)?|[^\sA-Za-z0-9']/g) || []);
     var rows = [];
     var sawSubject = false;
     var sawVerb = false;
@@ -2421,6 +2422,17 @@ function prepFn(w) {
       // "I get up late" 的 late 才是副詞。late / early / right 都算。
       // 中間可以夾副詞（"She is often late."），所以用 lastNonAdvAt 判斷：
       // 若上一次的非副詞字就是 be 動詞，說明形容詞直接跟在 be 動詞的語意位置。
+      // 特殊處理：There be 句型中的 There 是虛主詞，不是地點副詞
+      if (w === 'there' && i > 0 && toks[i - 1] && /^(is|are|was|were|be)$/i.test(toks[i - 1].toLowerCase())) {
+        emit('代名詞', 'There be 句型中的虛主詞，表示存在');
+        return;
+      }
+      // 特殊處理：句首 There 開啟 There be 句型
+      if (w === 'there' && i === 0 && toks[1] && /^(is|are|was|were|be)$/i.test(toks[1].toLowerCase())) {
+        emit('代名詞', 'There be 句型中的虛主詞，表示存在');
+      return;
+      }
+
       if ((ADVERBS[w] || (/ly$/.test(w) && !LY_NOT_ADVERB[w])) &&
           !((prevWasBe || lastNonAdvWasBe) && CONTEXT_ADJ[w])) {
         // 副詞不會斷掉「情態動詞 → 動詞原形」的關係：
