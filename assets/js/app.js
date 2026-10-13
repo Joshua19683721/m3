@@ -100,26 +100,15 @@
     var voices = speechSynthesis.getVoices() || [];
     var sel = $('voiceSelect');
 
-    var mark = pickPreferredVoice(voices);
-    if (mark) {
-      voice = mark;
-      // 語音固定後就不需要讓使用者再選一次，只顯示目前用的聲音。
-      sel.innerHTML = '';
-      var only = document.createElement('option');
-      only.value = mark.name;
-      only.textContent = mark.name + ' (' + mark.lang + ')';
-      only.selected = true;
-      sel.appendChild(only);
-      sel.disabled = true;
-      sel.title = '固定使用 Microsoft Mark（en-US）朗讀';
-      return;
-    }
-
-    // 這台裝置沒有 Mark：退回原本的英文語音清單，至少還聽得到聲音。
+    // 列出所有英文語音，讓使用者自由切換
     sel.disabled = false;
-    sel.title = '這台裝置沒有 Microsoft Mark，改用其他英文語音';
+    sel.title = '選擇朗讀語音（預設 Microsoft Mark）';
     var en = voices.filter(function (v) { return /^en/i.test(v.lang); });
     en.sort(function (a, b) {
+      // Microsoft Mark 排最前面
+      var aMark = /microsoft\s+mark/i.test(a.name) ? 0 : 1;
+      var bMark = /microsoft\s+mark/i.test(b.name) ? 0 : 1;
+      if (aMark !== bMark) return aMark - bMark;
       function score(v) {
         return (v.name.indexOf('Google') >= 0 ? 2 : 0)
              + (v.name.indexOf('Microsoft') >= 0 ? 1 : 0)
@@ -140,7 +129,10 @@
       o.textContent = v.name + ' (' + v.lang + ')';
       sel.appendChild(o);
     });
-    voice = en[0];
+    // 預設選 Microsoft Mark（en-US），找不到就用清單第一個
+    var mark = pickPreferredVoice(en);
+    voice = mark || en[0];
+    sel.value = voice.name;
     sel.addEventListener('change', function () {
       en.forEach(function (v) { if (v.name === sel.value) voice = v; });
     });

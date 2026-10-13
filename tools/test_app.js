@@ -595,14 +595,14 @@ console.log('\n=== 朗讀語音固定用 Microsoft Mark ===');
   ];
   const { doc: dV, spoken: sV, dom: domV } = await freshDom({}, VOICES);
   const sel = dV.getElementById('voiceSelect');
-  ok('有 Microsoft Mark 時，語音選單只顯示 Mark',
-     sel.options.length === 1 && /Microsoft Mark/.test(sel.options[0].textContent),
+  ok('有 Microsoft Mark 時，語音選單列出所有英文語音',
+     sel.options.length > 1 && /Microsoft Mark/.test(sel.options[0].textContent),
      sel.options.length + ' 個選項: ' +
        Array.prototype.map.call(sel.options, o => o.textContent).join(' | '));
-  ok('顯示的是 en-US 那個 Mark',
-     sel.options[0] && /en-US/.test(sel.options[0].textContent),
+  ok('預設選的是 en-US 那個 Mark',
+     sel.options[0] && /en-US/.test(sel.options[0].textContent) && sel.selectedIndex === 0,
      sel.options[0] && sel.options[0].textContent);
-  ok('語音選單鎖定，避免被改掉', sel.disabled === true);
+  ok('語音選單可自由切換', sel.disabled === false);
 
   domV.window.location.hash = '#school/0/3';
   await tick2(domV.window);
