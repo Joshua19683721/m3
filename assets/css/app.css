@@ -439,8 +439,10 @@ ul.tips--num li::before {
 .fc-mistake-row { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-bottom: 1px solid #ffffff0d; font-size: .86rem; }
 .fc-mistake-row .mrow__w { min-width: 120px; }
 .fc-ipa { font-size: .9rem; color: var(--txt-3); margin-bottom: 12px; font-family: var(--mono); }
-.fc-words { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 8px 0; }
+.fc-words { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 16px 0 20px; }
 .fc-words .word { margin: 0; }
+#fcTypeZh { margin-bottom: 6px; }
+#fcTypeIpa { margin-bottom: 24px; }
 
 .statRow {
   display: flex; align-items: center; gap: 12px;

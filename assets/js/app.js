@@ -3694,11 +3694,11 @@ function prepFn(w) {
   var fcTypeErrCount = [];
   var fcTypeHintOn = [];
 
-  function fcToggleMode() {
-    fcTypeMode = !fcTypeMode;
-    $('fcModeBtn').textContent = fcTypeMode ? '🔤 選擇模式' : '⌨ 輸入模式';
+  function fcSetMode(mode) {
+    fcTypeMode = (mode === 'type');
     $('fcCard').classList.toggle('hidden', fcTypeMode);
     $('fcTypeCard').classList.toggle('hidden', !fcTypeMode);
+    if ($('fcMode')) $('fcMode').value = mode;
     fcRenderCard();
   }
 
@@ -3723,6 +3723,7 @@ function prepFn(w) {
     }
     zhEl.textContent = card.zh;
     $('fcIpa').textContent = card.ipa ? '/' + card.ipa + '/' : '';
+    $('fcTypeIpa').textContent = card.ipa ? '/' + card.ipa + '/' : '';
     resultEl.textContent = '';
     resultEl.className = 'fc-result';
     $('fcProgress').textContent = (fs.idx + 1) + ' / ' + fs.queue.length +
@@ -3961,7 +3962,7 @@ function prepFn(w) {
     state.flashcardState.answered = 0;
     state.flashcardState.correct = 0;
     fcTypeMode = true;
-    $('fcModeBtn').textContent = '🔤 選擇模式';
+    if ($('fcMode')) $('fcMode').value = 'type';
     $('fcCard').classList.add('hidden');
     $('fcTypeCard').classList.remove('hidden');
     showView('flashcards');
@@ -4202,7 +4203,7 @@ function prepFn(w) {
       state.flashcardState.level = parseInt(this.value, 10);
       initFlashcards();
     };
-    $('fcModeBtn').onclick = function () { fcToggleMode(); };
+    $('fcMode').onchange = function () { fcSetMode(this.value); };
     $('fcResetBtn').onclick = function () { resetFlashcardLevel(); };
     $('fcSpeakBtn').onclick = function () { speakFlashcardWord(); };
     $('fcMistakeBtn').onclick = function () { renderFlashcardMistakes(); };
