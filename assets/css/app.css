@@ -443,6 +443,7 @@ ul.tips--num li::before {
 .fc-words .word { margin: 0; }
 #fcTypeZh { margin-bottom: 6px; }
 #fcTypeIpa { margin-bottom: 24px; }
+.hidden { display: none !important; }
 
 .statRow {
   display: flex; align-items: center; gap: 12px;
