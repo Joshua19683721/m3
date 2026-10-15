@@ -1052,24 +1052,51 @@
     }
     var level = 3; // 錯字本沒有 level 欄位，用全部單字池找干擾項
     var correct = { en: card.en, ok: true };
-    // 從所有單字中找 3 個拼法相似的干擾項
-    var pool = FC_WORDS.filter(function (w) {
-      return w.en.toLowerCase() !== card.en.toLowerCase();
-    });
-    // 相似度計分
+    // 從所有單字中找 3 個「非常相似」的干擾項（只差 1-2 個字母）
     var lower = card.en.toLowerCase();
-    var scored = pool.map(function (w) {
-      var wl = w.en.toLowerCase();
-      var lenDiff = Math.abs(wl.length - lower.length);
-      var common = 0;
-      for (var i = 0; i < wl.length; i++) {
-        if (lower.indexOf(wl[i]) >= 0) common++;
-      }
-      return { w: w, score: lenDiff * 2 - common };
+    var len = lower.length;
+    var pool = FC_WORDS.filter(function (w) {
+      return w.en.toLowerCase() !== lower;
     });
-    scored.sort(function (a, b) { return a.score - b.score; });
-    var distractors = scored.slice(0, 3).map(function (s) { return s.w; });
-    if (distractors.length < 3) distractors = pool.slice(0, 3);
+    function similarity(t, c) {
+      if (t.length === c.length) {
+        var diff = 0;
+        for (var i = 0; i < t.length; i++) if (t[i] !== c[i]) diff++;
+        return diff;
+      }
+      var longer = t.length > c.length ? t : c;
+      var shorter = t.length > c.length ? c : t;
+      var extra = longer.length - shorter.length;
+      var bestMatch = 0;
+      for (var offset = 0; offset <= extra; offset++) {
+        var match = 0;
+        for (var i = 0; i < shorter.length; i++) {
+          if (shorter[i] === longer[i + offset]) match++;
+        }
+        if (match > bestMatch) bestMatch = match;
+      }
+      return extra + (shorter.length - bestMatch);
+    }
+    var close = pool.filter(function (w) {
+      return similarity(lower, w.en) <= 2 && w.en.length === len;
+    });
+    if (close.length < 3) {
+      close = pool.filter(function (w) {
+        return similarity(lower, w.en) <= 3 && Math.abs(w.en.length - len) <= 1;
+      });
+    }
+    close.sort(function (a, b) {
+      return similarity(lower, a.en) - similarity(lower, b.en);
+    });
+    var distractors = close.slice(0, 3);
+    if (distractors.length < 3) {
+      var rest = pool.filter(function (w) {
+        return distractors.indexOf(w) < 0;
+      });
+      for (var i = 0; i < rest.length && distractors.length < 3; i++) {
+        distractors.push(rest[i]);
+      }
+    }
     var opts = [correct].concat(distractors.map(function (w) { return { en: w.en, ok: false }; }));
     // 洗牌
     for (var i = opts.length - 1; i > 0; i--) {
@@ -3579,23 +3606,64 @@ function prepFn(w) {
 
   // 從同一個級數中找三個「拼法相似」的干擾項
   function pickDistractors(correct, level) {
+    var lower = correct.en.toLowerCase();
+    var len = lower.length;
     var pool = FC_WORDS.filter(function (w) {
-      return w.level === level && w.en.toLowerCase() !== correct.en.toLowerCase();
+      return w.en.toLowerCase() !== lower;
     });
     if (pool.length < 3) return pool.slice(0, 3);
-    // 相似度：長度相近 + 有共同字母
-    var lower = correct.en.toLowerCase();
-    var scored = pool.map(function (w) {
-      var wl = w.en.toLowerCase();
-      var lenDiff = Math.abs(wl.length - lower.length);
-      var common = 0;
-      for (var i = 0; i < wl.length; i++) {
-        if (lower.indexOf(wl[i]) >= 0) common++;
+
+    // 嚴格相似度：計算「最少需要幾個字元不同」
+    function similarity(target, candidate) {
+      var t = target.toLowerCase();
+      var c = candidate.toLowerCase();
+      // 同長度：直接計算不同位置數
+      if (t.length === c.length) {
+        var diff = 0;
+        for (var i = 0; i < t.length; i++) if (t[i] !== c[i]) diff++;
+        return diff;
       }
-      return { w: w, score: lenDiff * 2 - common };
+      // 不同長度：計算編輯距離（簡化版）
+      var longer = t.length > c.length ? t : c;
+      var shorter = t.length > c.length ? c : t;
+      var extra = longer.length - shorter.length;
+      // 找出最多能匹配多少字元
+      var bestMatch = 0;
+      for (var offset = 0; offset <= extra; offset++) {
+        var match = 0;
+        for (var i = 0; i < shorter.length; i++) {
+          if (shorter[i] === longer[i + offset]) match++;
+        }
+        if (match > bestMatch) bestMatch = match;
+      }
+      return extra + (shorter.length - bestMatch);
+    }
+
+    // 只選「非常相似」的：同長度且只差 1-2 個字元
+    var close = pool.filter(function (w) {
+      return similarity(lower, w.en) <= 2 && w.en.length === len;
     });
-    scored.sort(function (a, b) { return a.score - b.score; });
-    return scored.slice(0, 3).map(function (s) { return s.w; });
+    // 如果不夠，放寬到允許差 3 個字元
+    if (close.length < 3) {
+      close = pool.filter(function (w) {
+        return similarity(lower, w.en) <= 3 && Math.abs(w.en.length - len) <= 1;
+      });
+    }
+    // 按相似度排序，取最接近的 3 个
+    close.sort(function (a, b) {
+      return similarity(lower, a.en) - similarity(lower, b.en);
+    });
+    var picked = close.slice(0, 3);
+    // 如果還是不夠，從池中隨機補
+    if (picked.length < 3) {
+      var rest = pool.filter(function (w) {
+        return picked.indexOf(w) < 0;
+      });
+      for (var i = 0; i < rest.length && picked.length < 3; i++) {
+        picked.push(rest[i]);
+      }
+    }
+    return picked;
   }
 
   function initFlashcards() {
