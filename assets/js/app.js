@@ -3674,7 +3674,8 @@ function prepFn(w) {
     state.flashcardState.idx = 0;
     state.flashcardState.answered = 0;
     state.flashcardState.correct = 0;
-    fcRenderCard();
+    // 確保模式狀態與 DOM 同步（預設為選擇模式）
+    fcSetMode('choice');
   }
 
   function resetFlashcardLevel() {
@@ -4115,32 +4116,58 @@ function prepFn(w) {
       });
     }
     html += '<div style="text-align:center;margin-top:16px">' +
-      '<button class="btn btn--ghost" id="fcMistakeBack">← 返回閃卡</button></div></div>';
+      '<button class="btn btn--purple" id="fcPracticeAllMistakes">✏ 練習全部錯誤</button>' +
+      '<button class="btn btn--ghost" id="fcMistakeBack" style="margin-left:8px">← 返回閃卡</button></div></div>';
     box.innerHTML = html;
+    
+    $('fcPracticeAllMistakes').onclick = function () { fcPracticeMistakes(); };
+    
     $('fcMistakeBack').onclick = function () {
-      // 恢復原本閃卡畫面
+      // 恢復原本閃卡畫面（包含兩張卡片）
       box.innerHTML = '<div class="fc-controls">' +
         '<label class="ctl"><span>級數</span>' +
         '<select id="fcLevel">' +
         [1,2,3,4,5,6].map(function(l){return '<option value="'+l+'"'+(l===state.flashcardState.level?' selected':'')+'>'+l+' 級</option>';}).join('') +
         '</select></label>' +
+        '<label class="ctl"><span>模式</span>' +
+        '<select id="fcMode">' +
+        '<option value="choice">四選一</option>' +
+        '<option value="type">輸入模式</option>' +
+        '</select></label>' +
+        '<button class="btn btn--ghost btn--sm" id="fcResetBtn">🔄 重置本級</button>' +
         '<span class="fc-progress" id="fcProgress"></span>' +
         '<button class="btn btn--ghost btn--sm" id="fcMistakeBtn">📕 閃卡錯誤本 <span id="fcMistakeCount">0</span></button>' +
         '</div>' +
+        '<!-- 選擇模式 -->' +
         '<div class="fc-card" id="fcCard">' +
         '<div class="fc-zh" id="fcZh"></div>' +
+        '<div class="fc-ipa" id="fcIpa"></div>' +
         '<button class="btn fc-speak" id="fcSpeakBtn">🔊 聽三次</button>' +
         '<div class="fc-options" id="fcOptions"></div>' +
         '<div class="fc-result" id="fcResult"></div>' +
+        '</div>' +
+        '<!-- 輸入模式 -->' +
+        '<div class="fc-card hidden" id="fcTypeCard">' +
+        '<div class="fc-zh" id="fcTypeZh"></div>' +
+        '<div class="fc-ipa" id="fcTypeIpa"></div>' +
+        '<div class="fc-words" id="fcWords"></div>' +
+        '<div class="fc-result" id="fcTypeResult"></div>' +
+        '<div style="margin-top:12px;font-size:.78rem;color:var(--txt-3)">' +
+        'Space 鍵＝聽一次 · Enter 鍵＝重打這個字' +
+        '</div>' +
         '</div>';
-      // 重新綁定
+      // 重新綁定所有事件
       $('fcLevel').onchange = function () {
         state.flashcardState.level = parseInt(this.value, 10);
         initFlashcards();
       };
+      $('fcMode').onchange = function () { fcSetMode(this.value); };
+      $('fcResetBtn').onclick = function () { resetFlashcardLevel(); };
       $('fcSpeakBtn').onclick = function () { speakFlashcardWord(); };
       $('fcMistakeBtn').onclick = function () { renderFlashcardMistakes(); };
       updateFlashcardMistakeCount();
+      // 同步模式狀態
+      if ($('fcMode')) $('fcMode').value = fcTypeMode ? 'type' : 'choice';
       renderFlashcard();
     };
   }
