@@ -27,6 +27,8 @@
     stepIndex: 0,
     progress: {},              // sid -> { done:{unitId:[stepIdx]}, cur:{unit,step}, words:{key:[idx]} }
     mistakes: {},              // wordKey -> {en,zh,n,sid,unitId}
+    flashcardMistakes: {},     // wordKey -> {en,zh,n,level}
+    flashcardState: { level: 1, queue: [], idx: 0, answered: 0, correct: 0 },
     settings: { hideZh: false, autoNext: true, autoSpeak: true, repeat: 3, rate: 0.85 },
     mistakesReviewMode: false  // 錯字本複習模式
   };
@@ -258,7 +260,8 @@
 
   var VIEW_IDS = {
     home: 'viewHome', practice: 'viewPractice', browse: 'viewBrowse',
-    mistakes: 'viewMistakes', stats: 'viewStats', data: 'viewData'
+    mistakes: 'viewMistakes', stats: 'viewStats', data: 'viewData',
+    flashcards: 'viewFlashcards'
   };
   function showView(v) {
     state.view = v;
@@ -3426,6 +3429,272 @@ function prepFn(w) {
     return '<div class="mistake__r"><span class="mistake__k">' + k +
       '</span><span class="mistake__v">' + v + '</span></div>';
   }
+  /* ------------------------------------------------------------ 閃卡練習 */
+  var FC_WORDS = [];      // 所有 Level 1-6 的單字
+  var fcAudioCtx = null;
+
+  function buildFlashcardWords() {
+    FC_WORDS = [];
+    DATA.scenarios.forEach(function (sc) {
+      sc.units.forEach(function (u) {
+        FC_WORDS.push({ en: u.target, zh: u.gloss, ipa: u.ipa || '', level: u.level });
+      });
+    });
+  }
+
+  function shuffle(arr) {
+    var a = arr.slice();
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    return a;
+  }
+
+  // 從同一個級數中找三個「拼法相似」的干擾項
+  function pickDistractors(correct, level) {
+    var pool = FC_WORDS.filter(function (w) {
+      return w.level === level && w.en.toLowerCase() !== correct.en.toLowerCase();
+    });
+    if (pool.length < 3) return pool.slice(0, 3);
+    // 相似度：長度相近 + 有共同字母
+    var lower = correct.en.toLowerCase();
+    var scored = pool.map(function (w) {
+      var wl = w.en.toLowerCase();
+      var lenDiff = Math.abs(wl.length - lower.length);
+      var common = 0;
+      for (var i = 0; i < wl.length; i++) {
+        if (lower.indexOf(wl[i]) >= 0) common++;
+      }
+      return { w: w, score: lenDiff * 2 - common };
+    });
+    scored.sort(function (a, b) { return a.score - b.score; });
+    return scored.slice(0, 3).map(function (s) { return s.w; });
+  }
+
+  function initFlashcards() {
+    if (!FC_WORDS.length) buildFlashcardWords();
+    var level = state.flashcardState.level;
+    var pool = FC_WORDS.filter(function (w) { return w.level === level; });
+    state.flashcardState.queue = shuffle(pool);
+    state.flashcardState.idx = 0;
+    state.flashcardState.answered = 0;
+    state.flashcardState.correct = 0;
+    renderFlashcard();
+  }
+
+  function renderFlashcard() {
+    var fs = state.flashcardState;
+    var card = fs.queue[fs.idx];
+    var zhEl = $('fcZh');
+    var optEl = $('fcOptions');
+    var resultEl = $('fcResult');
+    if (!zhEl || !optEl || !resultEl) return;
+    if (!card) {
+      zhEl.textContent = '這個級數沒有單字';
+      optEl.innerHTML = '';
+      resultEl.textContent = '';
+      $('fcProgress').textContent = '';
+      return;
+    }
+    zhEl.textContent = card.zh;
+    resultEl.textContent = '';
+    resultEl.className = 'fc-result';
+    $('fcProgress').textContent = (fs.idx + 1) + ' / ' + fs.queue.length +
+      '　答對 ' + fs.correct + ' 題';
+
+    // 四個選項：正確 + 3 個干擾，洗牌
+    var distractors = pickDistractors(card, fs.level);
+    var opts = shuffle([{ en: card.en, ok: true }].concat(
+      distractors.map(function (w) { return { en: w.en, ok: false }; })));
+    optEl.innerHTML = '';
+    opts.forEach(function (o, i) {
+      var btn = document.createElement('button');
+      btn.className = 'fc-opt';
+      btn.textContent = o.en;
+      btn.onclick = function () { handleFlashcardAnswer(i, o.ok, btn); };
+      optEl.appendChild(btn);
+    });
+    // 自動聽三次
+    speakFlashcardWord();
+  }
+
+  function speakFlashcardWord() {
+    var card = state.flashcardState.queue[state.flashcardState.idx];
+    if (card) speak(card.en, 3);
+  }
+
+  function playFireworkSound() {
+    if (!fcAudioCtx) {
+      try { fcAudioCtx = new (window.AudioContext || window.webkitAudioContext)(); }
+      catch (e) { return; }
+    }
+    var ctx = fcAudioCtx;
+    if (!ctx) return;
+    // 上行琶音 + 鞭炮聲
+    var notes = [523, 659, 784, 1047, 784, 1047, 1319];
+    notes.forEach(function (freq, i) {
+      var osc = ctx.createOscillator();
+      var gain = ctx.createGain();
+      osc.type = 'square';
+      osc.frequency.value = freq;
+      var t = ctx.currentTime + i * 0.12;
+      gain.gain.setValueAtTime(0.15, t);
+      gain.gain.exponentialRampToValueAtTime(0.001, t + 0.15);
+      osc.connect(gain); gain.connect(ctx.destination);
+      osc.start(t); osc.stop(t + 0.15);
+    });
+    // 鞭炮 noise burst
+    var dur = 0.6;
+    var buf = ctx.createBuffer(1, ctx.sampleRate * dur, ctx.sampleRate);
+    var data = buf.getChannelData(0);
+    for (var i = 0; i < data.length; i++) {
+      data[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / data.length, 2);
+    }
+    var src = ctx.createBufferSource();
+    var g2 = ctx.createGain();
+    g2.gain.setValueAtTime(0.3, ctx.currentTime);
+    g2.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + dur);
+    src.buffer = buf;
+    src.connect(g2); g2.connect(ctx.destination);
+    src.start(ctx.currentTime + 0.1);
+  }
+
+  function playWarningSound() {
+    if (!fcAudioCtx) {
+      try { fcAudioCtx = new (window.AudioContext || window.webkitAudioContext)(); }
+      catch (e) { return; }
+    }
+    var ctx = fcAudioCtx;
+    if (!ctx) return;
+    var osc = ctx.createOscillator();
+    var gain = ctx.createGain();
+    osc.type = 'sawtooth';
+    osc.frequency.setValueAtTime(220, ctx.currentTime);
+    osc.frequency.linearRampToValueAtTime(180, ctx.currentTime + 0.4);
+    gain.gain.setValueAtTime(0.25, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.5);
+    osc.connect(gain); gain.connect(ctx.destination);
+    osc.start(ctx.currentTime); osc.stop(ctx.currentTime + 0.5);
+  }
+
+  function handleFlashcardAnswer(idx, ok, btn) {
+    var fs = state.flashcardState;
+    var card = fs.queue[fs.idx];
+    var resultEl = $('fcResult');
+    var opts = $('fcOptions').querySelectorAll('.fc-opt');
+    opts.forEach(function (b) { b.classList.add('disabled'); });
+    fs.answered++;
+    if (ok) {
+      btn.classList.add('correct');
+      resultEl.textContent = '正確！';
+      resultEl.className = 'fc-result ok';
+      fs.correct++;
+      playFireworkSound();
+      // 停留 3 秒後自動進下一張
+      setTimeout(function () {
+        fs.idx++;
+        if (fs.idx >= fs.queue.length) {
+          $('fcZh').textContent = '這輪完成了！';
+          $('fcOptions').innerHTML = '';
+          $('fcResult').textContent = '';
+          $('fcProgress').textContent = '共 ' + fs.answered + ' 題，答對 ' + fs.correct + ' 題';
+        } else {
+          renderFlashcard();
+        }
+      }, 3000);
+    } else {
+      btn.classList.add('wrong');
+      // 標示正確答案
+      opts.forEach(function (b) {
+        if (card && b.textContent === card.en) b.classList.add('correct');
+      });
+      resultEl.textContent = '答錯了！正確答案是 ' + card.en;
+      resultEl.className = 'fc-result err';
+      playWarningSound();
+      // 記錄到閃卡錯誤本
+      if (card) {
+        var k = card.en.toLowerCase();
+        var rec = state.flashcardMistakes[k];
+        if (!rec) {
+          rec = state.flashcardMistakes[k] = { en: card.en, zh: card.zh, n: 0, level: card.level };
+        }
+        rec.n++;
+        saveAll();
+        updateFlashcardMistakeCount();
+      }
+      // 2 秒後自動進下一張
+      setTimeout(function () {
+        fs.idx++;
+        if (fs.idx >= fs.queue.length) {
+          $('fcZh').textContent = '這輪完成了！';
+          $('fcOptions').innerHTML = '';
+          $('fcResult').textContent = '';
+          $('fcProgress').textContent = '共 ' + fs.answered + ' 題，答對 ' + fs.correct + ' 題';
+        } else {
+          renderFlashcard();
+        }
+      }, 2000);
+    }
+  }
+
+  function updateFlashcardMistakeCount() {
+    var el = $('fcMistakeCount');
+    if (el) el.textContent = Object.keys(state.flashcardMistakes).length;
+  }
+
+  function renderFlashcardMistakes() {
+    var box = $('flashcardBody');
+    var keys = Object.keys(state.flashcardMistakes).sort(function (a, b) {
+      return state.flashcardMistakes[b].n - state.flashcardMistakes[a].n;
+    });
+    var html = '<div class="fc-mistake-list" style="max-width:560px;margin:0 auto">' +
+      '<h3 style="margin-bottom:12px;font-size:1rem">📕 閃卡錯誤本</h3>';
+    if (!keys.length) {
+      html += '<div class="empty">還沒有閃卡錯誤，繼續保持！</div>';
+    } else {
+      keys.forEach(function (k) {
+        var m = state.flashcardMistakes[k];
+        html += '<div class="fc-mistake-row">' +
+          '<span class="mrow__w">' + esc(m.en) + '</span>' +
+          '<span class="mrow__z">' + esc(m.zh || '') +
+          (m.ipa ? ' <span class="mono" style="opacity:.65">/' + esc(m.ipa) + '/</span>' : '') +
+          '</span>' +
+          '<span class="mrow__n">錯 ' + m.n + ' 次</span>' +
+          '</div>';
+      });
+    }
+    html += '<div style="text-align:center;margin-top:16px">' +
+      '<button class="btn btn--ghost" id="fcMistakeBack">← 返回閃卡</button></div></div>';
+    box.innerHTML = html;
+    $('fcMistakeBack').onclick = function () {
+      // 恢復原本閃卡畫面
+      box.innerHTML = '<div class="fc-controls">' +
+        '<label class="ctl"><span>級數</span>' +
+        '<select id="fcLevel">' +
+        [1,2,3,4,5,6].map(function(l){return '<option value="'+l+'"'+(l===state.flashcardState.level?' selected':'')+'>'+l+' 級</option>';}).join('') +
+        '</select></label>' +
+        '<span class="fc-progress" id="fcProgress"></span>' +
+        '<button class="btn btn--ghost btn--sm" id="fcMistakeBtn">📕 閃卡錯誤本 <span id="fcMistakeCount">0</span></button>' +
+        '</div>' +
+        '<div class="fc-card" id="fcCard">' +
+        '<div class="fc-zh" id="fcZh"></div>' +
+        '<button class="btn fc-speak" id="fcSpeakBtn">🔊 聽三次</button>' +
+        '<div class="fc-options" id="fcOptions"></div>' +
+        '<div class="fc-result" id="fcResult"></div>' +
+        '</div>';
+      // 重新綁定
+      $('fcLevel').onchange = function () {
+        state.flashcardState.level = parseInt(this.value, 10);
+        initFlashcards();
+      };
+      $('fcSpeakBtn').onclick = function () { speakFlashcardWord(); };
+      $('fcMistakeBtn').onclick = function () { renderFlashcardMistakes(); };
+      updateFlashcardMistakeCount();
+      renderFlashcard();
+    };
+  }
+
   function closePanel() { $('panel').hidden = true; $('scrim').hidden = true; }
 
   /* ------------------------------------------------------------ 事件 */
@@ -3477,6 +3746,15 @@ function prepFn(w) {
     $('autoSpeakToggle').onchange = function () {
       state.settings.autoSpeak = this.checked; saveAll();
     };
+
+    $('flashcardBtn').onclick = function () { initFlashcards(); showView('flashcards'); };
+    $('closeFlashcardsBtn').onclick = function () { showView('home'); renderHome(); };
+    $('fcLevel').onchange = function () {
+      state.flashcardState.level = parseInt(this.value, 10);
+      initFlashcards();
+    };
+    $('fcSpeakBtn').onclick = function () { speakFlashcardWord(); };
+    $('fcMistakeBtn').onclick = function () { renderFlashcardMistakes(); };
 
     $('exportBtn').onclick = function () {
       var payload = JSON.stringify({

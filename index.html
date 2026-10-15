@@ -46,6 +46,7 @@
     <button class="btn btn--ghost" id="browseBtn" title="查單字">🔍</button>
     <button class="btn btn--ghost" id="mistakesBtn" title="錯字本">📕 <span class="btn__count" id="mistakeCount">0</span></button>
     <button class="btn btn--ghost" id="statsBtn" title="學習統計">📊</button>
+    <button class="btn btn--ghost" id="flashcardBtn" title="閃卡練習">🃏</button>
     <button class="btn btn--ghost" id="dataBtn" title="資料管理">⚙</button>
   </div>
 </header>
@@ -164,6 +165,37 @@
     <button class="btn btn--ghost" id="closeMistakesBtn">✕ 關閉</button>
   </div>
   <div class="sheet__body" id="mistakeList"></div>
+</main>
+
+<!-- ============ 閃卡練習 ============ -->
+<main class="view view--sheet" id="viewFlashcards" hidden>
+  <div class="sheet__head">
+    <h2>🃏 閃卡練習</h2>
+    <p>看中文、聽英文三次，選出正確拼法。答對有鞭炮聲，答錯會記入閃卡錯誤本。</p>
+    <button class="btn btn--ghost" id="closeFlashcardsBtn">✕ 關閉</button>
+  </div>
+  <div class="sheet__body" id="flashcardBody">
+    <div class="fc-controls">
+      <label class="ctl"><span>級數</span>
+        <select id="fcLevel">
+          <option value="1">1 級</option>
+          <option value="2">2 級</option>
+          <option value="3">3 級</option>
+          <option value="4">4 級</option>
+          <option value="5">5 級</option>
+          <option value="6">6 級</option>
+        </select>
+      </label>
+      <span class="fc-progress" id="fcProgress"></span>
+      <button class="btn btn--ghost btn--sm" id="fcMistakeBtn">📕 閃卡錯誤本 <span id="fcMistakeCount">0</span></button>
+    </div>
+    <div class="fc-card" id="fcCard">
+      <div class="fc-zh" id="fcZh"></div>
+      <button class="btn fc-speak" id="fcSpeakBtn">🔊 聽三次</button>
+      <div class="fc-options" id="fcOptions"></div>
+      <div class="fc-result" id="fcResult"></div>
+    </div>
+  </div>
 </main>
 
 <!-- ============ 統計 ============ -->

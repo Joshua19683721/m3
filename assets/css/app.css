@@ -421,6 +421,24 @@ ul.tips--num li::before {
 .btn--easy  { background: #1e3a8a; color: #bfdbfe; border-color: #1d4ed8; }
 .btn--sm { padding: 4px 10px; font-size: .74rem; }
 
+/* 閃卡練習 */
+.fc-controls { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+.fc-progress { font-size: .84rem; color: var(--txt-3); font-variant-numeric: tabular-nums; }
+.fc-card { max-width: 560px; margin: 0 auto; background: var(--bg-3); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; text-align: center; }
+.fc-zh { font-size: 1.6rem; font-weight: 700; color: var(--txt-1); margin-bottom: 16px; }
+.fc-speak { margin-bottom: 20px; font-size: 1rem; padding: 10px 24px; }
+.fc-options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.fc-opt { padding: 14px 18px; border-radius: var(--radius-sm); border: 2px solid var(--line); background: var(--bg-2); color: var(--txt-1); font-family: var(--mono); font-size: 1.05rem; cursor: pointer; transition: border-color .15s, background .15s; text-align: center; }
+.fc-opt:hover { border-color: var(--accent); }
+.fc-opt.correct { border-color: var(--ok); background: #14532d33; }
+.fc-opt.wrong { border-color: var(--err); background: #7f1d1d33; }
+.fc-opt.disabled { pointer-events: none; opacity: .6; }
+.fc-result { margin-top: 16px; min-height: 28px; font-size: 1rem; font-weight: 700; }
+.fc-result.ok { color: var(--ok); }
+.fc-result.err { color: var(--err); }
+.fc-mistake-row { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-bottom: 1px solid #ffffff0d; font-size: .86rem; }
+.fc-mistake-row .mrow__w { min-width: 120px; }
+
 .statRow {
   display: flex; align-items: center; gap: 12px;
   padding: 10px 0; border-bottom: 1px solid #ffffff0d;
