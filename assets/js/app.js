@@ -30,7 +30,8 @@
     flashcardMistakes: {},     // wordKey -> {en,zh,n,level}
     flashcardState: { level: 1, queue: [], idx: 0, answered: 0, correct: 0 },
     settings: { hideZh: false, autoNext: true, autoSpeak: true, repeat: 3, rate: 0.85 },
-    mistakesReviewMode: false  // 錯字本複習模式
+    mistakesReviewMode: false,  // 錯字本 SRS 複習模式
+    mistakePractice: null      // 錯題練習狀態
   };
 
   var voice = null;
@@ -1018,6 +1019,131 @@
     });
     var html = '總計: ' + total + ' | 到期: ' + due + (overdue > 0 ? ' (逾期 ' + overdue + ')' : '') + ' | 新卡: ' + newCards + ' | 學習中: ' + learning + ' | 複習中: ' + review;
     statsEl.innerHTML = html;
+  }
+
+  /* ------------------------------------------------------------ 錯題練習 */
+  // 從錯字本中練習，看中文、聽英文、四選一，直到會為止
+  function initMistakePractice() {
+    if (!FC_WORDS.length) buildFlashcardWords();
+    var keys = Object.keys(state.mistakes);
+    if (!keys.length) {
+      toast('錯字本是空的，沒有需要練習的字');
+      return;
+    }
+    // 隨機排序錯字
+    state.mistakePractice = {
+      queue: keys.slice().sort(function () { return Math.random() - 0.5; }),
+      idx: 0,
+      answered: 0,
+      correct: 0
+    };
+    renderMistakePractice();
+  }
+
+  function renderMistakePractice() {
+    var mp = state.mistakePractice;
+    if (!mp) return;
+    var box = $('mistakeList');
+    var card = state.mistakes[mp.queue[mp.idx]];
+    if (!card) {
+      box.innerHTML = '<div class="empty">🎉 錯題練習完成！共 ' + mp.answered +
+        ' 題，答對 ' + mp.correct + ' 題。</div>';
+      return;
+    }
+    var level = 3; // 錯字本沒有 level 欄位，用全部單字池找干擾項
+    var correct = { en: card.en, ok: true };
+    // 從所有單字中找 3 個拼法相似的干擾項
+    var pool = FC_WORDS.filter(function (w) {
+      return w.en.toLowerCase() !== card.en.toLowerCase();
+    });
+    // 相似度計分
+    var lower = card.en.toLowerCase();
+    var scored = pool.map(function (w) {
+      var wl = w.en.toLowerCase();
+      var lenDiff = Math.abs(wl.length - lower.length);
+      var common = 0;
+      for (var i = 0; i < wl.length; i++) {
+        if (lower.indexOf(wl[i]) >= 0) common++;
+      }
+      return { w: w, score: lenDiff * 2 - common };
+    });
+    scored.sort(function (a, b) { return a.score - b.score; });
+    var distractors = scored.slice(0, 3).map(function (s) { return s.w; });
+    if (distractors.length < 3) distractors = pool.slice(0, 3);
+    var opts = [correct].concat(distractors.map(function (w) { return { en: w.en, ok: false }; }));
+    // 洗牌
+    for (var i = opts.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = opts[i]; opts[i] = opts[j]; opts[j] = t;
+    }
+
+    var html = '<div style="max-width:560px;margin:0 auto">' +
+      '<div style="text-align:center;margin-bottom:16px">' +
+      '<span style="font-size:.8rem;color:var(--txt-3)">錯題練習 ' +
+      (mp.idx + 1) + ' / ' + mp.queue.length + '　答對 ' + mp.correct + ' 題</span></div>' +
+      '<div class="fc-card">' +
+      '<div class="fc-zh">' + esc(card.zh || '') + '</div>' +
+      '<button class="btn fc-speak" id="mpSpeakBtn">🔊 聽三次</button>' +
+      '<div class="fc-options" id="mpOptions"></div>' +
+      '<div class="fc-result" id="mpResult"></div>' +
+      '</div></div>';
+    box.innerHTML = html;
+
+    var optEl = $('mpOptions');
+    opts.forEach(function (o, i) {
+      var btn = document.createElement('button');
+      btn.className = 'fc-opt';
+      btn.textContent = o.en;
+      btn.onclick = function () { handleMistakePractice(i, o.ok, btn); };
+      optEl.appendChild(b);
+    });
+    $('mpSpeakBtn').onclick = function () { speak(card.en, 3); };
+    speak(card.en, 3);
+  }
+
+  function handleMistakePractice(idx, ok, btn) {
+    var mp = state.mistakePractice;
+    var card = state.mistakes[mp.queue[mp.idx]];
+    var resultEl = $('mpResult');
+    var opts = $('mpOptions').querySelectorAll('.fc-opt');
+    opts.forEach(function (b) { b.classList.add('disabled'); });
+    mp.answered++;
+    if (ok) {
+      btn.classList.add('correct');
+      resultEl.textContent = '正確！';
+      resultEl.className = 'fc-result ok';
+      mp.correct++;
+      playFireworkSound();
+      setTimeout(function () {
+        mp.idx++;
+        if (mp.idx >= mp.queue.length) {
+          renderMistakePractice();
+        } else {
+          renderMistakePractice();
+        }
+      }, 2000);
+    } else {
+      btn.classList.add('wrong');
+      opts.forEach(function (b) {
+        if (card && b.textContent === card.en) b.classList.add('correct');
+      });
+      resultEl.textContent = '答錯了！正確答案是 ' + card.en;
+      resultEl.className = 'fc-result err';
+      playWarningSound();
+      // 錯誤就增加次數，繼續留在錯字本
+      if (card) {
+        card.n++;
+        saveAll();
+      }
+      setTimeout(function () {
+        mp.idx++;
+        if (mp.idx >= mp.queue.length) {
+          renderMistakePractice();
+        } else {
+          renderMistakePractice();
+        }
+      }, 2000);
+    }
   }
 
   /* ------------------------------------------------------------ 查單字 */
@@ -3483,6 +3609,17 @@ function prepFn(w) {
     renderFlashcard();
   }
 
+  function resetFlashcardLevel() {
+    var level = state.flashcardState.level;
+    var pool = FC_WORDS.filter(function (w) { return w.level === level; });
+    state.flashcardState.queue = shuffle(pool);
+    state.flashcardState.idx = 0;
+    state.flashcardState.answered = 0;
+    state.flashcardState.correct = 0;
+    renderFlashcard();
+    toast('已重置 ' + level + ' 級的閃卡進度');
+  }
+
   function renderFlashcard() {
     var fs = state.flashcardState;
     var card = fs.queue[fs.idx];
@@ -3753,8 +3890,11 @@ function prepFn(w) {
       state.flashcardState.level = parseInt(this.value, 10);
       initFlashcards();
     };
+    $('fcResetBtn').onclick = function () { resetFlashcardLevel(); };
     $('fcSpeakBtn').onclick = function () { speakFlashcardWord(); };
     $('fcMistakeBtn').onclick = function () { renderFlashcardMistakes(); };
+
+    $('mistakePracticeBtn').onclick = function () { initMistakePractice(); };
 
     $('exportBtn').onclick = function () {
       var payload = JSON.stringify({

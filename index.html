@@ -162,7 +162,10 @@
   <div class="sheet__head">
     <h2>📕 錯字本</h2>
     <p>同一個字打字出錯 3 次以上就會收進來。點任一列會跳到重打那個字的步驟。</p>
-    <button class="btn btn--ghost" id="closeMistakesBtn">✕ 關閉</button>
+    <div>
+      <button class="btn btn--ghost btn--sm" id="mistakePracticeBtn">✏ 錯題練習</button>
+      <button class="btn btn--ghost" id="closeMistakesBtn">✕ 關閉</button>
+    </div>
   </div>
   <div class="sheet__body" id="mistakeList"></div>
 </main>
@@ -186,6 +189,7 @@
           <option value="6">6 級</option>
         </select>
       </label>
+      <button class="btn btn--ghost btn--sm" id="fcResetBtn">🔄 重置本級</button>
       <span class="fc-progress" id="fcProgress"></span>
       <button class="btn btn--ghost btn--sm" id="fcMistakeBtn">📕 閃卡錯誤本 <span id="fcMistakeCount">0</span></button>
     </div>
