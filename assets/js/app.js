@@ -3674,7 +3674,7 @@ function prepFn(w) {
     state.flashcardState.idx = 0;
     state.flashcardState.answered = 0;
     state.flashcardState.correct = 0;
-    renderFlashcard();
+    fcRenderCard();
   }
 
   function resetFlashcardLevel() {
@@ -3684,11 +3684,30 @@ function prepFn(w) {
     state.flashcardState.idx = 0;
     state.flashcardState.answered = 0;
     state.flashcardState.correct = 0;
-    renderFlashcard();
+    fcRenderCard();
     toast('已重置 ' + level + ' 級的閃卡進度');
   }
 
-  function renderFlashcard() {
+  // 輸入模式狀態
+  var fcTypeMode = false;      // false = 選擇模式, true = 輸入模式
+  var fcTypeEls = [];          // 輸入模式的 word elements
+  var fcTypeErrCount = [];
+  var fcTypeHintOn = [];
+
+  function fcToggleMode() {
+    fcTypeMode = !fcTypeMode;
+    $('fcModeBtn').textContent = fcTypeMode ? '🔤 選擇模式' : '⌨ 輸入模式';
+    $('fcCard').classList.toggle('hidden', fcTypeMode);
+    $('fcTypeCard').classList.toggle('hidden', !fcTypeMode);
+    fcRenderCard();
+  }
+
+  function fcRenderCard() {
+    if (fcTypeMode) fcRenderTypeCard();
+    else fcRenderChoiceCard();
+  }
+
+  function fcRenderChoiceCard() {
     var fs = state.flashcardState;
     var card = fs.queue[fs.idx];
     var zhEl = $('fcZh');
@@ -3703,6 +3722,7 @@ function prepFn(w) {
       return;
     }
     zhEl.textContent = card.zh;
+    $('fcIpa').textContent = card.ipa ? '/' + card.ipa + '/' : '';
     resultEl.textContent = '';
     resultEl.className = 'fc-result';
     $('fcProgress').textContent = (fs.idx + 1) + ' / ' + fs.queue.length +
@@ -3722,6 +3742,230 @@ function prepFn(w) {
     });
     // 自動聽三次
     speakFlashcardWord();
+  }
+
+  // ===== 輸入模式 =====
+  function fcRenderTypeCard() {
+    var fs = state.flashcardState;
+    var card = fs.queue[fs.idx];
+    var zhEl = $('fcTypeZh');
+    var wordsEl = $('fcWords');
+    var resultEl = $('fcTypeResult');
+    if (!zhEl || !wordsEl || !resultEl) return;
+    if (!card) {
+      zhEl.textContent = '這個級數沒有單字';
+      wordsEl.innerHTML = '';
+      resultEl.textContent = '';
+      $('fcProgress').textContent = '';
+      return;
+    }
+    zhEl.textContent = card.zh;
+    $('fcTypeIpa').textContent = card.ipa ? '/' + card.ipa + '/' : '';
+    resultEl.textContent = '';
+    resultEl.className = 'fc-result';
+    $('fcProgress').textContent = (fs.idx + 1) + ' / ' + fs.queue.length +
+      '　答對 ' + fs.correct + ' 題';
+
+    // 建立輸入框（參考主練習的 slot/watermark 設計）
+    wordsEl.innerHTML = '';
+    fcTypeEls = [];
+    fcTypeErrCount = [];
+    fcTypeHintOn = [];
+
+    var toks = String(card.en).match(/([A-Za-z0-9'’]+)|([^A-Za-z0-9'\s]+)/g) || [];
+    var wordIdx = 0;
+    toks.forEach(function (tok) {
+      if (/[A-Za-z0-9'’]/.test(tok)) {
+        var idx = wordIdx;
+        fcTypeErrCount[idx] = 0;
+        fcTypeHintOn[idx] = false;
+
+        var wrap = document.createElement('div');
+        wrap.className = 'word';
+        var slot = document.createElement('div');
+        slot.className = 'slot';
+        slot.style.width = 'calc(' + Math.max(tok.length, 1) + 'ch + 1.2em)';
+        var wm = document.createElement('div');
+        wm.className = 'wm';
+        var inp = document.createElement('input');
+        inp.type = 'text';
+        inp.autocomplete = 'off'; inp.autocapitalize = 'off';
+        inp.spellcheck = false;
+        inp.dataset.target = tok;
+        inp.setAttribute('aria-label', '第 ' + (idx + 1) + ' 個字');
+        slot.appendChild(wm); slot.appendChild(inp);
+        wrap.appendChild(slot);
+        wordsEl.appendChild(wrap);
+
+        inp.addEventListener('focus', function () { slot.classList.add('focus'); });
+        inp.addEventListener('blur', function () { slot.classList.remove('focus'); });
+        inp.addEventListener('input', function () { fcOnTypeInput(inp, slot, wm, tok, idx); });
+        inp.addEventListener('keydown', function (e) { fcOnTypeKey(e, inp, tok); });
+
+        fcTypeEls.push({ input: inp, slot: slot, wm: wm, target: tok });
+        wordIdx++;
+      } else if (tok.trim()) {
+        var p = document.createElement('span');
+        p.className = 'punct';
+        p.textContent = tok;
+        wordsEl.appendChild(p);
+      }
+    });
+
+    // 焦點停在第一個字
+    setTimeout(function () { if (fcTypeEls[0]) fcTypeEls[0].input.focus(); }, 40);
+    // 自動聽三次
+    speak(card.en, 3);
+  }
+
+  function fcOnTypeInput(inp, slot, wm, target, idx) {
+    var v = inp.value;
+    var full = canon(target);
+    var lv = canon(v).toLowerCase();
+    var lfull = full.toLowerCase();
+    var okPrefix = lfull.indexOf(lv) === 0;
+
+    if (!okPrefix) {
+      slot.classList.add('bad'); slot.classList.remove('ok');
+      inp.classList.add('bad'); inp.classList.remove('ok');
+      fcTypeErrCount[idx]++;
+      if (fcTypeErrCount[idx] >= 3 && !fcTypeHintOn[idx]) {
+        fcTypeHintOn[idx] = true;
+        // 顯示浮水印提示
+        var t = canon(v).toLowerCase();
+        wm.innerHTML = t.length > 0 && lfull.indexOf(t) === 0
+          ? '<span class="t">' + esc(full.slice(0, t.length)) + '</span><span class="r">' +
+            esc(full.slice(t.length)) + '</span>'
+          : '<span class="r">' + esc(full) + '</span>';
+        if (state.settings.autoSpeak) speak(target, parseInt(state.settings.repeat, 10) || 3);
+        // 記錄到閃卡錯誤本
+        fcRecordMistake(target);
+      }
+      return;
+    }
+
+    slot.classList.remove('bad'); inp.classList.remove('bad');
+    if (fcTypeHintOn[idx]) {
+      var t2 = canon(v).toLowerCase();
+      wm.innerHTML = t2.length > 0 && lfull.indexOf(t2) === 0
+        ? '<span class="t">' + esc(full.slice(0, t2.length)) + '</span><span class="r">' +
+          esc(full.slice(t2.length)) + '</span>'
+        : '<span class="r">' + esc(full) + '</span>';
+    }
+
+    if (lv === lfull) {
+      inp.value = full;
+      wm.innerHTML = '';
+      inp.classList.add('ok'); slot.classList.add('ok');
+      slot.classList.remove('focus');
+      // 跳到下一個字
+      var nx = fcTypeEls[idx + 1];
+      if (nx) nx.input.focus();
+      // 檢查是否全部完成
+      if (fcIsTypeCorrect()) {
+        fcOnCardCorrect();
+      }
+    }
+  }
+
+  function fcOnTypeKey(e, inp, target) {
+    if (e.key === ' ') {
+      e.preventDefault();
+      speak(target, 1);
+      return;
+    }
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      fcRetryCurrentCard();
+      return;
+    }
+    if (inp.classList.contains('bad') &&
+        e.key !== 'Backspace' && e.key !== 'Delete' && !e.ctrlKey && !e.altKey && !e.metaKey) {
+      e.preventDefault();
+    }
+  }
+
+  function fcIsTypeCorrect() {
+    return fcTypeEls.length > 0 && fcTypeEls.every(function (w) {
+      return canon(w.input.value).toLowerCase() === canon(w.target).toLowerCase();
+    });
+  }
+
+  function fcOnCardCorrect() {
+    var fs = state.flashcardState;
+    fs.correct++;
+    playFireworkSound();
+    var resultEl = $('fcTypeResult');
+    resultEl.textContent = '正確！';
+    resultEl.className = 'fc-result ok';
+    // 2 秒後自動進下一張
+    setTimeout(function () {
+      fcNextCard();
+    }, 2000);
+  }
+
+  function fcNextCard() {
+    var fs = state.flashcardState;
+    fs.idx++;
+    if (fs.idx >= fs.queue.length) {
+      $('fcTypeZh').textContent = '這輪完成了！';
+      $('fcWords').innerHTML = '';
+      $('fcTypeResult').textContent = '';
+      $('fcProgress').textContent = '共 ' + fs.queue.length + ' 題，答對 ' + fs.correct + ' 題';
+    } else {
+      fcRenderTypeCard();
+    }
+  }
+
+  function fcRetryCurrentCard() {
+    fcTypeEls.forEach(function (w) {
+      w.input.value = ''; w.wm.innerHTML = '';
+      w.input.classList.remove('ok', 'bad');
+      w.slot.classList.remove('ok', 'bad');
+    });
+    fcTypeErrCount = fcTypeEls.map(function () { return 0; });
+    fcTypeHintOn = fcTypeEls.map(function () { return false; });
+    $('fcTypeResult').textContent = '';
+    $('fcTypeResult').className = 'fc-result';
+    if (fcTypeEls[0]) fcTypeEls[0].input.focus();
+  }
+
+  function fcRecordMistake(word) {
+    var k = word.toLowerCase();
+    var rec = state.flashcardMistakes[k];
+    if (!rec) {
+      var w = FC_WORDS.find(function (x) { return x.en.toLowerCase() === k; });
+      rec = state.flashcardMistakes[k] = {
+        en: word,
+        zh: w ? w.zh : '',
+        ipa: w ? w.ipa : '',
+        n: 0,
+        level: state.flashcardState.level
+      };
+    }
+    rec.n++;
+    saveAll();
+    updateFlashcardMistakeCount();
+    playWarningSound();
+  }
+
+  // 從閃卡錯誤本練習所有錯誤單字
+  function fcPracticeMistakes() {
+    var keys = Object.keys(state.flashcardMistakes);
+    if (!keys.length) {
+      toast('閃卡錯誤本是空的');
+      return;
+    }
+    state.flashcardState.queue = keys.map(function (k) { return state.flashcardMistakes[k]; });
+    state.flashcardState.idx = 0;
+    state.flashcardState.answered = 0;
+    state.flashcardState.correct = 0;
+    fcTypeMode = true;
+    $('fcModeBtn').textContent = '🔤 選擇模式';
+    $('fcCard').classList.add('hidden');
+    $('fcTypeCard').classList.remove('hidden');
+    showView('flashcards');
+    fcRenderTypeCard();
   }
 
   function speakFlashcardWord() {
@@ -3958,6 +4202,7 @@ function prepFn(w) {
       state.flashcardState.level = parseInt(this.value, 10);
       initFlashcards();
     };
+    $('fcModeBtn').onclick = function () { fcToggleMode(); };
     $('fcResetBtn').onclick = function () { resetFlashcardLevel(); };
     $('fcSpeakBtn').onclick = function () { speakFlashcardWord(); };
     $('fcMistakeBtn').onclick = function () { renderFlashcardMistakes(); };

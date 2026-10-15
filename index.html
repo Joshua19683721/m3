@@ -189,15 +189,30 @@
           <option value="6">6 級</option>
         </select>
       </label>
+      <button class="btn btn--ghost btn--sm" id="fcModeBtn">⌨ 輸入模式</button>
       <button class="btn btn--ghost btn--sm" id="fcResetBtn">🔄 重置本級</button>
       <span class="fc-progress" id="fcProgress"></span>
       <button class="btn btn--ghost btn--sm" id="fcMistakeBtn">📕 閃卡錯誤本 <span id="fcMistakeCount">0</span></button>
     </div>
+
+    <!-- 選擇模式 -->
     <div class="fc-card" id="fcCard">
       <div class="fc-zh" id="fcZh"></div>
+      <div class="fc-ipa" id="fcIpa"></div>
       <button class="btn fc-speak" id="fcSpeakBtn">🔊 聽三次</button>
       <div class="fc-options" id="fcOptions"></div>
       <div class="fc-result" id="fcResult"></div>
+    </div>
+
+    <!-- 輸入模式 -->
+    <div class="fc-card hidden" id="fcTypeCard">
+      <div class="fc-zh" id="fcTypeZh"></div>
+      <div class="fc-ipa" id="fcTypeIpa"></div>
+      <div class="fc-words" id="fcWords"></div>
+      <div class="fc-result" id="fcTypeResult"></div>
+      <div style="margin-top:12px;font-size:.78rem;color:var(--txt-3)">
+        Space 鍵＝聽一次 · Enter 鍵＝重打這個字
+      </div>
     </div>
   </div>
 </main>
