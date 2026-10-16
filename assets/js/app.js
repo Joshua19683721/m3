@@ -4067,6 +4067,9 @@ function prepFn(w) {
       resultEl.className = 'fc-result ok';
       fs.correct++;
       playFireworkSound();
+      // 即時更新答對計數
+      $('fcProgress').textContent = (fs.idx + 1) + ' / ' + fs.queue.length +
+        '　答對 ' + fs.correct + ' 題';
       // 停頓 2 秒讓學生看完「正確！」，再自動進下一張
       setTimeout(function () {
         fs.idx++;
@@ -4076,7 +4079,7 @@ function prepFn(w) {
           $('fcResult').textContent = '';
           $('fcProgress').textContent = '共 ' + fs.answered + ' 題，答對 ' + fs.correct + ' 題';
         } else {
-          renderFlashcard();
+          fcRenderCard();
         }
       }, 2000);
     } else {
@@ -4099,6 +4102,9 @@ function prepFn(w) {
         saveAll();
         updateFlashcardMistakeCount();
       }
+      // 即時更新答題計數
+      $('fcProgress').textContent = (fs.idx + 1) + ' / ' + fs.queue.length +
+        '　答對 ' + fs.correct + ' 題';
       // 2 秒後自動進下一張
       setTimeout(function () {
         fs.idx++;
@@ -4108,7 +4114,7 @@ function prepFn(w) {
           $('fcResult').textContent = '';
           $('fcProgress').textContent = '共 ' + fs.answered + ' 題，答對 ' + fs.correct + ' 題';
         } else {
-          renderFlashcard();
+          fcRenderCard();
         }
       }, 2000);
     }
