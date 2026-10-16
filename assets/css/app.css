@@ -441,8 +441,13 @@ ul.tips--num li::before {
 .fc-ipa { font-size: .9rem; color: var(--txt-3); margin-bottom: 12px; font-family: var(--mono); }
 .fc-words { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 16px 0 20px; }
 .fc-words .word { margin: 0; }
-#fcTypeZh { margin-bottom: 6px; }
-#fcTypeIpa { margin-bottom: 24px; }
+
+/* 統一閃卡兩種模式的中文、音標、內容間距 */
+.fc-card .fc-zh { margin-bottom: 16px; }
+.fc-card .fc-ipa { margin-bottom: 12px; }
+.fc-card #fcTypeZh { margin-bottom: 16px; }
+.fc-card #fcTypeIpa { margin-bottom: 12px; }
+
 .hidden { display: none !important; }
 
 .statRow {

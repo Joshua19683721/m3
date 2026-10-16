@@ -3685,18 +3685,23 @@ function prepFn(w) {
     state.flashcardState.idx = 0;
     state.flashcardState.answered = 0;
     state.flashcardState.correct = 0;
+    fcStrictMode = false; // 重置時關閉嚴格模式
     fcRenderCard();
     toast('已重置 ' + level + ' 級的閃卡進度');
   }
 
   // 輸入模式狀態
   var fcTypeMode = false;      // false = 選擇模式, true = 輸入模式
+  var fcStrictMode = false;    // true = 嚴格模式（練習錯誤本：必須零錯誤才能過關）
   var fcTypeEls = [];          // 輸入模式的 word elements
   var fcTypeErrCount = [];
   var fcTypeHintOn = [];
+  var fcStrictCardHasError = false; // 嚴格模式下目前這張卡是否有過錯誤
 
   function fcSetMode(mode) {
     fcTypeMode = (mode === 'type');
+    // 切換模式時關閉嚴格模式
+    if (!fcTypeMode) fcStrictMode = false;
     $('fcCard').classList.toggle('hidden', fcTypeMode);
     $('fcTypeCard').classList.toggle('hidden', !fcTypeMode);
     if ($('fcMode')) $('fcMode').value = mode;
@@ -3768,6 +3773,9 @@ function prepFn(w) {
     $('fcProgress').textContent = (fs.idx + 1) + ' / ' + fs.queue.length +
       '　答對 ' + fs.correct + ' 題';
 
+    // 嚴格模式：重置本卡錯誤旗標
+    fcStrictCardHasError = false;
+
     // 建立輸入框（參考主練習的 slot/watermark 設計）
     wordsEl.innerHTML = '';
     fcTypeEls = [];
@@ -3831,6 +3839,8 @@ function prepFn(w) {
       slot.classList.add('bad'); slot.classList.remove('ok');
       inp.classList.add('bad'); inp.classList.remove('ok');
       fcTypeErrCount[idx]++;
+      // 嚴格模式：只要打錯就標記本卡有錯誤
+      if (fcStrictMode) fcStrictCardHasError = true;
       if (fcTypeErrCount[idx] >= 3 && !fcTypeHintOn[idx]) {
         fcTypeHintOn[idx] = true;
         // 顯示浮水印提示
@@ -3876,9 +3886,9 @@ function prepFn(w) {
       speak(target, 1);
       return;
     }
+    // Enter 鍵在輸入模式下不做任何事（避免誤觸重打）
     if (e.key === 'Enter') {
       e.preventDefault();
-      fcRetryCurrentCard();
       return;
     }
     if (inp.classList.contains('bad') &&
@@ -3895,6 +3905,18 @@ function prepFn(w) {
 
   function fcOnCardCorrect() {
     var fs = state.flashcardState;
+    // 嚴格模式：如果本卡有過錯誤，強制重打直到零錯誤
+    if (fcStrictMode && fcStrictCardHasError) {
+      var resultEl = $('fcTypeResult');
+      resultEl.textContent = '有錯誤，請重打直到完全正確！';
+      resultEl.className = 'fc-result err';
+      playWarningSound();
+      // 短暫停留後自動重置本卡
+      setTimeout(function () {
+        fcRetryCurrentCard();
+      }, 1500);
+      return;
+    }
     fs.correct++;
     playFireworkSound();
     var resultEl = $('fcTypeResult');
@@ -3910,6 +3932,8 @@ function prepFn(w) {
     var fs = state.flashcardState;
     fs.idx++;
     if (fs.idx >= fs.queue.length) {
+      // 練習結束，關閉嚴格模式
+      fcStrictMode = false;
       $('fcTypeZh').textContent = '這輪完成了！';
       $('fcWords').innerHTML = '';
       $('fcTypeResult').textContent = '';
@@ -3951,7 +3975,7 @@ function prepFn(w) {
     playWarningSound();
   }
 
-  // 從閃卡錯誤本練習所有錯誤單字
+  // 從閃卡錯誤本練習所有錯誤單字（嚴格模式：必須零錯誤才能過關）
   function fcPracticeMistakes() {
     var keys = Object.keys(state.flashcardMistakes);
     if (!keys.length) {
@@ -3963,6 +3987,7 @@ function prepFn(w) {
     state.flashcardState.answered = 0;
     state.flashcardState.correct = 0;
     fcTypeMode = true;
+    fcStrictMode = true;  // 啟用嚴格模式
     if ($('fcMode')) $('fcMode').value = 'type';
     $('fcCard').classList.add('hidden');
     $('fcTypeCard').classList.remove('hidden');
@@ -4042,7 +4067,7 @@ function prepFn(w) {
       resultEl.className = 'fc-result ok';
       fs.correct++;
       playFireworkSound();
-      // 停留 3 秒後自動進下一張
+      // 停頓 2 秒讓學生看完「正確！」，再自動進下一張
       setTimeout(function () {
         fs.idx++;
         if (fs.idx >= fs.queue.length) {
@@ -4053,7 +4078,7 @@ function prepFn(w) {
         } else {
           renderFlashcard();
         }
-      }, 3000);
+      }, 2000);
     } else {
       btn.classList.add('wrong');
       // 標示正確答案
@@ -4123,6 +4148,8 @@ function prepFn(w) {
     $('fcPracticeAllMistakes').onclick = function () { fcPracticeMistakes(); };
     
     $('fcMistakeBack').onclick = function () {
+      // 返回時重置為選擇模式（四選一），避免殘留輸入模式狀態導致顯示錯誤
+      fcTypeMode = false;
       // 恢復原本閃卡畫面（包含兩張卡片）
       box.innerHTML = '<div class="fc-controls">' +
         '<label class="ctl"><span>級數</span>' +
@@ -4166,9 +4193,9 @@ function prepFn(w) {
       $('fcSpeakBtn').onclick = function () { speakFlashcardWord(); };
       $('fcMistakeBtn').onclick = function () { renderFlashcardMistakes(); };
       updateFlashcardMistakeCount();
-      // 同步模式狀態
-      if ($('fcMode')) $('fcMode').value = fcTypeMode ? 'type' : 'choice';
-      renderFlashcard();
+      // 同步模式狀態（確保選單與實際顯示一致）
+      if ($('fcMode')) $('fcMode').value = 'choice';
+      fcSetMode('choice'); // 正確初始化顯示/隱藏
     };
   }
 
