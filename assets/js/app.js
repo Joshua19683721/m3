@@ -3881,6 +3881,17 @@ function prepFn(w) {
   }
 
   function fcOnTypeKey(e, inp, target) {
+    // 方向鍵左右：切換到前一張／下一張閃卡，方便驗收時快速瀏覽
+    if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      fcNavigateFlashcard(-1);
+      return;
+    }
+    if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      fcNavigateFlashcard(1);
+      return;
+    }
     if (e.key === ' ') {
       e.preventDefault();
       speak(target, 1);
@@ -3954,6 +3965,16 @@ function prepFn(w) {
     $('fcTypeResult').textContent = '';
     $('fcTypeResult').className = 'fc-result';
     if (fcTypeEls[0]) fcTypeEls[0].input.focus();
+  }
+
+  // 手動切換前一張／下一張閃卡（驗收時用；方向鍵左右）
+  function fcNavigateFlashcard(delta) {
+    var fs = state.flashcardState;
+    if (!fs || !fs.queue || !fs.queue.length) return;
+    var ni = fs.idx + (delta || 0);
+    if (ni < 0 || ni >= fs.queue.length) return;
+    fs.idx = ni;
+    fcRenderCard();
   }
 
   function fcRecordMistake(word) {
@@ -4186,7 +4207,7 @@ function prepFn(w) {
         '<div class="fc-words" id="fcWords"></div>' +
         '<div class="fc-result" id="fcTypeResult"></div>' +
         '<div style="margin-top:12px;font-size:.78rem;color:var(--txt-3)">' +
-        'Space 鍵＝聽一次 · Enter 鍵＝重打這個字' +
+        'Space 鍵＝聽一次 · Enter 鍵＝重打這個字 · ←/→ 鍵＝前一張 / 下一張閃卡' +
         '</div>' +
         '</div>';
       // 重新綁定所有事件
@@ -4310,8 +4331,13 @@ function prepFn(w) {
       }
       if (e.key === 'Escape') { closePanel(); return; }
       if (inField) return;
-      if (e.key === 'ArrowRight') { gotoUnit(1); return; }
-      if (e.key === 'ArrowLeft') { gotoUnit(-1); return; }
+      if (state.view === 'flashcards') {
+        if (e.key === 'ArrowRight') { fcNavigateFlashcard(1); return; }
+        if (e.key === 'ArrowLeft') { fcNavigateFlashcard(-1); return; }
+      } else {
+        if (e.key === 'ArrowRight') { gotoUnit(1); return; }
+        if (e.key === 'ArrowLeft') { gotoUnit(-1); return; }
+      }
       // 面板開著時不要搶 Enter（面板是唯讀的，不需要反應）
       if (e.key === 'Enter' && state.view === 'practice' && $('panel').hidden) {
         e.preventDefault(); retryStep();
