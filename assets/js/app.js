@@ -4331,13 +4331,11 @@ function prepFn(w) {
       }
       if (e.key === 'Escape') { closePanel(); return; }
       if (inField) return;
-      if (state.view === 'flashcards') {
-        if (e.key === 'ArrowRight') { fcNavigateFlashcard(1); return; }
-        if (e.key === 'ArrowLeft') { fcNavigateFlashcard(-1); return; }
-      } else {
-        if (e.key === 'ArrowRight') { gotoUnit(1); return; }
-        if (e.key === 'ArrowLeft') { gotoUnit(-1); return; }
-      }
+      // 閃卡練習的左右鍵只在輸入框取得焦點時由 fcOnTypeKey 處理，
+      // 這裡不要在級數／模式等控制項上誤觸發切換，避免誤動作。
+      if (state.view === 'flashcards') return;
+      if (e.key === 'ArrowRight') { gotoUnit(1); return; }
+      if (e.key === 'ArrowLeft') { gotoUnit(-1); return; }
       // 面板開著時不要搶 Enter（面板是唯讀的，不需要反應）
       if (e.key === 'Enter' && state.view === 'practice' && $('panel').hidden) {
         e.preventDefault(); retryStep();
