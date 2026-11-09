@@ -3655,7 +3655,8 @@ function prepFn(w) {
     var pre = EN_PREFIXES.find(function (p) { return rest.indexOf(p) === 0 && rest.length > p.length + 1; });
     if (pre) { chunks.push(pre); rest = rest.slice(pre.length); }
     var suf = EN_SUFFIXES.find(function (s) { return rest.endsWith(s) && rest.length > s.length + 1; });
-    if (suf && rest.length > suf.length + 1) { rest = rest.slice(0, rest.length - suf.length); }
+    var suffixStr = '';
+    if (suf && rest.length > suf.length + 1) { suffixStr = suf; rest = rest.slice(0, rest.length - suf.length); }
     // 對剩下的主幹做 maximal-onset 音節拆解
     var body = [];
     var i = 0, n = rest.length;
@@ -3675,7 +3676,7 @@ function prepFn(w) {
     }
     if (!body.length) body = [rest];
     chunks = chunks.concat(body);
-    if (suf && rest.length > suf.length) chunks.push(suf);
+    if (suffixStr) chunks.push(suffixStr);
     // 合併過短碎片（小於 2 字母時併入前一塊）
     var merged = [];
     chunks.forEach(function (c) {
