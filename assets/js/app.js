@@ -3599,7 +3599,7 @@ function prepFn(w) {
   var FC_MNEMONICS = {
     surprise:
       'surprise (n./v.) 驚喜；使驚訝\n' +
-      '💡 記憶訣竅：拆成兩半＋諧音情境\n' +
+      '💡 記憶訣竅：英語字首字尾拆解＋諧音情境\n' +
       '拆解：sur + prise\n' +
       '發音：/sɚˈpraɪz/\n' +
       '諧音口訣：「蛇 (sur)」 突然跳出來 「派 (prise)」 對，給所有人一個 Surprise（驚喜）！\n' +
@@ -3609,7 +3609,7 @@ function prepFn(w) {
     '創意記憶：想像 Snake surprise 派對上 everyone 都被嚇一跳，r 就是蛇正在吐舌頭。',
     restaurant:
       '2. restaurant (n.) 餐廳\n' +
-      '💡 記憶訣竅：拆成 3 個音節＋拆字口訣\n' +
+      '💡 記憶訣竅：英語音節拆解＋拆字口訣\n' +
       '拆解：rest + au + rant\n' +
       '發音：/ˈres.tə.rɑːnt/\n' +
       '口訣記憶法：\n' +
@@ -3623,6 +3623,68 @@ function prepFn(w) {
     '創意記憶：想像在餐廳等位子時，先 rest、再說 au、最後 rant，整句就是 restaurant。'
   };
 
+  // 英語的思維記憶拆解：字首/字尾優先，剩下的再依音節（maximal onset）拆開
+  var EN_PREFIXES = [
+    'over','under','inter','trans','super','multi','semi','micro','macro','anti',
+    'auto','tele','sub','out','extra','ultra','counter','down','intro','intro',
+    'mono','omni','poly','post','pre','prime','retro','supra','under','over',
+    'un','re','in','im','ir','il','dis','mis','non','en','em','de','ex',
+    'pro','per','ab','ad','co','con','com','per','up','fore'
+  ].sort(function (a, b) { return b.length - a.length; });
+  var EN_SUFFIXES = [
+    'ation','ition','ation','tion','sion','ment','ness','ity','ty','able',
+    'ible','less','ful','ious','eous','ous','ive','ative','itive','ize','ise',
+    'ify','ation','arium','arium','ence','ance','ency','ancy','dom','ery','ry',
+    'ship','ward','wise','hood','ism','ist','ant','ent','age','ian','ial',
+    'ian','al','ic','ogy','ity','edly','ing','edly','ed','er','or','ar','ly',
+    'es','s','y'
+  ].sort(function (a, b) { return b.length - a.length; });
+  // 去重並依長度排序
+  EN_PREFIXES = Array.from(new Set(EN_PREFIXES)).sort(function (a,b){return b.length-a.length;});
+  EN_SUFFIXES = Array.from(new Set(EN_SUFFIXES)).sort(function (a,b){return b.length-a.length;});
+
+  function _isVowel(ch) { return 'aeiouy'.indexOf(ch) >= 0; }
+  function englishSyllables(w) {
+    w = String(w || '').toLowerCase().replace(/[^a-z]/g, '');
+    if (w.length <= 2) return [w];
+    // 先把字首/字尾拆出來；剩下的再做英語音節拆解
+    var chunks = [];
+    var rest = w;
+    var found = true;
+    // 前後各最多拆一次，避免過度碎裂
+    var pre = EN_PREFIXES.find(function (p) { return rest.indexOf(p) === 0 && rest.length > p.length + 1; });
+    if (pre) { chunks.push(pre); rest = rest.slice(pre.length); }
+    var suf = EN_SUFFIXES.find(function (s) { return rest.endsWith(s) && rest.length > s.length + 1; });
+    if (suf && rest.length > suf.length + 1) { rest = rest.slice(0, rest.length - suf.length); }
+    // 對剩下的主幹做 maximal-onset 音節拆解
+    var body = [];
+    var i = 0, n = rest.length;
+    while (i < n) {
+      var start = i;
+      while (i < n && !_isVowel(rest[i])) i++;
+      var onset = rest.slice(start, i);
+      var vstart = i;
+      while (i < n && _isVowel(rest[i])) i++;
+      var nucleus = rest.slice(vstart, i);
+      if (!nucleus) {
+        // 尾端子音併入前一音節
+        if (body.length) body[body.length - 1] += rest.slice(start);
+        break;
+      }
+      body.push(onset + nucleus);
+    }
+    if (!body.length) body = [rest];
+    chunks = chunks.concat(body);
+    if (suf && rest.length > suf.length) chunks.push(suf);
+    // 合併過短碎片（小於 2 字母時併入前一塊）
+    var merged = [];
+    chunks.forEach(function (c) {
+      if (c.length < 2 && merged.length) merged[merged.length - 1] += c;
+      else merged.push(c);
+    });
+    if (!merged.length) merged = [w];
+    return merged;
+  }
   function fcLettersOnly(w) {
     return String(w || '').replace(/[^A-Za-z]/g, '');
   }
@@ -3647,12 +3709,16 @@ function prepFn(w) {
     var mid = Math.ceil(letters.length / 2);
     var left = letters.slice(0, mid);
     var right = letters.slice(mid);
-    return '💡 記憶訣竅：拆成兩半＋情境\n' +
-      '拆解：' + left + ' + ' + right + '\n' +
+    // 使用英語的思維記憶拆解法：字首/字尾優先，其餘依音節拆解
+    var chunks = englishSyllables(card.en);
+    var splitText = chunks.join(' + ');
+    var methodLabel = chunks.length > 1 ? '英語音節/字首字尾拆解' : '整體記憶';
+    return '💡 記憶訣竅：' + methodLabel + '＋情境\n' +
+      '拆解：' + splitText + '\n' +
       (ipa ? ('發音：' + ipa + '\n') : '') +
-      '為何這樣記：把長單字拆成兩半，先記前半，再記後半，每次只記幾個字母，大腦更容易留下畫面。\n' +
-      '台灣人記憶法：把前半聯想成中文或台語日常情境，後半當成結尾音，朗讀後更能把拼法鎖住。\n' +
-      '創意記憶：把前後兩半當成一小段故事，' + left + ' + ' + right + ' 串起來就是 ' + (card && card.en ? card.en : letters) + '。\n' +
+      '為何這樣記：用英語的思維，把單字拆成有意義或可發音的 English chunks，而不是只從中間硬切，記憶時更容易呼應發音與字形。\n' +
+      '台灣人記憶法：把每一段拆解聯想成中文或台語生活情境，再把各段串起來，就不容易把中間字母順序記錯。\n' +
+      '創意記憶：把 ' + splitText + ' 串成一小段故事，例如想像它們依次出現，最後就是 ' + (card && card.en ? card.en : letters) + '。\n' +
       '（提示：把單字拆開記憶，並特別注意中間字母的順序。）';
   }
 
