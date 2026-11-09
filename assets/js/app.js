@@ -3595,6 +3595,49 @@ function prepFn(w) {
     });
   }
 
+  // 針對字母超過 5 個的單字，答對/答錯後顯示的記憶說明（解答欄位用）
+  var FC_MNEMONICS = {
+    surprise:
+      'surprise (n./v.) 驚喜；使驚訝\n\n' +
+      '💡 記憶訣竅：拆成兩半＋諧音情境\n' +
+      '拆解：sur + prise\n\n' +
+      '發音：/sɚˈpraɪz/\n\n' +
+      '諧音口訣：「蛇 (sur)」 突然跳出來 「派 (prise)」 對，給所有人一個 Surprise（驚喜）！\n\n' +
+      '常錯點：很多人會漏掉第一個 r。記住 sur- 這個字首（有超越、額外的意思），想像蛇 (sur) 吐舌頭的形狀就像那個 r。',
+    restaurant:
+      '2. restaurant (n.) 餐廳\n\n' +
+      '💡 記憶訣竅：拆成 3 個音節＋拆字口訣\n' +
+      '拆解：rest + au + rant\n\n' +
+      '發音：/ˈres.tə.rɑːnt/\n\n' +
+      '口訣記憶法：\n\n' +
+      'rest（休息）：去餐廳首先要坐下休息。\n\n' +
+      'au：想像成吃飽發出的讚嘆聲 「凹~ (au)」。\n\n' +
+      'rant（抱怨）：結果發現要排隊，客人開始 rant（抱怨）。\n\n' +
+      '常錯點：中間的 au 超容易寫成 ua 或漏掉！\n\n' +
+      '一句話鎖死拼法：去餐廳 rest（休息），發出 au 的聲音，然後 rant（抱怨）。'
+  };
+
+  function fcLettersOnly(w) {
+    return String(w || '').replace(/[^A-Za-z]/g, '');
+  }
+  function fcIsLongWord(w) {
+    return fcLettersOnly(w).length > 5;
+  }
+  function fcMnemonicFor(card) {
+    if (!card || !fcIsLongWord(card.en)) return '';
+    var key = String(card.en || '').toLowerCase();
+    if (FC_MNEMONICS[key]) return FC_MNEMONICS[key];
+    var letters = fcLettersOnly(card.en);
+    var mid = Math.ceil(letters.length / 2);
+    var left = letters.slice(0, mid);
+    var right = letters.slice(mid);
+    var ipa = card.ipa ? '/' + card.ipa + '/' : '';
+    return '💡 記憶訣竅：拆成兩半＋情境\n' +
+      '拆解：' + left + ' + ' + right + '\n\n' +
+      (ipa ? ('發音：' + ipa + '\n\n') : '') +
+      '（提示：把單字拆開記憶，並特別注意中間字母的順序。）';
+  }
+
   function shuffle(arr) {
     var a = arr.slice();
     for (var i = a.length - 1; i > 0; i--) {
@@ -3693,6 +3736,7 @@ function prepFn(w) {
   // 輸入模式狀態
   var fcTypeMode = false;      // false = 選擇模式, true = 輸入模式
   var fcStrictMode = false;    // true = 嚴格模式（練習錯誤本：必須零錯誤才能過關）
+  var fcAwaitingKey = false;    // 答對/答錯後顯示記憶訣竅，等待使用者按鍵再進下一張
   var fcTypeEls = [];          // 輸入模式的 word elements
   var fcTypeErrCount = [];
   var fcTypeHintOn = [];
@@ -3709,6 +3753,7 @@ function prepFn(w) {
   }
 
   function fcRenderCard() {
+    fcAwaitingKey = false;
     if (fcTypeMode) fcRenderTypeCard();
     else fcRenderChoiceCard();
   }
@@ -3881,6 +3926,13 @@ function prepFn(w) {
   }
 
   function fcOnTypeKey(e, inp, target) {
+    // 答題後若有記憶說明，先按鍵再進下一張
+    if (fcAwaitingKey && !e.altKey && !e.ctrlKey && !e.metaKey) {
+      e.preventDefault();
+      e.stopPropagation();
+      fcNextCard();
+      return;
+    }
     // 方向鍵左右：切換到前一張／下一張閃卡，方便驗收時快速瀏覽
     if (e.key === 'ArrowLeft') {
       e.preventDefault();
@@ -3931,12 +3983,18 @@ function prepFn(w) {
     fs.correct++;
     playFireworkSound();
     var resultEl = $('fcTypeResult');
-    resultEl.textContent = '正確！';
+    var typeCard = fs.queue[fs.idx];
+    var typeMnem = fcMnemonicFor(typeCard);
+    resultEl.textContent = '正確！' + (typeMnem ? '\n\n' + typeMnem : '');
     resultEl.className = 'fc-result ok';
-    // 2 秒後自動進下一張
-    setTimeout(function () {
-      fcNextCard();
-    }, 2000);
+    if (typeMnem) {
+      fcAwaitingKey = true;
+    } else {
+      // 2 秒後自動進下一張
+      setTimeout(function () {
+        fcNextCard();
+      }, 2000);
+    }
   }
 
   function fcNextCard() {
@@ -4075,6 +4133,20 @@ function prepFn(w) {
     osc.start(ctx.currentTime); osc.stop(ctx.currentTime + 0.5);
   }
 
+  function fcNextChoiceCard() {
+    var fs = state.flashcardState;
+    fcAwaitingKey = false;
+    fs.idx++;
+    if (fs.idx >= fs.queue.length) {
+      $('fcZh').textContent = '這輪完成了！';
+      $('fcOptions').innerHTML = '';
+      $('fcResult').textContent = '';
+      $('fcProgress').textContent = '共 ' + fs.answered + ' 題，答對 ' + fs.correct + ' 題';
+    } else {
+      fcRenderCard();
+    }
+  }
+
   function handleFlashcardAnswer(idx, ok, btn) {
     var fs = state.flashcardState;
     var card = fs.queue[fs.idx];
@@ -4084,32 +4156,33 @@ function prepFn(w) {
     fs.answered++;
     if (ok) {
       btn.classList.add('correct');
-      resultEl.textContent = '正確！';
+      var card = fs.queue[fs.idx];
+      var mnem = fcMnemonicFor(card);
+      resultEl.textContent = '正確！' + (mnem ? '\n\n' + mnem : '');
       resultEl.className = 'fc-result ok';
       fs.correct++;
       playFireworkSound();
       // 即時更新答對計數
       $('fcProgress').textContent = (fs.idx + 1) + ' / ' + fs.queue.length +
         '　答對 ' + fs.correct + ' 題';
-      // 停頓 2 秒讓學生看完「正確！」，再自動進下一張
-      setTimeout(function () {
-        fs.idx++;
-        if (fs.idx >= fs.queue.length) {
-          $('fcZh').textContent = '這輪完成了！';
-          $('fcOptions').innerHTML = '';
-          $('fcResult').textContent = '';
-          $('fcProgress').textContent = '共 ' + fs.answered + ' 題，答對 ' + fs.correct + ' 題';
-        } else {
-          fcRenderCard();
-        }
-      }, 2000);
+      if (mnem) {
+        // 字母超過 5 個的單字：顯示記憶說明後，暫停等待使用者按鍵再進下一張
+        fcAwaitingKey = true;
+      } else {
+        // 停頓 2 秒讓學生看完「正確！」，再自動進下一張
+        setTimeout(function () {
+          fcNextChoiceCard();
+        }, 2000);
+      }
     } else {
       btn.classList.add('wrong');
       // 標示正確答案
       opts.forEach(function (b) {
         if (card && b.textContent === card.en) b.classList.add('correct');
       });
-      resultEl.textContent = '答錯了！正確答案是 ' + card.en;
+      var mnemWrong = fcMnemonicFor(card);
+      resultEl.textContent = '答錯了！正確答案是 ' + card.en +
+        (mnemWrong ? '\n\n' + mnemWrong : '');
       resultEl.className = 'fc-result err';
       playWarningSound();
       // 記錄到閃卡錯誤本
@@ -4126,18 +4199,14 @@ function prepFn(w) {
       // 即時更新答題計數
       $('fcProgress').textContent = (fs.idx + 1) + ' / ' + fs.queue.length +
         '　答對 ' + fs.correct + ' 題';
-      // 2 秒後自動進下一張
-      setTimeout(function () {
-        fs.idx++;
-        if (fs.idx >= fs.queue.length) {
-          $('fcZh').textContent = '這輪完成了！';
-          $('fcOptions').innerHTML = '';
-          $('fcResult').textContent = '';
-          $('fcProgress').textContent = '共 ' + fs.answered + ' 題，答對 ' + fs.correct + ' 題';
-        } else {
-          fcRenderCard();
-        }
-      }, 2000);
+      if (mnemWrong) {
+        fcAwaitingKey = true;
+      } else {
+        // 2 秒後自動進下一張
+        setTimeout(function () {
+          fcNextChoiceCard();
+        }, 2000);
+      }
     }
   }
 
@@ -4330,6 +4399,20 @@ function prepFn(w) {
         if (k === 'b') { e.preventDefault(); $('toggleZhBtn').click(); return; }
       }
       if (e.key === 'Escape') { closePanel(); return; }
+      // 閃卡練習答題後：字母超過 5 個的單字會停在記憶說明，按任意鍵才進下一張
+      if (state.view === 'flashcards' && fcAwaitingKey &&
+          !e.altKey && !e.ctrlKey && !e.metaKey) {
+        var inInput2 = document.activeElement &&
+          /^(INPUT|TEXTAREA)$/.test(document.activeElement.tagName);
+        if (!(fcTypeMode && inInput2)) {
+          e.preventDefault();
+          if (fcTypeMode) fcNextCard();
+          else fcNextChoiceCard();
+          return;
+        } else {
+          // 輸入框內交由 fcOnTypeKey 處理（含 stopPropagation）
+        }
+      }
       if (inField) return;
       // 閃卡練習的左右鍵只在輸入框取得焦點時由 fcOnTypeKey 處理，
       // 這裡不要在級數／模式等控制項上誤觸發切換，避免誤動作。
