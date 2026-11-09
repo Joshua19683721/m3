@@ -433,7 +433,7 @@ ul.tips--num li::before {
 .fc-opt.correct { border-color: var(--ok); background: #14532d33; }
 .fc-opt.wrong { border-color: var(--err); background: #7f1d1d33; }
 .fc-opt.disabled { pointer-events: none; opacity: .6; }
-.fc-result { margin-top: 16px; min-height: 28px; font-size: 1rem; font-weight: 700; white-space: pre-wrap; }
+.fc-result { margin-top: 16px; min-height: 28px; font-size: 1rem; font-weight: 700; line-height: 1.6; white-space: pre-wrap; }
 .fc-result.ok { color: var(--ok); }
 .fc-result.err { color: var(--err); }
 .fc-mistake-row { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-bottom: 1px solid #ffffff0d; font-size: .86rem; }

@@ -3598,22 +3598,22 @@ function prepFn(w) {
   // 針對字母超過 5 個的單字，答對/答錯後顯示的記憶說明（解答欄位用）
   var FC_MNEMONICS = {
     surprise:
-      'surprise (n./v.) 驚喜；使驚訝\n\n' +
+      'surprise (n./v.) 驚喜；使驚訝\n' +
       '💡 記憶訣竅：拆成兩半＋諧音情境\n' +
-      '拆解：sur + prise\n\n' +
-      '發音：/sɚˈpraɪz/\n\n' +
-      '諧音口訣：「蛇 (sur)」 突然跳出來 「派 (prise)」 對，給所有人一個 Surprise（驚喜）！\n\n' +
+      '拆解：sur + prise\n' +
+      '發音：/sɚˈpraɪz/\n' +
+      '諧音口訣：「蛇 (sur)」 突然跳出來 「派 (prise)」 對，給所有人一個 Surprise（驚喜）！\n' +
       '常錯點：很多人會漏掉第一個 r。記住 sur- 這個字首（有超越、額外的意思），想像蛇 (sur) 吐舌頭的形狀就像那個 r。',
     restaurant:
-      '2. restaurant (n.) 餐廳\n\n' +
+      '2. restaurant (n.) 餐廳\n' +
       '💡 記憶訣竅：拆成 3 個音節＋拆字口訣\n' +
-      '拆解：rest + au + rant\n\n' +
-      '發音：/ˈres.tə.rɑːnt/\n\n' +
-      '口訣記憶法：\n\n' +
-      'rest（休息）：去餐廳首先要坐下休息。\n\n' +
-      'au：想像成吃飽發出的讚嘆聲 「凹~ (au)」。\n\n' +
-      'rant（抱怨）：結果發現要排隊，客人開始 rant（抱怨）。\n\n' +
-      '常錯點：中間的 au 超容易寫成 ua 或漏掉！\n\n' +
+      '拆解：rest + au + rant\n' +
+      '發音：/ˈres.tə.rɑːnt/\n' +
+      '口訣記憶法：\n' +
+      'rest（休息）：去餐廳首先要坐下休息。\n' +
+      'au：想像成吃飽發出的讚嘆聲 「凹~ (au)」。\n' +
+      'rant（抱怨）：結果發現要排隊，客人開始 rant（抱怨）。\n' +
+      '常錯點：中間的 au 超容易寫成 ua 或漏掉！\n' +
       '一句話鎖死拼法：去餐廳 rest（休息），發出 au 的聲音，然後 rant（抱怨）。'
   };
 
@@ -3633,8 +3633,8 @@ function prepFn(w) {
     var right = letters.slice(mid);
     var ipa = card.ipa ? '/' + card.ipa + '/' : '';
     return '💡 記憶訣竅：拆成兩半＋情境\n' +
-      '拆解：' + left + ' + ' + right + '\n\n' +
-      (ipa ? ('發音：' + ipa + '\n\n') : '') +
+      '拆解：' + left + ' + ' + right + '\n' +
+      (ipa ? ('發音：' + ipa + '\n') : '') +
       '（提示：把單字拆開記憶，並特別注意中間字母的順序。）';
   }
 
@@ -3985,7 +3985,7 @@ function prepFn(w) {
     var resultEl = $('fcTypeResult');
     var typeCard = fs.queue[fs.idx];
     var typeMnem = fcMnemonicFor(typeCard);
-    resultEl.textContent = '正確！' + (typeMnem ? '\n\n' + typeMnem : '');
+    resultEl.textContent = '正確！' + (typeMnem ? '\n' + typeMnem : '');
     resultEl.className = 'fc-result ok';
     if (typeMnem) {
       fcAwaitingKey = true;
@@ -4158,7 +4158,7 @@ function prepFn(w) {
       btn.classList.add('correct');
       var card = fs.queue[fs.idx];
       var mnem = fcMnemonicFor(card);
-      resultEl.textContent = '正確！' + (mnem ? '\n\n' + mnem : '');
+      resultEl.textContent = '正確！' + (mnem ? '\n' + mnem : '');
       resultEl.className = 'fc-result ok';
       fs.correct++;
       playFireworkSound();
@@ -4182,7 +4182,7 @@ function prepFn(w) {
       });
       var mnemWrong = fcMnemonicFor(card);
       resultEl.textContent = '答錯了！正確答案是 ' + card.en +
-        (mnemWrong ? '\n\n' + mnemWrong : '');
+        (mnemWrong ? '\n' + mnemWrong : '');
       resultEl.className = 'fc-result err';
       playWarningSound();
       // 記錄到閃卡錯誤本
