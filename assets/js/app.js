@@ -3944,11 +3944,16 @@ function prepFn(w) {
   }
 
   function fcOnTypeKey(e, inp, target) {
-    // 答題後若有記憶說明，先按鍵再進下一張
-    if (fcAwaitingKey && !e.altKey && !e.ctrlKey && !e.metaKey) {
-      e.preventDefault();
-      e.stopPropagation();
-      fcNextCard();
+    // 答題後若有記憶說明，先按 Space / Enter / → 等明確按鍵再進下一張
+    if (fcAwaitingKey) {
+      var advanceKey = (e.key === ' ' || e.key === 'Enter' ||
+        e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === 'PageDown' ||
+        e.code === 'Space' || e.code === 'Enter' || e.code === 'ArrowRight');
+      if (advanceKey && !e.altKey && !e.ctrlKey && !e.metaKey) {
+        e.preventDefault();
+        e.stopPropagation();
+        fcNextCard();
+      }
       return;
     }
     // 方向鍵左右：切換到前一張／下一張閃卡，方便驗收時快速瀏覽
@@ -4417,18 +4422,21 @@ function prepFn(w) {
         if (k === 'b') { e.preventDefault(); $('toggleZhBtn').click(); return; }
       }
       if (e.key === 'Escape') { closePanel(); return; }
-      // 閃卡練習答題後：字母超過 5 個的單字會停在記憶說明，按任意鍵才進下一張
+      // 閃卡練習答題後：顯示記憶說明時，只用明確按鍵（Space / Enter / → / ↓ / PageDown）才進下一張
       if (state.view === 'flashcards' && fcAwaitingKey &&
           !e.altKey && !e.ctrlKey && !e.metaKey) {
-        var inInput2 = document.activeElement &&
-          /^(INPUT|TEXTAREA)$/.test(document.activeElement.tagName);
-        if (!(fcTypeMode && inInput2)) {
-          e.preventDefault();
-          if (fcTypeMode) fcNextCard();
-          else fcNextChoiceCard();
-          return;
-        } else {
-          // 輸入框內交由 fcOnTypeKey 處理（含 stopPropagation）
+        var advanceDocKey = (e.key === ' ' || e.key === 'Enter' ||
+          e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === 'PageDown' ||
+          e.code === 'Space' || e.code === 'Enter' || e.code === 'ArrowRight');
+        if (advanceDocKey) {
+          var inInput3 = document.activeElement &&
+            /^(INPUT|TEXTAREA)$/.test(document.activeElement.tagName);
+          if (!(fcTypeMode && inInput3)) {
+            e.preventDefault();
+            if (fcTypeMode) fcNextCard();
+            else fcNextChoiceCard();
+            return;
+          }
         }
       }
       if (inField) return;
