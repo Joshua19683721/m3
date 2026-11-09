@@ -3630,14 +3630,23 @@ function prepFn(w) {
     return fcLettersOnly(w).length > 5;
   }
   function fcMnemonicFor(card) {
-    if (!card || !fcIsLongWord(card.en)) return '';
+    if (!card || !String(card.en || '').trim()) return '';
     var key = String(card.en || '').toLowerCase();
     if (FC_MNEMONICS[key]) return FC_MNEMONICS[key];
     var letters = fcLettersOnly(card.en);
+    var ipa = card.ipa ? '/' + card.ipa + '/' : '';
+    if (letters.length <= 2) {
+      return '💡 記憶訣竅：單字很短，直接把拼法和發音一起記\n' +
+        '拆解：' + letters + '\n' +
+        (ipa ? ('發音：' + ipa + '\n') : '') +
+        '為何這樣記：短單字不需拆解，直接誦讀幾次就能把字母順序固定住。\n' +
+        '台灣人記憶法：把發音和意思連成一句中文短句，朗讀時更容易記住。\n' +
+        '創意記憶：把這個字母想成一個小圖案或聲音，重複幾次就記住了。\n' +
+        '（提示：短單字要特別確認發音，避免把字母順序記反。）';
+    }
     var mid = Math.ceil(letters.length / 2);
     var left = letters.slice(0, mid);
     var right = letters.slice(mid);
-    var ipa = card.ipa ? '/' + card.ipa + '/' : '';
     return '💡 記憶訣竅：拆成兩半＋情境\n' +
       '拆解：' + left + ' + ' + right + '\n' +
       (ipa ? ('發音：' + ipa + '\n') : '') +
